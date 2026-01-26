@@ -1,0 +1,1542 @@
+[
+  {
+    "id": 0,
+    "question": "Según el artículo 101, ¿cuáles son las competencias de la Junta de Personal Docente e Investigador?",
+    "reference_answer": "Promover, como órganos colegiados, acciones administrativas o judiciales en el ámbito de sus funciones, conforme a lo establecido en la normativa vigente; participar, en el marco de la normativa vigente, en los procedimientos selectivos y de provisión de puestos, la promoción y la elaboración de plantillas; participar y promover la elaboración de la normativa de desarrollo de estos Estatutos que afecte al personal de los cuerpos de funcionarios docentes universitarios; todas aquellas que tengan reconocidas por la legislación vigente y las que, de acuerdo con dicha legislación, se establezcan reglamentariamente.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "disposiciones de creación, modificación y supresión de ficheros de datos de carácter personal. 29) Coordinar la labor de los distintos Centros y Departamentos unificando criterios y normas, especialme...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_21"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-filologia",
+        "text_preview": "en cuanto a la representación en ella de los diversos sectores de la comunidad universitaria que lo 2. La Comisión Permanente, presidida por el/la Decano/a, estará compuesta por los siguientes a) El/L...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-filologia_chunk_5"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-informatica",
+        "text_preview": "representante de los estudiantes. f) Un representante del Personal Técnico, de Gestión y de Administración y Servicios g) Un representante del resto del Personal Docente e Investigador (PDI). El presi...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-informatica_chunk_7"
+        }
+      },
+      {
+        "id": 4,
+        "title": "regimen-interno-fac-politicas-y-sociologia",
+        "text_preview": "de plazas de personal docente e IV. Las titulaciones oficiales en las que participe profesorado adscrito a la Facultad o en las que se pudieran necesitar instalaciones de la misma. V. La adscripción d...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "regimen-interno-fac-politicas-y-sociologia_chunk_10"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "estime conveniente, en su respectivo ámbito de competencias, el Claustro, el Consejo de Gobierno, el Rector/a, el Decano/a o Director/a, o los Consejos de Departamentos e Institutos Universitarios de ...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-ciencias-informacion_chunk_10"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "chunk_id": 681,
+    "retrieval_time": 0.6221660137176515,
+    "generation_time": 2.488664054870606,
+    "total_time": 3.110830068588257,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 1,
+    "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
+    "reference_answer": "a través de las modalidades de contratación laboral específicas del ámbito universitario que se regulan en la LOU, o mediante las modalidades previstas en el Estatuto de los Trabajadores para la sustitución de trabajadores con derecho a reserva de puesto de trabajo; también podrá contratar personal investigador, técnico u otro personal, a través del contrato de trabajo por obra o servicio determinado para el desarrollo de proyectos de investigación científica o técnica.",
+    "rag_answer": "Según el artículo 102 de los estatutos-ucm-consolidados, la UCM puede utilizar las siguientes modalidades de contratación laboral para contratar Personal Docente e Investigador:\n\n1. Contrato temporal (por períodos sucesivos de un año cada uno)\n2. Contrato indefinido (sin límite de tiempo)",
+    "sources": [
+      {
+        "id": 1,
+        "title": "estatutos-ucm",
+        "text_preview": "contratar personal docente, investigador, técnico u otro personal de administración y servicios para el desarrollo de proyectos concretos de investigación científicaotécnica,cuyaduraciónseráladelaobra...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm_chunk_30"
+        }
+      },
+      {
+        "id": 2,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "Personal Docente e Investigador de la Universidad, sin que se compute como profesorado contratado a quienes no impartan docencia en las enseñanzas conducentes a la obtención de títulos oficiales, al p...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_51"
+        }
+      },
+      {
+        "id": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": ".- Disposiciones generales 1. El Personal Docente e Investigador de la UCM está compuesto por funcionarios de los cuerpos docentes universitarios y por personal contratado. 2. El Personal Docente e In...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_36"
+        }
+      },
+      {
+        "id": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "por períodos sucesivos de un año cada uno, sin perjuicio de lo que establezca el Convenio Colectivo del Personal Docente e Investigador que esté en vigor. Artículo 105 .- Tiempo de trabajo 1. La organ...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_53"
+        }
+      },
+      {
+        "id": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "Artículo 153 .- Personal Docente e Investigador contratado y Personal de Administración y Servicios laboral El régimen disciplinario del Personal Docente e Investigador contratado y del Personal de Ad...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_68"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "chunk_id": 681,
+    "retrieval_time": 0.4413174629211426,
+    "generation_time": 1.7652698516845704,
+    "total_time": 2.206587314605713,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 2,
+    "question": "Según el artículo 22 del reglamento, ¿cuál es el plazo de inicio de la preinscripción para los estudios de formación permanente?",
+    "reference_answer": "7 de julio de 2022",
+    "rag_answer": "Los interesados en cursar estudios de formación permanente de la UCM de los señalados en el Artículo 7.1 deberán realizar una preinscripción mediante la aplicación informática habilitada al efecto, en el plazo de 30 días hábiles desde la publicación del presente Reglamento.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "de admisión a las enseñanzas oficiales de Grado), con el visto bueno del Comité de Dirección del Centro de Formación Permanente, previo informe del Director del curso. Artículo 22.- Preinscripción 1. ...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_12"
+        }
+      },
+      {
+        "id": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "las titulaciones de formación permanente y que puedan acreditar experiencia laboral o profesional con nivel competencial equivalente a la formación académica universitaria, podrán acceder a las enseña...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "ley-organica-sistema-universitario_chunk_79"
+        }
+      },
+      {
+        "id": 3,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "AÑO XIX 7 de julio de 2022 BOUC n.º 23\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE GOBIERNO\nDE LA UNIVERSIDAD COMPLUTENSE\nI.1. CONSEJO DE GOBIERNO\nI.1.3. Vicerrectorado de Empleabilidad y Emprendimi...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_0"
+        }
+      },
+      {
+        "id": 4,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "ayudas económicas y asistenciales que se establezcan. 8. Tener acceso y utilizar los correspondientes medios materiales destinados a los fines docentes de la enseñanza propia, con arreglo a las normas...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_11"
+        }
+      },
+      {
+        "id": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "la Calidad en los cursos, en colaboración con el Vicerrectorado de Calidad. 9. Intensificar la captación de estudiantes nacionales e internacionales mediante acciones publicitarias y de marketing. 10....",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_3"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "normatica-estudios-formacion-permanente",
+    "chunk_id": 114,
+    "retrieval_time": 0.4112827301025391,
+    "generation_time": 1.6451309204101563,
+    "total_time": 2.0564136505126953,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 3,
+    "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
+    "reference_answer": "Algunas de las cantidades prefijadas por la Comisión de Formación Permanente",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "de admisión a las enseñanzas oficiales de Grado), con el visto bueno del Comité de Dirección del Centro de Formación Permanente, previo informe del Director del curso. Artículo 22.- Preinscripción 1. ...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_12"
+        }
+      },
+      {
+        "id": 2,
+        "title": "permanencia-estudiantado-ucm",
+        "text_preview": "discapacidad no estarán sujetos a los límites mínimos de matrícula fijados por la Universidad. Tercero. La determinación de los créditos la realizará el estudiante en el momento de la matrícula, y la ...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "permanencia-estudiantado-ucm_chunk_1"
+        }
+      },
+      {
+        "id": 3,
+        "title": "cambios-universidad",
+        "text_preview": "Los Centros, previa valoración de la documentación presentada, excluirán del procedimiento de adjudicación de plazas las solicitudes que no reúnan los requisitos exigidos, entre las que se encontrarán...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "cambios-universidad_chunk_2"
+        }
+      },
+      {
+        "id": 4,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "acciones que cada curso académico se establezcan por falta de pago en la a) Estudiantes de grado de nuevo ingreso en primer curso Con anterioridad a la fecha que se establezca cada curso académico, el...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_2"
+        }
+      },
+      {
+        "id": 5,
+        "title": "cambios-universidad",
+        "text_preview": "resto de los requisitos exigidos en la presente normativa y en la convocatoria que se dicte para Ordenadas las solicitudes, se adjudicarán las plazas disponibles. Si el número de plazas ofertadas es s...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "cambios-universidad_chunk_3"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "normatica-estudios-formacion-permanente",
+    "chunk_id": 114,
+    "retrieval_time": 0.09867281913757325,
+    "generation_time": 0.394691276550293,
+    "total_time": 0.4933640956878662,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 4,
+    "question": "Según el artículo 12, ¿cuántos años de periodo improrrogable y no renovable tiene el cargo de Decano/a?",
+    "reference_answer": "Seis años",
+    "rag_answer": "Según el artículo 12 del Reglamento-Ciencias-Físicas, el cargo de Decano/a de la Facultad de Ciencias Físicas ostenta la representación del Centro y ejerce las funciones de dirección y gestión ordinaria de éste. Será elegido/a, por un periodo improrrogable y no renovable de seis años, entre profesores/as Doctores/as con vinculación permanente a la Universidad adscritos.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-ciencias-fisicas",
+        "text_preview": "representante de estudiantes. De los órganos unipersonales Artículo 12. El/La Decano/a. 1. El Decano/a de la Facultad de Ciencias Físicas ostenta la representación del Centro y ejerce las funciones de...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-ciencias-fisicas_chunk_9"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-ciencias-biologicas",
+        "text_preview": "periodo improrrogable y no renovable de seis años, entre los funcionarios docentes universitarios (Catedráticos de Universidad y Profesores Titulares de Universidad), Profesores Permanentes Laborales ...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-ciencias-biologicas_chunk_15"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "En todo caso las elecciones se llevarán a cabo dentro del periodo establecido en los artículos 10 y 11 de este Reglamento. Los Decanos/as y Directores/as ejercerán su mandato durante cuatro años, pudi...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-electoral-ucm_chunk_37"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-informatica",
+        "text_preview": "y no renovable de seis años, entre los funcionarios docentes universitarios (Catedráticos de Universidad y Profesores Titulares de Universidad), los Profesores Permanentes Laborales de la Universidad ...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-informatica_chunk_12"
+        }
+      },
+      {
+        "id": 5,
+        "title": "regimen-interno-fac-politicas-y-sociologia",
+        "text_preview": "Universidad y el Reglamento Electoral. 2. El/la Decano/a ejercerá las siguientes funciones: a) Ejecutar los acuerdos de la Junta de Facultad. b) Velar por el cumplimiento de la legislación. c) Llevar ...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "regimen-interno-fac-politicas-y-sociologia_chunk_22"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "reglamentos",
+    "source_doc": "reglamento-ciencias-fisicas",
+    "chunk_id": 25,
+    "retrieval_time": 0.5554447650909424,
+    "generation_time": 2.2217790603637697,
+    "total_time": 2.777223825454712,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 5,
+    "question": "Según el artículo 12, ¿cuál es la función principal de llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a?",
+    "reference_answer": "Llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a.",
+    "rag_answer": "Según el artículo 12 del documento [1], la función principal de llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a es:\n\nc) Llevar a cabo los actos que en el ejercicio de la potestad sancionadora de el/la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria de el/la Rector/a.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-trabajo-social",
+        "text_preview": "de Centro. b) Velar por el cumplimiento de la legislación. c) Llevar a cabo los actos que en el ejercicio de la potestad sancionadora de el/la Rector/a le encomienden los Reglamentos de disciplina y p...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-trabajo-social_chunk_12"
+        }
+      },
+      {
+        "id": 2,
+        "title": "regimen-interno-fac-politicas-y-sociologia",
+        "text_preview": "Universidad y el Reglamento Electoral. 2. El/la Decano/a ejercerá las siguientes funciones: a) Ejecutar los acuerdos de la Junta de Facultad. b) Velar por el cumplimiento de la legislación. c) Llevar ...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "regimen-interno-fac-politicas-y-sociologia_chunk_22"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-farmacia",
+        "text_preview": "de la actividad disciplinaria del Rector. d) Presidir los órganos colegiados de gobierno del Centro. e) Proponer al Rector el nombramiento y cese de Vicedecanos y Secretario del Centro. f) Coordinar l...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-farmacia_chunk_9"
+        }
+      },
+      {
+        "id": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "de la UCM y ejerce la representación, dirección, gobierno y gestión de la Universidad, desarrollando las líneas de actuación aprobadas por los órganos colegiados correspondientes y ejecutando sus acue...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_26"
+        }
+      },
+      {
+        "id": 5,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "ejercicio de sus competencias, podrá dictar los siguientes actos o a) Decretos rectorales: los acuerdos de delegación de competencias en otros órganos unipersonales y los actos de nombramiento y cese ...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_24"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-ciencias-fisicas",
+    "chunk_id": 25,
+    "retrieval_time": 0.7182664394378663,
+    "generation_time": 2.873065757751465,
+    "total_time": 3.591332197189331,
+    "correct_doc_in_top_k": false,
+    "correct_doc_rank": 0
+  },
+  {
+    "id": 6,
+    "question": "Según el Artículo 9 del reglamento-odontología, ¿cuántos representantes de los departamentos con sede en el centro deben integrar la Comisión de Actividades Prácticas y Clínicas?",
+    "reference_answer": "Dos representantes de cada uno de los Departamentos con sede en el Centro.",
+    "rag_answer": "Según el Artículo 9 del reglamento-odontología, dos representantes de cada uno de los Departamentos con sede en el Centro deben integrar la Comisión de Actividades Prácticas y Clínicas.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-odontologia",
+        "text_preview": "• El/La Secretario/a del Centro, que la presidirá. • El/La directora/a de la Biblioteca. • Dos representantes de cada uno de los Departamentos con sede en el Centro. • Un/a estudiante del Grado. • Un/...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_14"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-odontologia",
+        "text_preview": "con sede en el Centro. • Dos representantes de las materias básicas y obligatorias de los Departamentos externos que imparten docencia en el Centro. • El/La Jefe/a de la Secretaría de Estudiantes del ...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_11"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-odontologia",
+        "text_preview": "las siguientes funciones: a) Evaluar las Tesis Doctorales que han recibido la mención de opción a premio extraordinario y proponer a la Junta de Facultad el orden de prelación de las Son miembros de l...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_16"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-odontologia",
+        "text_preview": "surgiendo relacionadas con ellos. Son miembros de la Comisión Académica del Programa de Doctorado, los • El/La Vicedecano/a con competencias en Doctorado, que la presidirá. • Ocho representantes de lo...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_13"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-odontologia",
+        "text_preview": "el Centro pudieran ser objeto de sanción, la comisión de Seguimiento Docente las notificará a la Inspección de Servicios a la mayor brevedad posible. Son miembros de la Comisión de Seguimiento de la A...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_15"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "reglamentos",
+    "source_doc": "reglamento-odontologia",
+    "chunk_id": 788,
+    "retrieval_time": 0.27123384475708007,
+    "generation_time": 1.0849353790283203,
+    "total_time": 1.3561692237854004,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 7,
+    "question": "Según el Artículo 10 del reglamento-odontología, ¿quién preside la Comisión de Reclamaciones Clínicas según el Artículo X?",
+    "reference_answer": "El/La Vicedecano/a con responsabilidad en las Clínicas, que la presidirá.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-odontologia",
+        "text_preview": "• El/La Secretario/a del Centro, que la presidirá. • El/La directora/a de la Biblioteca. • Dos representantes de cada uno de los Departamentos con sede en el Centro. • Un/a estudiante del Grado. • Un/...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_14"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-odontologia",
+        "text_preview": "ser responsable de las actividades de formación del programa de Doctorado. b) Velar por la calidad académica del Doctorado en Ciencias Odontológicas participando en las memorias de seguimiento y reali...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_12"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-odontologia",
+        "text_preview": "de Odontología y con la política de calidad de la UCM. i) Informar, a través de su presidente/a, de las propuestas de normativa interna que se sometan a la consideración de la Junta de Facultad. Son m...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_10"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-odontologia",
+        "text_preview": "las siguientes funciones: a) Evaluar las Tesis Doctorales que han recibido la mención de opción a premio extraordinario y proponer a la Junta de Facultad el orden de prelación de las Son miembros de l...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_16"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-odontologia",
+        "text_preview": "y f) Gestionar el Sistema de Información del Grado en Odontología. g) Establecer y fijar la política de calidad del Grado en Odontología, de acuerdo con la política de calidad de la Facultad de Odonto...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_9"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-odontologia",
+    "chunk_id": 788,
+    "retrieval_time": 0.0945333480834961,
+    "generation_time": 0.3781333923339844,
+    "total_time": 0.47266674041748047,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 8,
+    "question": "Según el artículo X del reglamento, ¿cuál es el máximo de créditos para el TFG?",
+    "reference_answer": "30 créditos",
+    "rag_answer": "Según el artículo X del reglamento, el máximo de créditos para el TFG es de 30.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "directrices-tfg",
+        "text_preview": "de un trabajo de fin de Grado, que tiene carácter obligatorio, ha de constar de 6 a 30 créditos, deberá realizarse en la fase final del plan de estudios y estará orientado a la evaluación de competenc...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_1"
+        }
+      },
+      {
+        "id": 2,
+        "title": "directrices-tfg",
+        "text_preview": "créditos restantes para la obtención del título. 6.4. Cada curso tendrá dos convocatorias de examen. Asimismo, el estudiante podrá hacer uso, siempre que cumpla los requisitos establecidos, de la conv...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_4"
+        }
+      },
+      {
+        "id": 3,
+        "title": "directrices-tfm",
+        "text_preview": "AÑO XX 5 de octubre de 2023 BOUC n.º 32\nEl RD 822/2021, de 28 de septiembre, por el que se establece la organización de las\nenseñanzas universitarias y el procedimiento de aseguramiento de su calidad,...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfm_chunk_1"
+        }
+      },
+      {
+        "id": 4,
+        "title": "directrices-tfg",
+        "text_preview": "la UCM vinculados a la movilidad o a las prácticas externas, y puesto que el TFG no puede ser objeto de reconocimiento, el estudiante deberá matricularlo en la UCM y someterlo a evaluación según el pr...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_5"
+        }
+      },
+      {
+        "id": 5,
+        "title": "directrices-tfg",
+        "text_preview": "otra asignatura, materia o módulo de la misma o distinta titulación. 4.3. El TFG será preferentemente un trabajo individual que realizará el estudiante con la orientación y supervisión de uno o varios...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_2"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "trabajo_fin",
+    "source_doc": "directrices-tfg",
+    "chunk_id": 301,
+    "retrieval_time": 0.16749796867370606,
+    "generation_time": 0.6699918746948242,
+    "total_time": 0.8374898433685303,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 9,
+    "question": "Según el artículo 3.2 del reglamento, ¿quién puede elevar a la Junta o Juntas de Centro la normativa del TFG?",
+    "reference_answer": "La unidad encargada de la organización, coordinación y seguimiento de cada Grado, llamada de aquí en adelante, Comisión de Grado.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "directrices-tfg",
+        "text_preview": "carácter excepcional, y para Titulaciones cuyo número de estudiantes lo haga viable, se arbitrará la posibilidad de que la Comisión de Grado, en coordinación con los Departamentos, y con la aprobación...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_3"
+        }
+      },
+      {
+        "id": 2,
+        "title": "directrices-tfg",
+        "text_preview": "créditos restantes para la obtención del título. 6.4. Cada curso tendrá dos convocatorias de examen. Asimismo, el estudiante podrá hacer uso, siempre que cumpla los requisitos establecidos, de la conv...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_4"
+        }
+      },
+      {
+        "id": 3,
+        "title": "directrices-tfg",
+        "text_preview": "otra asignatura, materia o módulo de la misma o distinta titulación. 4.3. El TFG será preferentemente un trabajo individual que realizará el estudiante con la orientación y supervisión de uno o varios...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_2"
+        }
+      },
+      {
+        "id": 4,
+        "title": "directrices-tfg",
+        "text_preview": "la UCM vinculados a la movilidad o a las prácticas externas, y puesto que el TFG no puede ser objeto de reconocimiento, el estudiante deberá matricularlo en la UCM y someterlo a evaluación según el pr...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_5"
+        }
+      },
+      {
+        "id": 5,
+        "title": "recomendacion-defensa-tfg-signed",
+        "text_preview": "haber concluido la titulación de grado que facilitaría dicho acceso, incluyendo el TFG (art. 18.4), de modo que se entiende que, acreditada la adquisición de una parte elevada de las competencias prop...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "recomendacion-defensa-tfg-signed_chunk_5"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "trabajo_fin",
+    "source_doc": "directrices-tfg",
+    "chunk_id": 301,
+    "retrieval_time": 0.10091733932495117,
+    "generation_time": 0.4036693572998047,
+    "total_time": 0.5045866966247559,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 10,
+    "question": "Según el Artículo 18 del Tratado de Funcionamiento de la Unión Europea, ¿en qué artículos se prohíben específicamente formas de discriminación?",
+    "reference_answer": "Prohíben toda forma de discriminación, concretando motivaciones específicas en los artículos 22, 23 y 26.",
+    "rag_answer": "Según el Protocolo Discriminación de Derechos Humanos de 1950, el derecho a la igualdad y no discriminación es reconocido. A nivel de la Unión Europea, el Acervo Comunitario ha promovido la igualdad de trato y no discriminación a través de diversas fuentes desde las últimas décadas. El Tratado de la Unión Europea en sus artículos 2 y 3, junto con el Tratado de Funcionamiento, prohíben formas de discriminación.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "protocolo-discriminacion",
+        "text_preview": "de Derechos Humanos de 1950 reconoce también el derecho a la igualdad y no discriminación. A nivel de la Unión Europea, el acervo comunitario contempla distintas fuentes que en las últimas décadas han...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_10"
+        }
+      },
+      {
+        "id": 2,
+        "title": "protocolo-discriminacion",
+        "text_preview": "AÑO XX 29 de junio de 2023 BOUC n.º 25\nÁmbito internacional\nEn este ámbito la Declaración Universal de Derechos Humanos de 10 de diciembre de 1948\nreconoce la igualdad y la no discriminación como prin...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_9"
+        }
+      },
+      {
+        "id": 3,
+        "title": "protocolo-acoso-laboral",
+        "text_preview": "AÑO XX 20 de octubre de 2023 BOUC n.º 34\nDecreto Legislativo 5/2007, relativo al régimen disciplinario del empleado público se establece\ncomo falta muy grave toda actuación que suponga discriminación ...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-acoso-laboral_chunk_2"
+        }
+      },
+      {
+        "id": 4,
+        "title": "protocolo-discriminacion",
+        "text_preview": "de 29 de noviembre, de derechos de las personas con discapacidad y de su inclusión social, en su artículo 1, manifiesta su objeto en: a) garantizar el derecho a la igualdad de oportunidades y de trato...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_13"
+        }
+      },
+      {
+        "id": 5,
+        "title": "protocolo-discriminacion",
+        "text_preview": "respuesta frente a la violencia, el acoso laboral o la discriminación, en la línea de la ley de Convivencia que señala su compromiso con la eliminación de toda forma de discriminación en sus artículos...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_12"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "protocolo-discriminacion",
+    "chunk_id": 267,
+    "retrieval_time": 0.6583212852478028,
+    "generation_time": 2.633285140991211,
+    "total_time": 3.2916064262390137,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 11,
+    "question": "Según la Directiva 2000/43 del Consejo, ¿de qué fecha se establece la aplicación del principio de igualdad de trato independientemente del origen racial o étnico?",
+    "reference_answer": "29 de junio de 2000.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "protocolo-acoso-laboral",
+        "text_preview": "a los poderes públicos de cada país la necesidad de poner en práctica políticas de prevención eficaces y definir procedimientos adecuados para solucionar los problemas que ocasiona. En desarrollo de l...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-acoso-laboral_chunk_1"
+        }
+      },
+      {
+        "id": 2,
+        "title": "protocolo-discriminacion",
+        "text_preview": "de Derechos Humanos de 1950 reconoce también el derecho a la igualdad y no discriminación. A nivel de la Unión Europea, el acervo comunitario contempla distintas fuentes que en las últimas décadas han...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_10"
+        }
+      },
+      {
+        "id": 3,
+        "title": "protocolo-discriminacion",
+        "text_preview": "que actúen desde un enfoque preventivo, formativo y de sensibilización. También requieren la incorporación de los medios adecuados de gestión, transformación y solución colaborativa de conflictos, bas...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_1"
+        }
+      },
+      {
+        "id": 4,
+        "title": "protocolo-discriminacion",
+        "text_preview": "AÑO XX 29 de junio de 2023 BOUC n.º 25\nÁmbito internacional\nEn este ámbito la Declaración Universal de Derechos Humanos de 10 de diciembre de 1948\nreconoce la igualdad y la no discriminación como prin...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_9"
+        }
+      },
+      {
+        "id": 5,
+        "title": "protocolo-discriminacion",
+        "text_preview": "respuesta frente a la violencia, el acoso laboral o la discriminación, en la línea de la ley de Convivencia que señala su compromiso con la eliminación de toda forma de discriminación en sus artículos...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_12"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "protocolo-discriminacion",
+    "chunk_id": 267,
+    "retrieval_time": 0.10044136047363282,
+    "generation_time": 0.4017654418945313,
+    "total_time": 0.5022068023681641,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 2
+  },
+  {
+    "id": 12,
+    "question": "Según el artículo 3, ¿cuál es el problema principal relacionado con el uso del No Presentado?",
+    "reference_answer": "El problema principal es que esta nueva forma evaluativa está generando diversos problemas debido a la ausencia de una reflexión adecuada sobre el mecanismo de evaluación en el nuevo entorno educativo universitario y una adaptación apropiada de la normativa a esta nueva realidad.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "condiciones bajo las que se va a otorgar la anotación de No Presentado y entiende, a su vez, que esas condiciones no deben impedirle realizar determinadas actividades de la asignatura, incluidas algun...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_6"
+        }
+      },
+      {
+        "id": 2,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "N.º Expediente: 36/2025-2026/O\nINFORME SOBRE EL «NO PRESENTADO»\nEN EL ACTA DE CALIFICACIÓN\nRecibidas variadas consultas del profesorado y peticiones de amparo del\nestudiantado sobre cuándo se otorga l...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_0"
+        }
+      },
+      {
+        "id": 3,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "rendimiento académico de los estudiantes […] tenderá» hacia este mecanismo de evaluación (art. 25). Ahora bien, esta nueva forma evaluativa está generando diversos problemas resultado de la ausencia d...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_1"
+        }
+      },
+      {
+        "id": 4,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "Presentado en ninguna de ellas, y que su opción por el No Presentado se produjese al margen de si las ha realizado. QUINTA: Naturalmente, el derecho del estudiante a decidir si desea o no ser califica...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_5"
+        }
+      },
+      {
+        "id": 5,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "estar incluida en la información sobre los criterios de evaluación a cuyo conocimiento tiene derecho el estudiantado antes de iniciar la actividad académica de la asignatura correspondiente. SEGUNDA: ...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_3"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "informe-362025-2026o-no-presentado",
+    "chunk_id": 241,
+    "retrieval_time": 0.09912214279174805,
+    "generation_time": 0.3964885711669922,
+    "total_time": 0.49561071395874023,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 13,
+    "question": "Según el artículo 4, ¿qué no es el No Presentado en el contexto de la evaluación académica según el Real Decreto 1125/2003?",
+    "reference_answer": "El No Presentado no es una calificación, en sentido estricto, sino una norma o práctica interna de las universidades para calificar alternativamente a las calificaciones numéricas.",
+    "rag_answer": "El No Presentado no es el término utilizado para describir la situación cuando un estudiante no realiza al menos el 15% de las actividades de evaluación durante el semestre y no presenta a la actividad final, en el caso de que haya hecho una. Además, el documento menciona que el No Presentado puede ser presentado al margen de si las actividades han sido realizadas.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "rendimiento académico de los estudiantes […] tenderá» hacia este mecanismo de evaluación (art. 25). Ahora bien, esta nueva forma evaluativa está generando diversos problemas resultado de la ausencia d...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_1"
+        }
+      },
+      {
+        "id": 2,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "«al estudiantado que no haya realizado al menos el 15% de las actividades de evaluación durante el semestre y no se hubiera presentado a la actividad final, en el caso de que la hubiere»; o que para s...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_2"
+        }
+      },
+      {
+        "id": 3,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "Presentado en ninguna de ellas, y que su opción por el No Presentado se produjese al margen de si las ha realizado. QUINTA: Naturalmente, el derecho del estudiante a decidir si desea o no ser califica...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_5"
+        }
+      },
+      {
+        "id": 4,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "estar incluida en la información sobre los criterios de evaluación a cuyo conocimiento tiene derecho el estudiantado antes de iniciar la actividad académica de la asignatura correspondiente. SEGUNDA: ...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_3"
+        }
+      },
+      {
+        "id": 5,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "condiciones bajo las que se va a otorgar la anotación de No Presentado y entiende, a su vez, que esas condiciones no deben impedirle realizar determinadas actividades de la asignatura, incluidas algun...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "informe-362025-2026o-no-presentado_chunk_6"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "informe-362025-2026o-no-presentado",
+    "chunk_id": 241,
+    "retrieval_time": 0.45063309669494633,
+    "generation_time": 1.8025323867797853,
+    "total_time": 2.2531654834747314,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 14,
+    "question": "Según el artículo 6.1.4, ¿cuál es el máximo de duración en meses de la beca de formación práctica básica?",
+    "reference_answer": "El máximo de duración será de 12 meses",
+    "rag_answer": "Según el artículo 6.1.4 del Reglamento-Becas, la duración máxima de las becas de formación práctica básica es de dos años.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-becas",
+        "text_preview": "período de duración de la beca se establecerá en cada convocatoria. La duración máxima de estas becas será de dos años, o de lo que en su caso establezca la normativa vigente. En el año en que se agot...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_4"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-becas",
+        "text_preview": "de formación práctica. Requisitos y dedicación Las becas de formación práctica podrán ser de dos tipos: 6.1. Becas de formación práctica básica: 6.1.1 Se requiere que el estudiante esté matriculado en...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_3"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-becas",
+        "text_preview": "Verificar el cumplimiento de la formación del becario descrita en la oferta de beca. b) Realizar seguimiento del desarrollo del becario dentro del programa de actividades. c) Informar al Vicerrectorad...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_9"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-becas",
+        "text_preview": "la anulación de matrícula por falta de pago total o parcial de la misma. Cuando la anulación sea firme será causa inmediata de revocación de la beca de formación práctica. d) Ocultación o falseamiento...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_7"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-becas",
+        "text_preview": "aplicación. Artículo 3. Objeto 3.1. La Universidad Complutense podrá convocar becas de formación, facilitando la participación de los estudiantes en la adquisición de competencias transversales y prác...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_2"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "becas",
+    "source_doc": "reglamento-becas",
+    "chunk_id": 142,
+    "retrieval_time": 0.22099637985229492,
+    "generation_time": 0.8839855194091797,
+    "total_time": 1.1049818992614746,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 15,
+    "question": "Según el artículo 6.1.5, ¿cuántas horas semanales mínimas de dedicación requiere la beca de formación práctica básica?",
+    "reference_answer": "La dedicación mínima será de 20 horas a la semana",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-becas",
+        "text_preview": "de formación práctica. Requisitos y dedicación Las becas de formación práctica podrán ser de dos tipos: 6.1. Becas de formación práctica básica: 6.1.1 Se requiere que el estudiante esté matriculado en...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_3"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-becas",
+        "text_preview": "período de duración de la beca se establecerá en cada convocatoria. La duración máxima de estas becas será de dos años, o de lo que en su caso establezca la normativa vigente. En el año en que se agot...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_4"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-becas",
+        "text_preview": "Verificar el cumplimiento de la formación del becario descrita en la oferta de beca. b) Realizar seguimiento del desarrollo del becario dentro del programa de actividades. c) Informar al Vicerrectorad...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_9"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-becas",
+        "text_preview": "la anulación de matrícula por falta de pago total o parcial de la misma. Cuando la anulación sea firme será causa inmediata de revocación de la beca de formación práctica. d) Ocultación o falseamiento...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_7"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-becas",
+        "text_preview": "aplicación. Artículo 3. Objeto 3.1. La Universidad Complutense podrá convocar becas de formación, facilitando la participación de los estudiantes en la adquisición de competencias transversales y prác...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_2"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "becas",
+    "source_doc": "reglamento-becas",
+    "chunk_id": 142,
+    "retrieval_time": 0.10207219123840333,
+    "generation_time": 0.4082887649536133,
+    "total_time": 0.5103609561920166,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 16,
+    "question": "Según el artículo 3, ¿cuáles son los miembros de la Comisión de Calidad del Grado en Odontología?",
+    "reference_answer": "Los/Las miembros del equipo decanal con responsabilidad en Calidad, Clínicas y Coordinación del Grado. El/La Secretario/a. El/La Gerente/a de la Facultad. Un/a representante de cada Departamento con sede en la Facultad de Odontología y docencia en el Grado. Un/a representante de los Departamentos con sede externa a la Facultad de Odontología y docencia en el Grado. Un/a representante de los/las alumnos/as que cursan estudios de primero, segundo. Un/a representante de los/las alumnos que cursan estudios de cuarto o quinto curso. Un/a representante del Personal Técnico de Gestión, Administración y Servicios.",
+    "rag_answer": "Los miembros de la Comisión de Calidad del Grado en Odontología son:\n\n• El/la Decano/a de la Facultad, o persona en quien delegue,\n• El/la Coordinador/a de la Comisión de Calidad del Máster Universitario y Doctorado en Ciencias Odontológicas,\n• Dos representantes de las materias básicas y obligatorias de los Departamentos externos que imparten docencia en el Centro,\n• El/Ja Jefe/a de la Secretaría de Estudiantes del Centro,\n• Un/a representante de los/las alumnos/as que cursan estudios de primer ciclo,\n• Un/a representante de los/las alumnos/as que cursan estudios de segundo ciclo,\n• Un/a representante de los/las alumnos/as que cursan estudios de tercer ciclo,\n• Un/a representante de los/las alumnos/as que cursan estudios de cuarto o quinto ciclo.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-odontologia",
+        "text_preview": "y f) Gestionar el Sistema de Información del Grado en Odontología. g) Establecer y fijar la política de calidad del Grado en Odontología, de acuerdo con la política de calidad de la Facultad de Odonto...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_9"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-odontologia",
+        "text_preview": "de Odontología y con la política de calidad de la UCM. i) Informar, a través de su presidente/a, de las propuestas de normativa interna que se sometan a la consideración de la Junta de Facultad. Son m...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_10"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-optica-optometría",
+        "text_preview": "en su caso, a los Departamentos o Secciones Departamentales y a las Juntas de Centro para que, de acuerdo con sus competencias, faciliten su resolución. j) Poner en conocimiento del Decano/a, a la may...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-optica-optometría_chunk_10"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-odontologia",
+        "text_preview": "con sede en el Centro. • Dos representantes de las materias básicas y obligatorias de los Departamentos externos que imparten docencia en el Centro. • El/La Jefe/a de la Secretaría de Estudiantes del ...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_11"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-odontologia",
+        "text_preview": "ser responsable de las actividades de formación del programa de Doctorado. b) Velar por la calidad académica del Doctorado en Ciencias Odontológicas participando en las memorias de seguimiento y reali...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_12"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-odontologia",
+    "chunk_id": 783,
+    "retrieval_time": 1.1102293014526368,
+    "generation_time": 4.440917205810547,
+    "total_time": 5.551146507263184,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 17,
+    "question": "Según el artículo 3, ¿cuántos miembros mínimos hay en la Comisión de Calidad del Grado en Odontología?",
+    "reference_answer": "Diecisiete miembros mínimos.",
+    "rag_answer": "Según el artículo 3 del Reglamento de Odontología, la Facultad de Odontología tiene adscritos los siguientes departamentos y estructuras:\n\n• Departamento de Especialidades Clínicas Odontológicas.\n• Departamento de Odontología Conservadora.\n\nSin embargo, no puedo determinar cuántos miembros mínimo hay en la Comisión de Calidad del Grado en Odontología basándome solo en estos datos.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-odontologia",
+        "text_preview": "y f) Gestionar el Sistema de Información del Grado en Odontología. g) Establecer y fijar la política de calidad del Grado en Odontología, de acuerdo con la política de calidad de la Facultad de Odonto...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_9"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-odontologia",
+        "text_preview": "Odontología. b) Máster Universitario en Ciencias Odontológicas. c) Doctorado en Ciencias Odontológicas. Así como los títulos oficiales que pudieran aprobarse en el futuro. Artículo 3. Departamentos y ...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_1"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-psicología",
+        "text_preview": "Créditos. - Comisión de Evaluación de Mayores de 40 años. 1. La Comisión Deontológica. a) Vicedecano/a con competencias en Investigación, quien la presidirá. b) 4 profesores/as de la Facultad, doctore...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-psicología_chunk_7"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-odontologia",
+        "text_preview": "de Odontología y con la política de calidad de la UCM. i) Informar, a través de su presidente/a, de las propuestas de normativa interna que se sometan a la consideración de la Junta de Facultad. Son m...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-odontologia_chunk_10"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-optica-optometría",
+        "text_preview": "en su caso, a los Departamentos o Secciones Departamentales y a las Juntas de Centro para que, de acuerdo con sus competencias, faciliten su resolución. j) Poner en conocimiento del Decano/a, a la may...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-optica-optometría_chunk_10"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "reglamentos",
+    "source_doc": "reglamento-odontologia",
+    "chunk_id": 783,
+    "retrieval_time": 0.5391453266143799,
+    "generation_time": 2.1565813064575194,
+    "total_time": 2.6957266330718994,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 18,
+    "question": "Según el Artículo 1 del reglamento, ¿cuáles son los tres principales objetivos de los estudios de formación permanente?",
+    "reference_answer": "Los tres principales objetivos son: 1. Completar la formación académica de los titulados superiores, ofreciéndoles la posibilidad de perfeccionar su cualificación profesional, científica, técnica y/o artística. 2. Promover la actualización y la mejora de conocimientos y competencias clave para el aprendizaje a lo largo de la vida de trabajadores y empresarios. 3. Establecer relaciones de colaboración con organizaciones, instituciones y empresas.",
+    "rag_answer": "Los estudios de formación permanente se caracterizan por ofertar enseñanzas complementarias a las que se incluyen en los planes de estudio oficiales. Los principales objetivos que se persiguen a través de la oferta de este tipo de enseñanzas son:\n\n1. Completar la formación académica de los titulados superiores,\n2. Ofrecer la posibilidad de perfeccionamiento,\n3. Promover la continuidad educativa.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "FORMACIÓN PERMANENTE Artículo 1.- Objetivos Los estudios de formación permanente se caracterizan por ofertar enseñanzas complementarias a las que se incluyen en los planes de estudio oficiales. Los pr...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_2"
+        }
+      },
+      {
+        "id": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "las titulaciones de formación permanente y que puedan acreditar experiencia laboral o profesional con nivel competencial equivalente a la formación académica universitaria, podrán acceder a las enseña...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "ley-organica-sistema-universitario_chunk_79"
+        }
+      },
+      {
+        "id": 3,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "de las cantidades máximas que se pueden percibir por tareas de dirección, codirección y coordinación de los títulos y por hora de clase teórica o práctica impartida, tutorías, dirección de trabajos o ...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_4"
+        }
+      },
+      {
+        "id": 4,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "la Calidad en los cursos, en colaboración con el Vicerrectorado de Calidad. 9. Intensificar la captación de estudiantes nacionales e internacionales mediante acciones publicitarias y de marketing. 10....",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_3"
+        }
+      },
+      {
+        "id": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "AÑO XIX 7 de julio de 2022 BOUC n.º 23\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE GOBIERNO\nDE LA UNIVERSIDAD COMPLUTENSE\nI.1. CONSEJO DE GOBIERNO\nI.1.3. Vicerrectorado de Empleabilidad y Emprendimi...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_0"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "normatica-estudios-formacion-permanente",
+    "chunk_id": 104,
+    "retrieval_time": 0.5931803703308106,
+    "generation_time": 2.3727214813232425,
+    "total_time": 2.9659018516540527,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 19,
+    "question": "Según el Artículo 3 del reglamento, ¿cuál es el objetivo principal del Centro de Formación Permanente (CFP)?",
+    "reference_answer": "El objetivo principal es impulsar las líneas de formación estratégicas.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "en las que los estudiantes deberán presentar sus trabajos y las condiciones de realización de las prácticas externas o cualquier otro tipo de trabajo que se hubiera establecido en el programa como req...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_8"
+        }
+      },
+      {
+        "id": 2,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "FORMACIÓN PERMANENTE Artículo 1.- Objetivos Los estudios de formación permanente se caracterizan por ofertar enseñanzas complementarias a las que se incluyen en los planes de estudio oficiales. Los pr...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_2"
+        }
+      },
+      {
+        "id": 3,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "de las cantidades máximas que se pueden percibir por tareas de dirección, codirección y coordinación de los títulos y por hora de clase teórica o práctica impartida, tutorías, dirección de trabajos o ...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_4"
+        }
+      },
+      {
+        "id": 4,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "la Calidad en los cursos, en colaboración con el Vicerrectorado de Calidad. 9. Intensificar la captación de estudiantes nacionales e internacionales mediante acciones publicitarias y de marketing. 10....",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_3"
+        }
+      },
+      {
+        "id": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "de que se produzca un mayor número de solicitudes que el número de plazas reservadas para las personas que se encuentren en alguna de estas tres circunstancias, la dirección del curso de formación per...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_16"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "normatica-estudios-formacion-permanente",
+    "chunk_id": 104,
+    "retrieval_time": 0.09674582481384278,
+    "generation_time": 0.3869832992553711,
+    "total_time": 0.48372912406921387,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  }
+]

@@ -1,0 +1,280 @@
+"""
+Módulo de recuperación híbrida
+Combina BM25 + embeddings + re-ranking
+"""
+
+from typing import List, Dict, Tuple, Optional
+import time
+import numpy as np
+from sentence_transformers import SentenceTransformer, CrossEncoder
+from loguru import logger
+
+from .preprocessor import Chunk
+from .indexer import DocumentIndexer
+
+
+class HybridRetriever:
+    """
+    Recuperador híbrido que combina:
+    1. Búsqueda BM25 (léxica)
+    2. Búsqueda semántica (FAISS)
+    3. Fusión con Reciprocal Rank Fusion
+    4. Re-ranking con cross-encoder
+    """
+    
+    def __init__(
+        self,
+        indexer: DocumentIndexer,
+        reranker_model: str = "BAAI/bge-reranker-v2-m3",
+        alpha: float = 0.5
+    ):
+        """
+        Args:
+            indexer: Indexador con índices FAISS y BM25 ya construidos
+            reranker_model: Modelo cross-encoder para re-ranking
+            alpha: Balance entre BM25 y semántico (0=solo BM25, 1=solo semántico)
+        """
+        self.indexer = indexer
+        self.alpha = alpha
+        
+        logger.info(f"Cargando modelo de re-ranking: {reranker_model}")
+        # Cargar en GPU si está disponible con optimizaciones
+        import torch
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.reranker = CrossEncoder(
+            reranker_model, 
+            device=device,
+            max_length=256  # Limitar longitud para velocidad
+        )
+        logger.info(f"Re-ranker cargado en: {device}")
+        
+        logger.success(f"✓ HybridRetriever inicializado (alpha={alpha})")
+    
+    def search_bm25(self, query: str, top_k: int = 20) -> List[Tuple[int, float]]:
+        """
+        Búsqueda BM25
+        
+        Returns:
+            Lista de (índice_chunk, score) ordenados por relevancia
+        """
+        tokenized_query = query.lower().split()
+        scores = self.indexer.bm25_index.get_scores(tokenized_query)
+        
+        # Obtener top-k índices
+        top_indices = np.argsort(scores)[::-1][:top_k]
+        results = [(int(idx), float(scores[idx])) for idx in top_indices]
+        
+        logger.debug(f"BM25: {len(results)} resultados")
+        return results
+    
+    def search_semantic(self, query: str, top_k: int = 20) -> List[Tuple[int, float]]:
+        """
+        Búsqueda semántica con FAISS
+        
+        Returns:
+            Lista de (índice_chunk, score) ordenados por relevancia
+        """
+        # Generar embedding de la query
+        query_embedding = self.indexer.embedding_model.encode(
+            [query],
+            convert_to_numpy=True,
+            normalize_embeddings=True
+        )
+        
+        # Buscar en FAISS
+        scores, indices = self.indexer.faiss_index.search(
+            query_embedding.astype('float32'),
+            top_k
+        )
+        
+        results = [
+            (int(indices[0][i]), float(scores[0][i]))
+            for i in range(len(indices[0]))
+        ]
+        
+        logger.debug(f"Semántico: {len(results)} resultados")
+        return results
+    
+    def reciprocal_rank_fusion(
+        self,
+        bm25_results: List[Tuple[int, float]],
+        semantic_results: List[Tuple[int, float]],
+        k: int = 60
+    ) -> List[Tuple[int, float]]:
+        """
+        Fusión de resultados usando Reciprocal Rank Fusion (RRF)
+        
+        RRF score = sum(1 / (k + rank_i)) para cada lista
+        
+        Args:
+            bm25_results: Resultados BM25
+            semantic_results: Resultados semánticos
+            k: Constante RRF (típicamente 60)
+        
+        Returns:
+            Lista fusionada ordenada por score RRF
+        """
+        # Crear diccionario de scores RRF
+        rrf_scores = {}
+        
+        # Añadir scores BM25
+        for rank, (idx, _) in enumerate(bm25_results, 1):
+            rrf_scores[idx] = rrf_scores.get(idx, 0) + (1 - self.alpha) / (k + rank)
+        
+        # Añadir scores semánticos
+        for rank, (idx, _) in enumerate(semantic_results, 1):
+            rrf_scores[idx] = rrf_scores.get(idx, 0) + self.alpha / (k + rank)
+        
+        # Ordenar por score RRF
+        fused_results = sorted(
+            rrf_scores.items(),
+            key=lambda x: x[1],
+            reverse=True
+        )
+        
+        logger.debug(f"RRF: {len(fused_results)} resultados únicos fusionados")
+        return fused_results
+    
+    def rerank(
+        self,
+        query: str,
+        candidates: List[Tuple[int, float]],
+        top_k: int = 5
+    ) -> List[Tuple[Chunk, float]]:
+        """
+        Re-ranking con cross-encoder
+        
+        Args:
+            query: Query del usuario
+            candidates: Lista de (índice_chunk, score_previo)
+            top_k: Número de resultados finales
+        
+        Returns:
+            Lista de (Chunk, score_reranking) ordenados
+        """
+        if not candidates:
+            return []
+        
+        # Preparar pares (query, documento) para el cross-encoder
+        pairs = [
+            [query, self.indexer.chunks[idx].text]
+            for idx, _ in candidates
+        ]
+        
+        # Calcular scores de re-ranking con batch processing
+        rerank_scores = self.reranker.predict(pairs, batch_size=len(pairs), show_progress_bar=False)
+        
+        # Los cross-encoders devuelven logits, convertir a probabilidades
+        # Usando sigmoid con escala para mejor discriminación
+        raw_scores = np.array(rerank_scores)
+        
+        # Log para debug
+        logger.debug(f"Re-ranker raw scores: min={raw_scores.min():.3f}, max={raw_scores.max():.3f}, mean={raw_scores.mean():.3f}")
+        
+        # Normalización por ranking (mejor=1.0, peor=0.0)
+        # Más robusta que sigmoid cuando los logits están centrados en 0
+        ranks = np.argsort(-raw_scores)  # Índices ordenados de mayor a menor
+        normalized_scores = np.zeros_like(raw_scores, dtype=float)
+        if len(raw_scores) > 1:
+            normalized_scores[ranks] = 1 - (ranks / (len(raw_scores) - 1))
+        else:
+            normalized_scores[0] = 1.0
+        
+        # Combinar con chunks y ordenar por raw_scores (no por normalized)
+        results = [
+            (self.indexer.chunks[candidates[i][0]], float(raw_scores[i]), float(normalized_scores[i]))
+            for i in range(len(candidates))
+        ]
+        
+        results.sort(key=lambda x: x[1], reverse=True)  # Ordenar por score original
+        
+        # Devolver solo (chunk, normalized_score) para consistencia con la API
+        final_results = [(chunk, norm_score) for chunk, raw_score, norm_score in results[:top_k]]
+        
+        logger.debug(f"Re-ranking: top {top_k} de {len(results)} candidatos")
+        return final_results
+    
+    def retrieve(
+        self,
+        query: str,
+        top_k_retrieval: int = 20,
+        top_k_final: int = 5
+    ) -> List[Tuple[Chunk, float]]:
+        """
+        Pipeline completo de recuperación híbrida
+        
+        Args:
+            query: Pregunta del usuario
+            top_k_retrieval: Candidatos a recuperar en cada búsqueda
+            top_k_final: Resultados finales después de re-ranking
+        
+        Returns:
+            Lista de (Chunk, score) con los fragmentos más relevantes
+        """
+        logger.info(f"Recuperando documentos para: '{query[:50]}...'")
+        
+        # 1. Búsqueda BM25
+        t0 = time.time()
+        bm25_results = self.search_bm25(query, top_k=top_k_retrieval)
+        t_bm25 = time.time() - t0
+        
+        # 2. Búsqueda semántica
+        t0 = time.time()
+        semantic_results = self.search_semantic(query, top_k=top_k_retrieval)
+        t_semantic = time.time() - t0
+        
+        # 3. Fusión RRF
+        t0 = time.time()
+        fused_results = self.reciprocal_rank_fusion(
+            bm25_results,
+            semantic_results
+        )
+        t_fusion = time.time() - t0
+        
+        # Limitar candidatos para re-ranking
+        candidates = fused_results[:top_k_retrieval]
+        
+        # 4. Re-ranking con cross-encoder
+        t0 = time.time()
+        final_results = self.rerank(query, candidates, top_k=top_k_final)
+        t_rerank = time.time() - t0
+        
+        # Log de tiempos
+        logger.debug(f"  BM25: {t_bm25:.3f}s | Semántico: {t_semantic:.3f}s | Fusión: {t_fusion:.3f}s | Rerank: {t_rerank:.3f}s")
+        
+        logger.success(f"✓ Recuperados {len(final_results)} documentos relevantes")
+        
+        return final_results
+    
+    def retrieve_with_threshold(
+        self,
+        query: str,
+        top_k_retrieval: int = 20,
+        top_k_final: int = 5,
+        min_score: float = 0.3
+    ) -> List[Tuple[Chunk, float]]:
+        """
+        Recuperación con umbral mínimo de relevancia
+        Útil para evitar resultados irrelevantes
+        """
+        results = self.retrieve(query, top_k_retrieval, top_k_final)
+        
+        # Filtrar por score mínimo
+        filtered_results = [
+            (chunk, score) for chunk, score in results
+            if score >= min_score
+        ]
+        
+        if len(filtered_results) < len(results):
+            logger.warning(
+                f"Filtrados {len(results) - len(filtered_results)} "
+                f"resultados con score < {min_score}"
+            )
+        
+        return filtered_results
+
+
+if __name__ == "__main__":
+    # Ejemplo de uso
+    print("✓ Módulo retrieval listo para usar")
+    print("Implementa búsqueda híbrida BM25 + embeddings + re-ranking")

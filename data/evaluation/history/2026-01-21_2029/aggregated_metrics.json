@@ -1,0 +1,69 @@
+{
+  "precision_at_k": 0.95,
+  "mrr": 0.925,
+  "avg_factual_accuracy": 1.85,
+  "avg_source_grounding": 1.55,
+  "avg_answer_relevance": 2.0,
+  "avg_honesty": 2.8,
+  "avg_hallucination": 0.35,
+  "avg_overall": 1.85,
+  "avg_retrieval_time": 0.731089243888855,
+  "avg_generation_time": 2.92435697555542,
+  "avg_total_time": 3.6554462194442747,
+  "total_questions": 20,
+  "questions_with_correct_doc": 19,
+  "hallucination_rate": 0.35,
+  "metrics_by_category": {
+    "estatutos": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_factual_accuracy": 1.0,
+      "avg_overall": 1.0,
+      "avg_time": 8.619117617607117
+    },
+    "general": {
+      "count": 8,
+      "precision_at_k": 1.0,
+      "avg_factual_accuracy": 1.125,
+      "avg_overall": 1.0,
+      "avg_time": 3.2186629474163055
+    },
+    "reglamentos": {
+      "count": 6,
+      "precision_at_k": 0.8333333333333334,
+      "avg_factual_accuracy": 3.3333333333333335,
+      "avg_overall": 3.3333333333333335,
+      "avg_time": 3.8644756078720093
+    },
+    "trabajo_fin": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_factual_accuracy": 2.0,
+      "avg_overall": 2.5,
+      "avg_time": 1.5318843126296997
+    },
+    "becas": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_factual_accuracy": 1.0,
+      "avg_overall": 1.0,
+      "avg_time": 1.9353816509246826
+    }
+  },
+  "metrics_by_question_type": {
+    "procedimental": {
+      "count": 8,
+      "precision_at_k": 0.875,
+      "avg_factual_accuracy": 2.0,
+      "avg_overall": 2.25,
+      "avg_time": 5.095872402191162
+    },
+    "factual": {
+      "count": 12,
+      "precision_at_k": 1.0,
+      "avg_factual_accuracy": 1.75,
+      "avg_overall": 1.5833333333333333,
+      "avg_time": 2.6951620976130166
+    }
+  }
+}

@@ -1,0 +1,50 @@
+Eres un experto en normativa universitaria de la UCM. Tu tarea es generar preguntas de evaluación PRECISAS y VERIFICABLES.
+
+DOCUMENTO: "{source_doc}"
+FRAGMENTO:
+---
+{chunk_text}
+---
+
+TAREA: Genera 2 preguntas con respuestas BASADAS EXCLUSIVAMENTE en datos específicos del fragmento.
+
+REGLAS PARA PREGUNTAS (MUY IMPORTANTE):
+1. Las preguntas DEBEN incluir datos concretos que las hagan inequívocas:
+   - MALO: "¿Cuántos créditos tiene el TFG?" (ambiguo)
+   - BUENO: "Según el Artículo X, ¿cuál es el mínimo de créditos para el TFG?"
+   
+2. Las preguntas DEBEN poder verificarse con UNA SOLA respuesta correcta:
+   - MALO: "¿Quién preside la comisión?" (hay muchas comisiones)
+   - BUENO: "Según el artículo X del reglamento Y, ¿quién preside la Comisión de Biblioteca?"
+
+3. Incluir SIEMPRE en la pregunta:
+   - El artículo o sección específica si se menciona
+   - El nombre exacto del órgano, cargo o procedimiento
+   - El documento de referencia si es relevante
+
+TIPOS DE PREGUNTAS:
+- FACTUAL: Pregunta por un DATO CONCRETO (número, nombre, plazo, porcentaje)
+  Ejemplo: "Según el artículo 15, ¿cuántos días de plazo hay para presentar reclamaciones?"
+  
+- PROCEDIMENTAL: Pregunta por un PASO ESPECÍFICO de un proceso
+  Ejemplo: "¿Ante quién debe presentarse la solicitud de reconocimiento de créditos según el artículo 8?"
+
+REGLAS PARA RESPUESTAS:
+1. Respuesta BREVE (1-2 oraciones máximo)
+2. Incluir el DATO EXACTO del fragmento
+3. NO añadir información que no esté en el fragmento
+4. Citar el artículo o sección si está disponible
+
+FORMATO JSON (responde SOLO con esto, sin explicaciones):
+[
+  {{
+    "question": "Pregunta factual específica con referencias concretas del fragmento",
+    "reference_answer": "Respuesta breve con el dato exacto del fragmento",
+    "question_type": "factual"
+  }},
+  {{
+    "question": "Pregunta procedimental específica con referencias concretas del fragmento", 
+    "reference_answer": "Respuesta breve indicando el paso o requisito exacto",
+    "question_type": "procedimental"
+  }}
+]

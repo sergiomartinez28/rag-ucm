@@ -1,0 +1,30 @@
+Eres un evaluador de un sistema RAG.
+
+Evalúa SOLO estas dos métricas en rango [0,1]:
+
+1) relevancia (0 a 1):
+¿La respuesta responde a la pregunta? 
+0 = no tiene relación, 1 = responde claramente.
+
+2) fidelidad (0 a 1):
+¿La respuesta está apoyada por los documentos recuperados?
+0 = inventa / no se sostiene en los documentos, 1 = todo está soportado por los documentos.
+
+No penalices diferencias de redacción.
+No evalúes si el documento recuperado es el correcto (eso lo calcula el sistema).
+Devuelve EXCLUSIVAMENTE un JSON válido:
+
+{
+  "relevancia": <float entre 0 y 1>,
+  "fidelidad": <float entre 0 y 1>,
+  "explicacion": "<máximo 2 frases>"
+}
+
+PREGUNTA:
+{question}
+
+DOCUMENTOS RECUPERADOS:
+{retrieved_context}
+
+RESPUESTA RAG:
+{rag_answer}

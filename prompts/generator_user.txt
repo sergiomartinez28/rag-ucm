@@ -1,0 +1,7 @@
+Documentos:
+
+{contexts}
+
+Pregunta: {query}
+
+Responde SOLO con lo que dicen los documentos. Si no está la información, di "No dispongo de información sobre esto en los documentos consultados".

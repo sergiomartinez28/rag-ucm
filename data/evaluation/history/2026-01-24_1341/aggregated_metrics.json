@@ -1,0 +1,80 @@
+{
+  "precision_at_k": 0.95,
+  "mrr": 0.925,
+  "avg_relevancia": 1.7,
+  "avg_fidelidad": 1.75,
+  "avg_precision": 1.7,
+  "avg_overall": 1.7166666666666668,
+  "avg_retrieval_time": 2.5326353216171267,
+  "avg_generation_time": 10.130541286468507,
+  "avg_total_time": 12.663176608085632,
+  "total_questions": 20,
+  "questions_with_correct_doc": 19,
+  "metrics_by_category": {
+    "estatutos": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 1.0,
+      "avg_fidelidad": 1.0,
+      "avg_precision": 1.0,
+      "avg_overall": 1.0,
+      "avg_time": 12.961092710494995
+    },
+    "general": {
+      "count": 8,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 1.25,
+      "avg_fidelidad": 1.375,
+      "avg_precision": 1.25,
+      "avg_overall": 1.2916666666666667,
+      "avg_time": 12.739016354084015
+    },
+    "reglamentos": {
+      "count": 6,
+      "precision_at_k": 0.8333333333333334,
+      "avg_relevancia": 3.0,
+      "avg_fidelidad": 3.0,
+      "avg_precision": 3.0,
+      "avg_overall": 3.0,
+      "avg_time": 14.080227613449097
+    },
+    "trabajo_fin": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 1.0,
+      "avg_fidelidad": 1.0,
+      "avg_precision": 1.0,
+      "avg_overall": 1.0,
+      "avg_time": 10.912722706794739
+    },
+    "becas": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 1.0,
+      "avg_fidelidad": 1.0,
+      "avg_precision": 1.0,
+      "avg_overall": 1.0,
+      "avg_time": 9.56120240688324
+    }
+  },
+  "metrics_by_question_type": {
+    "procedimental": {
+      "count": 8,
+      "precision_at_k": 0.875,
+      "avg_relevancia": 1.5,
+      "avg_fidelidad": 1.5,
+      "avg_precision": 1.5,
+      "avg_overall": 1.5,
+      "avg_time": 12.612081378698349
+    },
+    "factual": {
+      "count": 12,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 1.8333333333333333,
+      "avg_fidelidad": 1.9166666666666667,
+      "avg_precision": 1.8333333333333333,
+      "avg_overall": 1.861111111111111,
+      "avg_time": 12.69724009434382
+    }
+  }
+}
