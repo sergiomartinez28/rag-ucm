@@ -4,22 +4,13 @@ Limpieza, normalización y chunking de documentos UCM
 """
 
 import re
-from pathlib import Path
-from typing import List, Dict, Optional
 from dataclasses import dataclass
-import pypdf
+from pathlib import Path
+from typing import Dict, List, Optional
+
 import pdfplumber
 from bs4 import BeautifulSoup
 from loguru import logger
-from unidecode import unidecode
-
-
-@dataclass
-class Document:
-    """Representa un documento procesado"""
-    text: str
-    metadata: Dict[str, str]
-    source: str
 
 
 @dataclass
@@ -113,10 +104,17 @@ class DocumentPreprocessor:
         lines = [line for line in lines if len(line.strip()) > 15 or len(line.strip()) == 0]
         text = '\n'.join(lines)
         
-        # Normalizar guiones y comillas
-        text = text.replace('–', '-').replace('—', '-')
-        text = text.replace('"', '"').replace('"', '"')
-        text = text.replace(''', "'").replace(''', "'")
+        # Normalizar guiones y comillas tipográficas
+        replacements = {
+            "–": "-",
+            "—": "-",
+            "“": '"',
+            "”": '"',
+            "‘": "'",
+            "’": "'",
+        }
+        for original, replacement in replacements.items():
+            text = text.replace(original, replacement)
         
         return text.strip()
     

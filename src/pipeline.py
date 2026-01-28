@@ -10,7 +10,7 @@ from typing import Dict, List, Optional
 from dotenv import load_dotenv
 from loguru import logger
 
-from .preprocessor import DocumentPreprocessor, Chunk
+from .preprocessor import DocumentPreprocessor
 from .indexer import DocumentIndexer
 from .retrieval import HybridRetriever
 from .generator import ResponseGenerator

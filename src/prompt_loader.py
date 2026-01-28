@@ -3,7 +3,6 @@ Utilidad para cargar prompts desde archivos externos
 """
 
 from pathlib import Path
-from typing import Optional
 from loguru import logger
 
 

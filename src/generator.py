@@ -3,8 +3,9 @@ Módulo de generación de respuestas
 Usa LLM local para generar respuestas con citas
 """
 
-from typing import List, Dict, Tuple, Optional
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from typing import Any, Dict, List, Tuple
+
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 from loguru import logger
 
@@ -114,7 +115,7 @@ class ResponseGenerator:
         self,
         query: str,
         contexts: List[Tuple[Chunk, float]]
-    ) -> Dict[str, any]:
+    ) -> Dict[str, Any]:
         """
         Genera respuesta usando el LLM
         
@@ -165,7 +166,7 @@ class ResponseGenerator:
             outputs = self.model.generate(
                 input_ids=inputs['input_ids'],
                 attention_mask=inputs['attention_mask'],
-                max_new_tokens=256,
+                max_new_tokens=self.max_new_tokens,
                 do_sample=False,
                 pad_token_id=eos_id,
                 eos_token_id=eos_id,

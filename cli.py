@@ -5,10 +5,9 @@ Interfaz CLI para RAG-UCM
 Uso: python cli.py "¿Cuál es el plazo para el TFM?"
 """
 
-import sys
 import io
+import sys
 from pathlib import Path
-from typing import Optional
 import typer
 
 # Forzar UTF-8 en Windows
@@ -17,9 +16,7 @@ if sys.platform == 'win32':
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 from rich.console import Console
 from rich.panel import Panel
-from rich.markdown import Markdown
 from rich.table import Table
-from rich import print as rprint
 
 from src.pipeline import RAGPipeline
 

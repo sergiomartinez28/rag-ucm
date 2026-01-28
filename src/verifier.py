@@ -3,7 +3,7 @@ Módulo de verificación de fidelidad
 Detecta posibles alucinaciones en la respuesta generada
 """
 
-from typing import List, Dict, Tuple, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from transformers import pipeline
 import re
 from loguru import logger
@@ -55,7 +55,7 @@ class FidelityVerifier:
         self,
         answer: str,
         contexts: List[Tuple[Chunk, float]]
-    ) -> Dict[str, any]:
+    ) -> Dict[str, Any]:
         """
         Verificación usando heurísticas simples
         Busca si las palabras clave de cada oración aparecen en los contextos
@@ -118,7 +118,7 @@ class FidelityVerifier:
         self,
         answer: str,
         contexts: List[Tuple[Chunk, float]]
-    ) -> Dict[str, any]:
+    ) -> Dict[str, Any]:
         """
         Verificación usando modelo NLI (Natural Language Inference)
         Más preciso pero más lento
@@ -186,7 +186,7 @@ class FidelityVerifier:
         answer: str,
         contexts: List[Tuple[Chunk, float]],
         method: str = "auto"
-    ) -> Dict[str, any]:
+    ) -> Dict[str, Any]:
         """
         Verifica la fidelidad de una respuesta
         
@@ -229,7 +229,7 @@ class FidelityVerifier:
         self,
         answer: str,
         num_sources: int
-    ) -> Dict[str, any]:
+    ) -> Dict[str, Any]:
         """
         Verifica que la respuesta incluya citas a las fuentes
         """

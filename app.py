@@ -4,7 +4,6 @@ Ejecución: streamlit run app.py
 """
 
 import streamlit as st
-from pathlib import Path
 from src.pipeline import RAGPipeline
 
 # Configuración de la página

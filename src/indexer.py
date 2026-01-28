@@ -5,7 +5,9 @@ Crea índices FAISS (vectorial) y BM25 (léxico)
 
 import pickle
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import Any, Dict, List, Optional
+
+import torch
 import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
@@ -41,7 +43,6 @@ class DocumentIndexer:
         
         logger.info(f"Cargando modelo de embeddings: {embedding_model}")
         # Detectar dispositivo y cargar modelo optimizado
-        import torch
         device = "cuda" if torch.cuda.is_available() else "cpu"
         self.embedding_model = SentenceTransformer(embedding_model, device=device)
         self.embedding_dim = self.embedding_model.get_sentence_embedding_dimension()
@@ -200,7 +201,7 @@ class DocumentIndexer:
         
         logger.success(f"✓ Índices cargados: {len(self.chunks)} chunks")
     
-    def get_stats(self) -> Dict[str, any]:
+    def get_stats(self) -> Dict[str, Any]:
         """Retorna estadísticas de los índices"""
         if self.faiss_index is None:
             return {"status": "No indexado"}

@@ -3,14 +3,16 @@ Módulo de recuperación híbrida
 Combina BM25 + embeddings + re-ranking
 """
 
-from typing import List, Dict, Tuple, Optional
 import time
+from typing import List, Tuple
+
 import numpy as np
-from sentence_transformers import SentenceTransformer, CrossEncoder
+import torch
+from sentence_transformers import CrossEncoder
 from loguru import logger
 
-from .preprocessor import Chunk
 from .indexer import DocumentIndexer
+from .preprocessor import Chunk
 
 
 class HybridRetriever:
@@ -39,7 +41,6 @@ class HybridRetriever:
         
         logger.info(f"Cargando modelo de re-ranking: {reranker_model}")
         # Cargar en GPU si está disponible con optimizaciones
-        import torch
         device = "cuda" if torch.cuda.is_available() else "cpu"
         self.reranker = CrossEncoder(
             reranker_model, 

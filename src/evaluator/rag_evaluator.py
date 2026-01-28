@@ -6,7 +6,7 @@ Ejecuta el RAG con las preguntas del dataset y registra respuestas y tiempos
 import json
 import time
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import Dict, List
 from dataclasses import dataclass, asdict
 
 from loguru import logger
@@ -95,8 +95,9 @@ class RAGEvaluator:
         total_time = time.time() - start_total
         
         # Extraer tiempos del resultado si están disponibles
-        retrieval_time = result.get('retrieval_time', 0)
-        generation_time = result.get('generation_time', 0)
+        timing = result.get('timing', {})
+        retrieval_time = timing.get('retrieval', 0)
+        generation_time = timing.get('generation', 0)
         
         # Si no hay tiempos detallados, estimar
         if retrieval_time == 0 and generation_time == 0:
@@ -181,12 +182,15 @@ class RAGEvaluator:
             json.dump(results_data, f, ensure_ascii=False, indent=2)
         
         # Calcular métricas básicas de retrieval
-        precision_at_k = sum(1 for r in results if r.correct_doc_in_top_k) / len(results)
-        
-        mrr_sum = sum(1/r.correct_doc_rank for r in results if r.correct_doc_rank > 0)
-        mrr = mrr_sum / len(results) if results else 0
-        
-        avg_time = sum(r.total_time for r in results) / len(results)
+        if results:
+            precision_at_k = sum(1 for r in results if r.correct_doc_in_top_k) / len(results)
+            mrr_sum = sum(1 / r.correct_doc_rank for r in results if r.correct_doc_rank > 0)
+            mrr = mrr_sum / len(results)
+            avg_time = sum(r.total_time for r in results) / len(results)
+        else:
+            precision_at_k = 0
+            mrr = 0
+            avg_time = 0
         
         logger.success(f"✓ Evaluación completada: {len(results)} preguntas")
         logger.info(f"  Precision@{top_k}: {precision_at_k:.2%}")
