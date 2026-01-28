@@ -12,6 +12,8 @@ import pdfplumber
 from bs4 import BeautifulSoup
 from loguru import logger
 
+from .utils import timed, ProgressTracker, validate_file_exists
+
 
 @dataclass
 class Chunk:
@@ -36,25 +38,36 @@ class DocumentPreprocessor:
             chunk_size: Tamaño aproximado de cada chunk en tokens
             chunk_overlap: Solapamiento entre chunks consecutivos
         """
+        if chunk_overlap >= chunk_size:
+            raise ValueError("chunk_overlap debe ser menor que chunk_size")
+        
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         logger.info(f"DocumentPreprocessor inicializado: chunk_size={chunk_size}, overlap={chunk_overlap}")
     
+    @timed
     def extract_from_pdf(self, pdf_path: Path) -> str:
         """
         Extrae texto de un PDF
         Usa pdfplumber para mejor extracción de tablas y estructura
         """
-        logger.info(f"Extrayendo texto de PDF: {pdf_path}")
+        validate_file_exists(str(pdf_path))
+        logger.info(f"Extrayendo texto de PDF: {pdf_path.name}")
         
         text_parts = []
         
         try:
             with pdfplumber.open(pdf_path) as pdf:
+                total_pages = len(pdf.pages)
+                tracker = ProgressTracker(total=total_pages, desc=f"Extrayendo {pdf_path.name}")
+                
                 for page_num, page in enumerate(pdf.pages, 1):
                     text = page.extract_text()
                     if text:
                         text_parts.append(text)
+                    tracker.update()
+                
+                tracker.close()
                         
             full_text = "\n\n".join(text_parts)
             logger.success(f"✓ Extraídas {len(text_parts)} páginas de {pdf_path.name}")
@@ -62,13 +75,15 @@ class DocumentPreprocessor:
             
         except Exception as e:
             logger.error(f"Error extrayendo PDF {pdf_path}: {e}")
-            raise
+            raise RuntimeError(f"Error extrayendo PDF: {e}") from e
     
+    @timed
     def extract_from_html(self, html_path: Path) -> str:
         """
         Extrae texto limpio de HTML
         """
-        logger.info(f"Extrayendo texto de HTML: {html_path}")
+        validate_file_exists(str(html_path))
+        logger.info(f"Extrayendo texto de HTML: {html_path.name}")
         
         try:
             with open(html_path, 'r', encoding='utf-8') as f:
@@ -84,7 +99,7 @@ class DocumentPreprocessor:
             
         except Exception as e:
             logger.error(f"Error extrayendo HTML {html_path}: {e}")
-            raise
+            raise RuntimeError(f"Error extrayendo HTML: {e}") from e
     
     def clean_text(self, text: str) -> str:
         """
@@ -93,6 +108,10 @@ class DocumentPreprocessor:
         - Normaliza espacios
         - Mantiene estructura de párrafos
         """
+        if not text or not text.strip():
+            logger.warning("Texto vacío recibido para limpieza")
+            return ""
+        
         # Eliminar múltiples saltos de línea
         text = re.sub(r'\n{3,}', '\n\n', text)
         
@@ -108,23 +127,32 @@ class DocumentPreprocessor:
         replacements = {
             "–": "-",
             "—": "-",
-            "“": '"',
-            "”": '"',
-            "‘": "'",
-            "’": "'",
+            """: '"',
+            """: '"',
+            "'": "'",
+            "'": "'",
         }
         for original, replacement in replacements.items():
             text = text.replace(original, replacement)
         
         return text.strip()
     
+    @timed
     def create_chunks(self, text: str, metadata: Dict[str, str]) -> List[Chunk]:
         """
         Divide el texto en chunks con solapamiento
         Intenta respetar límites de párrafos y secciones
         """
+        if not text or not text.strip():
+            logger.warning("No se puede crear chunks de texto vacío")
+            return []
+        
         # Dividir por párrafos
         paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
+        
+        if not paragraphs:
+            logger.warning("No se encontraron párrafos en el texto")
+            return []
         
         chunks = []
         current_chunk = []
@@ -214,6 +242,7 @@ class DocumentPreprocessor:
             doc_id=doc_id
         )
     
+    @timed
     def process_document(
         self, 
         file_path: Path, 
@@ -228,6 +257,10 @@ class DocumentPreprocessor:
         
         Returns:
             Lista de chunks procesados
+        
+        Raises:
+            ValueError: Si el formato no es soportado
+            RuntimeError: Si hay errores en extracción o procesamiento
         """
         if metadata is None:
             metadata = {}
@@ -247,11 +280,56 @@ class DocumentPreprocessor:
         # Limpiar
         text = self.clean_text(text)
         
+        if not text:
+            raise RuntimeError(f"No se pudo extraer texto del documento: {file_path}")
+        
         # Crear chunks
         chunks = self.create_chunks(text, metadata)
         
+        if not chunks:
+            raise RuntimeError(f"No se pudieron crear chunks del documento: {file_path}")
+        
         logger.success(f"✓ Documento procesado: {len(chunks)} chunks generados")
         return chunks
+    
+    def process_batch(
+        self,
+        file_paths: List[Path],
+        metadata_dict: Optional[Dict[str, Dict[str, str]]] = None
+    ) -> List[Chunk]:
+        """
+        Procesa múltiples documentos en batch
+        
+        Args:
+            file_paths: Lista de rutas a documentos
+            metadata_dict: Diccionario con metadata por documento
+        
+        Returns:
+            Lista combinada de todos los chunks
+        """
+        all_chunks = []
+        failed_files = []
+        
+        tracker = ProgressTracker(total=len(file_paths), desc="Procesando documentos")
+        
+        for file_path in file_paths:
+            try:
+                metadata = metadata_dict.get(str(file_path), {}) if metadata_dict else {}
+                chunks = self.process_document(file_path, metadata)
+                all_chunks.extend(chunks)
+            except Exception as e:
+                logger.error(f"Error procesando {file_path.name}: {e}")
+                failed_files.append(file_path.name)
+            finally:
+                tracker.update()
+        
+        tracker.close()
+        
+        if failed_files:
+            logger.warning(f"Archivos con errores ({len(failed_files)}): {', '.join(failed_files)}")
+        
+        logger.success(f"✓ Procesamiento batch completo: {len(all_chunks)} chunks totales")
+        return all_chunks
 
 
 if __name__ == "__main__":
@@ -259,17 +337,5 @@ if __name__ == "__main__":
     from pathlib import Path
     
     preprocessor = DocumentPreprocessor(chunk_size=600, chunk_overlap=100)
-    
-    # Procesar un PDF de ejemplo
-    # pdf_path = Path("data/raw/normativa_tfg_ejemplo.pdf")
-    # chunks = preprocessor.process_document(
-    #     pdf_path,
-    #     metadata={
-    #         'title': 'Normativa TFG Facultad de Informática',
-    #         'faculty': 'Informática',
-    #         'year': '2024',
-    #         'url': 'https://...'
-    #     }
-    # )
     
     print("✓ Módulo preprocessor listo para usar")

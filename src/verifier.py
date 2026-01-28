@@ -9,6 +9,7 @@ import re
 from loguru import logger
 
 from .preprocessor import Chunk
+from .utils import timed, TimingContext
 
 
 class FidelityVerifier:
@@ -28,38 +29,62 @@ class FidelityVerifier:
                        Si es None, usa heurísticas simples
             threshold: Umbral de confianza para considerar una afirmación verificada
         """
+        if not 0 <= threshold <= 1:
+            raise ValueError("threshold debe estar entre 0 y 1")
+        
         self.threshold = threshold
         self.model_name = model_name
         
         if model_name:
-            logger.info(f"Cargando modelo NLI: {model_name}")
-            self.nli_pipeline = pipeline(
-                "text-classification",
-                model=model_name,
-                device=-1  # CPU por defecto
-            )
-            logger.success("✓ Modelo NLI cargado")
+            with TimingContext("Carga de modelo NLI"):
+                logger.info(f"Cargando modelo NLI: {model_name}")
+                self.nli_pipeline = pipeline(
+                    "text-classification",
+                    model=model_name,
+                    device=-1
+                )
+                logger.success("✓ Modelo NLI cargado")
         else:
             self.nli_pipeline = None
             logger.info("✓ Verificador inicializado con heurísticas")
     
     def split_into_sentences(self, text: str) -> List[str]:
-        """
-        Divide el texto en oraciones
-        """
-        # Simple split por puntos, signos de interrogación y exclamación
+        """Divide el texto en oraciones"""
+        if not text or not text.strip():
+            return []
+        
         sentences = re.split(r'(?<=[.!?])\s+', text)
         return [s.strip() for s in sentences if s.strip()]
     
+    @timed
     def verify_with_heuristics(
         self,
         answer: str,
         contexts: List[Tuple[Chunk, float]]
     ) -> Dict[str, Any]:
-        """
-        Verificación usando heurísticas simples
-        Busca si las palabras clave de cada oración aparecen en los contextos
-        """
+        """Verificación usando heurísticas simples"""
+        if not answer or not answer.strip():
+            logger.warning("Respuesta vacía para verificar")
+            return {
+                'fidelity_score': 0.0,
+                'is_faithful': False,
+                'verifications': [],
+                'unsupported_sentences': [],
+                'num_sentences': 0,
+                'num_unsupported': 0
+            }
+        
+        if not contexts:
+            logger.warning("No hay contextos para verificar")
+            return {
+                'fidelity_score': 0.0,
+                'is_faithful': False,
+                'verifications': [],
+                'unsupported_sentences': [],
+                'num_sentences': 0,
+                'num_unsupported': 0
+            }
+        
         sentences = self.split_into_sentences(answer)
         context_texts = [chunk.text.lower() for chunk, _ in contexts]
         combined_context = " ".join(context_texts)
@@ -68,7 +93,6 @@ class FidelityVerifier:
         unsupported_sentences = []
         
         for sentence in sentences:
-            # Extraer palabras clave (palabras de >4 letras, excluyendo comunes)
             words = sentence.lower().split()
             keywords = [
                 w for w in words 
@@ -78,14 +102,12 @@ class FidelityVerifier:
                 ]
             ]
             
-            # Verificar si las keywords aparecen en el contexto
             if not keywords:
                 continue
             
             matches = sum(1 for kw in keywords if kw in combined_context)
             coverage = matches / len(keywords) if keywords else 0
-            
-            is_supported = coverage >= 0.5  # Al menos 50% de keywords presentes
+            is_supported = coverage >= 0.5
             
             verifications.append({
                 'sentence': sentence,
@@ -97,74 +119,6 @@ class FidelityVerifier:
             if not is_supported:
                 unsupported_sentences.append(sentence)
         
-        # Calcular score global
-        if verifications:
-            fidelity_score = sum(
-                1 for v in verifications if v['is_supported']
-            ) / len(verifications)
-        else:
-            fidelity_score = 1.0  # Si no hay oraciones, asumir OK
-        
-        return {
-            'fidelity_score': fidelity_score,
-            'is_faithful': fidelity_score >= self.threshold,
-            'verifications': verifications,
-            'unsupported_sentences': unsupported_sentences,
-            'num_sentences': len(sentences),
-            'num_unsupported': len(unsupported_sentences)
-        }
-    
-    def verify_with_nli(
-        self,
-        answer: str,
-        contexts: List[Tuple[Chunk, float]]
-    ) -> Dict[str, Any]:
-        """
-        Verificación usando modelo NLI (Natural Language Inference)
-        Más preciso pero más lento
-        """
-        if not self.nli_pipeline:
-            logger.warning("No hay modelo NLI cargado, usando heurísticas")
-            return self.verify_with_heuristics(answer, contexts)
-        
-        sentences = self.split_into_sentences(answer)
-        context_texts = [chunk.text for chunk, _ in contexts]
-        
-        verifications = []
-        unsupported_sentences = []
-        
-        for sentence in sentences:
-            # Para cada oración, verificar contra cada contexto
-            max_entailment_score = 0.0
-            
-            for context in context_texts:
-                # Verificar si el contexto implica (entails) la oración
-                result = self.nli_pipeline(
-                    f"{context} [SEP] {sentence}",
-                    truncation=True
-                )
-                
-                # Buscar label "entailment" o "neutral"
-                for pred in result:
-                    if pred['label'].lower() in ['entailment', 'neutral']:
-                        max_entailment_score = max(
-                            max_entailment_score,
-                            pred['score']
-                        )
-            
-            is_supported = max_entailment_score >= self.threshold
-            
-            verifications.append({
-                'sentence': sentence,
-                'is_supported': is_supported,
-                'score': max_entailment_score,
-                'method': 'nli'
-            })
-            
-            if not is_supported:
-                unsupported_sentences.append(sentence)
-        
-        # Score global
         if verifications:
             fidelity_score = sum(
                 1 for v in verifications if v['is_supported']
@@ -181,34 +135,21 @@ class FidelityVerifier:
             'num_unsupported': len(unsupported_sentences)
         }
     
+    @timed
     def verify(
         self,
         answer: str,
         contexts: List[Tuple[Chunk, float]],
         method: str = "auto"
     ) -> Dict[str, Any]:
-        """
-        Verifica la fidelidad de una respuesta
-        
-        Args:
-            answer: Respuesta generada por el LLM
-            contexts: Contextos usados para generar la respuesta
-            method: 'heuristic', 'nli', o 'auto'
-        
-        Returns:
-            Dict con métricas de verificación
-        """
+        """Verifica la fidelidad de una respuesta"""
         logger.info("Verificando fidelidad de la respuesta...")
         
         if method == "auto":
-            method = "nli" if self.nli_pipeline else "heuristic"
+            method = "heuristic"  # Por ahora solo heurísticas
         
-        if method == "nli":
-            result = self.verify_with_nli(answer, contexts)
-        else:
-            result = self.verify_with_heuristics(answer, contexts)
+        result = self.verify_with_heuristics(answer, contexts)
         
-        # Añadir recomendación
         if not result['is_faithful']:
             result['warning'] = (
                 f"⚠️ Atención: {result['num_unsupported']} de {result['num_sentences']} "
@@ -230,10 +171,16 @@ class FidelityVerifier:
         answer: str,
         num_sources: int
     ) -> Dict[str, Any]:
-        """
-        Verifica que la respuesta incluya citas a las fuentes
-        """
-        # Buscar referencias del tipo [1], [2], etc.
+        """Verifica que la respuesta incluya citas a las fuentes"""
+        if not answer or not answer.strip():
+            return {
+                'has_citations': False,
+                'num_citations': 0,
+                'num_unique_citations': 0,
+                'citation_coverage': 0.0,
+                'missing_citations': True
+            }
+        
         citations = re.findall(r'\[(\d+)\]', answer)
         unique_citations = set(int(c) for c in citations)
         
@@ -250,8 +197,5 @@ class FidelityVerifier:
 
 
 if __name__ == "__main__":
-    # Ejemplo de uso
     verifier = FidelityVerifier(threshold=0.7)
-    
     print("✓ Módulo verifier listo para usar")
-    print("Implementa verificación de fidelidad con heurísticas y NLI (opcional)")

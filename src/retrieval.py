@@ -3,7 +3,6 @@ Módulo de recuperación híbrida
 Combina BM25 + embeddings + re-ranking
 """
 
-import time
 from typing import List, Tuple
 
 import numpy as np
@@ -13,6 +12,7 @@ from loguru import logger
 
 from .indexer import DocumentIndexer
 from .preprocessor import Chunk
+from .utils import timed, TimingContext, torch_memory_cleanup
 
 
 class HybridRetriever:
@@ -38,26 +38,30 @@ class HybridRetriever:
             reranker_type: Tipo de re-ranking ('cross-encoder' o 'simple')
             alpha: Balance entre BM25 y semántico (0=solo BM25, 1=solo semántico)
         """
+        if not 0 <= alpha <= 1:
+            raise ValueError("alpha debe estar entre 0 y 1")
+        
         self.indexer = indexer
         self.alpha = alpha
         self.reranker_type = reranker_type.lower().strip()
+        self.reranker = None
         
         if self.reranker_type == "cross-encoder":
-            logger.info(f"Cargando modelo de re-ranking: {reranker_model}")
-            # Cargar en GPU si esta disponible con optimizaciones
-            device = "cuda" if torch.cuda.is_available() else "cpu"
-            self.reranker = CrossEncoder(
-                reranker_model, 
-                device=device,
-                max_length=256  # Limitar longitud para velocidad
-            )
-            logger.info(f"Re-ranker cargado en: {device}")
+            with TimingContext("Carga de re-ranker"):
+                logger.info(f"Cargando modelo de re-ranking: {reranker_model}")
+                device = "cuda" if torch.cuda.is_available() else "cpu"
+                self.reranker = CrossEncoder(
+                    reranker_model, 
+                    device=device,
+                    max_length=256
+                )
+                logger.info(f"Re-ranker cargado en: {device}")
         else:
-            self.reranker = None
             logger.info("Re-ranker simple activado (sin cross-encoder)")
         
         logger.success(f"✓ HybridRetriever inicializado (alpha={alpha})")
     
+    @timed
     def search_bm25(self, query: str, top_k: int = 20) -> List[Tuple[int, float]]:
         """
         Búsqueda BM25
@@ -65,6 +69,10 @@ class HybridRetriever:
         Returns:
             Lista de (índice_chunk, score) ordenados por relevancia
         """
+        if not query or not query.strip():
+            logger.warning("Query vacía para BM25")
+            return []
+        
         tokenized_query = query.lower().split()
         scores = self.indexer.bm25_index.get_scores(tokenized_query)
         
@@ -75,6 +83,7 @@ class HybridRetriever:
         logger.debug(f"BM25: {len(results)} resultados")
         return results
     
+    @timed
     def search_semantic(self, query: str, top_k: int = 20) -> List[Tuple[int, float]]:
         """
         Búsqueda semántica con FAISS
@@ -82,6 +91,10 @@ class HybridRetriever:
         Returns:
             Lista de (índice_chunk, score) ordenados por relevancia
         """
+        if not query or not query.strip():
+            logger.warning("Query vacía para búsqueda semántica")
+            return []
+        
         # Generar embedding de la query
         query_embedding = self.indexer.embedding_model.encode(
             [query],
@@ -143,6 +156,7 @@ class HybridRetriever:
         logger.debug(f"RRF: {len(fused_results)} resultados únicos fusionados")
         return fused_results
     
+    @timed
     def rerank(
         self,
         query: str,
@@ -161,6 +175,7 @@ class HybridRetriever:
             Lista de (Chunk, score_reranking) ordenados
         """
         if not candidates:
+            logger.warning("No hay candidatos para re-ranking")
             return []
 
         if self.reranker is None:
@@ -173,34 +188,39 @@ class HybridRetriever:
         ]
         
         # Calcular scores de re-ranking con batch processing
-        rerank_scores = self.reranker.predict(pairs, batch_size=len(pairs), show_progress_bar=False)
+        rerank_scores = self.reranker.predict(
+            pairs, 
+            batch_size=min(32, len(pairs)), 
+            show_progress_bar=False
+        )
         
-        # Los cross-encoders devuelven logits, convertir a probabilidades
-        # Usando sigmoid con escala para mejor discriminación
+        # Los cross-encoders devuelven logits
         raw_scores = np.array(rerank_scores)
         
-        # Log para debug
-        logger.debug(f"Re-ranker raw scores: min={raw_scores.min():.3f}, max={raw_scores.max():.3f}, mean={raw_scores.mean():.3f}")
+        logger.debug(
+            f"Re-ranker raw scores: min={raw_scores.min():.3f}, "
+            f"max={raw_scores.max():.3f}, mean={raw_scores.mean():.3f}"
+        )
         
         # Normalización por ranking (mejor=1.0, peor=0.0)
-        # Más robusta que sigmoid cuando los logits están centrados en 0
-        ranks = np.argsort(-raw_scores)  # Índices ordenados de mayor a menor
+        ranks = np.argsort(-raw_scores)
         normalized_scores = np.zeros_like(raw_scores, dtype=float)
+        
         if len(raw_scores) > 1:
             normalized_scores[ranks] = 1 - (ranks / (len(raw_scores) - 1))
         else:
             normalized_scores[0] = 1.0
         
-        # Combinar con chunks y ordenar por raw_scores (no por normalized)
+        # Combinar con chunks y ordenar
         results = [
             (self.indexer.chunks[candidates[i][0]], float(raw_scores[i]), float(normalized_scores[i]))
             for i in range(len(candidates))
         ]
         
-        results.sort(key=lambda x: x[1], reverse=True)  # Ordenar por score original
+        results.sort(key=lambda x: x[1], reverse=True)
         
-        # Devolver solo (chunk, normalized_score) para consistencia con la API
-        final_results = [(chunk, norm_score) for chunk, raw_score, norm_score in results[:top_k]]
+        # Devolver solo (chunk, normalized_score)
+        final_results = [(chunk, norm_score) for chunk, _, norm_score in results[:top_k]]
         
         logger.debug(f"Re-ranking: top {top_k} de {len(results)} candidatos")
         return final_results
@@ -219,6 +239,7 @@ class HybridRetriever:
         ordered = sorted(candidates, key=lambda x: x[1], reverse=True)[:top_k]
         n = len(ordered)
         results = []
+        
         for i, (idx, _) in enumerate(ordered):
             if n > 1:
                 score = 1 - (i / (n - 1))
@@ -228,6 +249,7 @@ class HybridRetriever:
 
         return results
 
+    @timed
     def retrieve(
         self,
         query: str,
@@ -245,39 +267,39 @@ class HybridRetriever:
         Returns:
             Lista de (Chunk, score) con los fragmentos más relevantes
         """
+        if not query or not query.strip():
+            raise ValueError("Query no puede estar vacía")
+        
         logger.info(f"Recuperando documentos para: '{query[:50]}...'")
         
         # 1. Búsqueda BM25
-        t0 = time.time()
-        bm25_results = self.search_bm25(query, top_k=top_k_retrieval)
-        t_bm25 = time.time() - t0
+        with TimingContext("BM25", log=False) as timer:
+            bm25_results = self.search_bm25(query, top_k=top_k_retrieval)
+        logger.debug(f"  BM25: {timer.elapsed:.3f}s")
         
         # 2. Búsqueda semántica
-        t0 = time.time()
-        semantic_results = self.search_semantic(query, top_k=top_k_retrieval)
-        t_semantic = time.time() - t0
+        with TimingContext("Semántico", log=False) as timer:
+            semantic_results = self.search_semantic(query, top_k=top_k_retrieval)
+        logger.debug(f"  Semántico: {timer.elapsed:.3f}s")
         
         # 3. Fusión RRF
-        t0 = time.time()
-        fused_results = self.reciprocal_rank_fusion(
-            bm25_results,
-            semantic_results
-        )
-        t_fusion = time.time() - t0
+        with TimingContext("Fusión RRF", log=False) as timer:
+            fused_results = self.reciprocal_rank_fusion(
+                bm25_results,
+                semantic_results
+            )
+        logger.debug(f"  Fusión: {timer.elapsed:.3f}s")
         
         # Limitar candidatos para re-ranking
         candidates = fused_results[:top_k_retrieval]
         
         # 4. Re-ranking
-        t0 = time.time()
-        if self.reranker_type == "cross-encoder":
-            final_results = self.rerank(query, candidates, top_k=top_k_final)
-        else:
-            final_results = self.rerank_simple(candidates, top_k=top_k_final)
-        t_rerank = time.time() - t0
-        
-        # Log de tiempos
-        logger.debug(f"  BM25: {t_bm25:.3f}s | Semántico: {t_semantic:.3f}s | Fusión: {t_fusion:.3f}s | Rerank: {t_rerank:.3f}s")
+        with TimingContext("Re-ranking", log=False) as timer:
+            if self.reranker_type == "cross-encoder":
+                final_results = self.rerank(query, candidates, top_k=top_k_final)
+            else:
+                final_results = self.rerank_simple(candidates, top_k=top_k_final)
+        logger.debug(f"  Rerank: {timer.elapsed:.3f}s")
         
         logger.success(f"✓ Recuperados {len(final_results)} documentos relevantes")
         
@@ -309,9 +331,17 @@ class HybridRetriever:
             )
         
         return filtered_results
+    
+    def cleanup(self) -> None:
+        """Libera recursos de memoria"""
+        logger.info("Liberando recursos del retriever...")
+        
+        with torch_memory_cleanup():
+            self.reranker = None
+        
+        logger.success("✓ Recursos del retriever liberados")
 
 
 if __name__ == "__main__":
-    # Ejemplo de uso
     print("✓ Módulo retrieval listo para usar")
     print("Implementa búsqueda híbrida BM25 + embeddings + re-ranking")

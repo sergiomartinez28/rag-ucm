@@ -11,6 +11,7 @@ from loguru import logger
 
 from .preprocessor import Chunk
 from .prompt_loader import load_prompt
+from .utils import timed, TimingContext, torch_memory_cleanup
 
 
 class ResponseGenerator:
@@ -35,6 +36,9 @@ class ResponseGenerator:
             temperature: Temperatura de sampling (0.0-1.0)
             device: 'cuda', 'cpu', o 'auto'
         """
+        if not 0 <= temperature <= 2.0:
+            raise ValueError("temperature debe estar entre 0.0 y 2.0")
+        
         self.model_name = model_name
         self.max_new_tokens = max_new_tokens
         self.temperature = temperature
@@ -48,26 +52,27 @@ class ResponseGenerator:
         self.device = device
         logger.info(f"Usando dispositivo: {device}")
         
-        # Cargar tokenizer con optimizaciones
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        # Cargar tokenizer y modelo con timing
+        with TimingContext("Carga de tokenizer"):
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+            
+            # Configurar pad_token si no existe
+            if self.tokenizer.pad_token is None:
+                self.tokenizer.pad_token = self.tokenizer.eos_token
         
-        # Configurar pad_token si no existe
-        if self.tokenizer.pad_token is None:
-            self.tokenizer.pad_token = self.tokenizer.eos_token
-        
-        # Cargar modelo
-        if device == "cuda":
-            logger.info("Cargando modelo en GPU...")
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_name,
-                torch_dtype=torch.float16
-            ).to(device)
-        else:
-            logger.info("Cargando modelo en CPU...")
-            self.model = AutoModelForCausalLM.from_pretrained(
-                model_name,
-                torch_dtype=torch.float32
-            ).to(device)
+        with TimingContext("Carga de modelo LLM"):
+            if device == "cuda":
+                logger.info("Cargando modelo en GPU...")
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    model_name,
+                    torch_dtype=torch.float16
+                ).to(device)
+            else:
+                logger.info("Cargando modelo en CPU...")
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    model_name,
+                    torch_dtype=torch.float32
+                ).to(device)
         
         # Poner en modo evaluación
         self.model.eval()
@@ -78,7 +83,7 @@ class ResponseGenerator:
         self,
         query: str,
         contexts: List[Tuple[Chunk, float]]
-    ) -> Dict:
+    ) -> List[Dict[str, str]]:
         """
         Crea el prompt usando el formato de chat del tokenizer
         
@@ -87,14 +92,16 @@ class ResponseGenerator:
             contexts: Lista de (Chunk, score) recuperados
         
         Returns:
-            Dict con messages para apply_chat_template
+            Lista de messages para apply_chat_template
         """
-        # Construir contextos con referencias - optimizado
+        if not contexts:
+            raise ValueError("Se requieren contextos para generar el prompt")
+        
+        # Construir contextos con referencias
         context_texts = []
         for i, (chunk, score) in enumerate(contexts, 1):
             metadata = chunk.metadata
             title = metadata.get('title', metadata.get('filename', 'Doc'))
-            # Texto más corto para modelo 1.5B
             text = chunk.text[:400].strip()
             context_texts.append(f"[{i}] {title}: {text}")
         
@@ -111,6 +118,7 @@ class ResponseGenerator:
         
         return messages
     
+    @timed
     def generate(
         self,
         query: str,
@@ -126,6 +134,9 @@ class ResponseGenerator:
         Returns:
             Dict con 'answer', 'sources', y metadata
         """
+        if not query or not query.strip():
+            raise ValueError("Query no puede estar vacía")
+        
         if not contexts:
             logger.warning("No hay contextos para generar respuesta")
             return {
@@ -152,26 +163,30 @@ class ResponseGenerator:
             return_tensors="pt",
             max_length=1536,
             truncation=True,
-            padding=False  # Sin padding para evitar problemas
+            padding=False
         ).to(self.device)
         
         # Obtener longitud del prompt para extraer respuesta
         prompt_length = inputs['input_ids'].shape[1]
         
-        # Usar eos_token_id como pad_token_id (más seguro)
+        # Usar eos_token_id como pad_token_id
         eos_id = self.tokenizer.eos_token_id
         
-        # Generar respuesta - greedy decoding (más rápido y determinista)
+        # Generar respuesta
         with torch.no_grad():
-            outputs = self.model.generate(
-                input_ids=inputs['input_ids'],
-                attention_mask=inputs['attention_mask'],
-                max_new_tokens=self.max_new_tokens,
-                do_sample=False,
-                pad_token_id=eos_id,
-                eos_token_id=eos_id,
-                use_cache=True
-            )
+            with TimingContext("Generación LLM", log=False) as timer:
+                outputs = self.model.generate(
+                    input_ids=inputs['input_ids'],
+                    attention_mask=inputs['attention_mask'],
+                    max_new_tokens=self.max_new_tokens,
+                    do_sample=self.temperature > 0,
+                    temperature=self.temperature if self.temperature > 0 else None,
+                    pad_token_id=eos_id,
+                    eos_token_id=eos_id,
+                    use_cache=True
+                )
+        
+        logger.debug(f"Generación LLM: {timer.elapsed:.2f}s")
         
         # Decodificar solo los tokens nuevos generados
         generated_tokens = outputs[0][prompt_length:]
@@ -189,14 +204,15 @@ class ResponseGenerator:
             'metadata': {
                 'model': self.model_name,
                 'temperature': self.temperature,
-                'num_contexts': len(contexts)
+                'num_contexts': len(contexts),
+                'generation_time': timer.elapsed
             }
         }
     
     def _format_sources(
         self,
         contexts: List[Tuple[Chunk, float]]
-    ) -> List[Dict[str, str]]:
+    ) -> List[Dict[str, Any]]:
         """
         Formatea las fuentes para mostrar al usuario
         """
@@ -222,22 +238,17 @@ class ResponseGenerator:
         
         return sources
     
-    def generate_stream(
-        self,
-        query: str,
-        contexts: List[Tuple[Chunk, float]]
-    ):
-        """
-        Genera respuesta en streaming (para interfaz más dinámica)
-        TODO: Implementar streaming real
-        """
-        # Por ahora, retorna la respuesta completa
-        # En futuras versiones, se puede implementar streaming real
-        result = self.generate(query, contexts)
-        yield result['answer']
+    def cleanup(self) -> None:
+        """Libera recursos de memoria"""
+        logger.info("Liberando recursos del generador...")
+        
+        with torch_memory_cleanup():
+            self.model = None
+            self.tokenizer = None
+        
+        logger.success("✓ Recursos del generador liberados")
 
 
 if __name__ == "__main__":
-    # Ejemplo de uso
     print("✓ Módulo generator listo para usar")
     print("Nota: La primera vez que uses un modelo, se descargará de HuggingFace")

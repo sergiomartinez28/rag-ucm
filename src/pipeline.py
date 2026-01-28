@@ -1,15 +1,14 @@
 """
 Pipeline completo RAG-UCM
-Integra todos los componentes del sistema
+Integra todos los componentes del sistema con arquitectura refactorizada
 """
 
-import os
-import time
 from pathlib import Path
 from typing import Dict, List, Optional
-from dotenv import load_dotenv
 from loguru import logger
 
+from .config import get_config, RAGConfig
+from .utils import TimingContext, torch_memory_cleanup
 from .preprocessor import DocumentPreprocessor
 from .indexer import DocumentIndexer
 from .retrieval import HybridRetriever
@@ -31,180 +30,159 @@ class RAGPipeline:
     
     def __init__(
         self,
-        config_path: Optional[Path] = None,
+        config: Optional[RAGConfig] = None,
         load_existing: bool = True
     ):
         """
         Args:
-            config_path: Ruta al archivo .env de configuración
+            config: Configuración personalizada (usa config global si es None)
             load_existing: Si True, intenta cargar índices existentes
         """
-        # Cargar configuración
-        if config_path:
-            load_dotenv(config_path)
-        else:
-            load_dotenv()
-        
         logger.info("Inicializando RAG-UCM Pipeline...")
         
-        # Configuración desde variables de entorno
-        # Configuración optimizada para modelos rápidos
-        self.config = {
-            'embedding_model': os.getenv('EMBEDDING_MODEL', 'BAAI/bge-m3'),
-            'reranker_model': os.getenv('RERANKER_MODEL', 'BAAI/bge-reranker-base'),
-            'reranker_type': os.getenv('RERANKER_TYPE', 'cross-encoder'),
-            'llm_model': os.getenv('LLM_MODEL', 'Qwen/Qwen2.5-3B-Instruct'),
-            'chunk_size': int(os.getenv('CHUNK_SIZE', 1000)),  
-            'chunk_overlap': int(os.getenv('CHUNK_OVERLAP', 200)), 
-            'top_k_retrieval': int(os.getenv('TOP_K_RETRIEVAL', 8)),  # Optimizado
-            'top_k_rerank': int(os.getenv('TOP_K_RERANK', 3)),  # Top 3 documentos finales
-            'hybrid_alpha': float(os.getenv('HYBRID_ALPHA', 0.6)),  # Más peso a semántico
-            'max_new_tokens': int(os.getenv('MAX_NEW_TOKENS', 120)),  # Respuestas concisas
-            'temperature': float(os.getenv('TEMPERATURE', 0.1)),  # Más determinístico
-            'enable_verification': os.getenv('ENABLE_VERIFICATION', 'false').lower() == 'true',  # Desactivado para velocidad
-            'verification_threshold': float(os.getenv('VERIFICATION_THRESHOLD', 0.7)),
-            'data_raw_path': Path(os.getenv('DATA_RAW_PATH', './data/raw')),
-            'data_processed_path': Path(os.getenv('DATA_PROCESSED_PATH', './data/processed')),
-            'faiss_index_path': Path(os.getenv('FAISS_INDEX_PATH', './data/processed/faiss_index')),
-            'bm25_index_path': Path(os.getenv('BM25_INDEX_PATH', './data/processed/bm25_index')),
-        }
+        # Cargar configuración
+        self.config = config or get_config()
         
         # Inicializar componentes
-        self.preprocessor = None
-        self.indexer = None
-        self.retriever = None
-        self.generator = None
-        self.verifier = None
+        self.preprocessor: Optional[DocumentPreprocessor] = None
+        self.indexer: Optional[DocumentIndexer] = None
+        self.retriever: Optional[HybridRetriever] = None
+        self.generator: Optional[ResponseGenerator] = None
+        self.verifier: Optional[FidelityVerifier] = None
         
         # Cargar índices si existen
         if load_existing:
-            self._load_indices()
+            try:
+                self._load_indices()
+            except Exception as e:
+                logger.warning(f"No se pudieron cargar índices: {e}")
+                logger.info("Ejecuta build_index() para crear índices")
         
         logger.success("✓ RAG-UCM Pipeline inicializado")
     
-    def _load_indices(self):
-        """Intenta cargar índices existentes"""
-        try:
-            t_start = time.time()
-            logger.info("Intentando cargar índices existentes...")
-            
-            # Inicializar indexador
-            t0 = time.time()
-            self.indexer = DocumentIndexer(
-                embedding_model=self.config['embedding_model'],
-                faiss_index_path=self.config['faiss_index_path'],
-                bm25_index_path=self.config['bm25_index_path']
-            )
-            
-            # Cargar índices
-            self.indexer.load_indices()
-            t_indexer = time.time() - t0
+    def _load_indices(self) -> None:
+        """Carga índices existentes y modelos"""
+        with TimingContext("Carga completa de sistema"):
+            # Inicializar y cargar indexador
+            with TimingContext("Indexador"):
+                self.indexer = DocumentIndexer(
+                    embedding_model=self.config.models.embedding_model,
+                    faiss_index_path=self.config.paths.faiss_index_path,
+                    bm25_index_path=self.config.paths.bm25_index_path
+                )
+                self.indexer.load_indices()
             
             # Inicializar retriever
-            t0 = time.time()
-            self.retriever = HybridRetriever(
-                indexer=self.indexer,
-                reranker_model=self.config['reranker_model'],
-                reranker_type=self.config['reranker_type'],
-                alpha=self.config['hybrid_alpha']
-            )
-            t_retriever = time.time() - t0
-            
-            # Inicializar generador
-            t0 = time.time()
-            self.generator = ResponseGenerator(
-                model_name=self.config['llm_model'],
-                max_new_tokens=self.config['max_new_tokens'],
-                temperature=self.config['temperature']
-            )
-            t_generator = time.time() - t0
-            
-            # Inicializar verificador
-            if self.config['enable_verification']:
-                self.verifier = FidelityVerifier(
-                    threshold=self.config['verification_threshold']
+            with TimingContext("Retriever"):
+                self.retriever = HybridRetriever(
+                    indexer=self.indexer,
+                    reranker_model=self.config.models.reranker_model,
+                    reranker_type=self.config.models.reranker_type,
+                    alpha=self.config.retrieval.hybrid_alpha
                 )
             
-            t_total = time.time() - t_start
-            logger.info(f"⏱️  Carga: Indexer {t_indexer:.2f}s | Retriever {t_retriever:.2f}s | Generator {t_generator:.2f}s | Total {t_total:.2f}s")
-            logger.success("✓ Índices y modelos cargados correctamente")
+            # Inicializar generador
+            with TimingContext("Generador"):
+                self.generator = ResponseGenerator(
+                    model_name=self.config.models.llm_model,
+                    max_new_tokens=self.config.generation.max_new_tokens,
+                    temperature=self.config.generation.temperature
+                )
             
-        except Exception as e:
-            logger.warning(f"No se pudieron cargar índices existentes: {e}")
-            logger.info("Necesitarás ejecutar build_index() primero")
+            # Inicializar verificador si está habilitado
+            if self.config.verification.enable_verification:
+                with TimingContext("Verificador"):
+                    self.verifier = FidelityVerifier(
+                        threshold=self.config.verification.verification_threshold
+                    )
+            
+            logger.success("✓ Todos los componentes cargados")
     
-    def build_index(self, documents_path: Optional[Path] = None):
+    def build_index(self, documents_path: Optional[Path] = None) -> None:
         """
         Construye los índices desde cero
         
         Args:
             documents_path: Ruta a la carpeta con documentos (PDFs/HTML)
+        
+        Raises:
+            RuntimeError: Si hay errores procesando documentos
         """
         if documents_path is None:
-            documents_path = self.config['data_raw_path']
+            documents_path = self.config.paths.data_raw_path
         
         logger.info(f"Construyendo índices desde: {documents_path}")
         
-        # Inicializar preprocessor
-        self.preprocessor = DocumentPreprocessor(
-            chunk_size=self.config['chunk_size'],
-            chunk_overlap=self.config['chunk_overlap']
-        )
-        
-        # Procesar todos los documentos
-        all_chunks = []
-        
-        for doc_file in documents_path.glob('**/*.pdf'):
-            try:
-                logger.info(f"Procesando: {doc_file.name}")
-                
-                # Aquí deberías añadir metadatos específicos por documento
-                # Por ejemplo, extrayéndolos del nombre del archivo o de un CSV
-                metadata = {
-                    'title': doc_file.stem,
-                    # 'faculty': '...',
-                    # 'year': '...',
-                    # 'url': '...'
-                }
-                
-                chunks = self.preprocessor.process_document(doc_file, metadata)
-                all_chunks.extend(chunks)
-                
-            except Exception as e:
-                logger.error(f"Error procesando {doc_file.name}: {e}")
-        
-        logger.info(f"Total de chunks procesados: {len(all_chunks)}")
-        
-        # Inicializar e indexar
-        self.indexer = DocumentIndexer(
-            embedding_model=self.config['embedding_model'],
-            faiss_index_path=self.config['faiss_index_path'],
-            bm25_index_path=self.config['bm25_index_path']
-        )
-        
-        self.indexer.index_chunks(all_chunks)
-        self.indexer.save_indices()
-        
-        # Inicializar retriever
-        self.retriever = HybridRetriever(
-            indexer=self.indexer,
-            reranker_model=self.config['reranker_model'],
-            reranker_type=self.config['reranker_type'],
-            alpha=self.config['hybrid_alpha']
-        )
-        
-        # Inicializar generador
-        self.generator = ResponseGenerator(
-            model_name=self.config['llm_model'],
-            max_new_tokens=self.config['max_new_tokens'],
-            temperature=self.config['temperature']
-        )
-        
-        # Inicializar verificador
-        if self.config['enable_verification']:
-            self.verifier = FidelityVerifier(
-                threshold=self.config['verification_threshold']
+        with TimingContext("Construcción completa de índices"):
+            # Inicializar preprocessor
+            self.preprocessor = DocumentPreprocessor(
+                chunk_size=self.config.chunking.chunk_size,
+                chunk_overlap=self.config.chunking.chunk_overlap
             )
+            
+            # Procesar todos los documentos
+            all_chunks = []
+            pdf_files = list(documents_path.glob('**/*.pdf'))
+            
+            if not pdf_files:
+                logger.warning(f"No se encontraron archivos PDF en {documents_path}")
+                return
+            
+            logger.info(f"Encontrados {len(pdf_files)} documentos PDF")
+            
+            for doc_file in pdf_files:
+                try:
+                    logger.info(f"Procesando: {doc_file.name}")
+                    
+                    # Metadatos básicos (en producción, cargar de metadata.json)
+                    metadata = {
+                        'title': doc_file.stem,
+                        'filename': doc_file.name,
+                    }
+                    
+                    chunks = self.preprocessor.process_document(doc_file, metadata)
+                    all_chunks.extend(chunks)
+                    
+                except Exception as e:
+                    logger.error(f"Error procesando {doc_file.name}: {e}")
+                    continue
+            
+            if not all_chunks:
+                raise RuntimeError("No se generaron chunks para indexar")
+            
+            logger.info(f"Total de chunks procesados: {len(all_chunks)}")
+            
+            # Inicializar e indexar
+            with TimingContext("Indexación"):
+                self.indexer = DocumentIndexer(
+                    embedding_model=self.config.models.embedding_model,
+                    faiss_index_path=self.config.paths.faiss_index_path,
+                    bm25_index_path=self.config.paths.bm25_index_path
+                )
+                
+                self.indexer.index_chunks(all_chunks)
+                self.indexer.save_indices()
+            
+            # Inicializar retriever
+            self.retriever = HybridRetriever(
+                indexer=self.indexer,
+                reranker_model=self.config.models.reranker_model,
+                reranker_type=self.config.models.reranker_type,
+                alpha=self.config.retrieval.hybrid_alpha
+            )
+            
+            # Inicializar generador
+            self.generator = ResponseGenerator(
+                model_name=self.config.models.llm_model,
+                max_new_tokens=self.config.generation.max_new_tokens,
+                temperature=self.config.generation.temperature
+            )
+            
+            # Inicializar verificador
+            if self.config.verification.enable_verification:
+                self.verifier = FidelityVerifier(
+                    threshold=self.config.verification.verification_threshold
+                )
         
         logger.success("✓ Índices construidos y guardados correctamente")
     
@@ -224,7 +202,15 @@ class RAGPipeline:
         
         Returns:
             Dict con respuesta, fuentes, verificación, y metadata
+        
+        Raises:
+            ValueError: Si la pregunta está vacía
+            RuntimeError: Si el pipeline no está inicializado
         """
+        # Validación de entrada
+        if not question or not question.strip():
+            raise ValueError("La pregunta no puede estar vacía")
+        
         if self.retriever is None or self.generator is None:
             raise RuntimeError(
                 "El pipeline no está inicializado. "
@@ -235,72 +221,71 @@ class RAGPipeline:
         
         # Parámetros
         if top_k is None:
-            top_k = self.config['top_k_rerank']
+            top_k = self.config.retrieval.top_k_rerank
         if include_verification is None:
-            include_verification = self.config['enable_verification']
+            include_verification = self.config.verification.enable_verification
+        
+        timing = {}
         
         # 1. Recuperación
-        t0 = time.time()
-        contexts = self.retriever.retrieve(
-            query=question,
-            top_k_retrieval=self.config['top_k_retrieval'],
-            top_k_final=top_k
-        )
-        retrieval_time = time.time() - t0
-        logger.info(f"⏱️  Recuperación: {retrieval_time:.2f}s")
+        with TimingContext("Recuperación", log=False) as timer:
+            contexts = self.retriever.retrieve(
+                query=question,
+                top_k_retrieval=self.config.retrieval.top_k_retrieval,
+                top_k_final=top_k
+            )
+        timing['retrieval'] = timer.elapsed
+        logger.info(f"⏱️  Recuperación: {timer.elapsed:.2f}s")
         
         # 2. Generación
-        t0 = time.time()
-        response = self.generator.generate(question, contexts)
-        generation_time = time.time() - t0
-        logger.info(f"⏱️  Generación: {generation_time:.2f}s")
+        with TimingContext("Generación", log=False) as timer:
+            response = self.generator.generate(question, contexts)
+        timing['generation'] = timer.elapsed
+        logger.info(f"⏱️  Generación: {timer.elapsed:.2f}s")
         
         # 3. Verificación (opcional)
-        verification_time = 0
+        timing['verification'] = 0
         if include_verification and self.verifier and contexts:
-            t0 = time.time()
-            verification = self.verifier.verify(
-                answer=response['answer'],
-                contexts=contexts
-            )
+            with TimingContext("Verificación", log=False) as timer:
+                verification = self.verifier.verify(
+                    answer=response['answer'],
+                    contexts=contexts
+                )
+                
+                # Añadir verificación de citas
+                citation_check = self.verifier.add_citation_check(
+                    answer=response['answer'],
+                    num_sources=len(contexts)
+                )
+                
+                verification['citation_check'] = citation_check
+                response['verification'] = verification
+                
+                # Añadir advertencia si es necesario
+                if verification.get('warning'):
+                    response['warning'] = verification['warning']
             
-            # Añadir verificación de citas
-            citation_check = self.verifier.add_citation_check(
-                answer=response['answer'],
-                num_sources=len(contexts)
-            )
-            
-            verification['citation_check'] = citation_check
-            response['verification'] = verification
-            
-            # Añadir advertencia si es necesario
-            if verification.get('warning'):
-                response['warning'] = verification['warning']
-            
-            verification_time = time.time() - t0
-            logger.info(f"⏱️  Verificación: {verification_time:.2f}s")
+            timing['verification'] = timer.elapsed
+            logger.info(f"⏱️  Verificación: {timer.elapsed:.2f}s")
         
         # Tiempo total
-        total_time = retrieval_time + generation_time + verification_time
-        logger.info(f"⏱️  TOTAL: {total_time:.2f}s")
+        timing['total'] = sum(timing.values())
+        response['timing'] = timing
         
-        # Añadir tiempos a la respuesta
-        response['timing'] = {
-            'retrieval': retrieval_time,
-            'generation': generation_time,
-            'verification': verification_time,
-            'total': total_time
-        }
-        
-        logger.success("✓ Respuesta generada y verificada")
+        logger.success(f"✓ Respuesta generada - Tiempo total: {timing['total']:.2f}s")
         
         return response
     
     def get_stats(self) -> Dict:
         """Obtiene estadísticas del sistema"""
         stats = {
-            'config': self.config,
-            'status': {}
+            'config': self.config.to_dict(),
+            'status': {
+                'indexer': self.indexer is not None,
+                'retriever': self.retriever is not None,
+                'generator': self.generator is not None,
+                'verifier': self.verifier is not None,
+            }
         }
         
         if self.indexer:
@@ -309,22 +294,36 @@ class RAGPipeline:
             stats['index'] = {'status': 'No inicializado'}
         
         return stats
+    
+    def cleanup(self) -> None:
+        """Libera recursos y memoria"""
+        logger.info("Liberando recursos del pipeline...")
+        
+        with torch_memory_cleanup():
+            self.generator = None
+            self.retriever = None
+            self.verifier = None
+            self.indexer = None
+            self.preprocessor = None
+        
+        logger.success("✓ Recursos liberados")
+    
+    def __enter__(self):
+        """Context manager support"""
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """Limpieza automática al salir del contexto"""
+        self.cleanup()
 
 
 if __name__ == "__main__":
-    # Ejemplo de uso
-    
-    # Inicializar pipeline (carga índices existentes si están disponibles)
-    rag = RAGPipeline()
-    
-    # Si no hay índices, construirlos:
-    # rag.build_index(Path("data/raw"))
-    
-    # Hacer una pregunta
-    # result = rag.query("¿Cuál es el plazo para presentar el TFM?")
-    # print(result['answer'])
-    # print("\nFuentes:")
-    # for source in result['sources']:
-    #     print(f"[{source['id']}] {source['title']}")
+    # Ejemplo de uso con context manager
+    with RAGPipeline() as rag:
+        # Hacer consultas
+        # result = rag.query("¿Cuál es el plazo para presentar el TFM?")
+        # print(result['answer'])
+        pass
+    # Recursos liberados automáticamente
     
     print("✓ Pipeline RAG-UCM listo para usar")
