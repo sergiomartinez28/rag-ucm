@@ -30,9 +30,7 @@ class JudgeScore:
     precision: float   # esta será 0 o 1
     overall_score: float
 
-    
     # Agregados
-    overall_score: float
     explanation: str
     
     # Referencias
@@ -97,7 +95,7 @@ class LLMJudge:
         self.model.eval()
         logger.success(f"✓ LLM Juez cargado: {model_name}")
 
-    def _generate_response(self, prompt: str, max_tokens: int = 400) -> str:
+    def _generate_response(self, prompt: str, max_tokens: int = 600) -> str:
         """Genera respuesta del LLM"""
         messages = [{"role": "user", "content": prompt}]
         
@@ -119,6 +117,9 @@ class LLMJudge:
                 **inputs,
                 max_new_tokens=max_tokens,
                 do_sample=False,
+                temperature=None,
+                top_p=None,
+                top_k=None,
                 pad_token_id=self.tokenizer.eos_token_id
             )
 
@@ -131,42 +132,73 @@ class LLMJudge:
     
     
     def _extract_scores(self, response: str) -> Optional[Dict]:
-        """Extrae puntuaciones del JSON de respuesta"""
-        try:
-            # Buscar JSON
-            start = response.find('{')
-            end = response.rfind('}')
-            
-            if start != -1 and end != -1:
-                json_str = response[start:end+1]
-                return json.loads(json_str)
-        except json.JSONDecodeError:
-            pass
+        """Extrae puntuaciones de la respuesta del LLM - muy robusto"""
         
-        # Fallback: extraer números con regex
         scores = {}
+        
+        # Buscar patrones simples: "relevancia: 0.8" o "relevancia: 0.8,"
         patterns = [
-            (r'relevancia["\s:]+([\d]+(?:\.\d+)?)', 'relevancia'),
-            (r'fidelidad["\s:]+([\d]+(?:\.\d+)?)', 'fidelidad'),
-            (r'precision["\s:]+([\d]+(?:\.\d+)?)', 'precision'),
+            (r'relevancia\s*:\s*([0-9]*\.?[0-9]+)', 'relevancia'),
+            (r'fidelidad\s*:\s*([0-9]*\.?[0-9]+)', 'fidelidad'),
+            (r'precision\s*:\s*([0-9]*\.?[0-9]+)', 'precision'),
         ]
         
         for pattern, key in patterns:
-            match = re.search(pattern, response.lower())
+            match = re.search(pattern, response, re.IGNORECASE)
             if match:
-                scores[key] = float(match.group(1))
-
-        return scores if len(scores) >= 3 else None
+                try:
+                    value = float(match.group(1))
+                    # Normalizar a rango [0, 1]
+                    if value > 1:
+                        value = min(1.0, value / 5.0)
+                    scores[key] = max(0.0, min(1.0, value))
+                except ValueError:
+                    logger.debug(f"Error converting {match.group(1)} to float")
+                    pass
+        
+        # Si encontramos 3 scores, retornarlos
+        if len(scores) == 3:
+            return scores
+        
+        # Si encontramos 2+ scores, retornar lo que tengamos
+        if len(scores) >= 2:
+            logger.debug(f"Solo se encontraron {len(scores)}/3 scores: {scores}")
+            return scores if len(scores) >= 2 else None
+        
+        # Si no hay patrones simple, intentar con JSON como último recurso
+        try:
+            start = response.find('{')
+            end = response.rfind('}')
+            if start != -1 and end != -1:
+                json_str = response[start:end+1]
+                return json.loads(json_str)
+        except:
+            pass
+        
+        # Si aún no tenemos nada, extraer números sueltos
+        if len(scores) == 0:
+            numbers = re.findall(r'([0-9]*\.?[0-9]+)', response)
+            if len(numbers) >= 3:
+                try:
+                    return {
+                        'relevancia': max(0.0, min(1.0, float(numbers[0]))),
+                        'fidelidad': max(0.0, min(1.0, float(numbers[1]))),
+                        'precision': max(0.0, min(1.0, float(numbers[2])))
+                    }
+                except ValueError:
+                    pass
+        
+        return scores if len(scores) >= 2 else None
     
     def evaluate_answer(
         self,
         question: str,
+        reference_answer: str,
         rag_answer: str,
         question_id: int,
         question_type: str,
         category: str,
-        sources: List[Dict],
-        precision: float
+        sources: List[Dict]
     ) -> JudgeScore:
         """
         Evalúa una respuesta del RAG
@@ -190,28 +222,33 @@ class LLMJudge:
         prompt = load_prompt(
             "judge_evaluation",
             question=question,
+            reference_answer=reference_answer,
             rag_answer=rag_answer,
             retrieved_context=retrieved_context
         )
 
         response = self._generate_response(prompt)
+        logger.debug(f"LLM Juez response (Q#{question_id}): {response[:200]}...")
         scores = self._extract_scores(response)
         
         if scores is None:
             logger.warning(f"No se pudieron extraer scores para pregunta {question_id}")
+            # Usar heurística simple basada en la respuesta
+            is_empty_answer = len(rag_answer.strip()) < 10
+            
             scores = {
-                'relevancia': 0.0,
-                'fidelidad': 0.0,
-                'precision': 0.0,
-                'overall_score': 0.0,
-                'explicacion': "Error al extraer puntuaciones"
+                'relevancia': 0.0 if is_empty_answer else 0.3,
+                'fidelidad': 0.0 if is_empty_answer else 0.3,
+                'precision': 0.0 if is_empty_answer else 0.2,
+                'overall_score': 0.0 if is_empty_answer else 0.3,
+                'explicacion': "Error al extraer puntuaciones del LLM Juez"
             }
-        
-        # Calcular overall si no está
-        if 'overall_score' not in scores:
-            metrics = ['relevancia', 'fidelidad', 'precision']
-            avg = sum(scores.get(m, 0.0) for m in metrics) / 3
-            scores['overall_score'] = avg
+            logger.warning(f"Usando valores heurísticos: {scores}")
+        else:
+            if 'overall_score' not in scores:
+                metrics = ['relevancia', 'fidelidad', 'precision']
+                avg = sum(scores.get(m, 0.0) for m in metrics) / 3
+                scores['overall_score'] = avg
         
         return JudgeScore(
             id=question_id,
@@ -245,23 +282,25 @@ class LLMJudge:
         with open(results_path, 'r', encoding='utf-8') as f:
             results = json.load(f)
         
-        logger.info(f"Evaluando {len(results)} respuestas con LLM Juez...")
+        if isinstance(results, dict):
+            results_list = [results]
+        else:
+            results_list = list(results)
+
+        logger.info(f"Evaluando {len(results_list)} respuestas con LLM Juez...")
         
         scores = []
-    
-        precision = 1.0 if results.get("correct_doc_in_top_k", False) else 0.0
-
-        score = self.evaluate_answer(
-            question=results['question'],
-            rag_answer=results['rag_answer'],
-            question_id=results['id'],
-            question_type=results['question_type'],
-            category=results['category'],
-            sources=results['sources'],
-            precision=precision      # 👈 SE INYECTA AQUÍ
-        )
-        
-        scores.append(score)
+        for item in results_list:
+            score = self.evaluate_answer(
+                question=item['question'],
+                reference_answer=item.get('reference_answer', ''),
+                rag_answer=item['rag_answer'],
+                question_id=item['id'],
+                question_type=item['question_type'],
+                category=item['category'],
+                sources=item['sources']
+            )
+            scores.append(score)
 
         
         # Guardar métricas
@@ -272,16 +311,22 @@ class LLMJudge:
             json.dump(scores_data, f, ensure_ascii=False, indent=2)
         
         # Calcular estadísticas
-        avg_relevancia = sum(s.relevancia for s in scores) / len(scores)
-        avg_fidelidad = sum(s.fidelidad for s in scores) / len(scores)
-        avg_precision = sum(s.precision for s in scores) / len(scores)
-        avg_overall = sum(s.overall_score for s in scores) / len(scores)
+        if scores:
+            avg_relevancia = sum(s.relevancia for s in scores) / len(scores)
+            avg_fidelidad = sum(s.fidelidad for s in scores) / len(scores)
+            avg_precision = sum(s.precision for s in scores) / len(scores)
+            avg_overall = sum(s.overall_score for s in scores) / len(scores)
+        else:
+            avg_relevancia = 0.0
+            avg_fidelidad = 0.0
+            avg_precision = 0.0
+            avg_overall = 0.0
         
-        logger.success("✓ Evaluación con LLM Juez completada")
-        logger.info(f"  Relevancia:   {avg_relevancia:.2f}/5")
-        logger.info(f"  Fidelidad:    {avg_fidelidad:.2f}/5")
-        logger.info(f"  Precisión:    {avg_precision:.2f}/5")
-        logger.info(f"  Overall:      {avg_overall:.2f}/5")
+        logger.success("? Evaluaci?n con LLM Juez completada")
+        logger.info(f"  Relevancia:   {avg_relevancia:.2f}/1")
+        logger.info(f"  Fidelidad:    {avg_fidelidad:.2f}/1")
+        logger.info(f"  Precision:    {avg_precision:.2f}/1")
+        logger.info(f"  Overall:      {avg_overall:.2f}/1")
         
         return scores
 

@@ -1,0 +1,387 @@
+[
+  {
+    "id": 0,
+    "question": "Según el artículo 101, ¿cuáles son las competencias de la Junta de Personal Docente e Investigador?",
+    "reference_answer": "Promover, como órganos colegiados, acciones administrativas o judiciales en el ámbito de sus funciones, conforme a lo establecido en la normativa vigente; participar, en el marco de la normativa vigente, en los procedimientos selectivos y de provisión de puestos, la promoción y la elaboración de plantillas; participar y promover la elaboración de la normativa de desarrollo de estos Estatutos que afecte al personal de los cuerpos de funcionarios docentes universitarios; todas aquellas que tengan reconocidas por la legislación vigente y las que, de acuerdo con dicha legislación, se establezcan reglamentariamente.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-estudios-estadisticos",
+        "text_preview": "sus miembros 3.- La Comisión ejercerá las funciones delegadas siguientes: a) Aprobar, a propuesta de los departamentos, la renovación de plazas de profesorado asociado y la solicitud de nueva plaza en...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-estudios-estadisticos_chunk_4"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-enfermeria",
+        "text_preview": "Junta de Facultad ejercerá las funciones que tiene atribuidas por los Estatutos de la UCM y por el Reglamento de Centros y Estructuras, y podrá actuar en pleno y mediante las siguientes comisiones del...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-enfermeria_chunk_4"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-filologia",
+        "text_preview": "elegidos/as por ella, y su composición necesariamente garantizará el equilibrio, en cuanto a la representación en la misma, de los diversos sectores de la comunidad universitaria que la componen. 2. L...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-filologia_chunk_5"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-bellas-artes",
+        "text_preview": "e Investigador. s) Proponer, mediante la oportuna justificación, las modificaciones de la Relación de Puestos de Trabajo del Personal Docente e Investigador y del Personal de Administración y Servicio...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-bellas-artes_chunk_4"
+        }
+      },
+      {
+        "id": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "del porcentaje de la letra b) hasta alcanzar, entre miembros natos y miembros electos, el 51 por 100 de los Profesores con vinculación permanente. Artículo 53 .- Funcionamiento 1. Las Juntas actuarán ...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_21"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "chunk_id": 681,
+    "retrieval_time": 4.907541990280151,
+    "generation_time": 7.7418060302734375,
+    "total_time": 12.649348020553589,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 5
+  },
+  {
+    "id": 1,
+    "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
+    "reference_answer": "a través de las modalidades de contratación laboral específicas del ámbito universitario que se regulan en la LOU, o mediante las modalidades previstas en el Estatuto de los Trabajadores para la sustitución de trabajadores con derecho a reserva de puesto de trabajo; también podrá contratar personal investigador, técnico u otro personal, a través del contrato de trabajo por obra o servicio determinado para el desarrollo de proyectos de investigación científica o técnica.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "Ayudante Doctor. c) Profesor/a Contratado Doctor. d) Profesor/a Asociado. e) Profesor/a Visitante. Asimismo, cuando sea perceptora de fondos cuyo destino incluya la contratación de personal investigad...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_47"
+        }
+      },
+      {
+        "id": 2,
+        "title": "estatutos-ucm",
+        "text_preview": "automáticamente elegido el candidato propuesto por los firmantes de la moción por el período que reste del mandato. 4. Silamociónnofueseaprobada,ningunodesussignatariospodráparticiparenla presentación...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm_chunk_9"
+        }
+      },
+      {
+        "id": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "de clases pasivas de los funcionarios docentes. En estos supuestos, la efectividad de la jubilación estará referida, en cada caso, a la finalización del curso académico correspondiente. 3. La UCM otor...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_46"
+        }
+      },
+      {
+        "id": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "por un representante de cada Departamento y Sección Departamental, que será elegido entre los Doctores del mismo por el Consejo del Departamento. Su Presidente/a será nombrado por el Decano/a o Direct...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_72"
+        }
+      },
+      {
+        "id": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "presentación de la moción de censura obligará a convocar al órgano colegiado en el plazo de quince días. 3. Se considerará aprobada la moción si resulta apoyada por la mayoría absoluta de los componen...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_34"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "chunk_id": 681,
+    "retrieval_time": 3.185075283050537,
+    "generation_time": 7.171339273452759,
+    "total_time": 10.357415914535522,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 2,
+    "question": "Según el artículo 22 del reglamento, ¿cuál es el plazo de inicio de la preinscripción para los estudios de formación permanente?",
+    "reference_answer": "7 de julio de 2022",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "que hubieran superado 180 créditos de una misma titulación oficial en España. No tendrán derecho a la expedición del correspondiente título hasta que no se justifique la obtención de la titulación ofi...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_12"
+        }
+      },
+      {
+        "id": 2,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "cursos de formación permanente. 3. Aprobar las propuestas de modificación o supresión de los cursos. 4. Aprobar las propuestas de cursos de formación para el personal de la UCM, así como otras accione...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_4"
+        }
+      },
+      {
+        "id": 3,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "como en su equivalencia en horas. Con carácter general, la duración de las prácticas no podrá superar el 50% de los créditos ECTS, a excepción a) Las prácticas clínicas, a las que se les aplicará la p...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_7"
+        }
+      },
+      {
+        "id": 4,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "entre 0 y 10 otorgada por la dirección del curso, de acuerdo con el rendimiento del estudiante. Los que no alcancen la calificación de 5 podrán obtener un certificado de asistencia, siempre que hubier...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_13"
+        }
+      },
+      {
+        "id": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "calificaciones obtenidas. En caso de disconformidad con el resultado de la revisión, se podrá impugnar la calificación en el plazo de diez días ante el Comité de Dirección del Centro de Formación Perm...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_11"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "normatica-estudios-formacion-permanente",
+    "chunk_id": 114,
+    "retrieval_time": 2.8340108394622803,
+    "generation_time": 6.73129415512085,
+    "total_time": 9.567307233810425,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 3,
+    "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
+    "reference_answer": "Algunas de las cantidades prefijadas por la Comisión de Formación Permanente",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "abonados por los créditos y asignaturas matriculados y por el seguro escolar. No se devolverán los importes correspondientes a servicios de secretaría. Las matrículas así anuladas no se tendrán en cue...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_1"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-becas",
+        "text_preview": "cumplir con las obligaciones establecidas en el presente reglamento, y en las bases de la convocatoria correspondiente. Los posibles casos de incumplimiento serán comunicados al vicerrectorado compete...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-becas_chunk_7"
+        }
+      },
+      {
+        "id": 3,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "de género Se podrá reservar hasta una plaza a los estudiantes que aporten la correspondiente resolución administrativa por la que se les reconoce tal condición, de conformidad con el art. 7.1 de la Le...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_16"
+        }
+      },
+      {
+        "id": 4,
+        "title": "cambios-universidad",
+        "text_preview": "estudios por el procedimiento establecido en esta normativa podrán participar también en el proceso general de admisión. Artículo 2.- CONVOCATORIA 1.- La Vicerrectora de Estudiantes, por delegación de...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "cambios-universidad_chunk_1"
+        }
+      },
+      {
+        "id": 5,
+        "title": "cambios-universidad",
+        "text_preview": "AÑO VII 7 de julio de 2010 BOUC nº 8\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE GOBIERNO DE LA\nUNIVERSIDAD COMPLUTENSE\nI.2. CONSEJO DE GOBIERNO\nI.2.4. Vicerrectorado de Estudiantes\nAcuerdo del Cons...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "cambios-universidad_chunk_0"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "normatica-estudios-formacion-permanente",
+    "chunk_id": 114,
+    "retrieval_time": 2.8215882778167725,
+    "generation_time": 6.85247540473938,
+    "total_time": 9.6750168800354,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 3
+  },
+  {
+    "id": 4,
+    "question": "Según el artículo 12, ¿cuántos años de periodo improrrogable y no renovable tiene el cargo de Decano/a?",
+    "reference_answer": "Seis años",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "reglamento-informatica",
+        "text_preview": "con la actividad de la biblioteca del centro, le atribuya expresamente la Junta de Facultad. La Comisión de Biblioteca estará compuesta por los siguientes miembros: a) El vicedecano con competencias e...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-informatica_chunk_9"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "Por sentencia judicial firme. e) Por fallecimiento. f) Por extinción del mandato. g) Por cambiar la dedicación de tiempo completo a tiempo parcial. h) Por resultar elegido o designado como titular de ...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-ciencias-informacion_chunk_21"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-optica-optometría",
+        "text_preview": "ostentar la condición de elegible. 2. El/la Decano/a ejercerá las siguientes funciones: a) Ejecutar los acuerdos de la Junta de Centro. b) Velar por el cumplimiento de la legislación. c) Llevar a cabo...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-optica-optometría_chunk_10"
+        }
+      },
+      {
+        "id": 4,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "ser funcionarios de los cuerpos docentes universitarios, personal docente e investigador no funcionario, o personal de administración y servicios, deberán tener también dedicación completa a la UCM Ar...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-ciencias-informacion_chunk_22"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "sus actividades. Estos asesores podrán asistir a las sesiones de la comisión con voz y sin voto. En todo caso, el presidente de las respectivas Comisiones, tanto de las delegadas como de las de trabaj...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-ciencias-informacion_chunk_20"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "reglamentos",
+    "source_doc": "reglamento-ciencias-fisicas",
+    "chunk_id": 25,
+    "retrieval_time": 2.7866599559783936,
+    "generation_time": 6.750045537948608,
+    "total_time": 9.536705493927002,
+    "correct_doc_in_top_k": false,
+    "correct_doc_rank": 0
+  }
+]

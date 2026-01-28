@@ -91,3 +91,5 @@ desktop.ini
 .env.*
 
 /data/raw/
+
+.venv/

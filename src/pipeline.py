@@ -52,6 +52,7 @@ class RAGPipeline:
         self.config = {
             'embedding_model': os.getenv('EMBEDDING_MODEL', 'BAAI/bge-m3'),
             'reranker_model': os.getenv('RERANKER_MODEL', 'BAAI/bge-reranker-base'),
+            'reranker_type': os.getenv('RERANKER_TYPE', 'cross-encoder'),
             'llm_model': os.getenv('LLM_MODEL', 'Qwen/Qwen2.5-3B-Instruct'),
             'chunk_size': int(os.getenv('CHUNK_SIZE', 1000)),  
             'chunk_overlap': int(os.getenv('CHUNK_OVERLAP', 200)), 
@@ -104,6 +105,7 @@ class RAGPipeline:
             self.retriever = HybridRetriever(
                 indexer=self.indexer,
                 reranker_model=self.config['reranker_model'],
+                reranker_type=self.config['reranker_type'],
                 alpha=self.config['hybrid_alpha']
             )
             t_retriever = time.time() - t0
@@ -187,6 +189,7 @@ class RAGPipeline:
         self.retriever = HybridRetriever(
             indexer=self.indexer,
             reranker_model=self.config['reranker_model'],
+            reranker_type=self.config['reranker_type'],
             alpha=self.config['hybrid_alpha']
         )
         

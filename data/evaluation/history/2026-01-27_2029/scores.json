@@ -1,0 +1,222 @@
+[
+  {
+    "id": 0,
+    "question": "Según el artículo 101, ¿cuáles son las competencias de la Junta de Personal Docente e Investigador?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde parcialmente a la pregunta formulada, ya que menciona acciones administrativas y participación en procedimientos selectivos, lo cual está relacionado con las competencias de la Junta de Personal Docente e Investigador. Sin embargo, no menciona específicamente la promoción y la elaboración de plantillas, ni la elaboración de normativa de desarrollo de Estatutos, que son puntos clave en la respuesta de referencia. La fidelidad es parcial porque la respuesta RAG menciona algunas funciones pero no todas, y la precisión es parcial porque no coincide completamente con los puntos clave de la respuesta de referencia.",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 1,
+    "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
+    "relevancia": 1,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.6666666666666666,
+    "explanation": "La respuesta RAG aborda la pregunta formulada y menciona la modalidad de contratación laboral específica de la UCM, aunque no se menciona explícitamente el artículo 20. La fidelidad es parcial ya que no se incluye información sobre las modalidades previstas en la LOU o en el Estatuto de los Trabajadores. La precisión es parcial porque la respuesta no coincierme con la referencia completa, que incluye más modalidades de contratación.",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 2,
+    "question": "Según el artículo 22 del reglamento, ¿cuál es el plazo de inicio de la preinscripción para los estudios de formación permanente?",
+    "relevancia": 1,
+    "fidelidad": 0.5,
+    "precision": 0,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde completamente a la pregunta formulada, lo que indica una relevancia perfecta. Sin embargo, la fidelidad es solo parcial, ya que la respuesta no incluye información explícita de los documentos recuperados. La precisión es cero, ya que la respuesta no coinciˈa con la respuesta de referencia proporcionada.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 3,
+    "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.0,
+    "overall_score": 0.3333333333333333,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 4,
+    "question": "Según el artículo 12, ¿cuántos años de periodo improrrogable y no renovable tiene el cargo de Decano/a?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "La respuesta RAG no proporciona información sobre el periodo improrrogable y no renovable del cargo de Decano/a, que es el tema de la pregunta. Ninguno de los documentos recuperados menciona este detalle, por lo que la respuesta no es relevante, no está respaldada por los documentos y no coincierme con la respuesta de referencia.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 5,
+    "question": "Según el artículo 12, ¿cuál es la función principal de llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a?",
+    "relevancia": 1.0,
+    "fidelidad": 1.0,
+    "precision": 1.0,
+    "overall_score": 1.0,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 6,
+    "question": "Según el Artículo 9 del reglamento-odontología, ¿cuántos representantes de los departamentos con sede en el centro deben integrar la Comisión de Actividades Prácticas y Clínicas?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.0,
+    "overall_score": 0.3333333333333333,
+    "explanation": "La respuesta RAG responde parcialmente a la pregunta formulada, pero no coincide con la respuesta de referencia. La respuesta RAG no está respaldada por los documentos recuperados, ya que no menciona la cantidad de representantes requerida.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 7,
+    "question": "Según el Artículo 10 del reglamento-odontología, ¿quién preside la Comisión de Reclamaciones Clínicas según el Artículo X?",
+    "relevancia": 0.5,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.16666666666666666,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 8,
+    "question": "Según el artículo X del reglamento, ¿cuál es el máximo de créditos para el TFG?",
+    "relevancia": 1.0,
+    "fidelidad": 0.5,
+    "precision": 0.0,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "trabajo_fin"
+  },
+  {
+    "id": 9,
+    "question": "Según el artículo 3.2 del reglamento, ¿quién puede elevar a la Junta o Juntas de Centro la normativa del TFG?",
+    "relevancia": 1.0,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.6666666666666666,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "trabajo_fin"
+  },
+  {
+    "id": 10,
+    "question": "Según el Artículo 18 del Tratado de Funcionamiento de la Unión Europea, ¿en qué artículos se prohíben específicamente formas de discriminación?",
+    "relevancia": 0.5,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.16666666666666666,
+    "explanation": "La respuesta RAG no aborda directamente el Artículo 18 del Tratado de Funcionamiento de la Unión Europea ni menciona los artículos específicos que prohíben formas de discriminación. No hay información recuperada que se relacione con la pregunta formulada.",
+    "question_type": "procedimental",
+    "category": "general"
+  },
+  {
+    "id": 11,
+    "question": "Según la Directiva 2000/43 del Consejo, ¿de qué fecha se establece la aplicación del principio de igualdad de trato independientemente del origen racial o étnico?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.0,
+    "overall_score": 0.3333333333333333,
+    "explanation": "La respuesta RAG no abordó la pregunta específica sobre la fecha de aplicación de la Directiva 2000/43, aunque los documentos recuperados están relacionados con temas de igualdad y derechos humanos. La respuesta fue parcialmente relevante y parcialmente fidedigna, pero no precisa.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 12,
+    "question": "Según el artículo 3, ¿cuál es el problema principal relacionado con el uso del No Presentado?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde parcialmente a la pregunta formulada, pero no está completamente respaldada por los documentos recuperados ni coincide con la respuesta de referencia. La respuesta RAG menciona la ausencia de información, lo que sugiere que no se ha encontrado una respuesta completa en los documentos proporcionados. Sin embargo, los documentos sí contienen información relevante sobre el problema principal, aunque no se menciona explícitamente en la respuesta RAG.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 13,
+    "question": "Según el artículo 4, ¿qué no es el No Presentado en el contexto de la evaluación académica según el Real Decreto 1125/2003?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde parcialmente a la pregunta formulada, pero no proporciona información específica sobre qué no es el No Presentado según el Real Decreto 1125/2003. La respuesta está parcialmente respaldada por los documentos recuperados, que mencionan el No Presentado en el contexto de la evaluación académica, pero no detallan su significado exacto.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 14,
+    "question": "Según el artículo 6.1.4, ¿cuál es el máximo de duración en meses de la beca de formación práctica básica?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0,
+    "overall_score": 0.3333333333333333,
+    "explanation": "La respuesta RAG no responde completamente a la pregunta formulada, ya que no proporciona información sobre el máximo de duración de la beca de formación práctica básica. Sin embargo, menciona la dedicación máxima de las becas, lo que indica que está parcialmente relacionada con la pregunta. No coincide con la respuesta de referencia, ya que no menciona el máximo de duración de 12 meses.",
+    "question_type": "factual",
+    "category": "becas"
+  },
+  {
+    "id": 15,
+    "question": "Según el artículo 6.1.5, ¿cuántas horas semanales mínimas de dedicación requiere la beca de formación práctica básica?",
+    "relevancia": 1,
+    "fidelidad": 0.5,
+    "precision": 0,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde completamente a la pregunta formulada, pero no coincide con la respuesta de referencia, ya que la respuesta de referencia indica un mínimo de 20 horas semanales, mientras que la respuesta RAG no proporciona información. La fidelidad es parcialmente baja porque la respuesta RAG no está respaldada por los documentos recuperados.",
+    "question_type": "factual",
+    "category": "becas"
+  },
+  {
+    "id": 16,
+    "question": "Según el artículo 3, ¿cuáles son los miembros de la Comisión de Calidad del Grado en Odontología?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG parcialmente responde a la pregunta formulada, pero no menciona los miembros específicos de la Comisión de Calidad para el Grado en Odontología. La respuesta es parcialmente correcta y parcialmente respaldada por los documentos recuperados.",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 17,
+    "question": "Según el artículo 3, ¿cuántos miembros mínimos hay en la Comisión de Calidad del Grado en Odontología?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0,
+    "overall_score": 0.3333333333333333,
+    "explanation": "La respuesta RAG menciona la existencia de comisiones relacionadas con la calidad y la deontología, pero no proporciona el número mínimo de miembros para la Comisión de Calidad del Grado en Odontología, que es lo que la pregunta solicita.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 18,
+    "question": "Según el Artículo 1 del reglamento, ¿cuáles son los tres principales objetivos de los estudios de formación permanente?",
+    "relevancia": 1,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.6666666666666666,
+    "explanation": "La respuesta RAG está completamente relevante y precisa en términos de los objetivos de los estudios de formación permanente. Sin embargo, la fidelidad es solo parcial, ya que la respuesta no menciona explícitamente la mejora de la cualificación profesional, aunque se refiere a la transferencia de conocimiento.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 19,
+    "question": "Según el Artículo 3 del reglamento, ¿cuál es el objetivo principal del Centro de Formación Permanente (CFP)?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "general"
+  }
+]

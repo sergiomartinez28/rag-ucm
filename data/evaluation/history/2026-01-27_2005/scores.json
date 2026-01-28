@@ -1,0 +1,57 @@
+[
+  {
+    "id": 0,
+    "question": "Según el artículo 101, ¿cuáles son las competencias de la Junta de Personal Docente e Investigador?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde parcialmente a la pregunta formulada, ya que menciona acciones administrativas y judiciales, así como la promoción y elaboración de plantillas, lo cual está relacionado con las competencias de la Junta de Personal Docente e Investigador. Sin embargo, no menciona específicamente la promoción y la elaboración de la normativa de desarrollo de los Estatutos, que son parte de las competencias. La fidelidad es parcial porque la respuesta incluye algunas funciones de la Junta, pero no todas, y la precisión es parcial porque la respuesta no coincide claramente con la respuesta de referencia.",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 1,
+    "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde parcialmente a la pregunta formulada, ya que menciona la contratación de personal investigador, técnico u otro personal, pero no menciona las modalidades de contratación laboral específativas del ámbito universitario que se regulan en la LOU. La fidelidad es parcial porque la respuesta incluye información que podría estar en los documentos recuperados, pero no se menciona explícitamente. La precisión es parcial porque la respuesta coincide con algunos puntos clave de la referencia, pero no abarca completamente el alcance de la pregunta.",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 2,
+    "question": "Según el artículo 22 del reglamento, ¿cuál es el plazo de inicio de la preinscripción para los estudios de formación permanente?",
+    "relevancia": 1,
+    "fidelidad": 0.5,
+    "precision": 0,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG responde completamente a la pregunta formulada, ya que el artículo 22 del reglamento menciona el plazo de inicio de la preinscripción para los estudios de formación permanente. Sin embargo, la respuesta no coincide con la respuesta de referencia, ya que no menciona el plazo específico, y no está respaldada por los documentos recuperados, ya que no se menciona el plazo en ninguno de los documentos proporcionados.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 3,
+    "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 4,
+    "question": "Según el artículo 12, ¿cuántos años de periodo improrrogable y no renovable tiene el cargo de Decano/a?",
+    "relevancia": 1.0,
+    "fidelidad": 0.5,
+    "precision": 0.0,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "reglamentos"
+  }
+]

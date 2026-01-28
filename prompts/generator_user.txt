@@ -1,7 +1,13 @@
-Documentos:
-
+DOCUMENTOS PROPORCIONADOS:
 {contexts}
 
-Pregunta: {query}
+---
 
-Responde SOLO con lo que dicen los documentos. Si no está la información, di "No dispongo de información sobre esto en los documentos consultados".
+PREGUNTA A RESPONDER:
+{query}
+
+---
+
+Basándote en los documentos anteriores, responde la pregunta de forma clara y completa. 
+Cita siempre los documentos [1], [2], [3], etc.
+Si no hay información, di "No dispongo de información disponible".

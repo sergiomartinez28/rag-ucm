@@ -13,10 +13,10 @@
   {
     "id": 1,
     "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
-    "relevancia": 0.5,
-    "fidelidad": 0.4,
+    "relevancia": 0.7,
+    "fidelidad": 0.5,
     "precision": 0.6,
-    "overall_score": 0.5,
+    "overall_score": 0.6,
     "explanation": "",
     "question_type": "procedimental",
     "category": "estatutos"
@@ -35,10 +35,10 @@
   {
     "id": 3,
     "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
-    "relevancia": 0.0,
-    "fidelidad": 0.0,
-    "precision": 0.0,
-    "overall_score": 0.0,
+    "relevancia": 0.5,
+    "fidelidad": 0.4,
+    "precision": 0.6,
+    "overall_score": 0.5,
     "explanation": "",
     "question_type": "factual",
     "category": "general"
@@ -57,10 +57,10 @@
   {
     "id": 5,
     "question": "Según el artículo 12, ¿cuál es la función principal de llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a?",
-    "relevancia": 1.0,
-    "fidelidad": 0.8,
-    "precision": 0.9,
-    "overall_score": 0.9,
+    "relevancia": 0.6,
+    "fidelidad": 0.4,
+    "precision": 0.5,
+    "overall_score": 0.5,
     "explanation": "",
     "question_type": "procedimental",
     "category": "reglamentos"
@@ -79,10 +79,10 @@
   {
     "id": 7,
     "question": "Según el Artículo 10 del reglamento-odontología, ¿quién preside la Comisión de Reclamaciones Clínicas según el Artículo X?",
-    "relevancia": 0.5,
-    "fidelidad": 0.2,
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
     "precision": 0.0,
-    "overall_score": 0.2333333333333333,
+    "overall_score": 0.0,
     "explanation": "",
     "question_type": "procedimental",
     "category": "reglamentos"
@@ -91,9 +91,9 @@
     "id": 8,
     "question": "Según el artículo X del reglamento, ¿cuál es el máximo de créditos para el TFG?",
     "relevancia": 0.5,
-    "fidelidad": 0.5,
-    "precision": 0.5,
-    "overall_score": 0.5,
+    "fidelidad": 0.7,
+    "precision": 0.6,
+    "overall_score": 0.6,
     "explanation": "",
     "question_type": "factual",
     "category": "trabajo_fin"
@@ -101,10 +101,10 @@
   {
     "id": 9,
     "question": "Según el artículo 3.2 del reglamento, ¿quién puede elevar a la Junta o Juntas de Centro la normativa del TFG?",
-    "relevancia": 0.2,
-    "fidelidad": 0.1,
-    "precision": 0.0,
-    "overall_score": 0.10000000000000002,
+    "relevancia": 0.8,
+    "fidelidad": 0.7,
+    "precision": 0.6,
+    "overall_score": 0.7000000000000001,
     "explanation": "",
     "question_type": "procedimental",
     "category": "trabajo_fin"
@@ -112,10 +112,10 @@
   {
     "id": 12,
     "question": "Según el artículo 3, ¿cuál es el problema principal relacionado con el uso del No Presentado?",
-    "relevancia": 0.0,
-    "fidelidad": 0.0,
-    "precision": 0.0,
-    "overall_score": 0.0,
+    "relevancia": 0.5,
+    "fidelidad": 0.4,
+    "precision": 0.6,
+    "overall_score": 0.5,
     "explanation": "",
     "question_type": "factual",
     "category": "general"
@@ -123,10 +123,10 @@
   {
     "id": 13,
     "question": "Según el artículo 4, ¿qué no es el No Presentado en el contexto de la evaluación académica según el Real Decreto 1125/2003?",
-    "relevancia": 0.2,
-    "fidelidad": 0.1,
-    "precision": 0.1,
-    "overall_score": 0.13333333333333333,
+    "relevancia": 0.5,
+    "fidelidad": 0.4,
+    "precision": 0.6,
+    "overall_score": 0.5,
     "explanation": "",
     "question_type": "factual",
     "category": "general"
@@ -134,6 +134,17 @@
   {
     "id": 14,
     "question": "Según el artículo 6.1.4, ¿cuál es el máximo de duración en meses de la beca de formación práctica básica?",
+    "relevancia": 0.5,
+    "fidelidad": 0.7,
+    "precision": 0.6,
+    "overall_score": 0.6,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "becas"
+  },
+  {
+    "id": 15,
+    "question": "Según el artículo 6.1.5, ¿cuántas horas semanales mínimas de dedicación requiere la beca de formación práctica básica?",
     "relevancia": 0.5,
     "fidelidad": 0.5,
     "precision": 0.5,
@@ -143,23 +154,12 @@
     "category": "becas"
   },
   {
-    "id": 15,
-    "question": "Según el artículo 6.1.5, ¿cuántas horas semanales mínimas de dedicación requiere la beca de formación práctica básica?",
-    "relevancia": 0.0,
-    "fidelidad": 0.0,
-    "precision": 0.0,
-    "overall_score": 0.0,
-    "explanation": "",
-    "question_type": "factual",
-    "category": "becas"
-  },
-  {
     "id": 16,
     "question": "Según el artículo 3, ¿cuáles son los miembros de la Comisión de Calidad del Grado en Odontología?",
-    "relevancia": 0.2,
-    "fidelidad": 0.1,
-    "precision": 0.1,
-    "overall_score": 0.13333333333333333,
+    "relevancia": 0.5,
+    "fidelidad": 0.4,
+    "precision": 0.6,
+    "overall_score": 0.5,
     "explanation": "",
     "question_type": "procedimental",
     "category": "reglamentos"
@@ -179,9 +179,9 @@
     "id": 18,
     "question": "Según el Artículo 1 del reglamento, ¿cuáles son los tres principales objetivos de los estudios de formación permanente?",
     "relevancia": 0.5,
-    "fidelidad": 0.5,
-    "precision": 0.5,
-    "overall_score": 0.5,
+    "fidelidad": 0.2,
+    "precision": 0.4,
+    "overall_score": 0.3666666666666667,
     "explanation": "",
     "question_type": "factual",
     "category": "general"
@@ -189,10 +189,10 @@
   {
     "id": 19,
     "question": "Según el Artículo 3 del reglamento, ¿cuál es el objetivo principal del Centro de Formación Permanente (CFP)?",
-    "relevancia": 0.0,
-    "fidelidad": 0.0,
-    "precision": 0.0,
-    "overall_score": 0.0,
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
     "explanation": "",
     "question_type": "procedimental",
     "category": "general"

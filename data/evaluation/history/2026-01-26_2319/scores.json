@@ -1,0 +1,222 @@
+[
+  {
+    "id": 0,
+    "question": "Según el artículo 101, ¿cuáles son las competencias de la Junta de Personal Docente e Investigador?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 1,
+    "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 2,
+    "question": "Según el artículo 22 del reglamento, ¿cuál es el plazo de inicio de la preinscripción para los estudios de formación permanente?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 3,
+    "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 4,
+    "question": "Según el artículo 12, ¿cuántos años de periodo improrrogable y no renovable tiene el cargo de Decano/a?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 5,
+    "question": "Según el artículo 12, ¿cuál es la función principal de llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 6,
+    "question": "Según el Artículo 9 del reglamento-odontología, ¿cuántos representantes de los departamentos con sede en el centro deben integrar la Comisión de Actividades Prácticas y Clínicas?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 7,
+    "question": "Según el Artículo 10 del reglamento-odontología, ¿quién preside la Comisión de Reclamaciones Clínicas según el Artículo X?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 8,
+    "question": "Según el artículo X del reglamento, ¿cuál es el máximo de créditos para el TFG?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "trabajo_fin"
+  },
+  {
+    "id": 9,
+    "question": "Según el artículo 3.2 del reglamento, ¿quién puede elevar a la Junta o Juntas de Centro la normativa del TFG?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "trabajo_fin"
+  },
+  {
+    "id": 10,
+    "question": "Según el Artículo 18 del Tratado de Funcionamiento de la Unión Europea, ¿en qué artículos se prohíben específicamente formas de discriminación?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "general"
+  },
+  {
+    "id": 11,
+    "question": "Según la Directiva 2000/43 del Consejo, ¿de qué fecha se establece la aplicación del principio de igualdad de trato independientemente del origen racial o étnico?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 12,
+    "question": "Según el artículo 3, ¿cuál es el problema principal relacionado con el uso del No Presentado?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 13,
+    "question": "Según el artículo 4, ¿qué no es el No Presentado en el contexto de la evaluación académica según el Real Decreto 1125/2003?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 14,
+    "question": "Según el artículo 6.1.4, ¿cuál es el máximo de duración en meses de la beca de formación práctica básica?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "becas"
+  },
+  {
+    "id": 15,
+    "question": "Según el artículo 6.1.5, ¿cuántas horas semanales mínimas de dedicación requiere la beca de formación práctica básica?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "becas"
+  },
+  {
+    "id": 16,
+    "question": "Según el artículo 3, ¿cuáles son los miembros de la Comisión de Calidad del Grado en Odontología?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 17,
+    "question": "Según el artículo 3, ¿cuántos miembros mínimos hay en la Comisión de Calidad del Grado en Odontología?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 18,
+    "question": "Según el Artículo 1 del reglamento, ¿cuáles son los tres principales objetivos de los estudios de formación permanente?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 19,
+    "question": "Según el Artículo 3 del reglamento, ¿cuál es el objetivo principal del Centro de Formación Permanente (CFP)?",
+    "relevancia": 0.9,
+    "fidelidad": 0.8,
+    "precision": 0.0,
+    "overall_score": 0.5666666666666668,
+    "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
+    "question_type": "procedimental",
+    "category": "general"
+  }
+]

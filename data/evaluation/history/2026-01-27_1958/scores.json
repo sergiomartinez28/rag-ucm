@@ -1,0 +1,222 @@
+[
+  {
+    "id": 0,
+    "question": "Según el artículo 101, ¿cuáles son las competencias de la Junta de Personal Docente e Investigador?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 1,
+    "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta proporcionada menciona algunas modalidades de contratación laboral, pero no cubre completamente las modalidades específicios del ámbito universitario mencionadas en la referencia. No se mencionan las modalidades de contratación laboral específicas del ámbito universitario que se regulan en la LOU, ni se hace referencia a las modalidades previstas en el Estatuto de los Trabajadores para la sustitución de trabajadores con derecho a reserva de puesto de trabajo.",
+    "question_type": "procedimental",
+    "category": "estatutos"
+  },
+  {
+    "id": 2,
+    "question": "Según el artículo 22 del reglamento, ¿cuál es el plazo de inicio de la preinscripción para los estudios de formación permanente?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "No hay información sobre el plazo de inicio de la preinscripción para los estudios de formación permanente en los documentos recuperados.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 3,
+    "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 4,
+    "question": "Según el artículo 12, ¿cuántos años de periodo improrrogable y no renovable tiene el cargo de Decano/a?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "No se encontraron documentos que contengan información sobre el periodo de mandato del cargo de Decano/a. Los documentos proporcionados no incluyen detalles sobre la duración del mandato o las condiciones bajo las cuales se puede cambiar o extender el mismo.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 5,
+    "question": "Según el artículo 12, ¿cuál es la función principal de llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a?",
+    "relevancia": 1,
+    "fidelidad": 1,
+    "precision": 1,
+    "overall_score": 1.0,
+    "explanation": "Las funciones de velar por el cumplimiento de la legislación y llevar a cabo los actos de la potestad sancionadora del Rector, así como promover la actividad disciplinaria del Rector, están bien reflejadas en los documentos recuperados. La respuesta RAG coincide con la respuesta de referencia y está apoyada por los documentos.",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 6,
+    "question": "Según el Artículo 9 del reglamento-odontología, ¿cuántos representantes de los departamentos con sede en el centro deben integrar la Comisión de Actividades Prácticas y Clínicas?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 7,
+    "question": "Según el Artículo 10 del reglamento-odontología, ¿quién preside la Comisión de Reclamaciones Clínicas según el Artículo X?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 8,
+    "question": "Según el artículo X del reglamento, ¿cuál es el máximo de créditos para el TFG?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "trabajo_fin"
+  },
+  {
+    "id": 9,
+    "question": "Según el artículo 3.2 del reglamento, ¿quién puede elevar a la Junta o Juntas de Centro la normativa del TFG?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "trabajo_fin"
+  },
+  {
+    "id": 10,
+    "question": "Según el Artículo 18 del Tratado de Funcionamiento de la Unión Europea, ¿en qué artículos se prohíben específicamente formas de discriminación?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "No hay coincidencia entre la pregunta y la información proporcionada en los documentos recuperados.",
+    "question_type": "procedimental",
+    "category": "general"
+  },
+  {
+    "id": 11,
+    "question": "Según la Directiva 2000/43 del Consejo, ¿de qué fecha se establece la aplicación del principio de igualdad de trato independientemente del origen racial o étnico?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "No se encontraron documentos que contengan información sobre la fecha de aplicación del principio de igualdad de trato según la Directiva 2000/43 del Consejo. Los documentos proporcionados no incluyen datos específicos sobre la fecha de entrada en vigor de dicha directiva.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 12,
+    "question": "Según el artículo 3, ¿cuál es el problema principal relacionado con el uso del No Presentado?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG no aborda directamente el problema principal del No Presentado como se describe en la pregunta. No se menciona la falta de reflexión ni la adaptación de la normativa. Sin embargo, se reconoce que hay documentos que discuten el No Presentado, aunque no se alinean completamente con la pregunta formulada.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 13,
+    "question": "Según el artículo 4, ¿qué no es el No Presentado en el contexto de la evaluación académica según el Real Decreto 1125/2003?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG no aborda directamente la pregunta sobre el No Presentado según el Real Decreto 1125/2003, pero reconoce la existencia de una norma o práctica universitaria relacionada. No se menciona el artículo 4 ni se hace referencia a la evaluación académica según el Real Decreto.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 14,
+    "question": "Según el artículo 6.1.4, ¿cuál es el máximo de duración en meses de la beca de formación práctica básica?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "No hay información sobre el máximo de duración de la beca de formación práctica básica en los documentos recuperados.",
+    "question_type": "factual",
+    "category": "becas"
+  },
+  {
+    "id": 15,
+    "question": "Según el artículo 6.1.5, ¿cuántas horas semanales mínimas de dedicación requiere la beca de formación práctica básica?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "No hay información en los documentos recuperados sobre la dedicación mínima de horas semanales para la beca de formación práctica básica según el artículo 6.1.5.",
+    "question_type": "factual",
+    "category": "becas"
+  },
+  {
+    "id": 16,
+    "question": "Según el artículo 3, ¿cuáles son los miembros de la Comisión de Calidad del Grado en Odontología?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "reglamentos"
+  },
+  {
+    "id": 17,
+    "question": "Según el artículo 3, ¿cuántos miembros mínimos hay en la Comisión de Calidad del Grado en Odontología?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "No se encontraron documentos que contengan información sobre el número mínimo de miembros en la Comisión de Calidad del Grado en Odontología.",
+    "question_type": "factual",
+    "category": "reglamentos"
+  },
+  {
+    "id": 18,
+    "question": "Según el Artículo 1 del reglamento, ¿cuáles son los tres principales objetivos de los estudios de formación permanente?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "La respuesta RAG no coincide completamente con la respuesta de referencia, ya que no se mencionan los tres objetivos principales en los documentos recuperados. Sin embargo, los documentos sí reflejan la importancia de la formación permanente y la transferencia de conocimiento, lo que podría estar relacionado con los objetivos mencionados en la respuesta de referencia.",
+    "question_type": "factual",
+    "category": "general"
+  },
+  {
+    "id": 19,
+    "question": "Según el Artículo 3 del reglamento, ¿cuál es el objetivo principal del Centro de Formación Permanente (CFP)?",
+    "relevancia": 0.5,
+    "fidelidad": 0.5,
+    "precision": 0.5,
+    "overall_score": 0.5,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "general"
+  }
+]

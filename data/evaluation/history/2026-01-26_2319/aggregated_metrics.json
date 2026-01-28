@@ -1,0 +1,80 @@
+{
+  "precision_at_k": 0.9,
+  "mrr": 0.7766666666666666,
+  "avg_relevancia": 0.9,
+  "avg_fidelidad": 0.8000000000000002,
+  "avg_precision": 0.0,
+  "avg_overall": 0.5666666666666667,
+  "avg_retrieval_time": 2.8714831471443176,
+  "avg_generation_time": 6.872079765796661,
+  "avg_total_time": 9.744254660606384,
+  "total_questions": 20,
+  "questions_with_correct_doc": 18,
+  "metrics_by_category": {
+    "estatutos": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.9,
+      "avg_fidelidad": 0.8,
+      "avg_precision": 0.0,
+      "avg_overall": 0.5666666666666668,
+      "avg_time": 10.594486474990845
+    },
+    "general": {
+      "count": 8,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.9000000000000001,
+      "avg_fidelidad": 0.7999999999999999,
+      "avg_precision": 0.0,
+      "avg_overall": 0.5666666666666668,
+      "avg_time": 9.252992630004883
+    },
+    "reglamentos": {
+      "count": 6,
+      "precision_at_k": 0.6666666666666666,
+      "avg_relevancia": 0.9,
+      "avg_fidelidad": 0.7999999999999999,
+      "avg_precision": 0.0,
+      "avg_overall": 0.5666666666666668,
+      "avg_time": 10.542368531227112
+    },
+    "trabajo_fin": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.9,
+      "avg_fidelidad": 0.8,
+      "avg_precision": 0.0,
+      "avg_overall": 0.5666666666666668,
+      "avg_time": 9.09974992275238
+    },
+    "becas": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.9,
+      "avg_fidelidad": 0.8,
+      "avg_precision": 0.0,
+      "avg_overall": 0.5666666666666668,
+      "avg_time": 9.109234094619751
+    }
+  },
+  "metrics_by_question_type": {
+    "procedimental": {
+      "count": 8,
+      "precision_at_k": 0.875,
+      "avg_relevancia": 0.9000000000000001,
+      "avg_fidelidad": 0.7999999999999999,
+      "avg_precision": 0.0,
+      "avg_overall": 0.5666666666666668,
+      "avg_time": 11.013835936784744
+    },
+    "factual": {
+      "count": 12,
+      "precision_at_k": 0.9166666666666666,
+      "avg_relevancia": 0.9000000000000002,
+      "avg_fidelidad": 0.7999999999999999,
+      "avg_precision": 0.0,
+      "avg_overall": 0.5666666666666667,
+      "avg_time": 8.897867143154144
+    }
+  }
+}

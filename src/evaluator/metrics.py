@@ -86,10 +86,11 @@ class MetricsCalculator:
         avg_total_time = sum(r['total_time'] for r in results) / n if n > 0 else 0
         
         # Métricas de generación (del LLM Juez) - 3 métricas simples
-        avg_relevancia = sum(s.get('relevancia', 3) for s in scores) / n if n > 0 else 0
-        avg_fidelidad = sum(s.get('fidelidad', 3) for s in scores) / n if n > 0 else 0
-        avg_precision = sum(s.get('precision', 3) for s in scores) / n if n > 0 else 0
-        avg_overall = sum(s['overall_score'] for s in scores) / n if n > 0 else 0
+        n_scores = len(scores)
+        avg_relevancia = sum(s.get('relevancia', 0.0) for s in scores) / n_scores if n_scores > 0 else 0.0
+        avg_fidelidad = sum(s.get('fidelidad', 0.0) for s in scores) / n_scores if n_scores > 0 else 0.0
+        avg_precision = sum(s.get('precision', 0.0) for s in scores) / n_scores if n_scores > 0 else 0.0
+        avg_overall = sum(s.get('overall_score', 0.0) for s in scores) / n_scores if n_scores > 0 else 0.0
         
         # Métricas por categoría
         metrics_by_category = self._calculate_by_group(results, scores_by_id, 'category')
@@ -173,12 +174,12 @@ class MetricsCalculator:
         print("\n┌" + "─"*68 + "┐")
         print("│                   MÉTRICAS DE GENERACIÓN                           │")
         print("├" + "─"*68 + "┤")
-        stars = lambda x: "⭐" * int(round(x))
-        print(f"│  Relevancia:        {metrics.avg_relevancia:.2f}/5  {stars(metrics.avg_relevancia)}".ljust(69) + "│")
-        print(f"│  Fidelidad:         {metrics.avg_fidelidad:.2f}/5  {stars(metrics.avg_fidelidad)}".ljust(69) + "│")
-        print(f"│  Precisión:         {metrics.avg_precision:.2f}/5  {stars(metrics.avg_precision)}".ljust(69) + "│")
+        stars = lambda x: "*" * int(round(x * 5))
+        print(f"│  Relevancia:        {metrics.avg_relevancia:.2f}/1  {stars(metrics.avg_relevancia)}".ljust(69) + "│")
+        print(f"│  Fidelidad:         {metrics.avg_fidelidad:.2f}/1  {stars(metrics.avg_fidelidad)}".ljust(69) + "│")
+        print(f"│  Precision:         {metrics.avg_precision:.2f}/1  {stars(metrics.avg_precision)}".ljust(69) + "│")
         print("├" + "─"*68 + "┤")
-        print(f"│  Overall Score:     {metrics.avg_overall:.2f}/5  {stars(metrics.avg_overall)}".ljust(69) + "│")
+        print(f"│  Overall Score:     {metrics.avg_overall:.2f}/1  {stars(metrics.avg_overall)}".ljust(69) + "│")
         print("└" + "─"*68 + "┘")
         
         print("\n┌" + "─"*68 + "┐")
@@ -192,12 +193,12 @@ class MetricsCalculator:
         if metrics.metrics_by_category:
             print("\n📈 RENDIMIENTO POR CATEGORÍA:")
             for cat, m in metrics.metrics_by_category.items():
-                print(f"  • {cat}: {m['avg_overall']:.2f}/5 (n={m['count']})")
+                print(f"  • {cat}: {m['avg_overall']:.2f}/1 (n={m['count']})")
         
         if metrics.metrics_by_question_type:
             print("\n📈 RENDIMIENTO POR TIPO DE PREGUNTA:")
             for qtype, m in metrics.metrics_by_question_type.items():
-                print(f"  • {qtype}: {m['avg_overall']:.2f}/5 (n={m['count']})")
+                print(f"  • {qtype}: {m['avg_overall']:.2f}/1 (n={m['count']})")
         
         print("\n" + "="*70)
 

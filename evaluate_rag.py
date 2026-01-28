@@ -86,7 +86,16 @@ def cmd_evaluate(args):
     import torch
     
     output_dir = Path(args.output_dir)
-    dataset_path = output_dir / "dataset.json"
+    
+    # Intentar cargar dataset limpio primero
+    if args.clean:
+        dataset_path = output_dir / "dataset_clean.json"
+        if not dataset_path.exists():
+            print(f"\n⚠️  No se encontró dataset limpio, usando el dataset regular")
+            dataset_path = output_dir / "dataset.json"
+    else:
+        dataset_path = output_dir / "dataset.json"
+    
     results_path = output_dir / "results.json"
     scores_path = output_dir / "scores.json"
     metrics_path = output_dir / "aggregated_metrics.json"
@@ -313,6 +322,11 @@ Ejemplos:
         type=int,
         default=None,
         help='Limitar evaluación a N preguntas (para pruebas rápidas)'
+    )
+    eval_parser.add_argument(
+        '--clean',
+        action='store_true',
+        help='Usar dataset limpio sin preguntas out-of-scope'
     )
     eval_parser.add_argument(
         '--output-dir',

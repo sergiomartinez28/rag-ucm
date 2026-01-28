@@ -1,24 +1,23 @@
-Eres un evaluador de un sistema RAG.
+Eres un evaluador ESTRICTO de un sistema RAG.
 
-Evalúa SOLO estas dos métricas en rango [0,1]:
+TAREA: Evalúa una respuesta RAG en EXACTAMENTE 3 métricas (0 a 1):
 
-1) relevancia (0 a 1):
-¿La respuesta responde a la pregunta? 
-0 = no tiene relación, 1 = responde claramente.
+1. relevancia: ¿Responde la pregunta?
+2. fidelidad: ¿Está respaldada por documentos?
+3. precision: ¿Coincide con la referencia?
 
-2) fidelidad (0 a 1):
-¿La respuesta está apoyada por los documentos recuperados?
-0 = inventa / no se sostiene en los documentos, 1 = todo está soportado por los documentos.
+RESPONDE EXCLUSIVAMENTE CON ESTE FORMATO (sin explicaciones previas):
 
-No penalices diferencias de redacción.
-No evalúes si el documento recuperado es el correcto (eso lo calcula el sistema).
-Devuelve EXCLUSIVAMENTE un JSON válido:
+relevancia: [número 0-1]
+fidelidad: [número 0-1]
+precision: [número 0-1]
 
-{
-  "relevancia": <float entre 0 y 1>,
-  "fidelidad": <float entre 0 y 1>,
-  "explicacion": "<máximo 2 frases>"
-}
+Ejemplo:
+relevancia: 0.8
+fidelidad: 0.6
+precision: 0.5
+
+---
 
 PREGUNTA:
 {question}
@@ -26,5 +25,12 @@ PREGUNTA:
 DOCUMENTOS RECUPERADOS:
 {retrieved_context}
 
-RESPUESTA RAG:
+RESPUESTA DE REFERENCIA (Gold Standard):
+{reference_answer}
+
+RESPUESTA GENERADA POR EL RAG:
 {rag_answer}
+
+---
+
+RESPONDE SOLO CON LOS 3 NÚMEROS EN EL FORMATO EXACTO.

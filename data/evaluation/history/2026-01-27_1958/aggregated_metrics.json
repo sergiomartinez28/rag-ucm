@@ -1,0 +1,80 @@
+{
+  "precision_at_k": 0.9,
+  "mrr": 0.7766666666666666,
+  "avg_relevancia": 0.325,
+  "avg_fidelidad": 0.325,
+  "avg_precision": 0.325,
+  "avg_overall": 0.325,
+  "avg_retrieval_time": 3.435584855079651,
+  "avg_generation_time": 8.022735440731049,
+  "avg_total_time": 11.458856523036957,
+  "total_questions": 20,
+  "questions_with_correct_doc": 18,
+  "metrics_by_category": {
+    "estatutos": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.5,
+      "avg_fidelidad": 0.5,
+      "avg_precision": 0.5,
+      "avg_overall": 0.5,
+      "avg_time": 12.668429732322693
+    },
+    "general": {
+      "count": 8,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.25,
+      "avg_fidelidad": 0.25,
+      "avg_precision": 0.25,
+      "avg_overall": 0.25,
+      "avg_time": 10.92917886376381
+    },
+    "reglamentos": {
+      "count": 6,
+      "precision_at_k": 0.6666666666666666,
+      "avg_relevancia": 0.4166666666666667,
+      "avg_fidelidad": 0.4166666666666667,
+      "avg_precision": 0.4166666666666667,
+      "avg_overall": 0.4166666666666667,
+      "avg_time": 12.485503753026327
+    },
+    "trabajo_fin": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.5,
+      "avg_fidelidad": 0.5,
+      "avg_precision": 0.5,
+      "avg_overall": 0.5,
+      "avg_time": 10.50796127319336
+    },
+    "becas": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.0,
+      "avg_fidelidad": 0.0,
+      "avg_precision": 0.0,
+      "avg_overall": 0.0,
+      "avg_time": 10.2389475107193
+    }
+  },
+  "metrics_by_question_type": {
+    "procedimental": {
+      "count": 8,
+      "precision_at_k": 0.875,
+      "avg_relevancia": 0.5,
+      "avg_fidelidad": 0.5,
+      "avg_precision": 0.5,
+      "avg_overall": 0.5,
+      "avg_time": 12.841845154762268
+    },
+    "factual": {
+      "count": 12,
+      "precision_at_k": 0.9166666666666666,
+      "avg_relevancia": 0.20833333333333334,
+      "avg_fidelidad": 0.20833333333333334,
+      "avg_precision": 0.20833333333333334,
+      "avg_overall": 0.20833333333333334,
+      "avg_time": 10.53686410188675
+    }
+  }
+}

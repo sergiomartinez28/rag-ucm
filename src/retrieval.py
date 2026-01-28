@@ -28,26 +28,33 @@ class HybridRetriever:
         self,
         indexer: DocumentIndexer,
         reranker_model: str = "BAAI/bge-reranker-v2-m3",
+        reranker_type: str = "cross-encoder",
         alpha: float = 0.5
     ):
         """
         Args:
             indexer: Indexador con índices FAISS y BM25 ya construidos
             reranker_model: Modelo cross-encoder para re-ranking
+            reranker_type: Tipo de re-ranking ('cross-encoder' o 'simple')
             alpha: Balance entre BM25 y semántico (0=solo BM25, 1=solo semántico)
         """
         self.indexer = indexer
         self.alpha = alpha
+        self.reranker_type = reranker_type.lower().strip()
         
-        logger.info(f"Cargando modelo de re-ranking: {reranker_model}")
-        # Cargar en GPU si está disponible con optimizaciones
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.reranker = CrossEncoder(
-            reranker_model, 
-            device=device,
-            max_length=256  # Limitar longitud para velocidad
-        )
-        logger.info(f"Re-ranker cargado en: {device}")
+        if self.reranker_type == "cross-encoder":
+            logger.info(f"Cargando modelo de re-ranking: {reranker_model}")
+            # Cargar en GPU si esta disponible con optimizaciones
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            self.reranker = CrossEncoder(
+                reranker_model, 
+                device=device,
+                max_length=256  # Limitar longitud para velocidad
+            )
+            logger.info(f"Re-ranker cargado en: {device}")
+        else:
+            self.reranker = None
+            logger.info("Re-ranker simple activado (sin cross-encoder)")
         
         logger.success(f"✓ HybridRetriever inicializado (alpha={alpha})")
     
@@ -155,6 +162,9 @@ class HybridRetriever:
         """
         if not candidates:
             return []
+
+        if self.reranker is None:
+            return self.rerank_simple(candidates, top_k=top_k)
         
         # Preparar pares (query, documento) para el cross-encoder
         pairs = [
@@ -195,6 +205,29 @@ class HybridRetriever:
         logger.debug(f"Re-ranking: top {top_k} de {len(results)} candidatos")
         return final_results
     
+    def rerank_simple(
+        self,
+        candidates: List[Tuple[int, float]],
+        top_k: int = 5
+    ) -> List[Tuple[Chunk, float]]:
+        """
+        Re-ranking simple basado en el score de fusion (RRF)
+        """
+        if not candidates:
+            return []
+
+        ordered = sorted(candidates, key=lambda x: x[1], reverse=True)[:top_k]
+        n = len(ordered)
+        results = []
+        for i, (idx, _) in enumerate(ordered):
+            if n > 1:
+                score = 1 - (i / (n - 1))
+            else:
+                score = 1.0
+            results.append((self.indexer.chunks[idx], float(score)))
+
+        return results
+
     def retrieve(
         self,
         query: str,
@@ -235,9 +268,12 @@ class HybridRetriever:
         # Limitar candidatos para re-ranking
         candidates = fused_results[:top_k_retrieval]
         
-        # 4. Re-ranking con cross-encoder
+        # 4. Re-ranking
         t0 = time.time()
-        final_results = self.rerank(query, candidates, top_k=top_k_final)
+        if self.reranker_type == "cross-encoder":
+            final_results = self.rerank(query, candidates, top_k=top_k_final)
+        else:
+            final_results = self.rerank_simple(candidates, top_k=top_k_final)
         t_rerank = time.time() - t0
         
         # Log de tiempos

@@ -3,7 +3,7 @@
     "id": 0,
     "question": "Según el artículo 101, ¿cuáles son las competencias de la Junta de Personal Docente e Investigador?",
     "reference_answer": "Promover, como órganos colegiados, acciones administrativas o judiciales en el ámbito de sus funciones, conforme a lo establecido en la normativa vigente; participar, en el marco de la normativa vigente, en los procedimientos selectivos y de provisión de puestos, la promoción y la elaboración de plantillas; participar y promover la elaboración de la normativa de desarrollo de estos Estatutos que afecte al personal de los cuerpos de funcionarios docentes universitarios; todas aquellas que tengan reconocidas por la legislación vigente y las que, de acuerdo con dicha legislación, se establezcan reglamentariamente.",
-    "rag_answer": "No dispongo de información sobre este tema. Las competencias específicas de la Junta de Personal Docente e Investigador no están explicitamente mencionadas en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -70,9 +70,9 @@
     "category": "estatutos",
     "source_doc": "estatutos-ucm-consolidados",
     "chunk_id": 681,
-    "retrieval_time": 5.262519359588623,
-    "generation_time": 17.063435077667236,
-    "total_time": 22.32595443725586,
+    "retrieval_time": 6.748802900314331,
+    "generation_time": 7.4451003074646,
+    "total_time": 14.19390320777893,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 5
   },
@@ -80,7 +80,7 @@
     "id": 1,
     "question": "Según el artículo 102, ¿qué modalidades de contratación laboral puede utilizar la UCM para contratar Personal Docente e Investigador?",
     "reference_answer": "a través de las modalidades de contratación laboral específicas del ámbito universitario que se regulan en la LOU, o mediante las modalidades previstas en el Estatuto de los Trabajadores para la sustitución de trabajadores con derecho a reserva de puesto de trabajo; también podrá contratar personal investigador, técnico u otro personal, a través del contrato de trabajo por obra o servicio determinado para el desarrollo de proyectos de investigación científica o técnica.",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica solicitada no se encuentra directamente mencionada en los documentos proporcionados. Los documentos abordan aspectos relacionados con la contratación de personal investigador, pero no especifican las modalidades de contratación laboral disponibles para el Personal Docente e Investigador.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -147,9 +147,9 @@
     "category": "estatutos",
     "source_doc": "estatutos-ucm-consolidados",
     "chunk_id": 681,
-    "retrieval_time": 2.8743772506713867,
-    "generation_time": 24.53372836112976,
-    "total_time": 27.410107851028442,
+    "retrieval_time": 3.40793514251709,
+    "generation_time": 7.734018325805664,
+    "total_time": 11.142956256866455,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -157,7 +157,7 @@
     "id": 2,
     "question": "Según el artículo 22 del reglamento, ¿cuál es el plazo de inicio de la preinscripción para los estudios de formación permanente?",
     "reference_answer": "7 de julio de 2022",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica sobre el plazo de inicio de la preinscripción para los estudios de formación permanente no se encuentra mencionada en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -224,9 +224,9 @@
     "category": "general",
     "source_doc": "normatica-estudios-formacion-permanente",
     "chunk_id": 114,
-    "retrieval_time": 2.8790509700775146,
-    "generation_time": 17.952558517456055,
-    "total_time": 20.832610368728638,
+    "retrieval_time": 3.7634494304656982,
+    "generation_time": 8.06870150566101,
+    "total_time": 11.83315134048462,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -234,7 +234,7 @@
     "id": 3,
     "question": "Según el artículo 23 del reglamento, ¿cuál es la cantidad mínima en concepto de reserva de plaza que se abona tras la admisión?",
     "reference_answer": "Algunas de las cantidades prefijadas por la Comisión de Formación Permanente",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica sobre la cantidad mínima en concepto de reserva de plaza tras la admisión no se encuentra mencionada en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -301,9 +301,9 @@
     "category": "general",
     "source_doc": "normatica-estudios-formacion-permanente",
     "chunk_id": 114,
-    "retrieval_time": 2.8063435554504395,
-    "generation_time": 17.244895219802856,
-    "total_time": 20.052249670028687,
+    "retrieval_time": 3.3874478340148926,
+    "generation_time": 8.803940057754517,
+    "total_time": 12.19138789176941,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 3
   },
@@ -311,7 +311,7 @@
     "id": 4,
     "question": "Según el artículo 12, ¿cuántos años de periodo improrrogable y no renovable tiene el cargo de Decano/a?",
     "reference_answer": "Seis años",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica solicitada no se encuentra directamente mencionada en los documentos proporcionados. Los documentos abordan funciones y estructura del Decano/a, pero no especifican el periodo de mandato ni si es improrrogable o no renovable.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -378,9 +378,9 @@
     "category": "reglamentos",
     "source_doc": "reglamento-ciencias-fisicas",
     "chunk_id": 25,
-    "retrieval_time": 2.858255624771118,
-    "generation_time": 22.253438472747803,
-    "total_time": 25.112651824951172,
+    "retrieval_time": 3.7864136695861816,
+    "generation_time": 7.289308309555054,
+    "total_time": 11.075721979141235,
     "correct_doc_in_top_k": false,
     "correct_doc_rank": 0
   },
@@ -388,7 +388,7 @@
     "id": 5,
     "question": "Según el artículo 12, ¿cuál es la función principal de llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a?",
     "reference_answer": "Llevar a cabo los actos que en el ejercicio de la potestad sancionadora del/de la Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a.",
-    "rag_answer": "Basándome en el documento [1], la función principal del Decano/a según el artículo 12 es llevar a cabo los actos que en el ejercicio de la potestad sancionadora del Rector/a le encomienden los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector/a.",
+    "rag_answer": "[1] y [2] establecen que velar por el cumplimiento de la legislación y llevar a cabo los actos que en el ejercicio de la potestad sancionadora del Rector le encomiende los Reglamentos de disciplina y promover la iniciativa de la actividad disciplinaria del Rector son funciones principales.",
     "sources": [
       {
         "id": 1,
@@ -455,9 +455,9 @@
     "category": "reglamentos",
     "source_doc": "reglamento-ciencias-fisicas",
     "chunk_id": 25,
-    "retrieval_time": 2.8226277828216553,
-    "generation_time": 26.66880702972412,
-    "total_time": 29.492434978485107,
+    "retrieval_time": 3.1530678272247314,
+    "generation_time": 20.840314149856567,
+    "total_time": 23.993887186050415,
     "correct_doc_in_top_k": false,
     "correct_doc_rank": 0
   },
@@ -465,7 +465,7 @@
     "id": 6,
     "question": "Según el Artículo 9 del reglamento-odontología, ¿cuántos representantes de los departamentos con sede en el centro deben integrar la Comisión de Actividades Prácticas y Clínicas?",
     "reference_answer": "Dos representantes de cada uno de los Departamentos con sede en el Centro.",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica solicitada no se encuentra directamente mencionada en los documentos proporcionados.",
+    "rag_answer": "No tengo esa información",
     "sources": [
       {
         "id": 1,
@@ -532,9 +532,9 @@
     "category": "reglamentos",
     "source_doc": "reglamento-odontologia",
     "chunk_id": 788,
-    "retrieval_time": 2.785479784011841,
-    "generation_time": 13.449703216552734,
-    "total_time": 16.2361843585968,
+    "retrieval_time": 3.1379966735839844,
+    "generation_time": 4.966684579849243,
+    "total_time": 8.106794118881226,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -542,7 +542,7 @@
     "id": 7,
     "question": "Según el Artículo 10 del reglamento-odontología, ¿quién preside la Comisión de Reclamaciones Clínicas según el Artículo X?",
     "reference_answer": "El/La Vicedecano/a con responsabilidad en las Clínicas, que la presidirá.",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica sobre quién preside la Comisión de Reclamaciones Clínicas no está directamente mencionada en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -609,9 +609,9 @@
     "category": "reglamentos",
     "source_doc": "reglamento-odontologia",
     "chunk_id": 788,
-    "retrieval_time": 2.7997357845306396,
-    "generation_time": 17.152376413345337,
-    "total_time": 19.95364809036255,
+    "retrieval_time": 3.2690272331237793,
+    "generation_time": 7.9557671546936035,
+    "total_time": 11.224794387817383,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -619,7 +619,7 @@
     "id": 8,
     "question": "Según el artículo X del reglamento, ¿cuál es el máximo de créditos para el TFG?",
     "reference_answer": "30 créditos",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica sobre el máximo de créditos para el TFG no se encuentra mencionada en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -686,9 +686,9 @@
     "category": "trabajo_fin",
     "source_doc": "directrices-tfg",
     "chunk_id": 301,
-    "retrieval_time": 3.0980961322784424,
-    "generation_time": 15.719059944152832,
-    "total_time": 18.817156076431274,
+    "retrieval_time": 3.3803021907806396,
+    "generation_time": 7.142869472503662,
+    "total_time": 10.523171663284302,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -696,7 +696,7 @@
     "id": 9,
     "question": "Según el artículo 3.2 del reglamento, ¿quién puede elevar a la Junta o Juntas de Centro la normativa del TFG?",
     "reference_answer": "La unidad encargada de la organización, coordinación y seguimiento de cada Grado, llamada de aquí en adelante, Comisión de Grado.",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica sobre quién puede elevar la normativa del TFG a la Junta o Juntas de Centro no está directamente mencionada en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -763,9 +763,163 @@
     "category": "trabajo_fin",
     "source_doc": "directrices-tfg",
     "chunk_id": 301,
-    "retrieval_time": 2.8155267238616943,
-    "generation_time": 18.122787475585938,
-    "total_time": 20.938873052597046,
+    "retrieval_time": 3.161724090576172,
+    "generation_time": 7.330025911331177,
+    "total_time": 10.492750883102417,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 10,
+    "question": "Según el Artículo 18 del Tratado de Funcionamiento de la Unión Europea, ¿en qué artículos se prohíben específicamente formas de discriminación?",
+    "reference_answer": "Prohíben toda forma de discriminación, concretando motivaciones específicas en los artículos 22, 23 y 26.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "protocolo-discriminacion",
+        "text_preview": "con sus sucesivas reformas, han situado los Derechos Humanos y la no discriminación como valores comunes a todos los Estados miembro. Además, en el preámbulo de la Carta de los Derechos Fundamentales ...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_9"
+        }
+      },
+      {
+        "id": 2,
+        "title": "protocolo-acoso-laboral",
+        "text_preview": "igualdad de trato en el empleo y la ocupación, a la luz de la Convención de las Naciones Unidas sobre Derechos de las Personas con Discapacidad (CNUDPD) (2020/2086(INI)) que, entre otras cosas, recomi...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-acoso-laboral_chunk_1"
+        }
+      },
+      {
+        "id": 3,
+        "title": "protocolo-discriminacion",
+        "text_preview": "AÑO XX 29 de junio de 2023 BOUC n.º 25\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE GOBIERNO\nDE LA UNIVERSIDAD COMPLUTENSE\nI.2. CONSEJO DE GOBIERNO\nI.2.1. Vicerrectorado de Estudiantes\nAcuerdo del Co...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_0"
+        }
+      },
+      {
+        "id": 4,
+        "title": "protocolo-discriminacion",
+        "text_preview": "tramitación del procedimiento, de oficio o a instancia de parte, en virtud de circunstancias sobrevenidas o que no pudieron ser tenidas en cuenta en el momento de su adopción. En todo caso, se extingu...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_8"
+        }
+      },
+      {
+        "id": 5,
+        "title": "protocolo-discriminacion",
+        "text_preview": "la intolerancia, y en relación con el artículo 8.j) de la Ley 10/1990, de 15 de octubre, del Deporte. También, este Protocolo se atiene en sus respectivos ámbitos de aplicación al texto consolidado de...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_10"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "protocolo-discriminacion",
+    "chunk_id": 267,
+    "retrieval_time": 3.145885944366455,
+    "generation_time": 7.124646425247192,
+    "total_time": 10.270532369613647,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 11,
+    "question": "Según la Directiva 2000/43 del Consejo, ¿de qué fecha se establece la aplicación del principio de igualdad de trato independientemente del origen racial o étnico?",
+    "reference_answer": "29 de junio de 2000.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "protocolo-discriminacion",
+        "text_preview": "con sus sucesivas reformas, han situado los Derechos Humanos y la no discriminación como valores comunes a todos los Estados miembro. Además, en el preámbulo de la Carta de los Derechos Fundamentales ...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_9"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-regimen-interior-consejo-social-ucm",
+        "text_preview": "partir de ese momento, de tal manera que, a partir del sexto año, pueda El Presidente y demás miembros del Consejo Social, incluido procederse a las renovaciones de acuerdo ya con lo previsto en el Se...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-regimen-interior-consejo-social-ucm_chunk_7"
+        }
+      },
+      {
+        "id": 3,
+        "title": "protocolo-acoso-laboral",
+        "text_preview": "igualdad de trato en el empleo y la ocupación, a la luz de la Convención de las Naciones Unidas sobre Derechos de las Personas con Discapacidad (CNUDPD) (2020/2086(INI)) que, entre otras cosas, recomi...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-acoso-laboral_chunk_1"
+        }
+      },
+      {
+        "id": 4,
+        "title": "protocolo-discriminacion",
+        "text_preview": "AÑO XX 29 de junio de 2023 BOUC n.º 25\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE GOBIERNO\nDE LA UNIVERSIDAD COMPLUTENSE\nI.2. CONSEJO DE GOBIERNO\nI.2.1. Vicerrectorado de Estudiantes\nAcuerdo del Co...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_0"
+        }
+      },
+      {
+        "id": 5,
+        "title": "protocolo-discriminacion",
+        "text_preview": "dichas conductas, posibles testigos). AÑO XX 29 de junio de 2023 BOUC n.º 25 Presentación de documentación anexa En caso afirmativo, especificar: Solicito la activación del Protocolo de prevención y a...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "protocolo-discriminacion_chunk_11"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "protocolo-discriminacion",
+    "chunk_id": 267,
+    "retrieval_time": 3.1713035106658936,
+    "generation_time": 6.998027324676514,
+    "total_time": 10.169330835342407,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -773,7 +927,7 @@
     "id": 12,
     "question": "Según el artículo 3, ¿cuál es el problema principal relacionado con el uso del No Presentado?",
     "reference_answer": "El problema principal es que esta nueva forma evaluativa está generando diversos problemas debido a la ausencia de una reflexión adecuada sobre el mecanismo de evaluación en el nuevo entorno educativo universitario y una adaptación apropiada de la normativa a esta nueva realidad.",
-    "rag_answer": "No dispongo de información sobre este tema. El documento no proporciona detalles específicos sobre el problema principal relacionado con el uso del No Presentado.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -840,9 +994,9 @@
     "category": "general",
     "source_doc": "informe-362025-2026o-no-presentado",
     "chunk_id": 241,
-    "retrieval_time": 2.7481374740600586,
-    "generation_time": 14.827591180801392,
-    "total_time": 17.576727867126465,
+    "retrieval_time": 3.151350259780884,
+    "generation_time": 7.83646821975708,
+    "total_time": 10.987818479537964,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -850,7 +1004,7 @@
     "id": 13,
     "question": "Según el artículo 4, ¿qué no es el No Presentado en el contexto de la evaluación académica según el Real Decreto 1125/2003?",
     "reference_answer": "El No Presentado no es una calificación, en sentido estricto, sino una norma o práctica interna de las universidades para calificar alternativamente a las calificaciones numéricas.",
-    "rag_answer": "No dispongo de información sobre este tema. La información proporcionada en los documentos no especifica qué no es el No Presentado en el contexto de la evaluación académica según el Real Decreto 1125/2003. Los documentos abordan aspectos relacionados con la programación docente, la renuncia a la convocatoria y la participación en actividades evaluativas, pero no definen explícitamente qué no es el No Presentado.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -917,9 +1071,9 @@
     "category": "general",
     "source_doc": "informe-362025-2026o-no-presentado",
     "chunk_id": 241,
-    "retrieval_time": 2.881103038787842,
-    "generation_time": 32.62362241744995,
-    "total_time": 35.5068998336792,
+    "retrieval_time": 3.1208460330963135,
+    "generation_time": 7.380061388015747,
+    "total_time": 10.502978324890137,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -927,7 +1081,7 @@
     "id": 14,
     "question": "Según el artículo 6.1.4, ¿cuál es el máximo de duración en meses de la beca de formación práctica básica?",
     "reference_answer": "El máximo de duración será de 12 meses",
-    "rag_answer": "No dispongo de información sobre este tema. La información solicitada no está explicitamente detallada en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -994,9 +1148,9 @@
     "category": "becas",
     "source_doc": "reglamento-becas",
     "chunk_id": 142,
-    "retrieval_time": 2.7551774978637695,
-    "generation_time": 13.002578496932983,
-    "total_time": 15.757755994796753,
+    "retrieval_time": 3.126542091369629,
+    "generation_time": 7.031476974487305,
+    "total_time": 10.158019065856934,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -1004,7 +1158,7 @@
     "id": 15,
     "question": "Según el artículo 6.1.5, ¿cuántas horas semanales mínimas de dedicación requiere la beca de formación práctica básica?",
     "reference_answer": "La dedicación mínima será de 20 horas a la semana",
-    "rag_answer": "No dispongo de información sobre este tema. La información solicitada específicamente no se encuentra en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -1071,9 +1225,9 @@
     "category": "becas",
     "source_doc": "reglamento-becas",
     "chunk_id": 142,
-    "retrieval_time": 2.787647247314453,
-    "generation_time": 12.489293336868286,
-    "total_time": 15.27694058418274,
+    "retrieval_time": 3.124109983444214,
+    "generation_time": 7.195765972137451,
+    "total_time": 10.319875955581665,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -1081,7 +1235,7 @@
     "id": 16,
     "question": "Según el artículo 3, ¿cuáles son los miembros de la Comisión de Calidad del Grado en Odontología?",
     "reference_answer": "Los/Las miembros del equipo decanal con responsabilidad en Calidad, Clínicas y Coordinación del Grado. El/La Secretario/a. El/La Gerente/a de la Facultad. Un/a representante de cada Departamento con sede en la Facultad de Odontología y docencia en el Grado. Un/a representante de los Departamentos con sede externa a la Facultad de Odontología y docencia en el Grado. Un/a representante de los/las alumnos/as que cursan estudios de primero, segundo. Un/a representante de los/las alumnos que cursan estudios de cuarto o quinto curso. Un/a representante del Personal Técnico de Gestión, Administración y Servicios.",
-    "rag_answer": "No dispongo de información sobre este tema. La pregunta específica solicitada no se encuentra directamente mencionada en los documentos proporcionados. Los documentos mencionan la Comisión de Calidad en el Reglamento de Matemáticas, pero no especifican a qué grado se refiere ni sus miembros.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -1148,9 +1302,9 @@
     "category": "reglamentos",
     "source_doc": "reglamento-odontologia",
     "chunk_id": 783,
-    "retrieval_time": 2.7503857612609863,
-    "generation_time": 22.793151140213013,
-    "total_time": 25.543536901474,
+    "retrieval_time": 3.145341634750366,
+    "generation_time": 7.059841871261597,
+    "total_time": 10.206196308135986,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 2
   },
@@ -1158,7 +1312,7 @@
     "id": 17,
     "question": "Según el artículo 3, ¿cuántos miembros mínimos hay en la Comisión de Calidad del Grado en Odontología?",
     "reference_answer": "Diecisiete miembros mínimos.",
-    "rag_answer": "No dispongo de información sobre este tema. La información solicitada no está explicitamente mencionada en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -1225,9 +1379,9 @@
     "category": "reglamentos",
     "source_doc": "reglamento-odontologia",
     "chunk_id": 783,
-    "retrieval_time": 2.8297157287597656,
-    "generation_time": 13.36853814125061,
-    "total_time": 16.200260400772095,
+    "retrieval_time": 3.1493184566497803,
+    "generation_time": 7.155297517776489,
+    "total_time": 10.305628538131714,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 2
   },
@@ -1235,7 +1389,7 @@
     "id": 18,
     "question": "Según el Artículo 1 del reglamento, ¿cuáles son los tres principales objetivos de los estudios de formación permanente?",
     "reference_answer": "Los tres principales objetivos son: 1. Completar la formación académica de los titulados superiores, ofreciéndoles la posibilidad de perfeccionar su cualificación profesional, científica, técnica y/o artística. 2. Promover la actualización y la mejora de conocimientos y competencias clave para el aprendizaje a lo largo de la vida de trabajadores y empresarios. 3. Establecer relaciones de colaboración con organizaciones, instituciones y empresas.",
-    "rag_answer": "No dispongo de información sobre este tema. Los documentos proporcionados no contienen detalles específicos sobre los tres principales objetivos de los estudios de formación permanente.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -1302,9 +1456,9 @@
     "category": "general",
     "source_doc": "normatica-estudios-formacion-permanente",
     "chunk_id": 104,
-    "retrieval_time": 2.7250583171844482,
-    "generation_time": 15.693108081817627,
-    "total_time": 18.419750213623047,
+    "retrieval_time": 3.1381895542144775,
+    "generation_time": 7.129295349121094,
+    "total_time": 10.26849102973938,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   },
@@ -1312,7 +1466,7 @@
     "id": 19,
     "question": "Según el Artículo 3 del reglamento, ¿cuál es el objetivo principal del Centro de Formación Permanente (CFP)?",
     "reference_answer": "El objetivo principal es impulsar las líneas de formación estratégicas.",
-    "rag_answer": "No dispongo de información sobre este tema. El artículo 3 del reglamento específico del Centro de Formación Permanente (CFP) no se menciona en los documentos proporcionados.",
+    "rag_answer": "No dispongo de información sobre esto en los documentos consultados.",
     "sources": [
       {
         "id": 1,
@@ -1379,9 +1533,9 @@
     "category": "general",
     "source_doc": "normatica-estudios-formacion-permanente",
     "chunk_id": 104,
-    "retrieval_time": 2.737647294998169,
-    "generation_time": 16.436931610107422,
-    "total_time": 19.175570726394653,
+    "retrieval_time": 3.242642641067505,
+    "generation_time": 7.967097997665405,
+    "total_time": 11.20974063873291,
     "correct_doc_in_top_k": true,
     "correct_doc_rank": 1
   }
