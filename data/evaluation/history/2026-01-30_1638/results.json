@@ -1,0 +1,387 @@
+[
+  {
+    "id": 0,
+    "question": "¿Cuántos vocales debe tener la Comisión Permanente del Consejo de Gobierno?",
+    "reference_answer": "La Comisión Permanente está integrada por 17 vocales.",
+    "rag_answer": "No dispongo de información disponible.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "que ser a su vez miembro del Consejo de Gobierno y pertenecer al mismo sector que la persona a la que 2. Si se produjera la baja de algún miembro de la comisión, la vacante se cubrirá con el suplente ...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_16"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "que ser a su vez miembro del Consejo de Gobierno y pertenecer al mismo sector que la persona a la que 2. Si se produjera la baja de algún miembro de la comisión, la vacante se cubrirá con el suplente ...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-gobierno-ucm_chunk_16"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "Ciencias e Ingeniería y Ciencias de la Salud. - Uno a Directores/as de Institutos Universitarios de Investigación. El mandato del Consejo de Gobierno será de cuatro años, excepto para los representant...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-electoral-ucm_chunk_15"
+        }
+      },
+      {
+        "id": 4,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "DE LAS COMISIONES DEL CONSEJO DE GOBIERNO Artículo 45. Creación 1. Corresponde al Pleno del Consejo de Gobierno la creación de comisiones específicas para el estudio y la preparación de los asuntos qu...",
+        "score": 0.714,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_15"
+        }
+      },
+      {
+        "id": 5,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "DE LAS COMISIONES DEL CONSEJO DE GOBIERNO Artículo 45. Creación 1. Corresponde al Pleno del Consejo de Gobierno la creación de comisiones específicas para el estudio y la preparación de los asuntos qu...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-gobierno-ucm_chunk_15"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "gobierno",
+    "source_doc": "texto-consolidad-reglamento-de-gobierno",
+    "chunk_id": 663,
+    "retrieval_time": 3.7559850215911865,
+    "generation_time": 8.560428142547607,
+    "total_time": 12.31681227684021,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 1,
+    "question": "¿Quién preside la Comisión Permanente del Consejo de Gobierno?",
+    "reference_answer": "La Comisión Permanente está presidida por el Rector, o persona en quien delegue.",
+    "rag_answer": "El decano, que la presidirá, o el vicedecanato, presiden la Comisión Permanente del Consejo de Gobierno.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "que ser a su vez miembro del Consejo de Gobierno y pertenecer al mismo sector que la persona a la que 2. Si se produjera la baja de algún miembro de la comisión, la vacante se cubrirá con el suplente ...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_16"
+        }
+      },
+      {
+        "id": 2,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "que ser a su vez miembro del Consejo de Gobierno y pertenecer al mismo sector que la persona a la que 2. Si se produjera la baja de algún miembro de la comisión, la vacante se cubrirá con el suplente ...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-gobierno-ucm_chunk_16"
+        }
+      },
+      {
+        "id": 3,
+        "title": "reglamento-informatica",
+        "text_preview": "delegada de la Junta de Facultad, todos los miembros de la Comisión Permanente habrán de ser miembros de esta y su composición necesariamente garantizará el equilibrio, en cuanto a la representación e...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "reglamento-informatica_chunk_4"
+        }
+      },
+      {
+        "id": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "47 .- Definición y ámbito de actuación 1. El Consejo de Gobierno es el órgano de gobierno de la Universidad. 2. Con carácter general, el Consejo de Gobierno establece las líneas estratégicas y program...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_18"
+        }
+      },
+      {
+        "id": 5,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "trámite, absteniéndose de adoptar cualesquiera otros, salvo casos de urgencia debidamente acreditados o por razones de interés general, cuya acreditación expresa así lo justifique. CAPÍTULO II. EL CON...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_9"
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "gobierno",
+    "source_doc": "texto-consolidad-reglamento-de-gobierno",
+    "chunk_id": 663,
+    "retrieval_time": 3.091181755065918,
+    "generation_time": 13.686795949935913,
+    "total_time": 16.778361558914185,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 2,
+    "question": "¿Cuántos años máximo puede estar en excedencia temporal el Personal Docente e Investigador de la UCM?",
+    "reference_answer": "Cinco años",
+    "rag_answer": "El Personal Docente e Investigador de la UCM podrá estar en situación de excedencia temporal un máximo de cinco años.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "los reciba. 4. El Personal Docente e Investigador será declarado en la situación de excedencia temporal para incorporarse a otros agentes públicos o privados de ejecución del Sistema Español de Cienci...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_44"
+        }
+      },
+      {
+        "id": 2,
+        "title": "estatutos-ucm",
+        "text_preview": "lo67delaLeyOrgánica6/2001,de21dediciembre,deUniversidadesyelartículo96de lospresentesEstatutos. B.O.C.M.Núm.71 VIERNES24DEMARZODE2017 Pág.99 BOCM BOLETÍN OFICIAL DE LA COMUNIDAD DE MADRID Reingreso al...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm_chunk_12"
+        }
+      },
+      {
+        "id": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "completo, pero también podrán ejercerlas a tiempo parcial. La dedicación será, en todo caso, compatible con la realización de trabajos científicos, técnicos y artísticos a que se refiere el artículo 8...",
+        "score": 0.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_45"
+        }
+      },
+      {
+        "id": 4,
+        "title": "estatutos-ucm",
+        "text_preview": "contratos 1. ElcontratodeAyudanteserádecaráctertemporal.Laduracióndelcontratonopo- dráserinferioraunañonisuperioracinco,pudiendoprorrogarseorenovarsesisehubiera concertadoporunaduracióninferioralamáxi...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm_chunk_13"
+        }
+      },
+      {
+        "id": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "l) A tener acceso a un procedimiento formal de mediación en los conflictos que se le puedan plantear en el ámbito profesional. m) Cualesquiera otros que les sean reconocidos por la normativa vigente. ...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_43"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "chunk_id": 120,
+    "retrieval_time": 3.072185516357422,
+    "generation_time": 13.206190824508667,
+    "total_time": 16.27837634086609,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 3,
+    "question": "¿Cuánto tiempo mínimo de excedencia voluntaria tienen que haber pasado para poder reingresar automáticamente un docente de la UCM?",
+    "reference_answer": "Dos años",
+    "rag_answer": "Los docentes deben llevar una excedencia voluntaria mínimo de dos años para poder reingresar automáticamente.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "los reciba. 4. El Personal Docente e Investigador será declarado en la situación de excedencia temporal para incorporarse a otros agentes públicos o privados de ejecución del Sistema Español de Cienci...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_44"
+        }
+      },
+      {
+        "id": 2,
+        "title": "estatutos-ucm",
+        "text_preview": "lo67delaLeyOrgánica6/2001,de21dediciembre,deUniversidadesyelartículo96de lospresentesEstatutos. B.O.C.M.Núm.71 VIERNES24DEMARZODE2017 Pág.99 BOCM BOLETÍN OFICIAL DE LA COMUNIDAD DE MADRID Reingreso al...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm_chunk_12"
+        }
+      },
+      {
+        "id": 3,
+        "title": "estatutos-ucm",
+        "text_preview": "automáticamente elegido el candidato propuesto por los firmantes de la moción por el período que reste del mandato. 4. Silamociónnofueseaprobada,ningunodesussignatariospodráparticiparenla presentación...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm_chunk_9"
+        }
+      },
+      {
+        "id": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "l) A tener acceso a un procedimiento formal de mediación en los conflictos que se le puedan plantear en el ámbito profesional. m) Cualesquiera otros que les sean reconocidos por la normativa vigente. ...",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "estatutos-ucm-consolidados_chunk_43"
+        }
+      },
+      {
+        "id": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "podrán ejercerse de forma simultánea por una misma persona. Artículo 17.- Profesorado Con carácter general, al menos el 25% de la docencia se impartirá por profesorado de la UCM, salvo en aquellos cas...",
+        "score": 0.143,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "normatica-estudios-formacion-permanente_chunk_10"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "chunk_id": 120,
+    "retrieval_time": 3.0682151317596436,
+    "generation_time": 11.787729024887085,
+    "total_time": 14.855944156646729,
+    "correct_doc_in_top_k": true,
+    "correct_doc_rank": 1
+  },
+  {
+    "id": 4,
+    "question": "¿Cuántos créditos mínimos tiene que tener el TFG?",
+    "reference_answer": "Los créditos mínimos del TFG no están especificados en el fragmento.",
+    "rag_answer": "El TFG debe superar como mínimo el 60% de los créditos de la titulación, entre ellos todos los de Formación.",
+    "sources": [
+      {
+        "id": 1,
+        "title": "directrices-tfg",
+        "text_preview": "cada grupo, deberán actuar de forma coordinada y colegiada. 6. Matriculación y gestión académica 6.1. El TFG se matriculará como una asignatura del plan de estudios del título oficial correspondiente....",
+        "score": 0.857,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_3"
+        }
+      },
+      {
+        "id": 2,
+        "title": "recomendacion-defensa-tfg-signed",
+        "text_preview": "SOBRE LA PRESENTACIÓN Y DEFENSA\nDEL TRABAJO FIN DE GRADO\nEN ESTUDIANTES MATRICULADOS EN ÉL\nY PENDIENTES DE APROBACIÓN DE ALGUNA ASIGNATURA\nExpdte. N.º: 43/2023-24\nRecibidas en esta Defensoría Universi...",
+        "score": 1.0,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "recomendacion-defensa-tfg-signed_chunk_0"
+        }
+      },
+      {
+        "id": 3,
+        "title": "directrices-tfg",
+        "text_preview": "Trabajo Fin de Grado. 4.1. El TFG se concibe como un trabajo de curso que el estudiante realizará y entregará en el formato establecido por la Comisión de Grado con el fin de mostrar de forma integrad...",
+        "score": 0.571,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_1"
+        }
+      },
+      {
+        "id": 4,
+        "title": "directrices-tfg",
+        "text_preview": "AÑO IX 30 de julio de 2012 BOUC nº8\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE\nGOBIERNO DE LA UNIVERSIDAD COMPLUTENSE\nI.2 Consejo de Gobierno\n1.2.5. Vicerrectorado de Estudios de Grado\nAcuerdo del ...",
+        "score": 0.286,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "directrices-tfg_chunk_0"
+        }
+      },
+      {
+        "id": 5,
+        "title": "recomendacion-defensa-tfg-signed",
+        "text_preview": "calificación al conjunto de las convocatorias del curso académico siguiente y extender la vigencia no sólo a la convocatoria extraordinaria del curso siguiente sino a todas las convocatorias de dicho ...",
+        "score": 0.429,
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": "",
+          "chunk_id": "recomendacion-defensa-tfg-signed_chunk_1"
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "3-2014-12-05-Firma de Certificados CES Felipe II. Diciembre 2014",
+    "chunk_id": 28,
+    "retrieval_time": 3.109321117401123,
+    "generation_time": 13.717875480651855,
+    "total_time": 16.82719659805298,
+    "correct_doc_in_top_k": false,
+    "correct_doc_rank": 0
+  }
+]

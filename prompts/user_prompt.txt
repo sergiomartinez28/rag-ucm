@@ -1,0 +1,7 @@
+PREGUNTA:
+{query}
+
+DOCUMENTOS DISPONIBLES:
+{contexts}
+
+Responde basándote únicamente en los documentos proporcionados. Si ningún fragmento menciona el dato solicitado, responde: "No dispongo de información disponible".

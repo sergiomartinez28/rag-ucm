@@ -64,7 +64,8 @@ def cmd_generate(args):
         chunks_path=chunks_path,
         output_path=dataset_path,
         num_samples=args.num_samples,
-        random_seed=args.seed
+        random_seed=args.seed,
+        max_workers=args.workers
     )
     
     # Liberar memoria
@@ -146,7 +147,8 @@ def cmd_evaluate(args):
         results = evaluator.run_evaluation(
             dataset_path=dataset_path,
             output_path=results_path,
-            top_k=args.top_k
+            top_k=args.top_k,
+            max_workers=args.rag_workers
         )
         
         print(f"\n✅ RAG ejecutado: {len(results)} respuestas generadas")
@@ -173,7 +175,8 @@ def cmd_evaluate(args):
         
         scores = judge.evaluate_all(
             results_path=results_path,
-            output_path=scores_path
+            output_path=scores_path,
+            max_workers=args.judge_workers
         )
         
         print(f"\n✅ Evaluación completada: {len(scores)} puntuaciones")
@@ -286,6 +289,12 @@ Ejemplos:
         action='store_true',
         help='Forzar regeneración aunque exista dataset'
     )
+    gen_parser.add_argument(
+        '--workers',
+        type=int,
+        default=4,
+        help='Número de workers paralelos para generación (default: 4)'
+    )
     gen_parser.set_defaults(func=cmd_generate)
     
     # -------------------------------------------------------------------------
@@ -333,6 +342,18 @@ Ejemplos:
         type=str,
         default="data/evaluation",
         help='Directorio con dataset y resultados'
+    )
+    eval_parser.add_argument(
+        '--rag-workers',
+        type=int,
+        default=2,
+        help='Workers paralelos para evaluación RAG (default: 2, cuidado con GPU)'
+    )
+    eval_parser.add_argument(
+        '--judge-workers',
+        type=int,
+        default=3,
+        help='Workers paralelos para LLM Juez (default: 3)'
     )
     eval_parser.set_defaults(func=cmd_evaluate)
     
@@ -388,6 +409,35 @@ Ejemplos:
         '--skip-judge',
         action='store_true',
         help='Saltar LLM Juez'
+    )
+    full_parser.add_argument(
+        '--workers',
+        type=int,
+        default=4,
+        help='Workers para generación (default: 4)'
+    )
+    full_parser.add_argument(
+        '--rag-workers',
+        type=int,
+        default=2,
+        help='Workers para evaluación RAG (default: 2)'
+    )
+    full_parser.add_argument(
+        '--judge-workers',
+        type=int,
+        default=3,
+        help='Workers para LLM Juez (default: 3)'
+    )
+    full_parser.add_argument(
+        '--limit',
+        type=int,
+        default=None,
+        help='Limitar evaluación a N preguntas (para pruebas)'
+    )
+    full_parser.add_argument(
+        '--clean',
+        action='store_true',
+        help='Usar dataset limpio sin preguntas out-of-scope'
     )
     full_parser.set_defaults(func=cmd_full)
     

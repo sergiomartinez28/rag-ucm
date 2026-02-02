@@ -1,0 +1,62 @@
+{
+  "precision_at_k": 0.8,
+  "mrr": 0.8,
+  "avg_relevancia": 0.6,
+  "avg_fidelidad": 0.52,
+  "avg_precision": 0.52,
+  "avg_overall": 0.5466666666666666,
+  "avg_retrieval_time": 3.2193777084350588,
+  "avg_generation_time": 12.191803884506225,
+  "avg_total_time": 15.411338186264038,
+  "total_questions": 5,
+  "questions_with_correct_doc": 4,
+  "metrics_by_category": {
+    "gobierno": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.25,
+      "avg_fidelidad": 0.2,
+      "avg_precision": 0.15,
+      "avg_overall": 0.19999999999999998,
+      "avg_time": 14.547586917877197
+    },
+    "estatutos": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 1.0,
+      "avg_fidelidad": 0.75,
+      "avg_precision": 0.95,
+      "avg_overall": 0.8999999999999999,
+      "avg_time": 15.567160248756409
+    },
+    "general": {
+      "count": 1,
+      "precision_at_k": 0.0,
+      "avg_relevancia": 0.5,
+      "avg_fidelidad": 0.7,
+      "avg_precision": 0.4,
+      "avg_overall": 0.5333333333333333,
+      "avg_time": 16.82719659805298
+    }
+  },
+  "metrics_by_question_type": {
+    "factual": {
+      "count": 4,
+      "precision_at_k": 0.75,
+      "avg_relevancia": 0.625,
+      "avg_fidelidad": 0.55,
+      "avg_precision": 0.575,
+      "avg_overall": 0.5833333333333333,
+      "avg_time": 15.069582343101501
+    },
+    "procedimental": {
+      "count": 1,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.5,
+      "avg_fidelidad": 0.4,
+      "avg_precision": 0.3,
+      "avg_overall": 0.39999999999999997,
+      "avg_time": 16.778361558914185
+    }
+  }
+}

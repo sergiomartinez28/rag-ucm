@@ -1,0 +1,107 @@
+{
+  "precision_at_k": 0.5990220048899756,
+  "mrr": 0.46487367563162196,
+  "avg_relevancia": 0.562836185819071,
+  "avg_fidelidad": 0.45134474327628304,
+  "avg_precision": 0.46185819070904677,
+  "avg_overall": 0.4920130399348,
+  "avg_retrieval_time": 3.78144849833183,
+  "avg_generation_time": 17.521313042395857,
+  "avg_total_time": 21.303300573656788,
+  "total_questions": 409,
+  "questions_with_correct_doc": 245,
+  "metrics_by_category": {
+    "gobierno": {
+      "count": 46,
+      "precision_at_k": 0.6304347826086957,
+      "avg_relevancia": 0.5065217391304347,
+      "avg_fidelidad": 0.4326086956521738,
+      "avg_precision": 0.4282608695652173,
+      "avg_overall": 0.4557971014492753,
+      "avg_time": 16.242365992587544
+    },
+    "estatutos": {
+      "count": 81,
+      "precision_at_k": 0.5802469135802469,
+      "avg_relevancia": 0.6123456790123456,
+      "avg_fidelidad": 0.4753086419753088,
+      "avg_precision": 0.49135802469135814,
+      "avg_overall": 0.5263374485596709,
+      "avg_time": 18.69780671743699
+    },
+    "general": {
+      "count": 124,
+      "precision_at_k": 0.5887096774193549,
+      "avg_relevancia": 0.5024193548387097,
+      "avg_fidelidad": 0.41532258064516153,
+      "avg_precision": 0.40645161290322573,
+      "avg_overall": 0.44139784946236565,
+      "avg_time": 19.10893315461374
+    },
+    "reglamentos": {
+      "count": 128,
+      "precision_at_k": 0.578125,
+      "avg_relevancia": 0.5875000000000001,
+      "avg_fidelidad": 0.46406250000000016,
+      "avg_precision": 0.4867187499999998,
+      "avg_overall": 0.5127604166666666,
+      "avg_time": 27.499852061271667
+    },
+    "trabajo_fin": {
+      "count": 10,
+      "precision_at_k": 0.8,
+      "avg_relevancia": 0.55,
+      "avg_fidelidad": 0.45,
+      "avg_precision": 0.48999999999999994,
+      "avg_overall": 0.4966666666666667,
+      "avg_time": 15.280380845069885
+    },
+    "becas": {
+      "count": 10,
+      "precision_at_k": 0.8,
+      "avg_relevancia": 0.78,
+      "avg_fidelidad": 0.5800000000000001,
+      "avg_precision": 0.62,
+      "avg_overall": 0.66,
+      "avg_time": 19.73389835357666
+    },
+    "defensoria": {
+      "count": 6,
+      "precision_at_k": 0.6666666666666666,
+      "avg_relevancia": 0.7000000000000001,
+      "avg_fidelidad": 0.5499999999999999,
+      "avg_precision": 0.6166666666666667,
+      "avg_overall": 0.6222222222222222,
+      "avg_time": 22.66245440642039
+    },
+    "master": {
+      "count": 4,
+      "precision_at_k": 0.5,
+      "avg_relevancia": 0.575,
+      "avg_fidelidad": 0.425,
+      "avg_precision": 0.475,
+      "avg_overall": 0.49166666666666675,
+      "avg_time": 18.94311535358429
+    }
+  },
+  "metrics_by_question_type": {
+    "factual": {
+      "count": 226,
+      "precision_at_k": 0.46017699115044247,
+      "avg_relevancia": 0.527876106194691,
+      "avg_fidelidad": 0.447345132743363,
+      "avg_precision": 0.43053097345132735,
+      "avg_overall": 0.4685840707964597,
+      "avg_time": 24.15418202370669
+    },
+    "procedimental": {
+      "count": 183,
+      "precision_at_k": 0.7704918032786885,
+      "avg_relevancia": 0.6060109289617489,
+      "avg_fidelidad": 0.45628415300546504,
+      "avg_precision": 0.5005464480874317,
+      "avg_overall": 0.5209471766848811,
+      "avg_time": 17.782539875780948
+    }
+  }
+}

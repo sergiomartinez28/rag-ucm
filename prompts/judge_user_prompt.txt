@@ -1,0 +1,13 @@
+PREGUNTA:
+{question}
+
+RESPUESTA DE REFERENCIA (Gold Standard):
+{reference_answer}
+
+RESPUESTA GENERADA POR EL RAG:
+{rag_answer}
+
+DOCUMENTOS RECUPERADOS:
+{retrieved_context}
+
+Evalúa y responde SOLO con los 3 números en el formato exacto.

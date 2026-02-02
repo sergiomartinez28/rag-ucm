@@ -3,6 +3,7 @@ Módulo de indexación de documentos
 Crea índices FAISS (vectorial) y BM25 (léxico)
 """
 
+import re
 import pickle
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -109,10 +110,42 @@ class DocumentIndexer:
         logger.success(f"✓ Índice FAISS construido: {index.ntotal} vectores")
         return index
     
+    def _tokenize_spanish(self, text: str) -> List[str]:
+        """
+        Fase 2: Tokenizador robusto para español
+        Captura palabras + números (créditos, plazos, artículos, fechas)
+        Remueve stopwords en español
+        """
+        # Stopwords comunes en español
+        stopwords_es = {
+            'el', 'la', 'de', 'que', 'y', 'a', 'en', 'un', 'ser', 'se', 'no', 'haber',
+            'por', 'con', 'su', 'para', 'es', 'al', 'lo', 'como', 'más', 'o', 'poder',
+            'decir', 'este', 'ir', 'otro', 'ese', 'la', 'si', 'me', 'ya', 'ver',
+            'porque', 'dar', 'cuando', 'él', 'muy', 'sin', 'vez', 'mucho', 'saber', 'qué',
+            'sobre', 'mi', 'alguno', 'mismo', 'yo', 'también', 'hasta', 'hay', 'donde',
+            'han', 'quien', 'están', 'estado', 'desde', 'todo', 'nos', 'durante', 'estados',
+            'todos', 'uno', 'les', 'ni', 'contra', 'otros', 'fueron', 'ese', 'eso', 'había',
+            'ante', 'ellos', 'algunas', 'algún', 'tuvo', 'tenía', 'él', 'pues', 'solo',
+            'sólo', 'unos', 'cual', 'cuales', 'cualquier', 'cuanto', 'cuantos'
+        }
+        
+        # Regex: palabras españolas (con acentos) + números
+        pattern = r'[a-záéíóúüñü]+|\d+'
+        tokens = re.findall(pattern, text.lower())
+        
+        # Filtrar stopwords pero mantener números y palabras largas
+        filtered = [
+            token for token in tokens 
+            if token not in stopwords_es or len(token) > 2 or token.isdigit()
+        ]
+        
+        return filtered
+    
     @timed
     def build_bm25_index(self, texts: List[str]) -> BM25Okapi:
         """
         Construye índice BM25 para búsqueda léxica
+        Fase 2: Usa tokenizador robusto en español
         
         Args:
             texts: Lista de textos a indexar
@@ -123,10 +156,10 @@ class DocumentIndexer:
         if not texts:
             raise ValueError("Lista de textos vacía")
         
-        logger.info("Construyendo índice BM25...")
+        logger.info("Construyendo índice BM25 (tokenizador español)...")
         
-        # Tokenizar (simple split por espacios)
-        tokenized_corpus = [text.lower().split() for text in texts]
+        # Tokenizar con tokenizador robusto en español
+        tokenized_corpus = [self._tokenize_spanish(text) for text in texts]
         bm25 = BM25Okapi(tokenized_corpus)
         
         logger.success(f"✓ Índice BM25 construido: {len(tokenized_corpus)} documentos")

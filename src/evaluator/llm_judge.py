@@ -8,6 +8,7 @@ import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Dict, List, Optional
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import torch
 from loguru import logger
@@ -95,21 +96,31 @@ class LLMJudge:
         self.model.eval()
         logger.success(f"✓ LLM Juez cargado: {model_name}")
 
-    def _generate_response(self, prompt: str, max_tokens: int = 600) -> str:
-        """Genera respuesta del LLM"""
-        messages = [{"role": "user", "content": prompt}]
+    def _generate_response(self, prompt: str, max_tokens: int = 600, use_messages: bool = True) -> str:
+        """
+        Genera respuesta del LLM
         
-        text = self.tokenizer.apply_chat_template(
-            messages,
-            tokenize=False,
-            add_generation_prompt=True
-        )
+        Args:
+            prompt: Texto del prompt (puede ser texto plano o ya formateado)
+            max_tokens: Tokens máximos a generar
+            use_messages: Si True, envuelve el prompt en messages. Si False, usa prompt directamente.
+        """
+        if use_messages:
+            messages = [{"role": "user", "content": prompt}]
+            text = self.tokenizer.apply_chat_template(
+                messages,
+                tokenize=False,
+                add_generation_prompt=True
+            )
+        else:
+            # Prompt ya viene formateado con apply_chat_template
+            text = prompt
 
         inputs = self.tokenizer(
             text,
             return_tensors="pt",
             truncation=True,
-            max_length=2048
+            max_length=4096
         ).to(self.model.device)
 
         with torch.no_grad():
@@ -218,16 +229,30 @@ class LLMJudge:
             [f"[{s['id']}] {s['title']}\n{s['text_preview']}" for s in sources]
         )
                 
-        # Cargar prompt desde archivo externo
-        prompt = load_prompt(
-            "judge_evaluation",
+        # Cargar prompts separados: system (instrucciones) y user (datos a evaluar)
+        system_prompt = load_prompt("judge_evaluation")
+        user_prompt = load_prompt(
+            "judge_user_prompt",
             question=question,
             reference_answer=reference_answer,
             rag_answer=rag_answer,
             retrieved_context=retrieved_context
         )
-
-        response = self._generate_response(prompt)
+        
+        # Construir messages con roles separados
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ]
+        
+        # Generar texto completo para el modelo
+        text = self.tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True
+        )
+        
+        response = self._generate_response(text, use_messages=False)
         logger.debug(f"LLM Juez response (Q#{question_id}): {response[:200]}...")
         scores = self._extract_scores(response)
         
@@ -265,7 +290,8 @@ class LLMJudge:
     def evaluate_all(
         self,
         results_path: Path,
-        output_path: Path
+        output_path: Path,
+        max_workers: int = 3
     ) -> List[JudgeScore]:
         """
         Evalúa todos los resultados del RAG
@@ -273,6 +299,7 @@ class LLMJudge:
         Args:
             results_path: Ruta a los resultados de evaluación
             output_path: Ruta para guardar métricas
+            max_workers: Número de workers paralelos (default: 3)
         
         Returns:
             Lista de JudgeScore
@@ -287,11 +314,13 @@ class LLMJudge:
         else:
             results_list = list(results)
 
-        logger.info(f"Evaluando {len(results_list)} respuestas con LLM Juez...")
+        logger.info(f"Evaluando {len(results_list)} respuestas con LLM Juez usando {max_workers} workers...")
         
         scores = []
-        for item in results_list:
-            score = self.evaluate_answer(
+        
+        # Función para procesar un item
+        def process_item(item):
+            return self.evaluate_answer(
                 question=item['question'],
                 reference_answer=item.get('reference_answer', ''),
                 rag_answer=item['rag_answer'],
@@ -300,8 +329,23 @@ class LLMJudge:
                 category=item['category'],
                 sources=item['sources']
             )
-            scores.append(score)
-
+        
+        # Procesamiento paralelo
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(process_item, item): item['id'] for item in results_list}
+            
+            with tqdm(total=len(results_list), desc="Evaluando con LLM Juez") as pbar:
+                for future in as_completed(futures):
+                    try:
+                        score = future.result()
+                        scores.append(score)
+                    except Exception as e:
+                        logger.error(f"Error evaluando pregunta {futures[future]}: {e}")
+                    finally:
+                        pbar.update(1)
+        
+        # Ordenar por ID para mantener consistencia
+        scores.sort(key=lambda x: x.id)
         
         # Guardar métricas
         output_path.parent.mkdir(parents=True, exist_ok=True)

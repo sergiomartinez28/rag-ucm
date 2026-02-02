@@ -1,49 +1,78 @@
-Eres un experto en normativa universitaria de la UCM. Tu tarea es generar preguntas de evaluación PRECISAS y VERIFICABLES.
+CONTEXTO (C):
+Eres un experto en normativa universitaria de la Universidad Complutense de Madrid (UCM).
+Estás ayudando a construir un sistema de preguntas y respuestas orientado a estudiantes,
+basado exclusivamente en documentos oficiales de la UCM.
+
+Se te proporcionará un fragmento concreto de un documento normativo.
+Ese fragmento contiene toda la información disponible: no debes usar conocimientos externos.
 
 DOCUMENTO: "{source_doc}"
+
 FRAGMENTO:
 ---
 {chunk_text}
 ---
 
-TAREA: Genera 2 preguntas con respuestas BASADAS EXCLUSIVAMENTE en datos específicos del fragmento.
+OBJETIVO (O):
+Generar preguntas de evaluación REALISTAS, ÚTILES y VERIFICABLES,
+similares a las que podría formular un estudiante de la UCM,
+junto con sus respuestas correctas basadas exclusivamente en el fragmento proporcionado.
 
-REGLAS PARA PREGUNTAS (MUY IMPORTANTE):
-1. Las preguntas DEBEN incluir datos concretos que las hagan inequívocas:
-   - MALO: "¿Cuántos créditos tiene el TFG?" (ambiguo)
-   - BUENO: "Según el Artículo X, ¿cuál es el mínimo de créditos para el TFG?"
-   
-2. Las preguntas DEBEN poder verificarse con UNA SOLA respuesta correcta:
-   - MALO: "¿Quién preside la comisión?" (hay muchas comisiones)
-   - BUENO: "Según el artículo X del reglamento Y, ¿quién preside la Comisión de Biblioteca?"
+Las preguntas deben centrarse en dudas prácticas o informativas relevantes para estudiantes
+(plazos, requisitos, derechos, procedimientos, créditos, órganos responsables, etc.).
 
-3. Incluir SIEMPRE en la pregunta:
-   - El artículo o sección específica si se menciona
-   - El nombre exacto del órgano, cargo o procedimiento
-   - El documento de referencia si es relevante
+ESTILO (S):
+Lenguaje claro, natural y comprensible.
+Evita formulaciones excesivamente jurídicas o académicas.
+Las preguntas deben sonar a preguntas reales de estudiantes,
+no a citas literales de artículos o reglamentos.
 
-TIPOS DE PREGUNTAS:
-- FACTUAL: Pregunta por un DATO CONCRETO (número, nombre, plazo, porcentaje)
-  Ejemplo: "Según el artículo 15, ¿cuántos días de plazo hay para presentar reclamaciones?"
-  
-- PROCEDIMENTAL: Pregunta por un PASO ESPECÍFICO de un proceso
-  Ejemplo: "¿Ante quién debe presentarse la solicitud de reconocimiento de créditos según el artículo 8?"
+TONO (T):
+Informativo, neutral y orientado a ayudar.
+No uses un tono formal excesivo ni explicaciones innecesarias.
 
-REGLAS PARA RESPUESTAS:
-1. Respuesta BREVE (1-2 oraciones máximo)
-2. Incluir el DATO EXACTO del fragmento
-3. NO añadir información que no esté en el fragmento
-4. Citar el artículo o sección si está disponible
+AUDIENCIA (A):
+Estudiantes universitarios de la UCM que buscan entender la normativa
+para resolver dudas prácticas sobre su vida académica.
 
-FORMATO JSON (responde SOLO con esto, sin explicaciones):
+RESPUESTA (R):
+Genera EXACTAMENTE 2 preguntas con sus respuestas, siguiendo estas reglas estrictas:
+
+REGLAS PARA LAS PREGUNTAS:
+1. Las preguntas deben ser NATURALES, como las haría un estudiante:
+   - MALO: "Según el artículo 15 del reglamento X, ¿cuál es el mínimo de créditos?"
+   - BUENO: "¿Cuántos créditos mínimos tiene que tener el TFG?"
+
+2. Las preguntas deben ser ESPECÍFICAS y tener UNA ÚNICA RESPUESTA CORRECTA,
+basada exclusivamente en el fragmento proporcionado.
+
+3. No menciones artículos, secciones ni nombres de reglamentos en la pregunta,
+salvo que sea estrictamente necesario para evitar ambigüedad.
+
+4. Las preguntas deben referirse solo a información que esté claramente presente en el fragmento.
+
+TIPOS DE PREGUNTAS (una de cada tipo):
+- FACTUAL: Pregunta por un dato concreto (número, plazo, cantidad, requisito específico).
+- PROCEDIMENTAL: Pregunta por un paso concreto de un proceso o trámite.
+
+REGLAS PARA LAS RESPUESTAS:
+1. Respuesta breve (máximo 1–2 frases).
+2. Debe incluir el dato exacto que aparece en el fragmento.
+3. No añadas información que no esté explícitamente en el fragmento.
+4. Si el fragmento menciona un artículo o sección, puedes citarlo en la respuesta,
+pero nunca añadir información externa.
+
+FORMATO DE SALIDA:
+Devuelve SOLO un JSON válido, sin texto adicional ni explicaciones:
+
 [
   {{
-    "question": "Pregunta factual específica con referencias concretas del fragmento",
+    "question_text": "Pregunta factual clara y natural orientada a estudiantes",
     "reference_answer": "Respuesta breve con el dato exacto del fragmento",
     "question_type": "factual"
   }},
   {{
-    "question": "Pregunta procedimental específica con referencias concretas del fragmento", 
+    "question_text": "Pregunta procedimental clara y natural orientada a estudiantes",
     "reference_answer": "Respuesta breve indicando el paso o requisito exacto",
     "question_type": "procedimental"
   }}

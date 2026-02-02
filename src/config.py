@@ -25,7 +25,11 @@ class ModelConfig(BaseModel):
     )
     reranker_type: str = Field(
         default="cross-encoder",
-        description="Tipo de re-ranking"
+        description="Tipo de re-ranking ('cross-encoder' o 'simple')"
+    )
+    use_cross_encoder: bool = Field(
+        default=True,
+        description="Usar cross-encoder para re-ranking (desactivar en CPU si es muy lento)"
     )
     llm_model: str = Field(
         default="Qwen/Qwen2.5-3B-Instruct",
@@ -39,6 +43,15 @@ class ModelConfig(BaseModel):
         if v.lower() not in allowed:
             raise ValueError(f"reranker_type debe ser uno de {allowed}")
         return v.lower()
+    
+    @field_validator('use_cross_encoder')
+    @classmethod
+    def validate_use_cross_encoder(cls, v: bool, info) -> bool:
+        reranker_type = info.data.get('reranker_type', 'cross-encoder')
+        if reranker_type == 'simple' and v:
+            # Si reranker_type es 'simple', desactivar cross-encoder automáticamente
+            return False
+        return v
 
 
 class ChunkingConfig(BaseModel):
@@ -66,24 +79,30 @@ class ChunkingConfig(BaseModel):
 
 
 class RetrievalConfig(BaseModel):
-    """Configuración de recuperación"""
+    """Configuración de recuperación - Fase 2: Optimizada para Precision@k"""
     top_k_retrieval: int = Field(
-        default=8,
+        default=20,
         ge=1,
         le=50,
-        description="Candidatos a recuperar"
+        description="Candidatos a recuperar (Fase 2: aumentado 8→20)"
     )
     top_k_rerank: int = Field(
-        default=3,
+        default=5,
         ge=1,
         le=10,
-        description="Documentos finales después de re-ranking"
+        description="Documentos finales después de re-ranking (Fase 2: aumentado 3→5)"
     )
     hybrid_alpha: float = Field(
-        default=0.6,
+        default=0.45,
         ge=0.0,
         le=1.0,
-        description="Balance BM25/Semántico (0=BM25, 1=Semántico)"
+        description="Balance BM25/Semántico (Fase 2: 0.6→0.45 para factual)"
+    )
+    min_score_threshold: float = Field(
+        default=0.5,
+        ge=0.0,
+        le=1.0,
+        description="Umbral mínimo de score del reranker para filtrar ruido (Fase 2)"
     )
 
 
@@ -155,11 +174,15 @@ class RAGConfig(BaseModel):
     @classmethod
     def from_env(cls) -> "RAGConfig":
         """Carga configuración desde variables de entorno"""
+        # Crear instancias default para obtener los valores por defecto
+        default_retrieval = RetrievalConfig()
+        
         return cls(
             models=ModelConfig(
                 embedding_model=os.getenv('EMBEDDING_MODEL', 'BAAI/bge-m3'),
                 reranker_model=os.getenv('RERANKER_MODEL', 'BAAI/bge-reranker-base'),
                 reranker_type=os.getenv('RERANKER_TYPE', 'cross-encoder'),
+                use_cross_encoder=os.getenv('USE_CROSS_ENCODER', 'true').lower() == 'true',
                 llm_model=os.getenv('LLM_MODEL', 'Qwen/Qwen2.5-3B-Instruct'),
             ),
             chunking=ChunkingConfig(
@@ -167,9 +190,10 @@ class RAGConfig(BaseModel):
                 chunk_overlap=int(os.getenv('CHUNK_OVERLAP', 200)),
             ),
             retrieval=RetrievalConfig(
-                top_k_retrieval=int(os.getenv('TOP_K_RETRIEVAL', 8)),
-                top_k_rerank=int(os.getenv('TOP_K_RERANK', 3)),
-                hybrid_alpha=float(os.getenv('HYBRID_ALPHA', 0.6)),
+                top_k_retrieval=int(os.getenv('TOP_K_RETRIEVAL', default_retrieval.top_k_retrieval)),
+                top_k_rerank=int(os.getenv('TOP_K_RERANK', default_retrieval.top_k_rerank)),
+                hybrid_alpha=float(os.getenv('HYBRID_ALPHA', default_retrieval.hybrid_alpha)),
+                min_score_threshold=float(os.getenv('MIN_SCORE_THRESHOLD', default_retrieval.min_score_threshold)),
             ),
             generation=GenerationConfig(
                 max_new_tokens=int(os.getenv('MAX_NEW_TOKENS', 120)),

@@ -1,0 +1,57 @@
+[
+  {
+    "id": 0,
+    "question": "¿Cuántos vocales debe tener la Comisión Permanente del Consejo de Gobierno?",
+    "relevancia": 0.0,
+    "fidelidad": 0.0,
+    "precision": 0.0,
+    "overall_score": 0.0,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "gobierno"
+  },
+  {
+    "id": 1,
+    "question": "¿Quién preside la Comisión Permanente del Consejo de Gobierno?",
+    "relevancia": 0.5,
+    "fidelidad": 0.4,
+    "precision": 0.3,
+    "overall_score": 0.39999999999999997,
+    "explanation": "",
+    "question_type": "procedimental",
+    "category": "gobierno"
+  },
+  {
+    "id": 2,
+    "question": "¿Cuántos años máximo puede estar en excedencia temporal el Personal Docente e Investigador de la UCM?",
+    "relevancia": 1.0,
+    "fidelidad": 0.8,
+    "precision": 1.0,
+    "overall_score": 0.9333333333333332,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "estatutos"
+  },
+  {
+    "id": 3,
+    "question": "¿Cuánto tiempo mínimo de excedencia voluntaria tienen que haber pasado para poder reingresar automáticamente un docente de la UCM?",
+    "relevancia": 1.0,
+    "fidelidad": 0.7,
+    "precision": 0.9,
+    "overall_score": 0.8666666666666667,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "estatutos"
+  },
+  {
+    "id": 4,
+    "question": "¿Cuántos créditos mínimos tiene que tener el TFG?",
+    "relevancia": 0.5,
+    "fidelidad": 0.7,
+    "precision": 0.4,
+    "overall_score": 0.5333333333333333,
+    "explanation": "",
+    "question_type": "factual",
+    "category": "general"
+  }
+]

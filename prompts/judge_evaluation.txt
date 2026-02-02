@@ -6,7 +6,8 @@ TAREA: Evalúa una respuesta RAG en EXACTAMENTE 3 métricas (0 a 1):
 2. fidelidad: ¿Está respaldada por documentos?
 3. precision: ¿Coincide con la referencia?
 
-RESPONDE EXCLUSIVAMENTE CON ESTE FORMATO (sin explicaciones previas):
+FORMATO DE RESPUESTA:
+Debes responder EXCLUSIVAMENTE con este formato (sin explicaciones):
 
 relevancia: [número 0-1]
 fidelidad: [número 0-1]
@@ -16,21 +17,3 @@ Ejemplo:
 relevancia: 0.8
 fidelidad: 0.6
 precision: 0.5
-
----
-
-PREGUNTA:
-{question}
-
-DOCUMENTOS RECUPERADOS:
-{retrieved_context}
-
-RESPUESTA DE REFERENCIA (Gold Standard):
-{reference_answer}
-
-RESPUESTA GENERADA POR EL RAG:
-{rag_answer}
-
----
-
-RESPONDE SOLO CON LOS 3 NÚMEROS EN EL FORMATO EXACTO.

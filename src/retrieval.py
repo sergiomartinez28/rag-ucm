@@ -29,6 +29,7 @@ class HybridRetriever:
         indexer: DocumentIndexer,
         reranker_model: str = "BAAI/bge-reranker-v2-m3",
         reranker_type: str = "cross-encoder",
+        use_cross_encoder: bool = True,
         alpha: float = 0.5
     ):
         """
@@ -36,6 +37,7 @@ class HybridRetriever:
             indexer: Indexador con índices FAISS y BM25 ya construidos
             reranker_model: Modelo cross-encoder para re-ranking
             reranker_type: Tipo de re-ranking ('cross-encoder' o 'simple')
+            use_cross_encoder: Si False, usa re-ranking simple aunque reranker_type='cross-encoder'
             alpha: Balance entre BM25 y semántico (0=solo BM25, 1=solo semántico)
         """
         if not 0 <= alpha <= 1:
@@ -46,25 +48,37 @@ class HybridRetriever:
         self.reranker_type = reranker_type.lower().strip()
         self.reranker = None
         
-        if self.reranker_type == "cross-encoder":
+        # Solo cargar cross-encoder si está activado Y el tipo es correcto
+        if self.reranker_type == "cross-encoder" and use_cross_encoder:
             with TimingContext("Carga de re-ranker"):
-                logger.info(f"Cargando modelo de re-ranking: {reranker_model}")
                 device = "cuda" if torch.cuda.is_available() else "cpu"
+                logger.info(f"Cargando modelo de re-ranking: {reranker_model} en {device}")
+                
+                if device == "cpu":
+                    logger.warning(
+                        "⚠️  Cross-encoder en CPU será lento (~5s con 20 candidatos). "
+                        "Considera: (1) usar GPU, (2) bajar top_k_retrieval a 15, "
+                        "o (3) desactivar con use_cross_encoder=False"
+                    )
+                
                 self.reranker = CrossEncoder(
                     reranker_model, 
                     device=device,
                     max_length=256
                 )
-                logger.info(f"Re-ranker cargado en: {device}")
+                logger.info(f"✓ Re-ranker cargado en: {device}")
         else:
-            logger.info("Re-ranker simple activado (sin cross-encoder)")
+            if not use_cross_encoder:
+                logger.info("Cross-encoder desactivado - usando re-ranker simple")
+            else:
+                logger.info("Re-ranker simple activado (sin cross-encoder)")
         
         logger.success(f"✓ HybridRetriever inicializado (alpha={alpha})")
     
     @timed
     def search_bm25(self, query: str, top_k: int = 20) -> List[Tuple[int, float]]:
         """
-        Búsqueda BM25
+        Búsqueda BM25 con tokenizador robusto
         
         Returns:
             Lista de (índice_chunk, score) ordenados por relevancia
@@ -73,14 +87,19 @@ class HybridRetriever:
             logger.warning("Query vacía para BM25")
             return []
         
-        tokenized_query = query.lower().split()
+        # Usar tokenizador español del indexador
+        tokenized_query = self.indexer._tokenize_spanish(query)
+        if not tokenized_query:
+            logger.warning("Query vacía después de tokenizar")
+            return []
+        
         scores = self.indexer.bm25_index.get_scores(tokenized_query)
         
         # Obtener top-k índices
         top_indices = np.argsort(scores)[::-1][:top_k]
         results = [(int(idx), float(scores[idx])) for idx in top_indices]
         
-        logger.debug(f"BM25: {len(results)} resultados")
+        logger.debug(f"BM25: {len(results)} resultados (top {top_k})")
         return results
     
     @timed
@@ -202,27 +221,22 @@ class HybridRetriever:
             f"max={raw_scores.max():.3f}, mean={raw_scores.mean():.3f}"
         )
         
-        # Normalización por ranking (mejor=1.0, peor=0.0)
-        ranks = np.argsort(-raw_scores)
-        normalized_scores = np.zeros_like(raw_scores, dtype=float)
+        # Fase 2: Normalizar con sigmoid para obtener scores [0, 1] reales
+        sigmoid_scores = 1 / (1 + np.exp(-raw_scores))
         
-        if len(raw_scores) > 1:
-            normalized_scores[ranks] = 1 - (ranks / (len(raw_scores) - 1))
-        else:
-            normalized_scores[0] = 1.0
-        
-        # Combinar con chunks y ordenar
+        # Combinar con chunks
         results = [
-            (self.indexer.chunks[candidates[i][0]], float(raw_scores[i]), float(normalized_scores[i]))
+            (self.indexer.chunks[candidates[i][0]], float(sigmoid_scores[i]))
             for i in range(len(candidates))
         ]
         
+        # Ordenar por score real
         results.sort(key=lambda x: x[1], reverse=True)
         
-        # Devolver solo (chunk, normalized_score)
-        final_results = [(chunk, norm_score) for chunk, _, norm_score in results[:top_k]]
+        # Devolver top_k
+        final_results = results[:top_k]
         
-        logger.debug(f"Re-ranking: top {top_k} de {len(results)} candidatos")
+        logger.debug(f"Re-ranking: top {top_k} de {len(results)} candidatos (sigmoid scores)")
         return final_results
     
     def rerank_simple(

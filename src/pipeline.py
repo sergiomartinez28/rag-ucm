@@ -78,6 +78,7 @@ class RAGPipeline:
                     indexer=self.indexer,
                     reranker_model=self.config.models.reranker_model,
                     reranker_type=self.config.models.reranker_type,
+                    use_cross_encoder=self.config.models.use_cross_encoder,
                     alpha=self.config.retrieval.hybrid_alpha
                 )
             
@@ -123,14 +124,19 @@ class RAGPipeline:
             # Procesar todos los documentos
             all_chunks = []
             pdf_files = list(documents_path.glob('**/*.pdf'))
+            html_files = list(documents_path.glob('**/*.html'))
+            all_files = pdf_files + html_files
             
-            if not pdf_files:
-                logger.warning(f"No se encontraron archivos PDF en {documents_path}")
+            if not all_files:
+                logger.warning(f"No se encontraron documentos (PDF/HTML) en {documents_path}")
                 return
             
-            logger.info(f"Encontrados {len(pdf_files)} documentos PDF")
+            logger.info(f"Encontrados {len(all_files)} documentos (PDFs: {len(pdf_files)}, HTML: {len(html_files)})")
             
-            for doc_file in pdf_files:
+            skipped_count = 0
+            processed_count = 0
+            
+            for doc_file in all_files:
                 try:
                     logger.info(f"Procesando: {doc_file.name}")
                     
@@ -141,11 +147,19 @@ class RAGPipeline:
                     }
                     
                     chunks = self.preprocessor.process_document(doc_file, metadata)
-                    all_chunks.extend(chunks)
+                    
+                    if chunks:
+                        all_chunks.extend(chunks)
+                        processed_count += 1
+                    else:
+                        skipped_count += 1
                     
                 except Exception as e:
                     logger.error(f"Error procesando {doc_file.name}: {e}")
+                    skipped_count += 1
                     continue
+            
+            logger.info(f"Documentos procesados: {processed_count}, omitidos: {skipped_count}")
             
             if not all_chunks:
                 raise RuntimeError("No se generaron chunks para indexar")
@@ -168,6 +182,7 @@ class RAGPipeline:
                 indexer=self.indexer,
                 reranker_model=self.config.models.reranker_model,
                 reranker_type=self.config.models.reranker_type,
+                use_cross_encoder=self.config.models.use_cross_encoder,
                 alpha=self.config.retrieval.hybrid_alpha
             )
             
@@ -227,23 +242,54 @@ class RAGPipeline:
         
         timing = {}
         
-        # 1. Recuperación
+        # 1. Recuperación con umbral de calidad
         with TimingContext("Recuperación", log=False) as timer:
-            contexts = self.retriever.retrieve(
+            contexts = self.retriever.retrieve_with_threshold(
                 query=question,
                 top_k_retrieval=self.config.retrieval.top_k_retrieval,
-                top_k_final=top_k
+                top_k_final=top_k,
+                min_score=self.config.retrieval.min_score_threshold
             )
         timing['retrieval'] = timer.elapsed
         logger.info(f"⏱️  Recuperación: {timer.elapsed:.2f}s")
         
-        # 2. Generación
+        # 2. Abstención temprana si no hay contextos de calidad suficiente
+        if len(contexts) == 0:
+            logger.warning("No hay contextos que superen el umbral de calidad → Abstención")
+            return {
+                'answer': "No dispongo de información disponible sobre esta consulta en la normativa.",
+                'sources': [],
+                'contexts': [],
+                'metadata': {
+                    'abstention_reason': 'no_quality_contexts',
+                    'min_score_threshold': self.config.retrieval.min_score_threshold
+                },
+                'timing': timing
+            }
+        
+        # Si solo hay 1 contexto con score muy bajo, también abstenerse
+        if len(contexts) == 1 and contexts[0][1] < (self.config.retrieval.min_score_threshold + 0.1):
+            logger.warning(f"Solo 1 contexto con score bajo ({contexts[0][1]:.3f}) → Abstención")
+            return {
+                'answer': "No dispongo de información suficiente para responder con certeza a esta consulta.",
+                'sources': [],
+                'contexts': contexts,
+                'metadata': {
+                    'abstention_reason': 'single_low_quality_context',
+                    'context_score': contexts[0][1]
+                },
+                'timing': timing
+            }
+        
+        logger.info(f"✓ {len(contexts)} contextos de calidad para generación")
+        
+        # 3. Generación
         with TimingContext("Generación", log=False) as timer:
             response = self.generator.generate(question, contexts)
         timing['generation'] = timer.elapsed
         logger.info(f"⏱️  Generación: {timer.elapsed:.2f}s")
         
-        # 3. Verificación (opcional)
+        # 4. Verificación (opcional)
         timing['verification'] = 0
         if include_verification and self.verifier and contexts:
             with TimingContext("Verificación", log=False) as timer:

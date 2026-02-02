@@ -5,9 +5,11 @@ Usa un LLM local para generar preguntas y respuestas de referencia desde los chu
 
 import json
 import random
+import re
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Set
 from dataclasses import dataclass, asdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import pickle
 
 import torch
@@ -25,8 +27,9 @@ class QAPair:
     question: str
     reference_answer: str
     question_type: str  # factual, procedural, conceptual
-    source_doc: str
-    chunk_id: int
+    source_doc: str  # Nombre del documento (legible)
+    doc_id: str      # ID real del documento en el indexador
+    chunk_id: int    # ID real del chunk en el indexador
     chunk_text: str
     category: str
 
@@ -68,6 +71,32 @@ class DatasetGenerator:
         )
         
         logger.success(f"✓ Modelo generador (Ground Truth) cargado: {model_name}")
+    
+    @staticmethod
+    def _normalize_question(question: str) -> str:
+        """
+        Normaliza una pregunta para detectar duplicados:
+        - Lowercase
+        - Elimina puntuación (excepto espacios)
+        - Colapsa espacios múltiples
+        - Strip de espacios
+        
+        Returns:
+            Versión normalizada de la pregunta
+        """
+        # Lowercase
+        normalized = question.lower()
+        
+        # Eliminar signos de puntuación pero preservar espacios y letras acentuadas
+        normalized = re.sub(r'[^\w\sáéíóúüñ]', '', normalized)
+        
+        # Colapsar espacios múltiples
+        normalized = re.sub(r'\s+', ' ', normalized)
+        
+        # Strip
+        normalized = normalized.strip()
+        
+        return normalized
     
     def _generate_response(self, prompt: str, max_tokens: int = 800) -> str:
         """Genera respuesta del LLM"""
@@ -155,8 +184,12 @@ class DatasetGenerator:
         if isinstance(qa_list, dict):
             qa_list = [qa_list]
         
-        # Añadir metadatos
+        # Añadir metadatos y mapear question_text -> question
         for qa in qa_list:
+            # Mapear question_text -> question si es necesario
+            if 'question_text' in qa and 'question' not in qa:
+                qa['question'] = qa.pop('question_text')
+            
             qa['source_doc'] = source_doc
             qa['chunk_id'] = chunk_id
             qa['category'] = category
@@ -169,7 +202,8 @@ class DatasetGenerator:
         chunks_path: Path,
         output_path: Path,
         num_samples: int = 5,
-        random_seed: int = 42
+        random_seed: int = 42,
+        max_workers: int = 4
     ) -> List[QAPair]:
         """
         Genera un dataset de evaluación desde chunks guardados
@@ -179,6 +213,7 @@ class DatasetGenerator:
             output_path: Ruta para guardar el dataset
             num_samples: Número de chunks a muestrear
             random_seed: Semilla para reproducibilidad
+            max_workers: Número de workers paralelos (default: 4)
         
         Returns:
             Lista de QAPair
@@ -218,43 +253,92 @@ class DatasetGenerator:
             )
         
         all_qa_pairs = []
+        seen_questions: Set[str] = set()  # Track de preguntas normalizadas para deduplicar
         qa_id = 0
+        duplicates_count = 0
         
-        for idx in tqdm(sampled_indices, desc="Generando Q&A"):
+        # Función para procesar un chunk
+        def process_chunk(idx):
             chunk = chunks[idx]
             
-            # Obtener nombre del documento desde doc_id (más confiable que source)
-            source = chunk.doc_id if hasattr(chunk, 'doc_id') else (
+            # Obtener doc_id real del chunk
+            doc_id = chunk.doc_id if hasattr(chunk, 'doc_id') else (
                 chunk.source if hasattr(chunk, 'source') else "unknown"
             )
-            # Limpiar el nombre del documento (quitar _chunk_X si existe)
-            if '_chunk_' in source:
-                source = source.split('_chunk_')[0]
             
-            category = self._infer_category(source)
+            # Nombre legible del documento (sin _chunk_X)
+            source_name = doc_id
+            if '_chunk_' in source_name:
+                source_name = source_name.split('_chunk_')[0]
+            
+            category = self._infer_category(source_name)
             
             # Generar Q&A
             qa_list = self.generate_qa_from_chunk(
                 chunk_text=chunk.text,
-                source_doc=source,
+                source_doc=source_name,
                 chunk_id=idx,
                 category=category
             )
             
-            # Convertir a QAPair
-            for qa in qa_list:
-                qa_pair = QAPair(
-                    id=qa_id,
-                    question=qa.get('question', ''),
-                    reference_answer=qa.get('reference_answer', ''),
-                    question_type=qa.get('question_type', 'unknown'),
-                    source_doc=qa.get('source_doc', source),
-                    chunk_id=qa.get('chunk_id', idx),
-                    chunk_text=qa.get('chunk_text', chunk.text[:500]),
-                    category=qa.get('category', category)
-                )
-                all_qa_pairs.append(qa_pair)
-                qa_id += 1
+            return qa_list, source_name, doc_id, idx, category, chunk.text
+        
+        # Procesamiento paralelo
+        logger.info(f"Procesando {len(sampled_indices)} chunks con {max_workers} workers...")
+        
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {executor.submit(process_chunk, idx): idx for idx in sampled_indices}
+            
+            with tqdm(total=len(sampled_indices), desc="Generando Q&A") as pbar:
+                for future in as_completed(futures):
+                    try:
+                        qa_list, source_name, doc_id, idx, category, chunk_text = future.result()
+                        
+                        # Convertir a QAPair y deduplicar
+                        for qa in qa_list:
+                            question_text = qa.get('question', '').strip()
+                            
+                            # Skip si pregunta vacía
+                            if not question_text:
+                                continue
+                            
+                            # Normalizar pregunta para detectar duplicados
+                            normalized_q = self._normalize_question(question_text)
+                            
+                            # Deduplicar: skip si ya vimos esta pregunta
+                            if normalized_q in seen_questions:
+                                duplicates_count += 1
+                                logger.debug(f"Duplicado detectado: '{question_text[:50]}...'")
+                                continue
+                            
+                            # Registrar pregunta como vista
+                            seen_questions.add(normalized_q)
+                            
+                            # Crear QAPair con doc_id y chunk_id reales
+                            qa_pair = QAPair(
+                                id=qa_id,
+                                question=question_text,
+                                reference_answer=qa.get('reference_answer', ''),
+                                question_type=qa.get('question_type', 'unknown'),
+                                source_doc=source_name,
+                                doc_id=doc_id,
+                                chunk_id=idx,
+                                chunk_text=chunk_text[:500],
+                                category=category
+                            )
+                            all_qa_pairs.append(qa_pair)
+                            qa_id += 1
+                    except Exception as e:
+                        logger.error(f"Error procesando chunk {futures[future]}: {e}")
+                    finally:
+                        pbar.update(1)
+        
+        # Ordenar por ID para mantener consistencia
+        all_qa_pairs.sort(key=lambda x: x.id)
+        
+        # Log de deduplicación
+        if duplicates_count > 0:
+            logger.info(f"Duplicados eliminados durante generación: {duplicates_count}")
         
         # Guardar dataset
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -263,7 +347,10 @@ class DatasetGenerator:
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(dataset, f, ensure_ascii=False, indent=2)
         
-        logger.success(f"✓ Dataset generado: {len(all_qa_pairs)} preguntas en {output_path}")
+        logger.success(
+            f"✓ Dataset generado: {len(all_qa_pairs)} preguntas únicas "
+            f"({duplicates_count} duplicados eliminados) en {output_path}"
+        )
         
         return all_qa_pairs
     
