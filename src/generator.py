@@ -260,6 +260,178 @@ class ResponseGenerator:
         
         return messages
     
+    def _is_suspicious_response(self, answer: str) -> bool:
+        """
+        Detecta respuestas sospechosas que indican un error de generación.
+        
+        Returns:
+            True si la respuesta es sospechosa y debe reintentarse
+        """
+        clean = answer.strip()
+        
+        # Respuesta vacía o muy corta (1-2 caracteres)
+        if len(clean) <= 2:
+            return True
+        
+        # Solo un número (posible error de parsing)
+        if clean.isdigit():
+            return True
+        
+        # Respuestas que son solo "1", "1.", "1:" etc
+        if re.match(r'^1\.?\s*:?\s*$', clean):
+            return True
+        
+        # Respuestas que empiezan con numeración seguida de casi nada
+        if re.match(r'^[1-9]\.\s*.{0,5}$', clean):
+            return True
+        
+        return False
+    
+    def _generate_answer_internal(
+        self,
+        query: str,
+        contexts: List[Tuple[Chunk, float]],
+        temperature: float = None,
+        do_sample: bool = None
+    ) -> Tuple[str, 'TimingContext']:
+        """
+        Lógica interna de generación de respuesta.
+        
+        Returns:
+            Tuple de (respuesta, timer)
+        """
+        # Crear mensajes para el chat
+        messages = self.create_prompt(query, contexts)
+        
+        # Usar apply_chat_template para formato correcto
+        prompt = self.tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True
+        )
+        
+        # Tokenizar con presupuesto de contexto aumentado
+        model_max_length = getattr(self.tokenizer, 'model_max_length', 4096)
+        max_input_length = min(model_max_length, 4096)
+        
+        inputs = self.tokenizer(
+            prompt, 
+            return_tensors="pt",
+            max_length=max_input_length,
+            truncation=True,
+            padding=False
+        ).to(self.device)
+        
+        logger.debug(f"Tokenización: {inputs['input_ids'].shape[1]} tokens (máx: {max_input_length})")
+        
+        # Obtener longitud del prompt para extraer respuesta
+        prompt_length = inputs['input_ids'].shape[1]
+        
+        # Usar eos_token_id como pad_token_id
+        eos_id = self.tokenizer.eos_token_id
+        
+        # Parámetros de generación
+        use_temp = temperature if temperature is not None else self.temperature
+        use_sample = do_sample if do_sample is not None else (use_temp > 0)
+        
+        logger.debug(f"Generando respuesta (max_new_tokens={self.max_new_tokens}, temp={use_temp})")
+        
+        with torch.no_grad():
+            with TimingContext("Generación LLM", log=False) as timer:
+                outputs = self.model.generate(
+                    input_ids=inputs['input_ids'],
+                    attention_mask=inputs['attention_mask'],
+                    max_new_tokens=self.max_new_tokens,
+                    do_sample=use_sample,
+                    temperature=use_temp if use_sample else None,
+                    pad_token_id=eos_id,
+                    eos_token_id=eos_id,
+                    use_cache=True
+                )
+        
+        logger.debug(f"Generación LLM: {timer.elapsed:.2f}s")
+        
+        # Decodificar solo los tokens nuevos generados
+        generated_tokens = outputs[0][prompt_length:]
+        answer = self.tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
+        
+        return answer, timer
+    
+    def _generate_answer_with_retry(
+        self,
+        query: str,
+        contexts: List[Tuple[Chunk, float]]
+    ) -> Tuple[str, 'TimingContext']:
+        """
+        Reintenta generación con parámetros más conservadores.
+        Si aún falla, intenta extracción directa para preguntas factuales.
+        """
+        # Retry 1: Sin sampling (determinístico)
+        answer, timer = self._generate_answer_internal(
+            query, contexts, temperature=0, do_sample=False
+        )
+        
+        if not self._is_suspicious_response(answer):
+            logger.info("Retry exitoso con temperature=0")
+            return answer, timer
+        
+        # Retry 2: Modo extractivo para preguntas factuales
+        if self._is_factual_query(query):
+            logger.info("Intentando extracción directa para query factual")
+            extracted = self._extract_factual_answer(query, contexts)
+            if extracted:
+                return extracted, timer
+        
+        # Si todo falla, devolver lo que tenemos
+        logger.warning(f"Fallback final: '{answer[:50]}'")
+        return answer, timer
+    
+    def _extract_factual_answer(
+        self,
+        query: str,
+        contexts: List[Tuple[Chunk, float]]
+    ) -> str:
+        """
+        Extrae respuesta directamente del contexto para preguntas factuales.
+        Busca oraciones que contengan números/fechas relevantes.
+        """
+        query_tokens = set(self._tokenize_spanish(query))
+        
+        best_sentence = None
+        best_score = 0
+        
+        for chunk, score in contexts[:3]:  # Solo top-3 chunks
+            sentences = re.split(r'(?<=[.!?])\s+', chunk.text)
+            
+            for sent in sentences:
+                sent = sent.strip()
+                if len(sent) < 20:  # Muy corta
+                    continue
+                
+                sent_tokens = set(self._tokenize_spanish(sent))
+                overlap = len(query_tokens & sent_tokens)
+                
+                # Boost si contiene números
+                has_numbers = bool(re.search(r'\d+', sent))
+                if has_numbers:
+                    overlap += 2
+                
+                # Boost si contiene palabras clave de normativa
+                if any(kw in sent.lower() for kw in ['plazo', 'crédito', 'día', 'mes', 'año', 'máximo', 'mínimo']):
+                    overlap += 1
+                
+                if overlap > best_score:
+                    best_score = overlap
+                    best_sentence = sent
+        
+        if best_sentence and best_score >= 2:
+            # Limpiar y limitar longitud
+            if len(best_sentence) > 300:
+                best_sentence = best_sentence[:300].rsplit(' ', 1)[0] + '...'
+            return best_sentence
+        
+        return None
+    
     @timed
     def generate(
         self,
@@ -289,58 +461,13 @@ class ResponseGenerator:
         
         logger.info("Generando respuesta...")
         
-        # Crear mensajes para el chat
-        messages = self.create_prompt(query, contexts)
+        # Generar respuesta inicial
+        answer, timer = self._generate_answer_internal(query, contexts)
         
-        # Usar apply_chat_template para formato correcto
-        prompt = self.tokenizer.apply_chat_template(
-            messages,
-            tokenize=False,
-            add_generation_prompt=True
-        )
-        
-        # Tokenizar con presupuesto de contexto aumentado
-        # Usar el máximo soportado por el modelo o 4096, lo que sea menor
-        model_max_length = getattr(self.tokenizer, 'model_max_length', 4096)
-        max_input_length = min(model_max_length, 4096)
-        
-        inputs = self.tokenizer(
-            prompt, 
-            return_tensors="pt",
-            max_length=max_input_length,
-            truncation=True,
-            padding=False
-        ).to(self.device)
-        
-        logger.debug(f"Tokenización: {inputs['input_ids'].shape[1]} tokens (máx: {max_input_length})")
-        
-        # Obtener longitud del prompt para extraer respuesta
-        prompt_length = inputs['input_ids'].shape[1]
-        
-        # Usar eos_token_id como pad_token_id
-        eos_id = self.tokenizer.eos_token_id
-        
-        # Generar respuesta
-        logger.debug(f"Generando respuesta (max_new_tokens={self.max_new_tokens}, temp={self.temperature})")
-        
-        with torch.no_grad():
-            with TimingContext("Generación LLM", log=False) as timer:
-                outputs = self.model.generate(
-                    input_ids=inputs['input_ids'],
-                    attention_mask=inputs['attention_mask'],
-                    max_new_tokens=self.max_new_tokens,
-                    do_sample=self.temperature > 0,
-                    temperature=self.temperature if self.temperature > 0 else None,
-                    pad_token_id=eos_id,
-                    eos_token_id=eos_id,
-                    use_cache=True
-                )
-        
-        logger.debug(f"Generación LLM: {timer.elapsed:.2f}s")
-        
-        # Decodificar solo los tokens nuevos generados
-        generated_tokens = outputs[0][prompt_length:]
-        answer = self.tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
+        # FALLBACK: Detectar respuestas sospechosas y reintentar
+        if self._is_suspicious_response(answer):
+            logger.warning(f"Respuesta sospechosa detectada: '{answer[:50]}'. Reintentando...")
+            answer, timer = self._generate_answer_with_retry(query, contexts)
         
         # Preparar fuentes
         sources = self._format_sources(contexts)

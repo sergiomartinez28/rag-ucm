@@ -29,7 +29,7 @@ class QAPair:
     question_type: str  # factual, procedural, conceptual
     source_doc: str  # Nombre del documento (legible)
     doc_id: str      # ID real del documento en el indexador
-    chunk_id: int    # ID real del chunk en el indexador
+    chunk_id: str    # ID real del chunk en el indexador (formato: "doc_id_chunk_N")
     chunk_text: str
     category: str
 
@@ -266,6 +266,9 @@ class DatasetGenerator:
                 chunk.source if hasattr(chunk, 'source') else "unknown"
             )
             
+            # Obtener chunk_id real del chunk (string tipo "doc_id_chunk_N")
+            real_chunk_id = chunk.chunk_id if hasattr(chunk, 'chunk_id') else f"{doc_id}_chunk_{idx}"
+            
             # Nombre legible del documento (sin _chunk_X)
             source_name = doc_id
             if '_chunk_' in source_name:
@@ -277,11 +280,11 @@ class DatasetGenerator:
             qa_list = self.generate_qa_from_chunk(
                 chunk_text=chunk.text,
                 source_doc=source_name,
-                chunk_id=idx,
+                chunk_id=real_chunk_id,  # Pasar chunk_id real, no idx
                 category=category
             )
             
-            return qa_list, source_name, doc_id, idx, category, chunk.text
+            return qa_list, source_name, doc_id, real_chunk_id, category, chunk.text
         
         # Procesamiento paralelo
         logger.info(f"Procesando {len(sampled_indices)} chunks con {max_workers} workers...")
@@ -292,7 +295,7 @@ class DatasetGenerator:
             with tqdm(total=len(sampled_indices), desc="Generando Q&A") as pbar:
                 for future in as_completed(futures):
                     try:
-                        qa_list, source_name, doc_id, idx, category, chunk_text = future.result()
+                        qa_list, source_name, doc_id, real_chunk_id, category, chunk_text = future.result()
                         
                         # Convertir a QAPair y deduplicar
                         for qa in qa_list:
@@ -322,7 +325,7 @@ class DatasetGenerator:
                                 question_type=qa.get('question_type', 'unknown'),
                                 source_doc=source_name,
                                 doc_id=doc_id,
-                                chunk_id=idx,
+                                chunk_id=real_chunk_id,  # chunk_id real (string)
                                 chunk_text=chunk_text[:500],
                                 category=category
                             )

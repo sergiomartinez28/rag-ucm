@@ -231,8 +231,7 @@ def cmd_evaluate(args):
 
 def cmd_full(args):
     """Ejecuta el pipeline completo: generar + evaluar"""
-    # Forzar generación
-    args.force = True
+    # Usar el valor de --force que pasó el usuario (ya viene en args)
     cmd_generate(args)
     
     # Ahora evaluar
@@ -369,6 +368,11 @@ Ejemplos:
         type=int,
         default=50,
         help='Número de chunks a muestrear (default: 50)'
+    )
+    full_parser.add_argument(
+        '--force', '-f',
+        action='store_true',
+        help='Regenerar dataset aunque ya exista'
     )
     full_parser.add_argument(
         '--generator-model',

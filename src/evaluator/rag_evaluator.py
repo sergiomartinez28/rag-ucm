@@ -26,7 +26,7 @@ class EvaluationResult:
     category: str
     source_doc: str  # Nombre legible del documento
     doc_id: str      # ID real del documento en el indexador
-    chunk_id: int    # ID real del chunk original
+    chunk_id: str    # ID real del chunk original (formato: "doc_id_chunk_N")
     
     # Métricas de tiempo (en segundos)
     retrieval_time: float
@@ -124,8 +124,8 @@ class RAGEvaluator:
             expected_doc_id_clean = expected_doc_id_clean.split('_chunk_')[0]
         
         for i, source in enumerate(sources, 1):
-            # Obtener chunk_id del source (viene del RAG)
-            source_chunk_id = source.get('chunk_id', -1)
+            # Obtener chunk_id del source (viene del RAG) - ahora es string
+            source_chunk_id = source.get('chunk_id', '')
             
             # Obtener doc_id del source
             source_id = source.get('id', '')
@@ -140,8 +140,8 @@ class RAGEvaluator:
                 correct_doc_in_top_k = True
                 correct_doc_rank = i
             
-            # Verificar coincidencia exacta de chunk (por chunk_id)
-            if source_chunk_id == chunk_id and correct_chunk_rank == 0:
+            # Verificar coincidencia exacta de chunk (por chunk_id string)
+            if source_chunk_id and source_chunk_id == chunk_id and correct_chunk_rank == 0:
                 correct_chunk_in_top_k = True
                 correct_chunk_rank = i
         
