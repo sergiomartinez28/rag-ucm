@@ -532,4 +532,3 @@ class ResponseGenerator:
 
 if __name__ == "__main__":
     print("✓ Módulo generator listo para usar")
-    print("Nota: La primera vez que uses un modelo, se descargará de HuggingFace")
