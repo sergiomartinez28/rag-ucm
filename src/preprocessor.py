@@ -46,7 +46,7 @@ class DocumentPreprocessor:
     - Divide en chunks semánticos
     """
     
-    def __init__(self, chunk_size: int = 600, chunk_overlap: int = 100):
+    def __init__(self, chunk_size: int = 1000, chunk_overlap: int = 200):
         """
         Args:
             chunk_size: Tamaño aproximado de cada chunk en tokens

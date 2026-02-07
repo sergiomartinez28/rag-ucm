@@ -185,17 +185,39 @@ class DatasetGenerator:
             qa_list = [qa_list]
         
         # Añadir metadatos y mapear question_text -> question
+        valid_qa_list = []
         for qa in qa_list:
             # Mapear question_text -> question si es necesario
             if 'question_text' in qa and 'question' not in qa:
                 qa['question'] = qa.pop('question_text')
             
+            # VALIDACIÓN: Verificar que la respuesta de referencia tiene datos del chunk
+            ref_answer = qa.get('reference_answer', '').lower()
+            chunk_lower = chunk_text.lower()
+            
+            # Extraer números de la respuesta
+            import re
+            ref_nums = set(re.findall(r'\d+', ref_answer))
+            chunk_nums = set(re.findall(r'\d+', chunk_lower))
+            
+            # Validación: si hay números en la referencia, al menos uno debe estar en el chunk
+            if ref_nums:
+                if not (ref_nums & chunk_nums):
+                    logger.warning(f"QA descartado: números de referencia {ref_nums} no en chunk {chunk_nums}")
+                    continue  # Descartar esta pregunta
+            
+            # Validación: respuestas muy genéricas o que dicen "no se especifica"
+            if 'no se especifica' in ref_answer or 'no se menciona' in ref_answer:
+                logger.warning(f"QA descartado: respuesta genérica '{ref_answer[:50]}'")
+                continue
+            
             qa['source_doc'] = source_doc
             qa['chunk_id'] = chunk_id
             qa['category'] = category
-            qa['chunk_text'] = chunk_text[:500]  # Guardar parte del chunk para referencia
+            qa['chunk_text'] = chunk_text[:1500]  # Aumentado de 500 a 1500 para mejor contexto
+            valid_qa_list.append(qa)
         
-        return qa_list
+        return valid_qa_list
     
     def generate_dataset(
         self,
@@ -318,6 +340,7 @@ class DatasetGenerator:
                             seen_questions.add(normalized_q)
                             
                             # Crear QAPair con doc_id y chunk_id reales
+                            # Usar chunk_text del qa (ya validado con 1500 chars) si existe
                             qa_pair = QAPair(
                                 id=qa_id,
                                 question=question_text,
@@ -326,7 +349,7 @@ class DatasetGenerator:
                                 source_doc=source_name,
                                 doc_id=doc_id,
                                 chunk_id=real_chunk_id,  # chunk_id real (string)
-                                chunk_text=chunk_text[:500],
+                                chunk_text=qa.get('chunk_text', chunk_text[:1500]),
                                 category=category
                             )
                             all_qa_pairs.append(qa_pair)

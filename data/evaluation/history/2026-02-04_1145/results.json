@@ -1,0 +1,4252 @@
+[
+  {
+    "id": 0,
+    "question": "¿Cuántos años máximo puede estar en excedencia voluntaria como Personal Docente e Investigador?",
+    "reference_answer": "Por un límite máximo de cinco años",
+    "rag_answer": "La excedencia voluntaria como Personal Docente e Investigador puede durar un máximo de cinco años.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "los reciba. 4. El Personal Docente e Investigador será declarado en la situación de excedencia temporal para incorporarse a otros agentes públicos o privados de ejecución del Sistema Español de Cienci...",
+        "score": 0.72,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_44",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "de esta ley orgánica deberán respetar el llamado principio de no causar un perjuicio significativo al medioambiente. Esta obligación incluye el cumplimiento de las condiciones específicas previstas en...",
+        "score": 0.567,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_64",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "en los términos establecidos en la LOU. Los Profesores Contratados Doctores cumplirán los siguientes requisitos: a) Estar en posesión del título de Doctor. b) Recibir la evaluación positiva de dicha a...",
+        "score": 0.501,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_48",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 4,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "artículo 68 y de Profesorado Permanente Laboral. Sólo podrán acceder a dichas plazas profesoras y profesores que hayan prestado, como mínimo, dos años de servicios efectivos en el puesto de origen y q...",
+        "score": 0.5,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_46",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "Ayudante Doctor. c) Profesor/a Contratado Doctor. d) Profesor/a Asociado. e) Profesor/a Visitante. Asimismo, cuando sea perceptora de fondos cuyo destino incluya la contratación de personal investigad...",
+        "score": 0.5,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_47",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_44",
+    "retrieval_time": 13.60631537437439,
+    "generation_time": 65.57076907157898,
+    "total_time": 79.17708444595337,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 1,
+    "question": "¿Qué requisito mínimo debe cumplir un funcionario docente para poder reingresar automáticamente al servicio activo tras excedencia voluntaria?",
+    "reference_answer": "Un mínimo de dos años",
+    "rag_answer": "Dos años",
+    "sources": [
+      {
+        "id": "estatutos-ucm",
+        "rank": 1,
+        "title": "estatutos-ucm",
+        "text_preview": "lo67delaLeyOrgánica6/2001,de21dediciembre,deUniversidadesyelartículo96de lospresentesEstatutos. B.O.C.M.Núm.71 VIERNES24DEMARZODE2017 Pág.99 BOCM BOLETÍN OFICIAL DE LA COMUNIDAD DE MADRID Reingreso al...",
+        "score": 0.61,
+        "chunk_id": "estatutos-ucm_chunk_12",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm",
+        "rank": 2,
+        "title": "estatutos-ucm",
+        "text_preview": "paralapresentaciónalosconcursoscontarándesdeeldíasiguientealdesupublicaciónen el“BoletínOficialdelEstado”. 4. Desde la publicación de la convocatoria en el “Boletín Oficial del Estado” a la resolución...",
+        "score": 0.522,
+        "chunk_id": "estatutos-ucm_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "artículo 68 y de Profesorado Permanente Laboral. Sólo podrán acceder a dichas plazas profesoras y profesores que hayan prestado, como mínimo, dos años de servicios efectivos en el puesto de origen y q...",
+        "score": 0.52,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_46",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "los reciba. 4. El Personal Docente e Investigador será declarado en la situación de excedencia temporal para incorporarse a otros agentes públicos o privados de ejecución del Sistema Español de Cienci...",
+        "score": 0.509,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_44",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "l) A tener acceso a un procedimiento formal de mediación en los conflictos que se le puedan plantear en el ámbito profesional. m) Cualesquiera otros que les sean reconocidos por la normativa vigente. ...",
+        "score": 0.504,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_43",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_44",
+    "retrieval_time": 13.603702068328857,
+    "generation_time": 20.152725219726562,
+    "total_time": 33.75903868675232,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 4,
+    "correct_chunk_rank": 4
+  },
+  {
+    "id": 2,
+    "question": "¿Cuándo se trató el problema de los certificados en la Comisión de Seguimiento del Convenio?",
+    "reference_answer": "El problema se trató el pasado 17 de noviembre",
+    "rag_answer": "Acreditar un nivel de conocimiento del español o de otro idioma exigible equivalente al\nB2 en función de la titulación escogida, que permita un seguimiento adecuado de los\nSiempre que se reúnan los requisitos anteriores, podrán ser admitidos en los estudios de\nGrado los estudiantes que hayan superado el curso de competencias\nuniversitarias/International Foundation Program de la UCM, u otro Foundation Program\nequivalente, siempre que exista convenio de colaboración con la institución educativa y...",
+    "sources": [
+      {
+        "id": "3-2014-12-05-Firma de Certificados CES Felipe II. Diciembre 2014",
+        "rank": 1,
+        "title": "3-2014-12-05-Firma de Certificados CES Felipe II. Diciembre 2014",
+        "text_preview": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario RECOMENDACION SOBRE LA URGENTE NECESIDAD DE DAR UNA SOLUCION\nDEFINITIVA A LOS PROBLEMAS QUE ESTAN SUFRIENDO LOS ALUMNOS DE L...",
+        "score": 0.5,
+        "chunk_id": "3-2014-12-05-Firma de Certificados CES Felipe II. Diciembre 2014_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "admision-estudiantes-internacionales",
+        "rank": 2,
+        "title": "admision-estudiantes-internacionales",
+        "text_preview": "Madrid. Artículo 1. Ámbito subjetivo de aplicación. De conformidad con lo dispuesto en el artículo 38 de la Ley Orgánica 2/2006, de 3 de mayo, de Educación, así como en el Real Decreto 412/2014, de 6 ...",
+        "score": 0.5,
+        "chunk_id": "admision-estudiantes-internacionales_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "rank": 3,
+        "title": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "text_preview": "efectúen labores de colaboración en un Departamento o en un Centro de la UCM, no encomendadas al Personal de Administración y Servicios podrán obtener créditos de libre elección, en los términos que s...",
+        "score": 0.5,
+        "chunk_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-matematicas",
+        "rank": 4,
+        "title": "reglamento-ciencias-matematicas",
+        "text_preview": "propuesta de anulación del convenio correspondiente. i) La Comisión de Prácticas Curriculares estudiará, cuando sea necesario para el mejor desarrollo de las prácticas, la posibilidad de modificar los...",
+        "score": 0.5,
+        "chunk_id": "reglamento-ciencias-matematicas_chunk_9",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm",
+        "rank": 5,
+        "title": "estatutos-ucm",
+        "text_preview": "1. ElDefensor/aUniversitarioactúadeoficiooainstanciadeparteenrelacióncon las solicitudes, quejas, sugerencias y observaciones que sean susceptibles de necesitar su amparo, formuladas por cualquier mie...",
+        "score": 0.5,
+        "chunk_id": "estatutos-ucm_chunk_16",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "3-2014-12-05-Firma de Certificados CES Felipe II. Diciembre 2014",
+    "doc_id": "3-2014-12-05-Firma de Certificados CES Felipe II. Diciembre 2014",
+    "chunk_id": "3-2014-12-05-Firma de Certificados CES Felipe II. Diciembre 2014_chunk_0",
+    "retrieval_time": 6.619992256164551,
+    "generation_time": 27.355523347854614,
+    "total_time": 33.97651648521423,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 3,
+    "question": "¿Cuántos días hábiles debe tardar el Tribunal de Compensación en resolver una solicitud?",
+    "reference_answer": "20 días hábiles siguientes a la finalización del plazo de presentación de solicitudes",
+    "rag_answer": "15 días hábiles",
+    "sources": [
+      {
+        "id": "tribunales-compensacion-grado",
+        "rank": 1,
+        "title": "tribunales-compensacion-grado",
+        "text_preview": "de Compensación realizar pruebas de examen al alumno para adoptar su decisión sobre la compensación solicitada. 3. Los profesores que hubieran calificado al alumno en la asignatura cuya compensación s...",
+        "score": 0.71,
+        "chunk_id": "tribunales-compensacion-grado_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normativa-tribubales-compensacion",
+        "rank": 2,
+        "title": "normativa-tribubales-compensacion",
+        "text_preview": "principios de transparencia y equidad, evitando actuaciones discriminatorias. 2. En ningún caso podrá el Tribunal de Compensación realizar pruebas de examen al estudiante para adoptar su decisión sobr...",
+        "score": 0.708,
+        "chunk_id": "normativa-tribubales-compensacion_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "tribunales-compensacion-2008",
+        "rank": 3,
+        "title": "tribunales-compensacion-2008",
+        "text_preview": "en la Universidad Complutense de Madrid y se haya presentado, al menos tres veces, para la superación de la asignatura cuya calificación solicita sea compensada. Artículo 3. Presentación y admisión de...",
+        "score": 0.512,
+        "chunk_id": "tribunales-compensacion-2008_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "rank": 4,
+        "title": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "text_preview": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario\nRECOMENDACIÓN SOBRE LAS FECHAS EN QUE DEBE FIJARSE LA REVISIÓN\nEn relación con diversas CONSULTAS que han llegado a la Ofici...",
+        "score": 0.503,
+        "chunk_id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-normativa-de-permanencia",
+        "rank": 5,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "de fecha 24 de julio de 3015) III.- CÓMPUTO DE CONVOCATORIAS Primero. El número de convocatorias por cada asignatura tendrá un límite máximo de seis. En la quinta y sexta convocatoria, el alumno tendr...",
+        "score": 0.5,
+        "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "normativa-tribubales-compensacion",
+    "doc_id": "normativa-tribubales-compensacion",
+    "chunk_id": "normativa-tribubales-compensacion_chunk_2",
+    "retrieval_time": 6.562369108200073,
+    "generation_time": 27.12372136116028,
+    "total_time": 33.68609046936035,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 2
+  },
+  {
+    "id": 4,
+    "question": "¿Qué porcentaje de miembros del Tribunal de Compensación deben asistir para que este pueda funcionar en primera convocatoria?",
+    "reference_answer": "Dos tercios de sus miembros",
+    "rag_answer": "La decisión del Tribunal de Compensación, que deberá incluir la motivación en\ncaso de denegación, será comunicada por el Secretario mediante escrito a cada\nArtículo 8.",
+    "sources": [
+      {
+        "id": "tribunales-compensacion-grado",
+        "rank": 1,
+        "title": "tribunales-compensacion-grado",
+        "text_preview": "de Compensación realizar pruebas de examen al alumno para adoptar su decisión sobre la compensación solicitada. 3. Los profesores que hubieran calificado al alumno en la asignatura cuya compensación s...",
+        "score": 0.608,
+        "chunk_id": "tribunales-compensacion-grado_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-normativa-de-permanencia",
+        "rank": 2,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "de fecha 24 de julio de 3015) III.- CÓMPUTO DE CONVOCATORIAS Primero. El número de convocatorias por cada asignatura tendrá un límite máximo de seis. En la quinta y sexta convocatoria, el alumno tendr...",
+        "score": 0.51,
+        "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "tribunales-compensacion-grado",
+        "rank": 3,
+        "title": "tribunales-compensacion-grado",
+        "text_preview": "una titulación, la Junta del Centro podrá constituir un Tribunal para cada una de ellas. 2. Cada Tribunal de Compensación estará formado por: a) Un Presidente: El Decano o Director del Centro, que pod...",
+        "score": 0.501,
+        "chunk_id": "tribunales-compensacion-grado_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-informacion",
+        "rank": 4,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "mediar un plazo de diez días naturales. La misma deberá contener el orden del día, lugar, fecha y hora señalados para la celebración en primera y segunda convocatoria y la documentación que se estime ...",
+        "score": 0.5,
+        "chunk_id": "reglamento-ciencias-informacion_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normativa-tribubales-compensacion",
+        "rank": 5,
+        "title": "normativa-tribubales-compensacion",
+        "text_preview": "compensación curricular Podrán solicitar la compensación curricular aquellos estudiantes de Grado que cumplan las siguientes condiciones: 1. Que hayan cursado un mínimo del 50 por 100 de la carga lect...",
+        "score": 0.5,
+        "chunk_id": "normativa-tribubales-compensacion_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "normativa-tribubales-compensacion",
+    "doc_id": "normativa-tribubales-compensacion",
+    "chunk_id": "normativa-tribubales-compensacion_chunk_2",
+    "retrieval_time": 11.016068935394287,
+    "generation_time": 41.478713512420654,
+    "total_time": 52.49516439437866,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 5,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 5,
+    "question": "¿Quién preside la Comisión Permanente del Consejo de Gobierno?",
+    "reference_answer": "La Comisión Permanente está presidida por el Rector, o persona en quien delegue.",
+    "rag_answer": "El Rector/a del Consejo de Gobierno preside la Comisión Permanente.",
+    "sources": [
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 1,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "que ser a su vez miembro del Consejo de Gobierno y pertenecer al mismo sector que la persona a la que 2. Si se produjera la baja de algún miembro de la comisión, la vacante se cubrirá con el suplente ...",
+        "score": 0.727,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_16",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 2,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "que ser a su vez miembro del Consejo de Gobierno y pertenecer al mismo sector que la persona a la que 2. Si se produjera la baja de algún miembro de la comisión, la vacante se cubrirá con el suplente ...",
+        "score": 0.727,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_16",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "47 .- Definición y ámbito de actuación 1. El Consejo de Gobierno es el órgano de gobierno de la Universidad. 2. Con carácter general, el Consejo de Gobierno establece las líneas estratégicas y program...",
+        "score": 0.519,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_18",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "3. No se podrán delegar con carácter resolutorio las funciones recogidas en las letras a), b), c), d), e), f), g), h) e i), si bien podrán ser objeto de delegación a efectos de su estudio y de la elab...",
+        "score": 0.509,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_16",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 5,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "DE LAS COMISIONES DEL CONSEJO DE GOBIERNO Artículo 45. Creación 1. Corresponde al Pleno del Consejo de Gobierno la creación de comisiones específicas para el estudio y la preparación de los asuntos qu...",
+        "score": 0.504,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_15",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "gobierno",
+    "source_doc": "texto-consolidad-reglamento-de-gobierno",
+    "doc_id": "texto-consolidad-reglamento-de-gobierno",
+    "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_16",
+    "retrieval_time": 6.618489980697632,
+    "generation_time": 45.075173139572144,
+    "total_time": 51.69566488265991,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 6,
+    "question": "¿Qué organismo es responsable de la comercialización y transferencia de resultados de investigación?",
+    "reference_answer": "Una oficina especializada es la encargada de estos servicios, Artículo 173.",
+    "rag_answer": "La UCM podrá crear y promover empresas de base tecnológica a partir de la actividad universitaria.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "por un representante de cada Departamento y Sección Departamental, que será elegido entre los Doctores del mismo por el Consejo del Departamento. Su Presidente/a será nombrado por el Decano/a o Direct...",
+        "score": 0.645,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_72",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm",
+        "rank": 2,
+        "title": "estatutos-ucm",
+        "text_preview": "3. LaUCMpodrácrearypromoverempresasdebasetecnológicaapartirdelaacti- vidaduniversitaria,asícomoparticiparensucapital.LaUniversidadpodráautorizarlapar- ticipacióntemporaldesuPersonalDocenteeInvestigado...",
+        "score": 0.564,
+        "chunk_id": "estatutos-ucm_chunk_18",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "de transferencia e intercambio del conocimiento e innovación realizadas por el personal docente e investigador se considerarán conceptos evaluables a efectos retributivos y de promoción. 7. La interdi...",
+        "score": 0.502,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_15",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "sistema-informacion",
+        "rank": 4,
+        "title": "sistema-informacion",
+        "text_preview": "el ejercicio de sus funciones en su condición de tal. f) Objetividad e imparcialidad en la recepción y tratamiento de las comunicaciones 4. Derechos y garantías del informante De conformidad con la Le...",
+        "score": 0.501,
+        "chunk_id": "sistema-informacion_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "se regulará por el Consejo de Gobierno, a la que corresponderá la coordinación de los Centros de Asistencia a la Investigación de la UCM. Artículo 169 .- Otras estructuras de investigación 1. La UCM p...",
+        "score": 0.501,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_71",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_72",
+    "retrieval_time": 6.528081655502319,
+    "generation_time": 39.001198530197144,
+    "total_time": 45.52928018569946,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 7,
+    "question": "¿Cuántos cursos académicos de los últimos siete años debe haber desempeñado en universidades públicas españolas para poder acceder a una plaza de promoción?",
+    "reference_answer": "Al menos cinco cursos académicos de los últimos siete años",
+    "rag_answer": "\"Se deben haber desempeñado en universidades públicas españolas durante al menos cinco cursos académicos de los últimos siete años.\"",
+    "sources": [
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 1,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "de la normativa autonómica para quienes, estando contratados con carácter indefinido y cuenten con la acreditación, hayan desempeñado en la fecha de la publicación de la convocatoria actividades docen...",
+        "score": 0.727,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_67",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "artículo 68 y de Profesorado Permanente Laboral. Sólo podrán acceder a dichas plazas profesoras y profesores que hayan prestado, como mínimo, dos años de servicios efectivos en el puesto de origen y q...",
+        "score": 0.515,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_46",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "de desarrollo del concurso. h) Composición de las comisiones. i) Características, lugar y fecha del acto de presentación de los candidatos. 3. Las convocatorias de los concursos de acceso se publicará...",
+        "score": 0.511,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_37",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 4,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "como en su equivalencia en horas. Con carácter general, la duración de las prácticas no podrá superar el 50% de los créditos ECTS, a excepción a) Las prácticas clínicas, a las que se les aplicará la p...",
+        "score": 0.503,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "recomendacion-defensa-tfg-signed",
+        "rank": 5,
+        "title": "recomendacion-defensa-tfg-signed",
+        "text_preview": "calificación al conjunto de las convocatorias del curso académico siguiente y extender la vigencia no sólo a la convocatoria extraordinaria del curso siguiente sino a todas las convocatorias de dicho ...",
+        "score": 0.502,
+        "chunk_id": "recomendacion-defensa-tfg-signed_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_67",
+    "retrieval_time": 6.5512049198150635,
+    "generation_time": 41.78279519081116,
+    "total_time": 48.33400011062622,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 8,
+    "question": "¿En qué fecha antes del 31 de diciembre de 2024 deberán los procesos de estabilización de las plazas de personal técnico, de gestión y de administración y servicios estar articulados?",
+    "reference_answer": "Antes del 31 de diciembre de 2024",
+    "rag_answer": "Antes del 31 de diciembre de 2024",
+    "sources": [
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 1,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "de la normativa autonómica para quienes, estando contratados con carácter indefinido y cuenten con la acreditación, hayan desempeñado en la fecha de la publicación de la convocatoria actividades docen...",
+        "score": 0.73,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_67",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "de profesorado funcionario establecida en el artículo 64.3 deberá cumplirse dentro del periodo previsto en el artículo 155.2 de la Ley Orgánica 2/2006, de 3 de mayo, relativo al plan de incremento del...",
+        "score": 0.713,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_66",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "competencias. 4. Las universidades podrán contratar otro personal con cargo a financiación externa o financiación procedente de convocatorias de ayudas públicas en concurrencia competitiva en su total...",
+        "score": 0.502,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_54",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "formación permanente del Personal de Administración y Servicios. A tal efecto, facilitará que dicho personal pueda seguir programas que aumenten sus capacidades y competencias profesionales. 2. La UCM...",
+        "score": 0.501,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_57",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-odontologia",
+        "rank": 5,
+        "title": "reglamento-odontologia",
+        "text_preview": "tengan su sede en la Facultad o, en su caso, de las Secciones Departamentales constituidas en la misma. d) Un/a representante del profesorado con vinculación permanente. e) Un/a representante de los/l...",
+        "score": 0.5,
+        "chunk_id": "reglamento-odontologia_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_67",
+    "retrieval_time": 6.581782579421997,
+    "generation_time": 24.270588874816895,
+    "total_time": 30.8533718585968,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 9,
+    "question": "¿Cuántos días mínimo debe transcurrir después de presentar una moción de censura para convocar al órgano colegiado?",
+    "reference_answer": "Quince días",
+    "rag_answer": "Los/las miembros del órgano colegiado deberán recibir la convocatoria junto con la documentación y el orden del día, con una antelación mínima de 48 horas en las sesiones ordinarias y 24 horas en las extraordinarias.",
+    "sources": [
+      {
+        "id": "reglamento-optica-optometría",
+        "rank": 1,
+        "title": "reglamento-optica-optometría",
+        "text_preview": "Decano/a deberá convocar la Junta en el plazo de quince días naturales a contar desde la recepción de la solicitud, incluyendo en el orden del día los puntos propuestos en la misma. A las reuniones de...",
+        "score": 0.589,
+        "chunk_id": "reglamento-optica-optometría_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 2,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "el Rector por propia iniciativa o a petición de un 20 por 100 de sus miembros, en cuyo caso los proponentes habrán de adjuntar el orden del día que se va a someter a debate junto con la documentación ...",
+        "score": 0.513,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_13",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 3,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "el Rector por propia iniciativa o a petición de un 20 por 100 de sus miembros, en cuyo caso los proponentes habrán de adjuntar el orden del día que se va a someter a debate junto con la documentación ...",
+        "score": 0.513,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_13",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 4,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "DEL MANDATO 1. Las elecciones serán convocadas por el Rector/a en el plazo establecido en el artículo 10 de este Reglamento. 2. La convocatoria incluirá la fecha de las votaciones y el calendario elec...",
+        "score": 0.509,
+        "chunk_id": "reglamento-electoral-ucm_chunk_27",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 5,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "de gobierno y Son deberes de los miembros de los órganos colegiados: a) Asistir a las sesiones del órgano, así como contribuir a su normal funcionamiento, participando en cuantas actividades sean prec...",
+        "score": 0.502,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_34",
+    "retrieval_time": 6.6060874462127686,
+    "generation_time": 41.9104585647583,
+    "total_time": 48.52222728729248,
+    "correct_doc_in_top_k": false,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 0,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 10,
+    "question": "¿Qué condición debe cumplir una moción de censura para ser aprobada?",
+    "reference_answer": "La mayoría absoluta de los componentes del órgano colegiado",
+    "rag_answer": "La moción de censura debe ser presentada por al menos el 25% de los miembros del órgano colegiado y resultar apoyada por la mayoría absoluta de los componentes del mismo para ser aprobada.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "presentación de la moción de censura obligará a convocar al órgano colegiado en el plazo de quince días. 3. Se considerará aprobada la moción si resulta apoyada por la mayoría absoluta de los componen...",
+        "score": 0.515,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_34",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 2,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "calidad medioambiental en el ámbito de la Universidad. 23) Aprobar las convocatorias de las plazas de Personal Docente e Investigador con vinculación permanente, de conformidad con la normativa vigent...",
+        "score": 0.507,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_20",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 3,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "sesión. 2. Finalizado el turno de intervenciones se procederá a la votación de la moción de censura, dirigida por la J.E. de Centro, que precisará para su aprobación el voto de la mayoría absoluta de ...",
+        "score": 0.503,
+        "chunk_id": "reglamento-electoral-ucm_chunk_28",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 4,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "a lo previsto en el artículo 79 apartado 2 de los Estatutos. El Director/a saliente continuará en sus funciones hasta la toma de posesión del nuevo o, en su defecto, asumirá las funciones el profesor ...",
+        "score": 0.501,
+        "chunk_id": "reglamento-electoral-ucm_chunk_29",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-psicología",
+        "rank": 5,
+        "title": "reglamento-psicología",
+        "text_preview": "Artículo 6.- De la condición de miembro. 1. La condición de representante de la Junta de Facultad es personal e indelegable e implica el deber de asistir y participar en todas las sesiones de la misma...",
+        "score": 0.5,
+        "chunk_id": "reglamento-psicología_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_34",
+    "retrieval_time": 15.442919254302979,
+    "generation_time": 97.45029044151306,
+    "total_time": 112.89421105384827,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 11,
+    "question": "¿Cuándo debe aprobarse la Relación de Puestos de Trabajo del Personal Docente e Investigador?",
+    "reference_answer": "Oídos los Consejos de Departamento y las Juntas de Centro",
+    "rag_answer": "Si la moción no fuese aprobada, ninguno de sus signatarios podrá participar en la presentación de otra iniciativa de este carácter hasta pasado un año desde la votación de la Del Personal Docente e Investigador de la UCM Artículo 81 .- Disposiciones generales 1. El Personal Docente e Investigador de la UCM está compuesto por funcionarios de los cuerpos docentes universitarios y por personal contratado.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "Presupuesto, su sistema contable y los documentos que comprenden las cuentas anuales de la UCM deberán adaptarse, en todo caso, a las normas que con carácter general se establezcan para el sector públ...",
+        "score": 0.507,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_78",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-bellas-artes",
+        "rank": 2,
+        "title": "reglamento-bellas-artes",
+        "text_preview": "refiere a la distribución de espacios, medios materiales, temporales y personales. h) Proponer al órgano que corresponda la modificación del calendario académico y cuantas otras medidas estime oportun...",
+        "score": 0.503,
+        "chunk_id": "reglamento-bellas-artes_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "presentación de la moción de censura obligará a convocar al órgano colegiado en el plazo de quince días. 3. Se considerará aprobada la moción si resulta apoyada por la mayoría absoluta de los componen...",
+        "score": 0.501,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_34",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "al Consejo de Universidades para su difusión en todas las Universidades. 2. El Consejo de Gobierno regulará el procedimiento y aprobará baremos objetivos en los que deberán basarse las convocatorias, ...",
+        "score": 0.501,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_50",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm",
+        "rank": 5,
+        "title": "estatutos-ucm",
+        "text_preview": "orden de preferenciaparasunombramiento.Dicharelaciónvendrápredeterminadaporlavaloración globalobtenidaporcadacandidato.Encasodeempate,seresolveráatendiendoalamayor puntuaciónobtenidaenlavaloracióndelc...",
+        "score": 0.501,
+        "chunk_id": "estatutos-ucm_chunk_11",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_19",
+    "retrieval_time": 6.572809934616089,
+    "generation_time": 26.503416299819946,
+    "total_time": 33.077226877212524,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 12,
+    "question": "¿Quién debe iniciar el expediente de concesión de la condecoración?",
+    "reference_answer": "La Secretaría Académica de la Facultad, con los datos proporcionados por los Servicios de Personal 2.",
+    "rag_answer": "La Secretaría Académica de la Facultad debe iniciar el expediente de concesión de la condecoración.",
+    "sources": [
+      {
+        "id": "reglamento-honores-estadisticos",
+        "rank": 1,
+        "title": "reglamento-honores-estadisticos",
+        "text_preview": "presente Reglamento, el expediente de concesión de la condecoración se iniciará de oficio por la Secretaría Académica de la Facultad, con los datos proporcionados por los Servicios de Personal 2. Para...",
+        "score": 0.686,
+        "chunk_id": "reglamento-honores-estadisticos_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-honores-farmacia",
+        "rank": 2,
+        "title": "reglamento-honores-farmacia",
+        "text_preview": "investigador, o por su vinculación especial con la Facultad de Farmacia. Artículo 10. Procedimiento. 1. El expediente se iniciará por el Secretario Académico de la Facultad, a propuesta del Decano o d...",
+        "score": 0.502,
+        "chunk_id": "reglamento-honores-farmacia_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-titulos-extranjeros1",
+        "rank": 3,
+        "title": "texto-consolidado-titulos-extranjeros1",
+        "text_preview": "“no apto” de cada asignatura cursada. Con carácter general, a partir de la publicación de las calificaciones, los solicitantes podrán formular las reclamaciones que estimen oportunas, según el procedi...",
+        "score": 0.501,
+        "chunk_id": "texto-consolidado-titulos-extranjeros1_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-honores-odontologia",
+        "rank": 4,
+        "title": "reglamento-honores-odontologia",
+        "text_preview": "la Facultad de Odontología se concederá a todos los/las Decanos/as salientes, profesores/as de la Facultad de Odontología que hayan ocupado puestos de Rector/a, Vicerrector/a y/o a personas ajenas a l...",
+        "score": 0.5,
+        "chunk_id": "reglamento-honores-odontologia_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-honores-odontologia",
+        "rank": 5,
+        "title": "reglamento-honores-odontologia",
+        "text_preview": "(PTGAS) en la Facultad de Odontología. Artículo 13. Motivos para su concesión. 13.1. La Insignia a la Trayectoria Universitaria en Docencia se concederá a profesores/as que se jubilen en ese curso, si...",
+        "score": 0.5,
+        "chunk_id": "reglamento-honores-odontologia_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-honores-estadisticos",
+    "doc_id": "reglamento-honores-estadisticos",
+    "chunk_id": "reglamento-honores-estadisticos_chunk_1",
+    "retrieval_time": 6.719486474990845,
+    "generation_time": 64.03028464317322,
+    "total_time": 70.75077605247498,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 13,
+    "question": "¿Quién es el responsable de convocar las sesiones de la Junta de Centro?",
+    "reference_answer": "El/la Secretario/a de la Facultad, por orden del/de la Decano/a.",
+    "rag_answer": "Sobre los profesores y sobre las asignaturas que impartan en Centros distintos al de la\nsede del Departamento no podrá recaer acuerdo de los órganos de gobierno de dicho\nCentro que les afecte directamente si no es con la posibilidad de audiencia directa del\nDepartamento al que estén adscritos, de conformidad con el Artículo33.2 del Reglamento\nde Centros y Estructuras de la UCM.",
+    "sources": [
+      {
+        "id": "reglamento-ciencias-biologicas",
+        "rank": 1,
+        "title": "reglamento-ciencias-biologicas",
+        "text_preview": "profesores sin vinculación permanente, o personal técnico, de gestión y administración de servicios, deberán tener también dedicación a tiempo completo en la UCM. 5. En caso de ausencia, vacante, enfe...",
+        "score": 0.676,
+        "chunk_id": "reglamento-ciencias-biologicas_chunk_11",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-informacion",
+        "rank": 2,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "personal permanente de la Facultad, actuará como fedatario de los actos o acuerdos de los órganos colegiados del Centro de los que se forme parte. Artículo 57. Competencias. El Secretario de la Facult...",
+        "score": 0.588,
+        "chunk_id": "reglamento-ciencias-informacion_chunk_23",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "regimen-interno-fac-politicas-y-sociologia",
+        "rank": 3,
+        "title": "regimen-interno-fac-politicas-y-sociologia",
+        "text_preview": "normativa vigente o que no hallándose contemplada en otras disposiciones normativas se considere necesaria para la consecución de los fines del Centro. 2. No se podrán delegar con carácter resolutorio...",
+        "score": 0.588,
+        "chunk_id": "regimen-interno-fac-politicas-y-sociologia_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-informatica",
+        "rank": 4,
+        "title": "reglamento-informatica",
+        "text_preview": "vicedecanos, el secretario, el gerente, el director de cada departamento que tenga su sede en el centro y el director de la biblioteca. b) Una representación de los diversos sectores de la comunidad u...",
+        "score": 0.562,
+        "chunk_id": "reglamento-informatica_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normativa-coordinador",
+        "rank": 5,
+        "title": "normativa-coordinador",
+        "text_preview": "el Vicedecanato con competencias en Artículo 7. Funciones de Coordinador/a de Grado o Máster 1. Las funciones del Coordinador/a de Grado o Máster son las siguientes: a) Asumir la representación de la ...",
+        "score": 0.511,
+        "chunk_id": "normativa-coordinador_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-optica-optometría",
+    "doc_id": "reglamento-optica-optometría",
+    "chunk_id": "reglamento-optica-optometría_chunk_11",
+    "retrieval_time": 6.392387628555298,
+    "generation_time": 36.435444831848145,
+    "total_time": 42.82883262634277,
+    "correct_doc_in_top_k": false,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 0,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 14,
+    "question": "¿Cuándo debe el profesor anunciarse el periodo de revisión de calificaciones?",
+    "reference_answer": "El mismo día de la publicación de las calificaciones.",
+    "rag_answer": "El profesor debe anunciar el periodo de revisión de calificaciones en los días siguientes a la publicación de las calificaciones.",
+    "sources": [
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 1,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "DE EVALUACION DE LOS ALUMNOS DE LA UNIVERSIDAD DE JAEN (Aprobado por el] Consejo de Gobierno el 19 de julio de 2005 y modificado el 13 de marzo de 2006. Modificado en Consejo de Gobierno de 23 de novi...",
+        "score": 0.703,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatuto-estudiante",
+        "rank": 2,
+        "title": "estatuto-estudiante",
+        "text_preview": "y demás disposiciones legales. el permiso correspondiente. Derecho de reclamación y queja Del procedimiento de revisión e impugnación de calificaciones Los estudiantes de la Universidad Complutense ti...",
+        "score": 0.536,
+        "chunk_id": "estatuto-estudiante_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "rank": 3,
+        "title": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "text_preview": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario\nRECOMENDACIÓN SOBRE LAS FECHAS EN QUE DEBE FIJARSE LA REVISIÓN\nEn relación con diversas CONSULTAS que han llegado a la Ofici...",
+        "score": 0.507,
+        "chunk_id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 4,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "394 65 71 Fax - 91 544 65 95 E mail: defensora@rect.ucm.es UNIVERSIDAD COMPLUTENSE DE MADRID veinticuatro horas siguientes a la finalizacién del periodo de revisién y procedera a elaborar las actas co...",
+        "score": 0.505,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "directrices-tfg",
+        "rank": 5,
+        "title": "directrices-tfg",
+        "text_preview": "cada grupo, deberán actuar de forma coordinada y colegiada. 6. Matriculación y gestión académica 6.1. El TFG se matriculará como una asignatura del plan de estudios del título oficial correspondiente....",
+        "score": 0.502,
+        "chunk_id": "directrices-tfg_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "doc_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_5",
+    "retrieval_time": 6.608839511871338,
+    "generation_time": 64.21415138244629,
+    "total_time": 70.8249921798706,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 15,
+    "question": "¿Qué tipo de actividades pueden ser revisadas en presencia del profesor?",
+    "reference_answer": "Todas las pruebas, examenes y trabajos objeto de evaluación.",
+    "rag_answer": "DE LAS JUNTAS DE CENTRO\nArtículo 51 .- Definición\nLas Juntas de Centro son los órganos colegiados de gobierno de las correspondientes\nFacultades y Escuelas y de cualesquiera otros Centros de naturaleza académica análoga que\npudieran crearse. Artículo 52 .- Composición\nLa Junta de Centro estará constituida por:\na) El Decano/a o Director/a, que la presidirá, los Vicedecanos/as o Subdirectores/as, el\nSecretario/a, el/la Gerente, el Director/a de cada Departamento que tenga su sede en el Centro...",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "calidad medioambiental en el ámbito de la Universidad. 23) Aprobar las convocatorias de las plazas de Personal Docente e Investigador con vinculación permanente, de conformidad con la normativa vigent...",
+        "score": 0.7,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_20",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 2,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "siempre manteniendo la unidad del proyecto formativo y la coherencia en todos aquellos aspectos académicos más relevantes -aunque la conjugación de la doble modalidad docente implique adaptaciones de ...",
+        "score": 0.502,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "directrices-master",
+        "rank": 3,
+        "title": "directrices-master",
+        "text_preview": "docentes y de investigación de la Universidad y, en su caso, en consonancia con el Sistema Madrileño de Universidades, Ciencia e Innovación (SMUCI). 8. Breve memoria que recoja los costes en materia d...",
+        "score": 0.501,
+        "chunk_id": "directrices-master_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 4,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "DE EVALUACION DE LOS ALUMNOS DE LA UNIVERSIDAD DE JAEN (Aprobado por el] Consejo de Gobierno el 19 de julio de 2005 y modificado el 13 de marzo de 2006. Modificado en Consejo de Gobierno de 23 de novi...",
+        "score": 0.501,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "podrán ejercerse de forma simultánea por una misma persona. Artículo 17.- Profesorado Con carácter general, al menos el 25% de la docencia se impartirá por profesorado de la UCM, salvo en aquellos cas...",
+        "score": 0.501,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "doc_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_5",
+    "retrieval_time": 12.953620195388794,
+    "generation_time": 26.75731348991394,
+    "total_time": 39.71193265914917,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 4,
+    "correct_chunk_rank": 4
+  },
+  {
+    "id": 16,
+    "question": "¿Cuántos profesores doctores participan en la elección de los vocales del Claustro?",
+    "reference_answer": "4 vocales correspondientes al sector de Profesores Doctores con vinculación permanente con la Universidad.",
+    "rag_answer": "53 profesores doctores con vinculación permanente con la Universidad participan en la elección de los vocales del Claustro.",
+    "sources": [
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 1,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "Jurídica de la Universidad. Sección Segunda. De las Comisiones Ordinarias del Claustro 1. En el seno del Claustro se constituirán, al menos, las siguientes Comisiones ordinarias: 1) La Comisión de Est...",
+        "score": 0.536,
+        "chunk_id": "reglamento-claustro-ucm_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 2,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "estos efectos, cada miembro de la comisión, de entre los candidatos que se presenten, escribirá sólo un nombre en la papeleta, resultando elegidos, por orden sucesivo, los que obtengan mayor número de...",
+        "score": 0.504,
+        "chunk_id": "reglamento-claustro-ucm_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "3. No se podrán delegar con carácter resolutorio las funciones recogidas en las letras a), b), c), d), e), f), g), h) e i), si bien podrán ser objeto de delegación a efectos de su estudio y de la elab...",
+        "score": 0.504,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_16",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 4,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "con representación en el Consejo del Instituto, con la siguiente proporción: dos Profesores doctores con vinculación permanente con la universidad, un miembro del Resto de Personal Docente e Investiga...",
+        "score": 0.502,
+        "chunk_id": "reglamento-electoral-ucm_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 5,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "vocales de las distintas comisiones. 2. En los tres días siguientes a la finalización del plazo para la presentación de solicitudes, la Mesa de Constitución, formada de acuerdo con el artículo 5.3, pr...",
+        "score": 0.502,
+        "chunk_id": "reglamento-claustro-ucm_chunk_8",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "gobierno",
+    "source_doc": "reglamento-claustro-ucm",
+    "doc_id": "reglamento-claustro-ucm",
+    "chunk_id": "reglamento-claustro-ucm_chunk_4",
+    "retrieval_time": 6.645846366882324,
+    "generation_time": 42.11791276931763,
+    "total_time": 48.76429605484009,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 17,
+    "question": "¿Quién es el responsable de regular los procedimientos de acceso durante las sesiones del Claustro?",
+    "reference_answer": "La Secretaría General regulará los procedimientos de control de acceso y salida de los asistentes durante la sesión.",
+    "rag_answer": "La Secretaría General regulará los procedimientos de control de acceso y salida de los asistentes durante la sesión.",
+    "sources": [
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 1,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "de este 2. Durante sus sesiones plenarias, sólo tendrán acceso a las mismas, además de los claustrales, y de los Vicerrectores que no lo sean, quienes estén expresamente invitados por el Presidente en...",
+        "score": 0.719,
+        "chunk_id": "reglamento-claustro-ucm_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 2,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "los debates y mantiene el orden 2. Corresponde al Presidente cumplir y hacer cumplir el presente Reglamento, interpretándolo en los casos de duda y supliéndolo en los de omisión. Cuando en el ejercici...",
+        "score": 0.606,
+        "chunk_id": "reglamento-claustro-ucm_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 3,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "el derecho a asistir, con voz y voto, a las sesiones del Claustro y a las de las Comisiones de las que formen parte. 1. Los miembros claustrales gozarán de exención de sus obligaciones académicas, doc...",
+        "score": 0.525,
+        "chunk_id": "reglamento-claustro-ucm_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 4,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "líneas generales de actuación del Claustro, fijar el calendario de actividades del Pleno y de las distintas Comisiones para cada curso académico y coordinar los trabajos de sus distintos órganos. e) A...",
+        "score": 0.515,
+        "chunk_id": "reglamento-claustro-ucm_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "podrá ser a tiempo parcial a petición del interesado o interesada con los requisitos, condiciones y efectos establecidos reglamentariamente. La dedicación será, en todo caso, compatible con la realiza...",
+        "score": 0.514,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_51",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "gobierno",
+    "source_doc": "reglamento-claustro-ucm",
+    "doc_id": "reglamento-claustro-ucm",
+    "chunk_id": "reglamento-claustro-ucm_chunk_4",
+    "retrieval_time": 6.628927946090698,
+    "generation_time": 38.717727184295654,
+    "total_time": 45.34665513038635,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 18,
+    "question": "¿Cuántos días transcurrieron entre la publicación de las calificaciones provisionales y el inicio del período de revisión?",
+    "reference_answer": "Al menos dos días hábiles desde su publicación",
+    "rag_answer": "\"Se deben esperar 24 horas siguientes a la finalización del periodo de revisión para la elaboración de las actas correspondientes.\"",
+    "sources": [
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 1,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "394 65 71 Fax - 91 544 65 95 E mail: defensora@rect.ucm.es UNIVERSIDAD COMPLUTENSE DE MADRID veinticuatro horas siguientes a la finalizacién del periodo de revisién y procedera a elaborar las actas co...",
+        "score": 0.552,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatuto-estudiante",
+        "rank": 2,
+        "title": "estatuto-estudiante",
+        "text_preview": "y demás disposiciones legales. el permiso correspondiente. Derecho de reclamación y queja Del procedimiento de revisión e impugnación de calificaciones Los estudiantes de la Universidad Complutense ti...",
+        "score": 0.525,
+        "chunk_id": "estatuto-estudiante_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "rank": 3,
+        "title": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "text_preview": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario\nRECOMENDACIÓN SOBRE LAS FECHAS EN QUE DEBE FIJARSE LA REVISIÓN\nEn relación con diversas CONSULTAS que han llegado a la Ofici...",
+        "score": 0.517,
+        "chunk_id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 4,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "DE EVALUACION DE LOS ALUMNOS DE LA UNIVERSIDAD DE JAEN (Aprobado por el] Consejo de Gobierno el 19 de julio de 2005 y modificado el 13 de marzo de 2006. Modificado en Consejo de Gobierno de 23 de novi...",
+        "score": 0.503,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 5,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "calificaciones provisionales de los examenes finales escritos u orales se hard publico el horario, lugar y fecha en que los estudiantes que lo deseen tendran derecho a revisar su examen, asi como el p...",
+        "score": 0.501,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "doc_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_3",
+    "retrieval_time": 6.6146464347839355,
+    "generation_time": 58.355029344558716,
+    "total_time": 64.97067642211914,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 19,
+    "question": "¿Cuándo se publican las calificaciones definitivas después del período de revisión?",
+    "reference_answer": "Transcurrido el periodo de revisión, el profesor publicará en los tablones de anuncios las calificaciones definitivas",
+    "rag_answer": "veinticuatro horas siguientes a la finalización del periodo de revisión.",
+    "sources": [
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 1,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "394 65 71 Fax - 91 544 65 95 E mail: defensora@rect.ucm.es UNIVERSIDAD COMPLUTENSE DE MADRID veinticuatro horas siguientes a la finalizacién del periodo de revisién y procedera a elaborar las actas co...",
+        "score": 0.637,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatuto-estudiante",
+        "rank": 2,
+        "title": "estatuto-estudiante",
+        "text_preview": "y demás disposiciones legales. el permiso correspondiente. Derecho de reclamación y queja Del procedimiento de revisión e impugnación de calificaciones Los estudiantes de la Universidad Complutense ti...",
+        "score": 0.548,
+        "chunk_id": "estatuto-estudiante_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "rank": 3,
+        "title": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "text_preview": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario\nRECOMENDACIÓN SOBRE LAS FECHAS EN QUE DEBE FIJARSE LA REVISIÓN\nEn relación con diversas CONSULTAS que han llegado a la Ofici...",
+        "score": 0.525,
+        "chunk_id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "rank": 4,
+        "title": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+        "text_preview": "DE EVALUACION DE LOS ALUMNOS DE LA UNIVERSIDAD DE JAEN (Aprobado por el] Consejo de Gobierno el 19 de julio de 2005 y modificado el 13 de marzo de 2006. Modificado en Consejo de Gobierno de 23 de novi...",
+        "score": 0.515,
+        "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "calificaciones obtenidas. En caso de disconformidad con el resultado de la revisión, se podrá impugnar la calificación en el plazo de diez días ante el Comité de Dirección del Centro de Formación Perm...",
+        "score": 0.501,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_11",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "doc_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam",
+    "chunk_id": "3-2015-05-18-Recomendación sobre el acto de revisión de calificación de exam_chunk_3",
+    "retrieval_time": 6.591975212097168,
+    "generation_time": 19.48272728919983,
+    "total_time": 26.074702501296997,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 20,
+    "question": "¿Quién debe someter a conocimiento y aprobación del Consejo de Gobierno las líneas generales de actuación de la Universidad?",
+    "reference_answer": "El Rector/a debe someter a conocimiento y aprobación del Consejo de Gobierno las líneas generales de actuación de la Universidad.",
+    "rag_answer": "El Consejo de Dirección debe conocer la propuesta de líneas estratégicas antes de su discusión y aprobación por el Consejo de Gobierno de la Universidad.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "47 .- Definición y ámbito de actuación 1. El Consejo de Gobierno es el órgano de gobierno de la Universidad. 2. Con carácter general, el Consejo de Gobierno establece las líneas estratégicas y program...",
+        "score": 0.639,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_18",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 2,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "el debate, tras la escueta formulación de la pregunta por el claustral, responderá el Rector o el miembro del Consejo de Gobierno a quien vaya dirigida. Seguidamente se abrirá un único turno de réplic...",
+        "score": 0.624,
+        "chunk_id": "reglamento-claustro-ucm_chunk_16",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "que los propuso, si bien podrán continuar en sus funciones hasta que se nombre al nuevo titular que sustituya al cesante. Artículo 63.- Causas comunes de cese en el cargo La condición de titular de un...",
+        "score": 0.532,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_25",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 4,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "Consejo de Dirección. En caso de ausencia le sustituirá la persona que designe el Rector. Artículo 53. Competencias del Consejo de Dirección En desarrollo de las competencias que atribuye al Rector la...",
+        "score": 0.526,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_17",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 5,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "Consejo de Dirección. En caso de ausencia le sustituirá la persona que designe el Rector. Artículo 53. Competencias del Consejo de Dirección En desarrollo de las competencias que atribuye al Rector la...",
+        "score": 0.526,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_17",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_25",
+    "retrieval_time": 6.601882219314575,
+    "generation_time": 47.66960525512695,
+    "total_time": 54.27148747444153,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 3
+  },
+  {
+    "id": 21,
+    "question": "¿Cómo se decide el uso de los bienes afectos al cumplimiento de los fines de la universidad?",
+    "reference_answer": "Los bienes afectos al cumplimiento de los fines se administra y gestiona por la universidad con aprobación del Consejo Social.",
+    "rag_answer": "Los bienes afectos al cumplimiento de los fines de la Universidad podrán ser utilizados para el desarrollo inmediato de tales fines, sin que ello implique transigir en pretensiones que afecten a su integridad patrimonial.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "de la forma más adecuada, exigiendo a los autores la responsabilidad que proceda y ejercitando frente a ellos, en su caso, la potestad 4. La UCM no podrá transigir, allanarse o renunciar, en juicio o ...",
+        "score": 0.538,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_80",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 2,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "de la UCM, todos aquellos bienes o derechos que estén afectos al cumplimiento de los fines de la Universidad o que el Estado o la Comunidad de Madrid destinen a dichos fines, mientras permanezcan en e...",
+        "score": 0.52,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_79",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "órganos de gobierno y representación de la Universidad en los aspectos concernientes a la actividad de los mismos. q) A obtener reconocimiento académico por su participación en actividades universitar...",
+        "score": 0.512,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_54",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 4,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "que se refiere el párrafo anterior dejen de ser necesarios para la prestación del servicio universitario o se empleen en funciones distintas de las propias de la universidad, la Administración de orig...",
+        "score": 0.509,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_40",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "4. La reclamación en vía administrativa es requisito previo al ejercicio de acciones fundadas en Derecho privado o laboral, excepto aquellos supuestos en que dicho requisito esté exceptuado por una di...",
+        "score": 0.503,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_40",
+    "retrieval_time": 6.5531792640686035,
+    "generation_time": 89.59966039657593,
+    "total_time": 96.1538393497467,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 4,
+    "correct_chunk_rank": 4
+  },
+  {
+    "id": 22,
+    "question": "¿Cuántos profesores con vinculación permanente hay en la Junta de Facultad?",
+    "reference_answer": "31 miembros del PDI con vinculación permanente",
+    "rag_answer": "- 3 Representantes del Personal de Administración y Servicios. c) Si la composición de la Junta, resultante de lo previsto en las letras a) y b), no cumpliera lo dispuesto en el artículo 18 de la LOU, se aumentará el número de profesores con vinculación permanente con la Universidad, contemplado en la letra b), hasta alcanzar, entre miembros natos y miembros electos, el 51 por ciento de los Profesores con vinculación permanente.",
+    "sources": [
+      {
+        "id": "reglamento-farmacia",
+        "rank": 1,
+        "title": "reglamento-farmacia",
+        "text_preview": "de la Biblioteca. b) Una representación de los diversos sectores de la comunidad universitaria de acuerdo con lo dispuesto en el Art. 52 a) de los Estatutos de la Universidad Complutense, hasta un tot...",
+        "score": 0.697,
+        "chunk_id": "reglamento-farmacia_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-matematicas",
+        "rank": 2,
+        "title": "reglamento-ciencias-matematicas",
+        "text_preview": "y el artículo 15 del Reglamento de Centros y Estructuras, la Junta de Facultad estará constituida por: a) El Decano que la presidirá, los Vicedecanos, el Secretario, el Gerente, el director de cada De...",
+        "score": 0.685,
+        "chunk_id": "reglamento-ciencias-matematicas_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-filologia",
+        "rank": 3,
+        "title": "reglamento-filologia",
+        "text_preview": "comunidad universitaria con la siguiente distribución: 31 miembros del PDI con vinculación permanente, 4 miembros del PDI sin vinculación permanente, 3 miembros del Personal técnico, de gestión y de a...",
+        "score": 0.58,
+        "chunk_id": "reglamento-filologia_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-estudios-estadisticos",
+        "rank": 4,
+        "title": "reglamento-estudios-estadisticos",
+        "text_preview": "apoyarla en la Facultad. b) Fomentar la colaboración e involucración de miembros de la Facultad en las iniciativas de La Comisión de Alianza UNA Europa estará constituida por los siguientes miembros: ...",
+        "score": 0.573,
+        "chunk_id": "reglamento-estudios-estadisticos_chunk_12",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-informatica",
+        "rank": 5,
+        "title": "reglamento-informatica",
+        "text_preview": "con la actividad de la biblioteca del centro, le atribuya expresamente la Junta de Facultad. La Comisión de Biblioteca estará compuesta por los siguientes miembros: a) El vicedecano con competencias e...",
+        "score": 0.523,
+        "chunk_id": "reglamento-informatica_chunk_9",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "reglamentos",
+    "source_doc": "reglamento-filologia",
+    "doc_id": "reglamento-filologia",
+    "chunk_id": "reglamento-filologia_chunk_1",
+    "retrieval_time": 6.643603563308716,
+    "generation_time": 23.92481541633606,
+    "total_time": 30.568418979644775,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 3,
+    "correct_chunk_rank": 3
+  },
+  {
+    "id": 23,
+    "question": "¿Cuántos días consecutivos de ausencia sin causa justificada pueden suponer la pérdida de la condición de miembro de la Junta de Facultad?",
+    "reference_answer": "tres sesiones consecutivas o seis alternas en un curso académico",
+    "rag_answer": "c) Muerte o enfermedad grave de un familiar hasta segundo grado de consanguinidad d) Disfrutar de permiso o licencia por estudios, asistencia a congresos o estancias fuera de la universidad. AÑO XV 8 de noviembre de 2018 BOUC n.º 24\nArtículo 9.2.- El procedimiento para la declaración de la pérdida de la condición de\nrepresentante de Junta por inasistencia, en los términos recogidos en los apartados\nanteriores, exigirá la instrucción de un expediente contradictorio, que será iniciado a...",
+    "sources": [
+      {
+        "id": "reglamento-enfermeria",
+        "rank": 1,
+        "title": "reglamento-enfermeria",
+        "text_preview": "personas que se vean afectadas directamente por un punto del orden del día o que puedan informar de temas específicos. En ningún caso las personas invitadas tendrán derecho a voto. Artículo 9.- La con...",
+        "score": 0.727,
+        "chunk_id": "reglamento-enfermeria_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-psicología",
+        "rank": 2,
+        "title": "reglamento-psicología",
+        "text_preview": "Artículo 6.- De la condición de miembro. 1. La condición de representante de la Junta de Facultad es personal e indelegable e implica el deber de asistir y participar en todas las sesiones de la misma...",
+        "score": 0.725,
+        "chunk_id": "reglamento-psicología_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-estudios-estadisticos",
+        "rank": 3,
+        "title": "reglamento-estudios-estadisticos",
+        "text_preview": "recogidas en el artículo 54 de los EUCM. Artículo 6. De la condición de miembro y la pérdida de la misma 1. La condición de miembro de la Junta de Facultad es personal e intransferible e implica el de...",
+        "score": 0.718,
+        "chunk_id": "reglamento-estudios-estadisticos_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-farmacia",
+        "rank": 4,
+        "title": "reglamento-farmacia",
+        "text_preview": "de la Biblioteca. b) Una representación de los diversos sectores de la comunidad universitaria de acuerdo con lo dispuesto en el Art. 52 a) de los Estatutos de la Universidad Complutense, hasta un tot...",
+        "score": 0.646,
+        "chunk_id": "reglamento-farmacia_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-optica-optometría",
+        "rank": 5,
+        "title": "reglamento-optica-optometría",
+        "text_preview": "las letras a) y b), no hubiera una mayoría de miembros que fueran profesores/as con vinculación permanente, se aumentará el número de ellos/as que resultó de la aplicación del porcentaje de la letra b...",
+        "score": 0.636,
+        "chunk_id": "reglamento-optica-optometría_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-filologia",
+    "doc_id": "reglamento-filologia",
+    "chunk_id": "reglamento-filologia_chunk_1",
+    "retrieval_time": 6.704118251800537,
+    "generation_time": 42.20589733123779,
+    "total_time": 48.91001558303833,
+    "correct_doc_in_top_k": false,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 0,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 24,
+    "question": "¿Qué órgano decide los criterios de determinación de los precios y exenciones correspondientes a las enseñanzas propias, de especialización y los referentes a las becas?",
+    "reference_answer": "El Consejo de Gobierno a través del Rector",
+    "rag_answer": "Para asegurar la eficacia del sistema y una gestión descentralizada, se establecerán\nlos oportunos mecanismos de información, coordinación y cooperación entre la\nAdministración General del Estado y las Administraciones de las Comunidades\n4. La concesión de las becas y ayudas al estudio contempladas en los apartados 2\ny 3 responderá prioritaria y fundamentalmente a criterios socioeconómicos, sin perjuicio\nde los criterios académicos y de otros criterios que, de conformidad con los principios...",
+    "sources": [
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 1,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "cursos de formación permanente. 3. Aprobar las propuestas de modificación o supresión de los cursos. 4. Aprobar las propuestas de cursos de formación para el personal de la UCM, así como otras accione...",
+        "score": 0.602,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 2,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "por el Consejo 3. Son funciones específicas de los Consejos y Comisiones Académicas de Titulación a) Elaborar anualmente un informe, que será enviado a la Junta del Centro al que esté adscrita la titu...",
+        "score": 0.502,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_68",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "transfronteriza entre comunidades y autoridades territoriales (Madrid, 21 de mayo de 1980), y en el ámbito geográfico comprendido en los respectivos convenios de cooperación transfronteriza suscritos,...",
+        "score": 0.501,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_24",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "imparten enseñanzas para el mejor ejercicio de la profesión por los titulados universitarios y, en su caso, cursos de formación continuada para el perfeccionamiento profesional, pudiendo desarrollar, ...",
+        "score": 0.501,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "del conocimiento, la innovación, la formación a lo largo de la vida, la internacionalización, la cooperación interuniversitaria y la participación en proyectos y redes, la tasa de inserción laboral, l...",
+        "score": 0.501,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_38",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-regimen-interior-consejo-social-ucm",
+    "doc_id": "reglamento-regimen-interior-consejo-social-ucm",
+    "chunk_id": "reglamento-regimen-interior-consejo-social-ucm_chunk_1",
+    "retrieval_time": 6.630195140838623,
+    "generation_time": 43.74432134628296,
+    "total_time": 50.37451648712158,
+    "correct_doc_in_top_k": false,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 0,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 25,
+    "question": "¿Qué tipo de personas pueden concurrir al concurso para cubrir puestos de personal técnico, de gestión y de administración y servicios?",
+    "reference_answer": "El personal técnico, de gestión y de administración y servicios puede concurrir tanto su propio personal, como el personal de otras universidades, así como, en las condiciones que reglamentariamente se determinen, el personal perteneciente a cuerpos y escalas de las Administraciones Públicas.",
+    "rag_answer": "El personal técnico, de gestión y de administración y servicios en la UCM podrá concurrir tanto su propio personal, como el personal de otras universidades y, en las condiciones que reglamentariamente se determinen, el personal perteneciente a cuerpos y escalas de las Administraciones Públicas.",
+    "sources": [
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 1,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "disponibilidad de mecanismos de revisión de los resultados de acuerdo con lo dispuesto por la normativa aplicable y la negociación colectiva. Artículo 92. Provisión de puestos de trabajo. 1. En la pro...",
+        "score": 0.717,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_55",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "competencias. 4. Las universidades podrán contratar otro personal con cargo a financiación externa o financiación procedente de convocatorias de ayudas públicas en concurrencia competitiva en su total...",
+        "score": 0.704,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_54",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 3,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "los distintos puestos de trabajo se efectuarán por el Rector/a de la Universidad. Artículo 134 .- Concurso La provisión de puestos de Personal funcionario de Administración y Servicios de la UCM se re...",
+        "score": 0.542,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_59",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "de desarrollo del concurso. h) Composición de las comisiones. i) Características, lugar y fecha del acto de presentación de los candidatos. 3. Las convocatorias de los concursos de acceso se publicará...",
+        "score": 0.525,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_37",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 5,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "apoyo al proceso técnico y atención de usuarios. Incluirá las Escalas: Auxiliar Administrativa y Auxiliares de Biblioteca. SECCIÓN 2ª- DE LA SELECCIÓN Artículo 129.- Sistemas selectivos La UCM realiza...",
+        "score": 0.524,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_58",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_55",
+    "retrieval_time": 6.651669263839722,
+    "generation_time": 120.06648588180542,
+    "total_time": 126.71915626525879,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 26,
+    "question": "¿Quién es el presidente de la Comisión de Calidad de los Grados?",
+    "reference_answer": "El vicedecano con competencias en calidad",
+    "rag_answer": "El presidente de la Comisión de Calidad de los Grados es el vicedecano con competencias en calidad.",
+    "sources": [
+      {
+        "id": "reglamento-bellas-artes",
+        "rank": 1,
+        "title": "reglamento-bellas-artes",
+        "text_preview": "sin voto. Así mismo, el Jefe de Sección de la Secretaría de estudiantes y el Jefe de la Sección de personal, podrán participar como invitados en las reuniones de la comisión con voz, En el caso de aus...",
+        "score": 0.728,
+        "chunk_id": "reglamento-bellas-artes_chunk_9",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-informatica",
+        "rank": 2,
+        "title": "reglamento-informatica",
+        "text_preview": "grado impartidas en la Facultad de Informática. f) Recoger información y evidencias sobre el desarrollo y aplicación del programa formativo de la titulación (objetivos, desarrollo de la enseñanza y ap...",
+        "score": 0.534,
+        "chunk_id": "reglamento-informatica_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-informatica",
+        "rank": 3,
+        "title": "reglamento-informatica",
+        "text_preview": "miembros. Siempre será secreta la votación referida a personas, así como la moción de censura al decano de la facultad. El voto de calidad del presidente decidirá los empates. 4. La Junta permanecerá ...",
+        "score": 0.515,
+        "chunk_id": "reglamento-informatica_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-matematicas",
+        "rank": 4,
+        "title": "reglamento-ciencias-matematicas",
+        "text_preview": "funciones referidas al posgrado que puedan serle atribuidas por el Rector y demás órganos competentes. Artículo 13. Comisión de Calidad La Comisión de Calidad, creada por acuerdo de Junta de Facultad ...",
+        "score": 0.51,
+        "chunk_id": "reglamento-ciencias-matematicas_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "regimen-interno-fac-politicas-y-sociologia",
+        "rank": 5,
+        "title": "regimen-interno-fac-politicas-y-sociologia",
+        "text_preview": "modificación y supresión de plazas de profesorado en lo que afecten al Centro, y elevar a la Junta el informe motivado correspondiente para su aprobación. b) Estudiar todas las cuestiones relativas al...",
+        "score": 0.502,
+        "chunk_id": "regimen-interno-fac-politicas-y-sociologia_chunk_14",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-informatica",
+    "doc_id": "reglamento-informatica",
+    "chunk_id": "reglamento-informatica_chunk_6",
+    "retrieval_time": 7.739150285720825,
+    "generation_time": 28.889214515686035,
+    "total_time": 36.62936472892761,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 2
+  },
+  {
+    "id": 27,
+    "question": "¿Quién es responsable de determinar los requisitos formativos complementarios que condicionan la homologación de un título extranjero?",
+    "reference_answer": "El Ministerio de Educación, Cultura y Deporte",
+    "rag_answer": "Tipo de pruebas, del Reglamento para la superación de requisitos formativos\ncomplementarios que condicionan la homologación de títulos extranjeros de educación superior,\naprobado por acuerdo del Consejo de Gobierno de 30 de abril de 2019 publicado en BOUC nº2\nde 2 de febrero de 2022. Según lo establecido en la Orden ECD/2654/2015, de 3 de diciembre, por la que se dictan\nnormas de desarrollo y aplicación del Real Decreto 967/2014, en lo que respecta a los\nprocedimientos para la homologación y...",
+    "sources": [
+      {
+        "id": "texto-consolidado-titulos-extranjeros1",
+        "rank": 1,
+        "title": "texto-consolidado-titulos-extranjeros1",
+        "text_preview": "TEXTO CONSOLIDADO REGLAMENTO PARA LA SUPERACIÓN DE RE\nQUISITOS FORMATIVOS COMPLEMENTARIOS QUE CONDICIONAN LA\nHOMOLOGACIÓN DE TÍTULOS EXTRANJEROS DE EDUCACIÓN SUPERIOR\nAprobado por Acuerdo del Consejo ...",
+        "score": 0.658,
+        "chunk_id": "texto-consolidado-titulos-extranjeros1_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-titulos-extranjeros1",
+        "rank": 2,
+        "title": "texto-consolidado-titulos-extranjeros1",
+        "text_preview": "“no apto” de cada asignatura cursada. Con carácter general, a partir de la publicación de las calificaciones, los solicitantes podrán formular las reclamaciones que estimen oportunas, según el procedi...",
+        "score": 0.583,
+        "chunk_id": "texto-consolidado-titulos-extranjeros1_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "su autonomía, podrán desarrollar estrategias de innovación docente específicas, como los títulos oficiales con itinerario abierto, mención dual, dobles titulaciones u otras modalidades, en la forma en...",
+        "score": 0.525,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_14",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 4,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "la obtención y expedición de los títulos universitarios oficiales. Éstos serán expedidos, en nombre del Rey, por el Rector o Rectora de la universidad. 2. La iniciativa para impartir una enseñanza req...",
+        "score": 0.503,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_13",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "56. Artículo 25. Alianzas interuniversitarias. Las Administraciones Públicas y las universidades, en el ámbito de sus respectivas competencias, fomentarán y facilitarán la creación y participación en ...",
+        "score": 0.503,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_22",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "texto-consolidado-titulos-extranjeros1",
+    "doc_id": "texto-consolidado-titulos-extranjeros1",
+    "chunk_id": "texto-consolidado-titulos-extranjeros1_chunk_0",
+    "retrieval_time": 7.888209104537964,
+    "generation_time": 27.36681294441223,
+    "total_time": 35.255022048950195,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 28,
+    "question": "¿Qué medidas adoptarán las universidades para asegurar el acceso, participación y contribución del estudiantado en actividades culturales?",
+    "reference_answer": "Las universidades adoptarán medidas oportunas para asegurar el acceso, participación y contribución del estudiantado en actividades culturales.",
+    "rag_answer": "Las universidades adoptarán medidas oportunas para asegurar el acceso del estudiantado a los servicios universitarios dirigidos al estudiantado.",
+    "sources": [
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 1,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "transmisión de la cultura universitaria en toda su diversidad constituye una misión fundamental de la Universidad. A tal fin, las universidades velarán por mantener y reforzar la dimensión cultural de...",
+        "score": 0.731,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_20",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "competencias. 4. Las universidades podrán contratar otro personal con cargo a financiación externa o financiación procedente de convocatorias de ayudas públicas en concurrencia competitiva en su total...",
+        "score": 0.696,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_54",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "n) A un diseño de las actividades académicas que facilite la conciliación de los estudios con la vida laboral y familiar. ñ) Al acceso y, en su caso, gestión de los distintos servicios universitarios ...",
+        "score": 0.695,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_26",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 4,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "fin, asegurarán la disponibilidad de procedimientos adecuados para su implementación y cumplimiento efectivos. 2. Las universidades informarán al estudiantado de sus derechos en el ámbito 3. Las unive...",
+        "score": 0.676,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_27",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "general de becas a que se refieren los párrafos anteriores, las Comunidades Autónomas podrán ofertar becas y ayudas para el fomento del estudio con cargo a sus fondos propios, conforme a lo establecid...",
+        "score": 0.551,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_25",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_20",
+    "retrieval_time": 6.661988258361816,
+    "generation_time": 68.11765742301941,
+    "total_time": 74.78161644935608,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 29,
+    "question": "¿Cuántos días se debe esperar después de los resultados electorales para que la Secretaría General inicie la tramitación para designar a los vocales?",
+    "reference_answer": "Los tres días siguientes",
+    "rag_answer": "En el plazo de los tres días siguientes, la Secretaría General iniciará la tramitación del procedimiento para la designación de los vocales de la Mesa del Claustro y sus Comisiones, en los términos previstos en la Sección Tercera del Capítulo III del Título Cuarto de este 3. A los efectos de la elección prevista en el apartado anterior, se constituirá una Mesa de Constitución compuesta por el Rector, el Secretario General, el claustral de mayor edad y el de menor edad.",
+    "sources": [
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 1,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "resultados electorales. 2. En el plazo de los tres días siguientes, la Secretaría General iniciará la tramitación del procedimiento para la designación de los vocales de la Mesa del Claustro y sus Com...",
+        "score": 0.728,
+        "chunk_id": "reglamento-claustro-ucm_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 2,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "presentación deberán hacerse constar los mismos datos que para el titular de la candidatura. 2. El plazo de presentación de candidaturas será de ocho días desde la publicación de la La Junta Electoral...",
+        "score": 0.524,
+        "chunk_id": "reglamento-electoral-ucm_chunk_18",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 3,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "vocales de las distintas comisiones. 2. En los tres días siguientes a la finalización del plazo para la presentación de solicitudes, la Mesa de Constitución, formada de acuerdo con el artículo 5.3, pr...",
+        "score": 0.515,
+        "chunk_id": "reglamento-claustro-ucm_chunk_8",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 4,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "en su defecto, por elección del Pleno en la forma establecida en los artículos anteriores en el caso de que restasen más de dos años para la finalización del mandato. En tal caso, la Mesa del Claustro...",
+        "score": 0.507,
+        "chunk_id": "reglamento-claustro-ucm_chunk_9",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-regimen-interior-consejo-social-ucm",
+        "rank": 5,
+        "title": "reglamento-regimen-interior-consejo-social-ucm",
+        "text_preview": "entidades, organizaciones o colectivos 6. El Presidente del Consejo Social, el o los Vicepresidentes querepresentan.Losnombramientosycesesseránpublicadosen así como, en su caso, los Presidentes de las...",
+        "score": 0.502,
+        "chunk_id": "reglamento-regimen-interior-consejo-social-ucm_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "gobierno",
+    "source_doc": "reglamento-claustro-ucm",
+    "doc_id": "reglamento-claustro-ucm",
+    "chunk_id": "reglamento-claustro-ucm_chunk_1",
+    "retrieval_time": 6.641047716140747,
+    "generation_time": 27.790138244628906,
+    "total_time": 34.432196855545044,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 30,
+    "question": "¿Quiénes forman parte inicialmente de la Mesa de Constitución?",
+    "reference_answer": "El Rector, el Secretario General, el claustral de mayor edad y el de menor edad",
+    "rag_answer": "El Rector, el Secretario General, el claustral de mayor edad y el de menor edad forman parte inicialmente de la Mesa de Constitución.",
+    "sources": [
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 1,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "estos efectos, cada miembro de la comisión, de entre los candidatos que se presenten, escribirá sólo un nombre en la papeleta, resultando elegidos, por orden sucesivo, los que obtengan mayor número de...",
+        "score": 0.51,
+        "chunk_id": "reglamento-claustro-ucm_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 2,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "Presidente/a y los dos vocales de cada Mesa Electoral, así como sus correspondientes suplentes, se reunirán media hora antes del inicio de la votación en el local asignado por la Junta Electoral compe...",
+        "score": 0.504,
+        "chunk_id": "reglamento-electoral-ucm_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 3,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "Jurídica de la Universidad. Sección Segunda. De las Comisiones Ordinarias del Claustro 1. En el seno del Claustro se constituirán, al menos, las siguientes Comisiones ordinarias: 1) La Comisión de Est...",
+        "score": 0.504,
+        "chunk_id": "reglamento-claustro-ucm_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 4,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "resultados electorales. 2. En el plazo de los tres días siguientes, la Secretaría General iniciará la tramitación del procedimiento para la designación de los vocales de la Mesa del Claustro y sus Com...",
+        "score": 0.501,
+        "chunk_id": "reglamento-claustro-ucm_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-claustro-ucm",
+        "rank": 5,
+        "title": "reglamento-claustro-ucm",
+        "text_preview": "la creación de Comisiones de estudio sobre asuntos de interés e índole especializada o de naturaleza preparatoria para los trabajos sobre los que sea competente La creación de Comisiones distintas de ...",
+        "score": 0.501,
+        "chunk_id": "reglamento-claustro-ucm_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "gobierno",
+    "source_doc": "reglamento-claustro-ucm",
+    "doc_id": "reglamento-claustro-ucm",
+    "chunk_id": "reglamento-claustro-ucm_chunk_1",
+    "retrieval_time": 6.666906118392944,
+    "generation_time": 59.93778657913208,
+    "total_time": 66.60569286346436,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 4
+  },
+  {
+    "id": 31,
+    "question": "¿Cuál es el órgano responsable de aprobar la creación de fundaciones públicas y otras personas jurídicas públicas?",
+    "reference_answer": "El Consejo Social es el órgano responsable de aprobar la creación de fundaciones públicas y otras personas jurídicas públicas.",
+    "rag_answer": "El Consejo de Gobierno y con la aprobación del Consejo Social.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "asegurar el mejor funcionamiento de los servicios públicos. 4. Para la promoción y desarrollo de sus fines, la Universidad, por sí sola o en colaboración con otras entidades públicas o privadas, a pro...",
+        "score": 0.539,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_77",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "jurídico tendrán la consideración de unidades funcionales separadas dentro de dichas universidades, a los efectos del cálculo del valor estimado que establece el artículo 101.6 de la Ley 9/2017, de 8 ...",
+        "score": 0.527,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_42",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 3,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "creación o en sus reglamentos internos, en su caso. SECCIÓN PRIMERA. DE LA CREACIÓN, MODIFICACIÓN Y SUPRESIÓN DE ÓRGANOS COLEGIADOS DE GOBIERNO Y REPRESENTACIÓN Artículo 5. Formas de creación Además d...",
+        "score": 0.502,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 4,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "través de los anteriores como a través de los órganos, centros, fundaciones o estructuras organizativas similares de la universidad dedicados a la canalización de las iniciativas investigadoras del pr...",
+        "score": 0.501,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_41",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "que se refiere el párrafo anterior dejen de ser necesarios para la prestación del servicio universitario o se empleen en funciones distintas de las propias de la universidad, la Administración de orig...",
+        "score": 0.5,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_40",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_42",
+    "retrieval_time": 6.73955225944519,
+    "generation_time": 21.16045832633972,
+    "total_time": 27.901009798049927,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 2
+  },
+  {
+    "id": 32,
+    "question": "¿Cuántos ejemplares de la acta de elección debe entregar cada Mesa Electoral a la Junta Electoral?",
+    "reference_answer": "Tres ejemplares",
+    "rag_answer": "Asimismo, aparecerá el sector al que\npertenece y, en el caso de elecciones en las que participen varios centros, aquél al que está\n3. En los procesos para la elección de órganos unipersonales, en el plazo de ocho días desde\nla fecha de la convocatoria, los titulares de derecho al sufragio que pertenezcan a más de un\nsector de los establecidos en el artículo 76.4 de los Estatutos comunicarán a la administración\nelectoral el sector por el que ejercerán su derecho. Transcurrido el plazo, a que se...",
+    "sources": [
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 1,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "Presidente/a y los dos vocales de cada Mesa Electoral, así como sus correspondientes suplentes, se reunirán media hora antes del inicio de la votación en el local asignado por la Junta Electoral compe...",
+        "score": 0.507,
+        "chunk_id": "reglamento-electoral-ucm_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 2,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "colegio y conocido el número de votos obtenidos por cada candidato/a, se procederá a proclamar al representante o representantes electos. 2. La Junta Electoral extenderá un acta por duplicado. De esta...",
+        "score": 0.505,
+        "chunk_id": "reglamento-electoral-ucm_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 3,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "a reclamación en sede del recurso que pueda interponerse en aplicación del art. 42. 1. Hecho el recuento de votos, según resulta de las operaciones anteriores, el Presidente/a preguntará si hay alguna...",
+        "score": 0.504,
+        "chunk_id": "reglamento-electoral-ucm_chunk_9",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 4,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "ejerciten el derecho en ninguno de los dos o más centros, se entenderá que podrán ejercer el derecho de sufragio activo en aquel en el que formalizaron la matrícula. 5. Los alumnos que simultanean dos...",
+        "score": 0.503,
+        "chunk_id": "reglamento-electoral-ucm_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 5,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "de inscripción en el censo, lo introducirá en el sobre dirigido a la Administración Electoral, consignando al dorso su nombre, apellidos, centro y sector al que pertenece, y en su caso tipo de dedicac...",
+        "score": 0.503,
+        "chunk_id": "reglamento-electoral-ucm_chunk_11",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-electoral-ucm",
+    "doc_id": "reglamento-electoral-ucm",
+    "chunk_id": "reglamento-electoral-ucm_chunk_9",
+    "retrieval_time": 6.67153525352478,
+    "generation_time": 42.70536184310913,
+    "total_time": 49.37689709663391,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 3
+  },
+  {
+    "id": 33,
+    "question": "¿Qué se consigna en el acta de elección en relación con los votos nulos y en blanco?",
+    "reference_answer": "El número de votos obtenidos por cada candidato/a",
+    "rag_answer": "\"El Presidente/a anunciará en voz alta el número de votantes, el de papeletas en blanco, el de papeletas nulas y el de votos obtenidos por cada candidato/a.\"",
+    "sources": [
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 1,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "a reclamación en sede del recurso que pueda interponerse en aplicación del art. 42. 1. Hecho el recuento de votos, según resulta de las operaciones anteriores, el Presidente/a preguntará si hay alguna...",
+        "score": 0.505,
+        "chunk_id": "reglamento-electoral-ucm_chunk_9",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 2,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "cuestión, continuara apartándose del tema. 5. Los miembros del órgano colegiado podrán ser llamados al orden cuando con interrupciones, o de cualquier otra forma, alteren el orden de las sesiones o cu...",
+        "score": 0.504,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_6",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 3,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "orden del día, las propuestas y acuerdos adoptados, y aquellas intervenciones que un miembro del Consejo solicite expresamente que consten en acta, sin perjuicio de lo dispuesto en el apartado 4. En e...",
+        "score": 0.501,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_14",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 4,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "orden del día, las propuestas y acuerdos adoptados, y aquellas intervenciones que un miembro del Consejo solicite expresamente que consten en acta, sin perjuicio de lo dispuesto en el apartado 4. En e...",
+        "score": 0.501,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_14",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 5,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "en la urna destinada al efecto. 3. Un miembro de la Mesa encargado de la comprobación de los votantes en el censo electoral, hará una señal en la lista de votante en el momento que vota cada elector. ...",
+        "score": 0.5,
+        "chunk_id": "reglamento-electoral-ucm_chunk_8",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "reglamentos",
+    "source_doc": "reglamento-electoral-ucm",
+    "doc_id": "reglamento-electoral-ucm",
+    "chunk_id": "reglamento-electoral-ucm_chunk_9",
+    "retrieval_time": 6.8046863079071045,
+    "generation_time": 63.88958144187927,
+    "total_time": 70.69727849960327,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 34,
+    "question": "¿Qué órgano colegiado preside el Decano?",
+    "reference_answer": "El Decano preside los Órganos Colegiados de gobierno del Centro.",
+    "rag_answer": "La Junta de Facultad quedará válidamente constituida a efectos de la celebración de sesiones, deliberaciones y toma de acuerdos, en primera convocatoria cuando concurran, al menos, la mitad de sus miembros, el Decano y el Secretario.",
+    "sources": [
+      {
+        "id": "reglamento-ciencias-informacion",
+        "rank": 1,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "sus actividades. Estos asesores podrán asistir a las sesiones de la comisión con voz y sin voto. En todo caso, el presidente de las respectivas Comisiones, tanto de las delegadas como de las de trabaj...",
+        "score": 0.728,
+        "chunk_id": "reglamento-ciencias-informacion_chunk_20",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-enfermeria",
+        "rank": 2,
+        "title": "reglamento-enfermeria",
+        "text_preview": "miembro del personal docente e investigador (PDI), elegido por la Junta de d) un miembro del personal de administración y servicios (PAS), elegido por la Junta de e) un estudiante, elegido por la Junt...",
+        "score": 0.593,
+        "chunk_id": "reglamento-enfermeria_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-farmacia",
+        "rank": 3,
+        "title": "reglamento-farmacia",
+        "text_preview": "y al destinatario. 3. La comunicación se entenderá practicada a todos los efectos legales en el momento en que se produzca el acceso a su contenido en la dirección electrónica. La Junta de Facultad qu...",
+        "score": 0.51,
+        "chunk_id": "reglamento-farmacia_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "regimen-interno-fac-politicas-y-sociologia",
+        "rank": 4,
+        "title": "regimen-interno-fac-politicas-y-sociologia",
+        "text_preview": "normativa vigente o que no hallándose contemplada en otras disposiciones normativas se considere necesaria para la consecución de los fines del Centro. 2. No se podrán delegar con carácter resolutorio...",
+        "score": 0.508,
+        "chunk_id": "regimen-interno-fac-politicas-y-sociologia_chunk_10",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-informacion",
+        "rank": 5,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "21. Interpelaciones. Los miembros de la Junta podrán presentar interpelaciones al Decano y a su equipo de gobierno. Las interpelaciones suscritas por un diez por ciento de los miembros de la Junta se ...",
+        "score": 0.504,
+        "chunk_id": "reglamento-ciencias-informacion_chunk_13",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "reglamentos",
+    "source_doc": "reglamento-optica-optometría",
+    "doc_id": "reglamento-optica-optometría",
+    "chunk_id": "reglamento-optica-optometría_chunk_10",
+    "retrieval_time": 7.202881097793579,
+    "generation_time": 64.20424008369446,
+    "total_time": 71.40712118148804,
+    "correct_doc_in_top_k": false,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 0,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 35,
+    "question": "¿Cuántos créditos restantes puede tener un estudiante para poder finalizar sus estudios?",
+    "reference_answer": "El 30% como máximo de los créditos del correspondiente plan de estudios.",
+    "rag_answer": "Los estudiantes deben dejar para finalizar sus estudios el 30% como máximo de los créditos del correspondiente plan de estudios.",
+    "sources": [
+      {
+        "id": "permanencia-estudiantado-ucm",
+        "rank": 1,
+        "title": "permanencia-estudiantado-ucm",
+        "text_preview": "los siguientes requisitos: 1º. Les reste para finalizar sus estudios el 30% como máximo de los créditos del correspondiente plan de estudios. 2º. No hayan disfrutado previamente de una convocatoria ex...",
+        "score": 0.709,
+        "chunk_id": "permanencia-estudiantado-ucm_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-normativa-de-permanencia",
+        "rank": 2,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "de fecha 24 de julio de 3015) III.- CÓMPUTO DE CONVOCATORIAS Primero. El número de convocatorias por cada asignatura tendrá un límite máximo de seis. En la quinta y sexta convocatoria, el alumno tendr...",
+        "score": 0.574,
+        "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "permanencia-estudiantado-ucm",
+        "rank": 3,
+        "title": "permanencia-estudiantado-ucm",
+        "text_preview": "AÑO V 20 de noviembre de 2008 BOUC nº 14\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE GOBIERNO DE LA\nUNIVERSIDAD COMPLUTENSE\nI.3. CONSEJO DE GOBIERNO\nI.3.3. Vicerrectorado de Estudiantes\nAcuerdo Cons...",
+        "score": 0.551,
+        "chunk_id": "permanencia-estudiantado-ucm_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "directrices-tfg",
+        "rank": 4,
+        "title": "directrices-tfg",
+        "text_preview": "cada grupo, deberán actuar de forma coordinada y colegiada. 6. Matriculación y gestión académica 6.1. El TFG se matriculará como una asignatura del plan de estudios del título oficial correspondiente....",
+        "score": 0.512,
+        "chunk_id": "directrices-tfg_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reconocimiento-transferencia-creditos",
+        "rank": 5,
+        "title": "reconocimiento-transferencia-creditos",
+        "text_preview": "el reconocimiento de créditos se realizará siempre en función de las competencias y conocimientos asociados a los créditos cursados por el estudiante y los previstos en el plan de estudios para el que...",
+        "score": 0.511,
+        "chunk_id": "reconocimiento-transferencia-creditos_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "permanencia-estudiantado-ucm",
+    "doc_id": "permanencia-estudiantado-ucm",
+    "chunk_id": "permanencia-estudiantado-ucm_chunk_1",
+    "retrieval_time": 6.75606369972229,
+    "generation_time": 44.683024406433105,
+    "total_time": 51.439088106155396,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 36,
+    "question": "¿Qué debe cumplir un estudiante para obtener una convocatoria extraordinaria?",
+    "reference_answer": "No haber disfrutado previamente de una convocatoria extraordinaria para alguna asignatura de la misma titulación y tener una nota media igual o superior a la calificación media de la promoción titulada dos cursos anteriores.",
+    "rag_answer": "Los estudiantes deben cumplir con las obligaciones establecidas en el presente reglamento y seguir disfrutando de la beca sin tener derecho a ello, ni haber renunciado a la misma, y además, les debe restar el 30% como máximo de los créditos del correspondiente plan de estudios.",
+    "sources": [
+      {
+        "id": "reglamento-becas",
+        "rank": 1,
+        "title": "reglamento-becas",
+        "text_preview": "cumplir con las obligaciones establecidas en el presente reglamento, y en las bases de la convocatoria correspondiente. Los posibles casos de incumplimiento serán comunicados al vicerrectorado compete...",
+        "score": 0.729,
+        "chunk_id": "reglamento-becas_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "permanencia-estudiantado-ucm",
+        "rank": 2,
+        "title": "permanencia-estudiantado-ucm",
+        "text_preview": "los siguientes requisitos: 1º. Les reste para finalizar sus estudios el 30% como máximo de los créditos del correspondiente plan de estudios. 2º. No hayan disfrutado previamente de una convocatoria ex...",
+        "score": 0.704,
+        "chunk_id": "permanencia-estudiantado-ucm_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 3,
+        "title": "reglamento-becas",
+        "text_preview": "deberá contener, al menos, los siguientes puntos: a) Definición del proyecto formativo. b) Objeto y alcance del mismo. d) Memoria descriptiva de las actividades que realizará el beneficiario de la bec...",
+        "score": 0.567,
+        "chunk_id": "reglamento-becas_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-normativa-de-permanencia",
+        "rank": 4,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "de fecha 24 de julio de 3015) III.- CÓMPUTO DE CONVOCATORIAS Primero. El número de convocatorias por cada asignatura tendrá un límite máximo de seis. En la quinta y sexta convocatoria, el alumno tendr...",
+        "score": 0.554,
+        "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "informe-362025-2026o-no-presentado",
+        "rank": 5,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "la fecha oficial de exámenes supondrá la renuncia automática a la convocatoria correspondiente». CONSIDERACIONES: PRIMERA: Los Estatutos de la UCM establecen en su artículo 155.e como un derecho del e...",
+        "score": 0.521,
+        "chunk_id": "informe-362025-2026o-no-presentado_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "permanencia-estudiantado-ucm",
+    "doc_id": "permanencia-estudiantado-ucm",
+    "chunk_id": "permanencia-estudiantado-ucm_chunk_1",
+    "retrieval_time": 7.208331346511841,
+    "generation_time": 116.54047513008118,
+    "total_time": 123.74982953071594,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 2
+  },
+  {
+    "id": 37,
+    "question": "¿Cuándo se abre un plazo específico de matriculación para los trabajos de fin de grado y de fin de master?",
+    "reference_answer": "Se establecería un plazo específico de matriculación tras la calificación del resto de asignaturas que configuran los estudios de Doctorado, y en junio tras la entrega de actas.",
+    "rag_answer": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario\nRECOMENDACIÓN SOBRE LA MATRICULACIÓN DE LOS TRABAJOS DE FIN DE GRADO\nSi bien la anterior Defensora del Universitario, el pasado mes de novi.embre de 2012\nefectuó una recomendación cuyo contenido es similar al de la presente, hemos detectado\nen la Oficina de la Defensora del Universitario, que persisten quejas sobre la matriculación\nde ambos Trabajos de fin de titulación y la imposibilidad de agotar las dos...",
+    "sources": [
+      {
+        "id": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013",
+        "rank": 1,
+        "title": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013",
+        "text_preview": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario\nRECOMENDACIÓN SOBRE LA MATRICULACIÓN DE LOS TRABAJOS DE FIN DE GRADO\nSi bien la anterior Defensora del Universitario, el pas...",
+        "score": 0.507,
+        "chunk_id": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-normativa-de-permanencia",
+        "rank": 2,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "TEXTO CONSOLIDADO NORMATIVA PERMANENCIA DEL ESTUDIANTADO EN LA\nUNIVERSIDAD COMPLUTENSE\nAprobado por Acuerdo Consejo de Gobierno de fecha 14 de octubre de 2008 en\nel que se aprueba la normativa de perm...",
+        "score": 0.504,
+        "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "directrices-tfg",
+        "rank": 3,
+        "title": "directrices-tfg",
+        "text_preview": "Trabajo Fin de Grado. 4.1. El TFG se concibe como un trabajo de curso que el estudiante realizará y entregará en el formato establecido por la Comisión de Grado con el fin de mostrar de forma integrad...",
+        "score": 0.503,
+        "chunk_id": "directrices-tfg_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-tfm",
+        "rank": 4,
+        "title": "reglamento-tfm",
+        "text_preview": "AÑO VII 15 de noviembre de 2010 BOUC nº 15\nI. DISPOSICIONES Y ACUERDOS DE LOS ÓRGANOS DE GOBIERNO DE LA\nUNIVERSIDAD COMPLUTENSE\nI.3. CONSEJO DE GOBIERNO\n1.3.2. Vicerrectorado de Espacio Europeo de Edu...",
+        "score": 0.502,
+        "chunk_id": "reglamento-tfm_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "directrices-tfg",
+        "rank": 5,
+        "title": "directrices-tfg",
+        "text_preview": "cada grupo, deberán actuar de forma coordinada y colegiada. 6. Matriculación y gestión académica 6.1. El TFG se matriculará como una asignatura del plan de estudios del título oficial correspondiente....",
+        "score": 0.501,
+        "chunk_id": "directrices-tfg_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "trabajo_fin",
+    "source_doc": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013",
+    "doc_id": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013",
+    "chunk_id": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013_chunk_1",
+    "retrieval_time": 6.4585959911346436,
+    "generation_time": 28.891103267669678,
+    "total_time": 35.35171675682068,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 38,
+    "question": "¿Cuántos créditos mínimos puede obtener un estudiante por participar en una colaboración en un Departamento?",
+    "reference_answer": "El número mínimo de créditos es el que figure en el plan de estudios, o en su defecto 5 por curso académico.",
+    "rag_answer": "La Comisión de Estudios podrá realizar los ajustes que\nconsidere oportunos a la vista de lo datos presentados en cada caso. El número máximo de créditos que se podrán obtener dentro de este apartado\nserá del 50 % de créditos totales de libre elección incluidos en la titulación. Organización de Congresos Científicos, Exposiciones Científico - Técnicas y\nExposiciones Artísticas.",
+    "sources": [
+      {
+        "id": "permanencia-estudiantado-ucm",
+        "rank": 1,
+        "title": "permanencia-estudiantado-ucm",
+        "text_preview": "los siguientes requisitos: 1º. Les reste para finalizar sus estudios el 30% como máximo de los créditos del correspondiente plan de estudios. 2º. No hayan disfrutado previamente de una convocatoria ex...",
+        "score": 0.719,
+        "chunk_id": "permanencia-estudiantado-ucm_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "rank": 2,
+        "title": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "text_preview": "efectúen labores de colaboración en un Departamento o en un Centro de la UCM, no encomendadas al Personal de Administración y Servicios podrán obtener créditos de libre elección, en los términos que s...",
+        "score": 0.701,
+        "chunk_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 3,
+        "title": "reglamento-becas",
+        "text_preview": "cumplir con las obligaciones establecidas en el presente reglamento, y en las bases de la convocatoria correspondiente. Los posibles casos de incumplimiento serán comunicados al vicerrectorado compete...",
+        "score": 0.691,
+        "chunk_id": "reglamento-becas_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-normativa-de-permanencia",
+        "rank": 4,
+        "title": "texto-consolidado-normativa-de-permanencia",
+        "text_preview": "de fecha 24 de julio de 3015) III.- CÓMPUTO DE CONVOCATORIAS Primero. El número de convocatorias por cada asignatura tendrá un límite máximo de seis. En la quinta y sexta convocatoria, el alumno tendr...",
+        "score": 0.53,
+        "chunk_id": "texto-consolidado-normativa-de-permanencia_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 5,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "entre 0 y 10 otorgada por la dirección del curso, de acuerdo con el rendimiento del estudiante. Los que no alcancen la calificación de 5 podrán obtener un certificado de asistencia, siempre que hubier...",
+        "score": 0.515,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_13",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+    "doc_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+    "chunk_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn_chunk_2",
+    "retrieval_time": 6.4938883781433105,
+    "generation_time": 26.956600189208984,
+    "total_time": 33.450488567352295,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 2
+  },
+  {
+    "id": 39,
+    "question": "¿Qué certificación es necesaria para poder obtener créditos por colaboración en un Departamento?",
+    "reference_answer": "La certificación del Consejo de Departamento o del Órgano Colegiado al que pertenezca el servicio en el que está realizando la colaboración.",
+    "rag_answer": "Certificación del Consejo de Departamento o del Órgano Colegiado al que pertenezca el servicio en el que está realizando la colaboración.",
+    "sources": [
+      {
+        "id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "rank": 1,
+        "title": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "text_preview": "efectúen labores de colaboración en un Departamento o en un Centro de la UCM, no encomendadas al Personal de Administración y Servicios podrán obtener créditos de libre elección, en los términos que s...",
+        "score": 0.723,
+        "chunk_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn_chunk_2",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 2,
+        "title": "reglamento-becas",
+        "text_preview": "cumplir con las obligaciones establecidas en el presente reglamento, y en las bases de la convocatoria correspondiente. Los posibles casos de incumplimiento serán comunicados al vicerrectorado compete...",
+        "score": 0.528,
+        "chunk_id": "reglamento-becas_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "recomendacion-defensa-tfg-signed",
+        "rank": 3,
+        "title": "recomendacion-defensa-tfg-signed",
+        "text_preview": "calificación al conjunto de las convocatorias del curso académico siguiente y extender la vigencia no sólo a la convocatoria extraordinaria del curso siguiente sino a todas las convocatorias de dicho ...",
+        "score": 0.508,
+        "chunk_id": "recomendacion-defensa-tfg-signed_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "rank": 4,
+        "title": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "text_preview": "reconocimiento de créditos por equivalencia en convenios de intercambio Erasmus u otros o el reconocimiento por equivalencia de créditos de libre elección mediante la realización de diversas actividad...",
+        "score": 0.501,
+        "chunk_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "rank": 5,
+        "title": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+        "text_preview": "siguientes instituciones: - British Council - Instituto Italiano di Cultura - Alliance Fraçaise - Institut Français - Goethe Institut Todas estas instituciones tienen el reconocimiento oficial de los ...",
+        "score": 0.501,
+        "chunk_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+    "doc_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn",
+    "chunk_id": "texto-consolidado-obtencion-de-creditos-de-libre-elecciÓn_chunk_2",
+    "retrieval_time": 6.747166156768799,
+    "generation_time": 47.52251315116882,
+    "total_time": 54.27067971229553,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 40,
+    "question": "¿Qué debe cumplir el becario antes de finalizar el período de beca?",
+    "reference_answer": "El becario debe entregar su memoria final de beca.",
+    "rag_answer": "Cumplir con las obligaciones establecidas en el presente reglamento y en las bases de la convocatoria correspondiente.",
+    "sources": [
+      {
+        "id": "reglamento-becas",
+        "rank": 1,
+        "title": "reglamento-becas",
+        "text_preview": "cumplir con las obligaciones establecidas en el presente reglamento, y en las bases de la convocatoria correspondiente. Los posibles casos de incumplimiento serán comunicados al vicerrectorado compete...",
+        "score": 0.585,
+        "chunk_id": "reglamento-becas_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 2,
+        "title": "reglamento-becas",
+        "text_preview": "deberá contener, al menos, los siguientes puntos: a) Definición del proyecto formativo. b) Objeto y alcance del mismo. d) Memoria descriptiva de las actividades que realizará el beneficiario de la bec...",
+        "score": 0.522,
+        "chunk_id": "reglamento-becas_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 3,
+        "title": "reglamento-becas",
+        "text_preview": "Obtener de la Universidad Complutense, a través del órgano, unidad o estructura donde desarrolle la beca, la colaboración y apoyo necesarios para el desarrollo y aprovechamiento de su formación, así c...",
+        "score": 0.521,
+        "chunk_id": "reglamento-becas_chunk_8",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "informe-362025-2026o-no-presentado",
+        "rank": 4,
+        "title": "informe-362025-2026o-no-presentado",
+        "text_preview": "fijada en su concepto y otorgamiento para que el estudiante conozca cuándo va a recibir la misma y el docente cuándo le corresponde SEXTO: Algunas universidades cuentan con una normativa de evaluación...",
+        "score": 0.506,
+        "chunk_id": "informe-362025-2026o-no-presentado_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 5,
+        "title": "reglamento-becas",
+        "text_preview": "siguiente: 1.- Datos personales del estudiante. 2.- Órgano, Unidad o Estructura de la UCM solicitante de la beca. 3.- Descripción concreta de las tareas desarrolladas y valoración de las mismas, con l...",
+        "score": 0.503,
+        "chunk_id": "reglamento-becas_chunk_9",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "becas",
+    "source_doc": "reglamento-becas",
+    "doc_id": "reglamento-becas",
+    "chunk_id": "reglamento-becas_chunk_8",
+    "retrieval_time": 6.740138292312622,
+    "generation_time": 66.7251250743866,
+    "total_time": 73.4657793045044,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 3
+  },
+  {
+    "id": 41,
+    "question": "¿Cuántos días hábiles tarda la Universidad Complutense de Madrid en publicar la relación de acuerdos después de una sesión ordinaria?",
+    "reference_answer": "Cuatro días hábiles",
+    "rag_answer": "La revisión se desarrollará en el propio Centro y, en\ntodo caso, permitirá atender a todos los alumnos interesados. El plazo para\nsolicitar dicha revisión será de 4 días hábiles desde la publicación de las\ncalificaciones”. La norma no establece plazo para el señalamiento de la fecha de revisión, que\ndebe efectuar el Profesor, junto con la publicación de las calificaciones, aunque\nsí establece un plazo de cuatro días para que el alumno formule su solicitud de\nHemos recibido solicitudes de...",
+    "sources": [
+      {
+        "id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "rank": 1,
+        "title": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014",
+        "text_preview": "UNIVERSIDAD COMPLUTENSE DE MADRID\nOficina de la Defensora del Universitario\nRECOMENDACIÓN SOBRE LAS FECHAS EN QUE DEBE FIJARSE LA REVISIÓN\nEn relación con diversas CONSULTAS que han llegado a la Ofici...",
+        "score": 0.656,
+        "chunk_id": "3-2014-03-04-Recomendacion Revisión de examen-febrero 2014_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 2,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "el Rector por propia iniciativa o a petición de un 20 por 100 de sus miembros, en cuyo caso los proponentes habrán de adjuntar el orden del día que se va a someter a debate junto con la documentación ...",
+        "score": 0.521,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_13",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 3,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "el Rector por propia iniciativa o a petición de un 20 por 100 de sus miembros, en cuyo caso los proponentes habrán de adjuntar el orden del día que se va a someter a debate junto con la documentación ...",
+        "score": 0.521,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_13",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "relación de todos los candidatos por orden de preferencia para su nombramiento. Dicha relación vendrá predeterminada por la valoración global obtenida por cada candidato. En caso de empate, se resolve...",
+        "score": 0.505,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_41",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatuto-estudiante",
+        "rank": 5,
+        "title": "estatuto-estudiante",
+        "text_preview": "y demás disposiciones legales. el permiso correspondiente. Derecho de reclamación y queja Del procedimiento de revisión e impugnación de calificaciones Los estudiantes de la Universidad Complutense ti...",
+        "score": 0.502,
+        "chunk_id": "estatuto-estudiante_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "gobierno",
+    "source_doc": "texto-consolidad-reglamento-de-gobierno",
+    "doc_id": "texto-consolidad-reglamento-de-gobierno",
+    "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_14",
+    "retrieval_time": 6.7047224044799805,
+    "generation_time": 27.409363508224487,
+    "total_time": 34.116082191467285,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 42,
+    "question": "¿Qué se debe incluir en la publicación de los acuerdos del Consejo de Gobierno en el Boletín Oficial de la Comunidad Autónoma (BOUC)?",
+    "reference_answer": "El número exacto de votos positivos, negativos, blancos, nulos y de abstenciones",
+    "rag_answer": "La publicación de los acuerdos del Consejo de Gobierno en el Boletín Oficial de la Comunidad Autónoma (BOUC) incluirá la función atribuida al delegado y, en su caso, el plazo para su ejercicio. Además, se publicará el número exacto de votos positivos, negativos, blancos, nulos y de abstenciones que se produzcan, así como el número de asistentes que había en el momento de la toma de decisión.",
+    "sources": [
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 1,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "los actos académicos de competencia de la Secretaría General. d) La comunicación interna y externa y la relación con los medios de comunicación. e) Cuantas otras funciones le delegue puntualmente el R...",
+        "score": 0.558,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_25",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 2,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "los actos académicos de competencia de la Secretaría General. d) La comunicación interna y externa y la relación con los medios de comunicación. e) Cuantas otras funciones le delegue puntualmente el R...",
+        "score": 0.558,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_24",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 3,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "orden del día, las propuestas y acuerdos adoptados, y aquellas intervenciones que un miembro del Consejo solicite expresamente que consten en acta, sin perjuicio de lo dispuesto en el apartado 4. En e...",
+        "score": 0.523,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_14",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 4,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "orden del día, las propuestas y acuerdos adoptados, y aquellas intervenciones que un miembro del Consejo solicite expresamente que consten en acta, sin perjuicio de lo dispuesto en el apartado 4. En e...",
+        "score": 0.523,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_14",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "fin, asegurarán la disponibilidad de procedimientos adecuados para su implementación y cumplimiento efectivos. 2. Las universidades informarán al estudiantado de sus derechos en el ámbito 3. Las unive...",
+        "score": 0.504,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_27",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "gobierno",
+    "source_doc": "texto-consolidad-reglamento-de-gobierno",
+    "doc_id": "texto-consolidad-reglamento-de-gobierno",
+    "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_14",
+    "retrieval_time": 6.6685614585876465,
+    "generation_time": 166.97216868400574,
+    "total_time": 173.64073014259338,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 4
+  },
+  {
+    "id": 43,
+    "question": "¿Qué causa específica puede hacer perder la condición de representante en un órgano colegiado?",
+    "reference_answer": "Fallecimiento",
+    "rag_answer": "El orden del día será fijado por el Presidente, e incluirá, necesariamente, aquellos puntos\nque hayan sido solicitados por el 20 por 100 de los miembros del órgano colegiado. No\npodrá ser objeto de deliberación, votación o acuerdo, ningún asunto no incluido en el orden\ndel día, salvo que se hallen presentes todos los miembros del órgano colegiado y sea\ndeclarada la urgencia por el voto favorable de la mayoría de los miembros.",
+    "sources": [
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 1,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "de gobierno y Son deberes de los miembros de los órganos colegiados: a) Asistir a las sesiones del órgano, así como contribuir a su normal funcionamiento, participando en cuantas actividades sean prec...",
+        "score": 0.727,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 2,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "de gobierno y Son deberes de los miembros de los órganos colegiados: a) Asistir a las sesiones del órgano, así como contribuir a su normal funcionamiento, participando en cuantas actividades sean prec...",
+        "score": 0.727,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-psicología",
+        "rank": 3,
+        "title": "reglamento-psicología",
+        "text_preview": "Artículo 6.- De la condición de miembro. 1. La condición de representante de la Junta de Facultad es personal e indelegable e implica el deber de asistir y participar en todas las sesiones de la misma...",
+        "score": 0.503,
+        "chunk_id": "reglamento-psicología_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidad-reglamento-de-gobierno",
+        "rank": 4,
+        "title": "texto-consolidad-reglamento-de-gobierno",
+        "text_preview": "entre sus Artículo 11. El Secretario 1. Los órganos colegiados de gobierno y representación tendrán un Secretario que tendrá las siguientes competencias: a) Asistir a las reuniones con voz pero sin vo...",
+        "score": 0.501,
+        "chunk_id": "texto-consolidad-reglamento-de-gobierno_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-gobierno-ucm",
+        "rank": 5,
+        "title": "reglamento-gobierno-ucm",
+        "text_preview": "entre sus Artículo 11. El Secretario 1. Los órganos colegiados de gobierno y representación tendrán un Secretario que tendrá las siguientes competencias: a) Asistir a las reuniones con voz pero sin vo...",
+        "score": 0.501,
+        "chunk_id": "reglamento-gobierno-ucm_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm",
+    "doc_id": "estatutos-ucm",
+    "chunk_id": "estatutos-ucm_chunk_4",
+    "retrieval_time": 6.609739780426025,
+    "generation_time": 27.06537389755249,
+    "total_time": 33.67611336708069,
+    "correct_doc_in_top_k": false,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 0,
+    "correct_chunk_rank": 0
+  },
+  {
+    "id": 44,
+    "question": "¿Qué porcentaje mínimo de Producto Interior Bruto debe dedicarse a la educación universitaria pública?",
+    "reference_answer": "1 por ciento",
+    "rag_answer": "En el marco del plan de incremento del gasto público para 2030 previsto en el artículo 155.2 de la Ley Orgánica 2/2006, de 3 de mayo, el Estado, las Comunidades Autónomas y las universidades comparten el objetivo de destinar como mínimo el 1 por ciento del Producto Interior Bruto al gasto público en educación universitaria pública en el conjunto del Estado, permitiendo así la equiparación progresiva a la inversión media de los Estados miembros de la Unión Europea y el cumplimiento de los...",
+    "sources": [
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 1,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "la consecución de los objetivos en ella previstos. 2. En el marco del plan de incremento del gasto público para 2030 previsto en el artículo 155.2 de la Ley Orgánica 2/2006, de 3 de mayo, el Estado, l...",
+        "score": 0.72,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_37",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-regimen-interior-consejo-social-ucm",
+        "rank": 2,
+        "title": "reglamento-regimen-interior-consejo-social-ucm",
+        "text_preview": "Pág. 8 VIERNES 17 DE OCTUBREDE 2003 B.O.C.M. Núm. 248\nConsejeríadeEducación susservicios;promoverlacolaboracióndelaSociedadenlafinan-\nciacióndeaquéllaylasrelacionesentrelaUniversidadysuentorno\n3965 DE...",
+        "score": 0.501,
+        "chunk_id": "reglamento-regimen-interior-consejo-social-ucm_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "correspondiente de la Comunidad Autónoma. Artículo 52. Otros órganos unipersonales. 1. Las universidades que cuenten con facultades, escuelas o departamentos tendrán los siguientes órganos unipersonal...",
+        "score": 0.501,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_36",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-regimen-interior-consejo-social-ucm",
+        "rank": 4,
+        "title": "reglamento-regimen-interior-consejo-social-ucm",
+        "text_preview": "partir de ese momento, de tal manera que, a partir del sexto año, pueda El Presidente y demás miembros del Consejo Social, incluido procederse a las renovaciones de acuerdo ya con lo previsto en el Se...",
+        "score": 0.501,
+        "chunk_id": "reglamento-regimen-interior-consejo-social-ucm_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "3-2013-10-23-Presencialidad y evaluación continua estudios EEES",
+        "rank": 5,
+        "title": "3-2013-10-23-Presencialidad y evaluación continua estudios EEES",
+        "text_preview": "para la superación de las mismas en la segunda convocatoria ordinaria de la asignatura. A la vista del problema planteado, procede analizar la normativa que establece la obligatoriedad de asistencia a...",
+        "score": 0.5,
+        "chunk_id": "3-2013-10-23-Presencialidad y evaluación continua estudios EEES_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_37",
+    "retrieval_time": 6.7250635623931885,
+    "generation_time": 23.92777705192566,
+    "total_time": 30.653841018676758,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 45,
+    "question": "¿Qué se debe incluir en la programación plurianual de las universidades?",
+    "reference_answer": "Objetivos a conseguir, recursos financieros y mecanismos de evaluación",
+    "rag_answer": "La programación plurianual de las universidades debe incluir líneas estratégicas y programáticas, directrices y procedimientos para la organización de las enseñanzas, investigación, recursos humanos y económicos, así como el elaborar y modificar su reglamento de funcionamiento.",
+    "sources": [
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 1,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "47 .- Definición y ámbito de actuación 1. El Consejo de Gobierno es el órgano de gobierno de la Universidad. 2. Con carácter general, el Consejo de Gobierno establece las líneas estratégicas y program...",
+        "score": 0.59,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_18",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 2,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "sean elevadas al Equipo de Gobierno. Cuando estas propuestas puedan tener un carácter normativo se elevarán al Consejo de Gobierno. c) Elaborar y modificar su reglamento de funcionamiento. d) Elegir a...",
+        "score": 0.579,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_31",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 3,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "como en su equivalencia en horas. Con carácter general, la duración de las prácticas no podrá superar el 50% de los créditos ECTS, a excepción a) Las prácticas clínicas, a las que se les aplicará la p...",
+        "score": 0.511,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "normatica-estudios-formacion-permanente",
+        "rank": 4,
+        "title": "normatica-estudios-formacion-permanente",
+        "text_preview": "11.- Requisitos académicos La propuesta debe contener una exposición de los objetivos del curso, así como una justificación de la conveniencia de su creación y grado de incidencia en el ámbito laboral...",
+        "score": 0.51,
+        "chunk_id": "normatica-estudios-formacion-permanente_chunk_8",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "la consecución de los objetivos en ella previstos. 2. En el marco del plan de incremento del gasto público para 2030 previsto en el artículo 155.2 de la Ley Orgánica 2/2006, de 3 de mayo, el Estado, l...",
+        "score": 0.503,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_37",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "ley-organica-sistema-universitario",
+    "doc_id": "ley-organica-sistema-universitario",
+    "chunk_id": "ley-organica-sistema-universitario_chunk_37",
+    "retrieval_time": 6.66281270980835,
+    "generation_time": 45.56235146522522,
+    "total_time": 52.22616505622864,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 2,
+    "correct_chunk_rank": 5
+  },
+  {
+    "id": 46,
+    "question": "¿Cuántas horas semanales máxima puede tener una beca?",
+    "reference_answer": "30 horas a la semana, pudiendo ser excepcionalmente 35 horas para becas de alta especialización.",
+    "rag_answer": "35 horas semanales",
+    "sources": [
+      {
+        "id": "reglamento-becas",
+        "rank": 1,
+        "title": "reglamento-becas",
+        "text_preview": "y 6.1.3 de este 6.2.3. Estas becas tendrán una dedicación máxima de 30 horas a la semana, pudiendo ser excepcionalmente de 35 horas en los casos de becas de alta especialización que perciban la cuantí...",
+        "score": 0.63,
+        "chunk_id": "reglamento-becas_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 2,
+        "title": "reglamento-becas",
+        "text_preview": "de dedicación de ambas actividades supere las 35 horas semanales. 5.4. No podrá solicitar una beca de formación práctica de la UCM el estudiante que haya sido becario con anterioridad, y no haya sido ...",
+        "score": 0.535,
+        "chunk_id": "reglamento-becas_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 3,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "podrá ser a tiempo parcial a petición del interesado o interesada con los requisitos, condiciones y efectos establecidos reglamentariamente. La dedicación será, en todo caso, compatible con la realiza...",
+        "score": 0.5,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_51",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 4,
+        "title": "reglamento-becas",
+        "text_preview": "deberá contener, al menos, los siguientes puntos: a) Definición del proyecto formativo. b) Objeto y alcance del mismo. d) Memoria descriptiva de las actividades que realizará el beneficiario de la bec...",
+        "score": 0.5,
+        "chunk_id": "reglamento-becas_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 5,
+        "title": "reglamento-becas",
+        "text_preview": "cumplir con las obligaciones establecidas en el presente reglamento, y en las bases de la convocatoria correspondiente. Los posibles casos de incumplimiento serán comunicados al vicerrectorado compete...",
+        "score": 0.5,
+        "chunk_id": "reglamento-becas_chunk_7",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "factual",
+    "category": "becas",
+    "source_doc": "reglamento-becas",
+    "doc_id": "reglamento-becas",
+    "chunk_id": "reglamento-becas_chunk_4",
+    "retrieval_time": 6.726080894470215,
+    "generation_time": 12.169402837753296,
+    "total_time": 18.896005392074585,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 47,
+    "question": "¿Cómo se puede modificar la dedicación de una beca?",
+    "reference_answer": "Disminuyendo o incrementando hasta el máximo permitido la dedicación de una beca concreta de este tipo durante un tiempo determinado, con ajuste proporcional de la ayuda económica correspondiente.",
+    "rag_answer": "Se podrá disminuir o incrementar hasta el máximo permitido la dedicación de una beca concreta, con ajuste proporcional de la ayuda económica correspondiente, con autorización previa del vicerrectorado competente.",
+    "sources": [
+      {
+        "id": "reglamento-becas",
+        "rank": 1,
+        "title": "reglamento-becas",
+        "text_preview": "y 6.1.3 de este 6.2.3. Estas becas tendrán una dedicación máxima de 30 horas a la semana, pudiendo ser excepcionalmente de 35 horas en los casos de becas de alta especialización que perciban la cuantí...",
+        "score": 0.506,
+        "chunk_id": "reglamento-becas_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 2,
+        "title": "reglamento-becas",
+        "text_preview": "de dedicación de ambas actividades supere las 35 horas semanales. 5.4. No podrá solicitar una beca de formación práctica de la UCM el estudiante que haya sido becario con anterioridad, y no haya sido ...",
+        "score": 0.501,
+        "chunk_id": "reglamento-becas_chunk_3",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-becas",
+        "rank": 3,
+        "title": "reglamento-becas",
+        "text_preview": "deberá contener, al menos, los siguientes puntos: a) Definición del proyecto formativo. b) Objeto y alcance del mismo. d) Memoria descriptiva de las actividades que realizará el beneficiario de la bec...",
+        "score": 0.501,
+        "chunk_id": "reglamento-becas_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 4,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "artículo 68 y de Profesorado Permanente Laboral. Sólo podrán acceder a dichas plazas profesoras y profesores que hayan prestado, como mínimo, dos años de servicios efectivos en el puesto de origen y q...",
+        "score": 0.501,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_46",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-electoral-ucm",
+        "rank": 5,
+        "title": "reglamento-electoral-ucm",
+        "text_preview": "de campañas electorales sólo podrá autorizarse para los procesos electorales de Rector/a, Decano/a de Facultad y Director/a de Escuela. De la Elección de los Órganos Colegiados CAPÍTULO I. DE LA ELECC...",
+        "score": 0.501,
+        "chunk_id": "reglamento-electoral-ucm_chunk_12",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "becas",
+    "source_doc": "reglamento-becas",
+    "doc_id": "reglamento-becas",
+    "chunk_id": "reglamento-becas_chunk_4",
+    "retrieval_time": 6.617518901824951,
+    "generation_time": 77.89276933670044,
+    "total_time": 84.51028823852539,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 48,
+    "question": "¿Cuándo pierde la eficacia la homologación condicionada si no se superan los requisitos formativos complementarios en un plazo de 6 años?",
+    "reference_answer": "Sin perjuicio de que, a partir de ese momento, el interesado pueda solicitar la convalidación por estudios parciales",
+    "rag_answer": "Plazos\nExistirá un plazo de solicitud y matrícula anual, establecido para cada curso académico por la\nUCM, que dará derecho a la evaluación de dos convocatorias. Cuando el interesado no supere los requisitos formativos complementarios exigidos en el plazo\nde seis años computados a partir del día siguiente al de la notificación de la resolución, la\nhomologación condicionada perderá su eficacia sin perjuicio de que, a partir de ese momento,\nel interesado pueda solicitar la convalidación por...",
+    "sources": [
+      {
+        "id": "texto-consolidado-titulos-extranjeros1",
+        "rank": 1,
+        "title": "texto-consolidado-titulos-extranjeros1",
+        "text_preview": "“no apto” de cada asignatura cursada. Con carácter general, a partir de la publicación de las calificaciones, los solicitantes podrán formular las reclamaciones que estimen oportunas, según el procedi...",
+        "score": 0.502,
+        "chunk_id": "texto-consolidado-titulos-extranjeros1_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "texto-consolidado-titulos-extranjeros1",
+        "rank": 2,
+        "title": "texto-consolidado-titulos-extranjeros1",
+        "text_preview": "TEXTO CONSOLIDADO REGLAMENTO PARA LA SUPERACIÓN DE RE\nQUISITOS FORMATIVOS COMPLEMENTARIOS QUE CONDICIONAN LA\nHOMOLOGACIÓN DE TÍTULOS EXTRANJEROS DE EDUCACIÓN SUPERIOR\nAprobado por Acuerdo del Consejo ...",
+        "score": 0.501,
+        "chunk_id": "texto-consolidado-titulos-extranjeros1_chunk_0",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "admision-estudiantes-internacionales",
+        "rank": 3,
+        "title": "admision-estudiantes-internacionales",
+        "text_preview": "Madrid. Artículo 1. Ámbito subjetivo de aplicación. De conformidad con lo dispuesto en el artículo 38 de la Ley Orgánica 2/2006, de 3 de mayo, de Educación, así como en el Real Decreto 412/2014, de 6 ...",
+        "score": 0.5,
+        "chunk_id": "admision-estudiantes-internacionales_chunk_1",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "directrices-master",
+        "rank": 4,
+        "title": "directrices-master",
+        "text_preview": "a las que le habilitan los estudios que esté cursando. El número de créditos no debe superar el tercio de ECTS del título. En Los Másteres con Mención Dual tendrán entre el 25 y el 50 por ciento de lo...",
+        "score": 0.5,
+        "chunk_id": "directrices-master_chunk_5",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "ley-organica-sistema-universitario",
+        "rank": 5,
+        "title": "ley-organica-sistema-universitario",
+        "text_preview": "de 27 de septiembre, de apoyo a los emprendedores y su internacionalización, se modifica como sigue: Uno. El apartado 1 de la disposición adicional decimoséptima pasa a tener la siguiente redacción: «...",
+        "score": 0.5,
+        "chunk_id": "ley-organica-sistema-universitario_chunk_71",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "general",
+    "source_doc": "texto-consolidado-titulos-extranjeros1",
+    "doc_id": "texto-consolidado-titulos-extranjeros1",
+    "chunk_id": "texto-consolidado-titulos-extranjeros1_chunk_1",
+    "retrieval_time": 6.69945764541626,
+    "generation_time": 27.31785249710083,
+    "total_time": 34.01731014251709,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": true,
+    "correct_doc_rank": 1,
+    "correct_chunk_rank": 1
+  },
+  {
+    "id": 49,
+    "question": "¿Quién preside la Comisión Permanente del Consejo de Departamento?",
+    "reference_answer": "La Comisión Permanente del Consejo de Departamento está presidida por el Director/a del Departamento.",
+    "rag_answer": "El decano, que la presidirá, o el vicedecano en quien delegue a tales efectos.",
+    "sources": [
+      {
+        "id": "reglamento-informatica",
+        "rank": 1,
+        "title": "reglamento-informatica",
+        "text_preview": "delegada de la Junta de Facultad, todos los miembros de la Comisión Permanente habrán de ser miembros de esta y su composición necesariamente garantizará el equilibrio, en cuanto a la representación e...",
+        "score": 0.636,
+        "chunk_id": "reglamento-informatica_chunk_4",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-informacion",
+        "rank": 2,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "personal permanente de la Facultad, actuará como fedatario de los actos o acuerdos de los órganos colegiados del Centro de los que se forme parte. Artículo 57. Competencias. El Secretario de la Facult...",
+        "score": 0.602,
+        "chunk_id": "reglamento-ciencias-informacion_chunk_23",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "reglamento-ciencias-informacion",
+        "rank": 3,
+        "title": "reglamento-ciencias-informacion",
+        "text_preview": "70 por 100 del Consejo. Dicha representación deberá incluir a todos los funcionarios docentes no doctores y del resto del personal docente e investigador, a un número de miembros que, sin alterar el p...",
+        "score": 0.593,
+        "chunk_id": "reglamento-ciencias-informacion_chunk_24",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "estatutos-ucm-consolidados",
+        "rank": 4,
+        "title": "estatutos-ucm-consolidados",
+        "text_preview": "3. No se podrán delegar con carácter resolutorio las funciones recogidas en las letras a), b), c), d), e), f), g), h) e i), si bien podrán ser objeto de delegación a efectos de su estudio y de la elab...",
+        "score": 0.533,
+        "chunk_id": "estatutos-ucm-consolidados_chunk_16",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      },
+      {
+        "id": "regimen-interno-fac-politicas-y-sociologia",
+        "rank": 5,
+        "title": "regimen-interno-fac-politicas-y-sociologia",
+        "text_preview": "la Comisión Académica de cada uno de los Programas de Doctorado de la Facultad. f) Un/a representante del Personal de Administración y Servicios. g) Dos representantes de los/las estudiantes de Posgra...",
+        "score": 0.532,
+        "chunk_id": "regimen-interno-fac-politicas-y-sociologia_chunk_15",
+        "metadata": {
+          "faculty": "",
+          "year": "",
+          "url": ""
+        }
+      }
+    ],
+    "question_type": "procedimental",
+    "category": "estatutos",
+    "source_doc": "estatutos-ucm-consolidados",
+    "doc_id": "estatutos-ucm-consolidados",
+    "chunk_id": "estatutos-ucm-consolidados_chunk_24",
+    "retrieval_time": 6.740882158279419,
+    "generation_time": 24.695844411849976,
+    "total_time": 31.437732696533203,
+    "correct_doc_in_top_k": true,
+    "correct_chunk_in_top_k": false,
+    "correct_doc_rank": 4,
+    "correct_chunk_rank": 0
+  }
+]

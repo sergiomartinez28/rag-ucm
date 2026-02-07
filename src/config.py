@@ -1,16 +1,13 @@
 """
 Configuración centralizada del sistema RAG-UCM
-Usa Pydantic para validación de tipos y valores por defecto
+
+Todos los parámetros del sistema están definidos aquí con valores optimizados
+tras la fase de experimentación. Usa Pydantic para validación de tipos.
 """
 
 from pathlib import Path
 from typing import Optional
 from pydantic import BaseModel, Field, field_validator
-from dotenv import load_dotenv
-import os
-
-# Cargar variables de entorno
-load_dotenv()
 
 
 class ModelConfig(BaseModel):
@@ -81,16 +78,16 @@ class ChunkingConfig(BaseModel):
 class RetrievalConfig(BaseModel):
     """Configuración de recuperación - Fase 2: Optimizada para Precision@k"""
     top_k_retrieval: int = Field(
-        default=20,
+        default=10,
         ge=1,
         le=50,
-        description="Candidatos a recuperar (Fase 2: aumentado 8→20)"
+        description="Candidatos a recuperar (optimizado velocidad: 15→10)"
     )
     top_k_rerank: int = Field(
-        default=5,
+        default=3,
         ge=1,
         le=10,
-        description="Documentos finales después de re-ranking (Fase 2: aumentado 3→5)"
+        description="Documentos finales después de re-ranking (reducido 5→3)"
     )
     hybrid_alpha: float = Field(
         default=0.45,
@@ -109,16 +106,32 @@ class RetrievalConfig(BaseModel):
 class GenerationConfig(BaseModel):
     """Configuración de generación"""
     max_new_tokens: int = Field(
-        default=120,
+        default=100,
         ge=50,
         le=1024,
-        description="Tokens máximos a generar"
+        description="Tokens máximos a generar (optimizado: 120→100)"
     )
     temperature: float = Field(
         default=0.1,
         ge=0.0,
         le=2.0,
         description="Temperatura de sampling"
+    )
+    # Fase 3: Control de recorte de contexto
+    use_sentence_extraction: bool = Field(
+        default=False,
+        description="Usar extracción de oraciones (desactivado para evitar perder respuestas)"
+    )
+    max_context_chars_per_chunk: int = Field(
+        default=800,
+        ge=400,
+        le=3000,
+        description="Máximo de caracteres por chunk cuando no se usa extracción"
+    )
+    # Retry en abstenciones
+    retry_on_abstention: bool = Field(
+        default=True,
+        description="Reintentar cuando el modelo abstiene pero hay señales de respuesta en contexto"
     )
 
 
@@ -171,46 +184,6 @@ class RAGConfig(BaseModel):
     verification: VerificationConfig = Field(default_factory=VerificationConfig)
     paths: PathsConfig = Field(default_factory=PathsConfig)
     
-    @classmethod
-    def from_env(cls) -> "RAGConfig":
-        """Carga configuración desde variables de entorno"""
-        # Crear instancias default para obtener los valores por defecto
-        default_retrieval = RetrievalConfig()
-        
-        return cls(
-            models=ModelConfig(
-                embedding_model=os.getenv('EMBEDDING_MODEL', 'BAAI/bge-m3'),
-                reranker_model=os.getenv('RERANKER_MODEL', 'BAAI/bge-reranker-base'),
-                reranker_type=os.getenv('RERANKER_TYPE', 'cross-encoder'),
-                use_cross_encoder=os.getenv('USE_CROSS_ENCODER', 'true').lower() == 'true',
-                llm_model=os.getenv('LLM_MODEL', 'Qwen/Qwen2.5-3B-Instruct'),
-            ),
-            chunking=ChunkingConfig(
-                chunk_size=int(os.getenv('CHUNK_SIZE', 1000)),
-                chunk_overlap=int(os.getenv('CHUNK_OVERLAP', 200)),
-            ),
-            retrieval=RetrievalConfig(
-                top_k_retrieval=int(os.getenv('TOP_K_RETRIEVAL', default_retrieval.top_k_retrieval)),
-                top_k_rerank=int(os.getenv('TOP_K_RERANK', default_retrieval.top_k_rerank)),
-                hybrid_alpha=float(os.getenv('HYBRID_ALPHA', default_retrieval.hybrid_alpha)),
-                min_score_threshold=float(os.getenv('MIN_SCORE_THRESHOLD', default_retrieval.min_score_threshold)),
-            ),
-            generation=GenerationConfig(
-                max_new_tokens=int(os.getenv('MAX_NEW_TOKENS', 120)),
-                temperature=float(os.getenv('TEMPERATURE', 0.1)),
-            ),
-            verification=VerificationConfig(
-                enable_verification=os.getenv('ENABLE_VERIFICATION', 'false').lower() == 'true',
-                verification_threshold=float(os.getenv('VERIFICATION_THRESHOLD', 0.7)),
-            ),
-            paths=PathsConfig(
-                data_raw_path=Path(os.getenv('DATA_RAW_PATH', './data/raw')),
-                data_processed_path=Path(os.getenv('DATA_PROCESSED_PATH', './data/processed')),
-                faiss_index_path=Path(os.getenv('FAISS_INDEX_PATH', './data/processed/faiss_index')),
-                bm25_index_path=Path(os.getenv('BM25_INDEX_PATH', './data/processed/bm25_index')),
-            ),
-        )
-    
     def to_dict(self) -> dict:
         """Convierte a diccionario para compatibilidad"""
         return self.model_dump()
@@ -224,13 +197,11 @@ def get_config() -> RAGConfig:
     """Obtiene la configuración global del sistema"""
     global _config
     if _config is None:
-        _config = RAGConfig.from_env()
+        _config = RAGConfig()
     return _config
 
 
-def reload_config() -> RAGConfig:
-    """Recarga la configuración desde variables de entorno"""
+def reset_config() -> None:
+    """Resetea la configuración (útil para tests)"""
     global _config
-    load_dotenv(override=True)
-    _config = RAGConfig.from_env()
-    return _config
+    _config = None

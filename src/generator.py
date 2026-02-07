@@ -13,21 +13,20 @@ from loguru import logger
 from .preprocessor import Chunk
 from .prompt_loader import load_prompt
 from .utils import timed, TimingContext, torch_memory_cleanup
+from .config import get_config
 
 
 class ResponseGenerator:
     """
     Genera respuestas usando un LLM local open source
-    - Llama-3.2-3B-Instruct
-    - Phi-4-mini
-    - Qwen2.5-3B-Instruct
+    Modelo por defecto: Qwen2.5-3B-Instruct
     """
     
     def __init__(
         self,
-        model_name: str = "microsoft/Phi-3-mini-4k-instruct",
-        max_new_tokens: int = 768,
-        temperature: float = 0.3,
+        model_name: str = "Qwen/Qwen2.5-3B-Instruct",
+        max_new_tokens: int = 100,
+        temperature: float = 0.1,
         device: str = "auto"
     ):
         """
@@ -43,6 +42,12 @@ class ResponseGenerator:
         self.model_name = model_name
         self.max_new_tokens = max_new_tokens
         self.temperature = temperature
+        
+        # Cargar config para opciones de generación
+        config = get_config()
+        self.use_sentence_extraction = config.generation.use_sentence_extraction  # type: ignore
+        self.max_context_chars = config.generation.max_context_chars_per_chunk  # type: ignore
+        self.retry_on_abstention = config.generation.retry_on_abstention  # type: ignore
         
         logger.info(f"Cargando modelo LLM: {model_name}")
         
@@ -62,32 +67,31 @@ class ResponseGenerator:
                 self.tokenizer.pad_token = self.tokenizer.eos_token
         
         with TimingContext("Carga de modelo LLM"):
-            if device == "cuda":
-                logger.info("Cargando modelo en GPU con float16...")
+            # Siempre usar cuantización 4-bit para reducir uso de VRAM
+            logger.info(f"Cargando modelo con cuantización 4-bit en {device}...")
+            try:
+                quantization_config = BitsAndBytesConfig(
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=torch.float16,
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_quant_type="nf4"
+                )
                 self.model = AutoModelForCausalLM.from_pretrained(
                     model_name,
-                    torch_dtype=torch.float16
-                ).to(device)
-            else:
-                logger.info("Cargando modelo en CPU con cuantización 4-bit...")
-                try:
-                    # Intentar cuantización 4-bit con bitsandbytes (solo en CPU)
-                    quantization_config = BitsAndBytesConfig(
-                        load_in_4bit=True,
-                        bnb_4bit_compute_dtype=torch.float16,
-                        bnb_4bit_use_double_quant=True,
-                        bnb_4bit_quant_type="nf4"
-                    )
+                    quantization_config=quantization_config,
+                    device_map="auto",
+                    low_cpu_mem_usage=True
+                )
+                logger.success("✓ Modelo cuantizado a 4-bit (ahorro ~50% VRAM)")
+            except Exception as e:
+                logger.warning(f"No se pudo cargar con cuantización 4-bit: {e}")
+                logger.info("Cargando modelo sin cuantización...")
+                if device == "cuda":
                     self.model = AutoModelForCausalLM.from_pretrained(
                         model_name,
-                        quantization_config=quantization_config,
-                        device_map="auto",
-                        low_cpu_mem_usage=True
-                    )
-                    logger.success("✓ Modelo cuantizado a 4-bit (2-4x más rápido en CPU)")
-                except Exception as e:
-                    logger.warning(f"No se pudo cargar con cuantización 4-bit: {e}")
-                    logger.info("Cargando modelo sin cuantización (más lento)...")
+                        torch_dtype=torch.float16
+                    ).to(device)
+                else:
                     self.model = AutoModelForCausalLM.from_pretrained(
                         model_name,
                         torch_dtype=torch.float32
@@ -233,21 +237,41 @@ class ResponseGenerator:
         if not contexts:
             raise ValueError("Se requieren contextos para generar el prompt")
         
-        # Construir contextos con referencias (usando top-sentences)
+        # Construir contextos con referencias
         context_texts = []
-        for i, (chunk, score) in enumerate(contexts, 1):
+        total_context_chars = 0
+        
+        for i, (chunk, _score) in enumerate(contexts, 1):
             metadata = chunk.metadata
             title = metadata.get('title', metadata.get('filename', 'Doc'))
-            # Extraer top-sentences relevantes en lugar de [:400] fijo
-            text = self._extract_top_sentences(
-                chunk.text,
-                query,
-                max_sentences=5,
-                max_chars=1200
-            ).strip()
+            
+            # FASE 3: Usar chunk completo o recortado según config
+            if self.use_sentence_extraction:
+                # Método antiguo: extraer oraciones (puede perder respuesta)
+                text = self._extract_top_sentences(
+                    chunk.text,
+                    query,
+                    max_sentences=5,
+                    max_chars=1200
+                ).strip()
+            else:
+                # Método nuevo: chunk completo o recortado conservadoramente
+                text = chunk.text.strip()
+                if len(text) > self.max_context_chars:
+                    # Recorte conservador: mantener texto contiguo
+                    text = text[:self.max_context_chars].rsplit(' ', 1)[0] + "..."
+            
             context_texts.append(f"[{i}] {title}: {text}")
+            total_context_chars += len(text)
         
         contexts_str = "\n\n".join(context_texts)
+        
+        # Log diagnóstico de longitud de contexto
+        logger.debug(
+            f"Contexto para LLM: {len(contexts)} chunks, "
+            f"{total_context_chars} chars total, "
+            f"extraction={'sentences' if self.use_sentence_extraction else 'full'}"
+        )
         
         # Cargar prompts separados: system (instrucciones) y user (pregunta + docs)
         system_prompt = load_prompt("system_prompt")
@@ -260,9 +284,102 @@ class ResponseGenerator:
         
         return messages
     
-    def _is_suspicious_response(self, answer: str) -> bool:
+    def _is_abstention_response(self, answer: str) -> bool:
+        """
+        Detecta si la respuesta es una abstención ("No dispongo de información...").
+        
+        Returns:
+            True si es una abstención explícita
+        """
+        clean = answer.strip().lower()
+        
+        abstention_patterns = [
+            'no dispongo',
+            'no encuentro información',
+            'no tengo información',
+            'no hay información',
+            'no se menciona',
+            'no aparece',
+            'no está especificado',
+            'la normativa no especifica',
+            'los fragmentos no contienen',
+            'no puedo proporcionar',
+            'no es posible determinar'
+        ]
+        
+        return any(pattern in clean for pattern in abstention_patterns)
+    
+    def _context_has_answer_signals(
+        self,
+        query: str,
+        contexts: List[Tuple[Chunk, float]]
+    ) -> Tuple[bool, Dict[str, Any]]:
+        """
+        Detecta si el contexto tiene señales de que contiene la respuesta.
+        Útil para decidir si reintentar cuando el modelo abstiene.
+        
+        Returns:
+            (tiene_señales, diagnostico_dict)
+        """
+        query_tokens = set(self._tokenize_spanish(query))
+        
+        # Keywords de normativa que indican respuesta factual
+        factual_keywords = {
+            'días', 'meses', 'años', 'plazo', 'créditos', 'ects',
+            'máximo', 'mínimo', 'porcentaje', '%', 'euros', 'fecha',
+            'deberá', 'podrá', 'será', 'tendrá', 'estará',
+            'artículo', 'apartado', 'capítulo'
+        }
+        
+        diagnostics = {
+            'has_numbers': False,
+            'has_factual_keywords': False,
+            'high_overlap': False,
+            'overlap_score': 0.0,
+            'context_chars': 0
+        }
+        
+        total_overlap = 0
+        total_chars = 0
+        
+        for chunk, score in contexts[:3]:  # Top-3 chunks
+            text = chunk.text.lower()
+            total_chars += len(chunk.text)
+            
+            # Chequear números
+            if re.search(r'\d+', text):
+                diagnostics['has_numbers'] = True
+            
+            # Chequear keywords factuales
+            if any(kw in text for kw in factual_keywords):
+                diagnostics['has_factual_keywords'] = True
+            
+            # Calcular overlap
+            chunk_tokens = set(self._tokenize_spanish(text))
+            overlap = len(query_tokens & chunk_tokens)
+            total_overlap += overlap
+        
+        diagnostics['context_chars'] = total_chars
+        diagnostics['overlap_score'] = total_overlap / (len(query_tokens) + 1)
+        diagnostics['high_overlap'] = diagnostics['overlap_score'] >= 2.0
+        
+        # Tiene señales si: (números + keywords) o (alto overlap + keywords)
+        has_signals = (
+            (diagnostics['has_numbers'] and diagnostics['has_factual_keywords']) or
+            (diagnostics['high_overlap'] and diagnostics['has_factual_keywords'])
+        )
+        
+        return has_signals, diagnostics
+    
+    def _is_suspicious_response(
+        self,
+        answer: str,
+        query: str = None,
+        contexts: List[Tuple[Chunk, float]] = None
+    ) -> bool:
         """
         Detecta respuestas sospechosas que indican un error de generación.
+        Ahora incluye abstenciones cuando hay señales de respuesta en el contexto.
         
         Returns:
             True si la respuesta es sospechosa y debe reintentarse
@@ -284,6 +401,19 @@ class ResponseGenerator:
         # Respuestas que empiezan con numeración seguida de casi nada
         if re.match(r'^[1-9]\.\s*.{0,5}$', clean):
             return True
+        
+        # NUEVO: Abstención cuando hay señales de respuesta en el contexto
+        if self.retry_on_abstention and self._is_abstention_response(answer):
+            if query and contexts:
+                has_signals, diag = self._context_has_answer_signals(query, contexts)
+                if has_signals:
+                    logger.warning(
+                        f"Abstención sospechosa detectada. "
+                        f"Context signals: numbers={diag['has_numbers']}, "
+                        f"keywords={diag['has_factual_keywords']}, "
+                        f"overlap={diag['overlap_score']:.2f}"
+                    )
+                    return True
         
         return False
     
@@ -357,33 +487,65 @@ class ResponseGenerator:
         
         return answer, timer
     
-    def _generate_answer_with_retry(
+    def _generate_with_focused_prompt(
         self,
         query: str,
         contexts: List[Tuple[Chunk, float]]
     ) -> Tuple[str, 'TimingContext']:
         """
-        Reintenta generación con parámetros más conservadores.
-        Si aún falla, intenta extracción directa para preguntas factuales.
+        Genera respuesta con prompt más directo y enfocado.
+        Usado en retry cuando el prompt normal falla.
         """
-        # Retry 1: Sin sampling (determinístico)
-        answer, timer = self._generate_answer_internal(
-            query, contexts, temperature=0, do_sample=False
-        )
+        chunk, score = contexts[0]
         
-        if not self._is_suspicious_response(answer):
-            logger.info("Retry exitoso con temperature=0")
-            return answer, timer
+        # Prompt ultra-directo
+        focused_system = """Eres un asistente que responde preguntas sobre normativa universitaria.
         
-        # Retry 2: Modo extractivo para preguntas factuales
-        if self._is_factual_query(query):
-            logger.info("Intentando extracción directa para query factual")
-            extracted = self._extract_factual_answer(query, contexts)
-            if extracted:
-                return extracted, timer
+REGLA CRÍTICA: Si el documento contiene información relacionada con la pregunta, responde con esa información específica. 
+NO digas "No dispongo" si hay algún dato relevante en el texto.
+
+Responde de forma concisa y directa."""
         
-        # Si todo falla, devolver lo que tenemos
-        logger.warning(f"Fallback final: '{answer[:50]}'")
+        focused_user = f"""Documento:
+{chunk.text}
+
+Pregunta: {query}
+
+Responde SOLO con la información que responda a la pregunta. Si hay nombres, fechas, números o datos específicos, menciónalos."""
+        
+        messages = [
+            {"role": "system", "content": focused_system},
+            {"role": "user", "content": focused_user}
+        ]
+        
+        # Generar con temperatura 0 (determinístico)
+        with TimingContext("Generación LLM focused", log=False) as timer:
+            prompt_text = self.tokenizer.apply_chat_template(
+                messages,
+                tokenize=False,
+                add_generation_prompt=True
+            )
+            
+            inputs = self.tokenizer(prompt_text, return_tensors="pt", truncation=True, max_length=4096)
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            
+            prompt_length = inputs['input_ids'].shape[1]
+            
+            with torch.no_grad():
+                outputs = self.model.generate(
+                    **inputs,
+                    max_new_tokens=100,
+                    temperature=None,  # greedy
+                    do_sample=False,
+                    pad_token_id=self.tokenizer.eos_token_id,
+                    eos_token_id=self.tokenizer.eos_token_id,
+                    use_cache=True
+                )
+            
+            generated_tokens = outputs[0][prompt_length:]
+            answer = self.tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
+        
+        logger.debug(f"Generación LLM focused: {timer.elapsed:.2f}s")
         return answer, timer
     
     def _extract_factual_answer(
@@ -393,42 +555,111 @@ class ResponseGenerator:
     ) -> str:
         """
         Extrae respuesta directamente del contexto para preguntas factuales.
-        Busca oraciones que contengan números/fechas relevantes.
+        Prioriza oraciones que contengan términos específicos de la pregunta.
         """
-        query_tokens = set(self._tokenize_spanish(query))
+        # Extraer palabras clave IMPORTANTES de la pregunta (no stopwords)
+        stopwords = {'qué', 'cuál', 'cuáles', 'cuándo', 'cuánto', 'cuántos', 'cuánta', 'cuántas',
+                     'cómo', 'dónde', 'quién', 'quiénes', 'por', 'para', 'que', 'cual', 'como',
+                     'cuando', 'donde', 'quien', 'los', 'las', 'del', 'de', 'la', 'el', 'un', 'una',
+                     'unos', 'unas', 'es', 'son', 'fue', 'fueron', 'ser', 'estar', 'ha', 'han',
+                     'debe', 'puede', 'se', 'en', 'con', 'sin', 'sobre', 'entre', 'tras', 'según',
+                     'hay', 'al', 'a', 'y', 'o', 'pero', 'si', 'no', 'más', 'menos', 'muy', 'poco'}
+        
+        query_lower = query.lower()
+        query_words = set(re.findall(r'\b[a-záéíóúñü]{3,}\b', query_lower))
+        query_keywords = query_words - stopwords
+        
+        # Detectar tipo de pregunta para priorizar
+        is_when_question = any(w in query_lower for w in ['cuándo', 'cuando', 'fecha', 'día', 'mes'])
+        is_how_many_question = any(w in query_lower for w in ['cuántos', 'cuántas', 'cuánto', 'número', 'cantidad'])
         
         best_sentence = None
         best_score = 0
+        best_chunk_sentences = []
+        best_sentence_idx = -1
         
-        for chunk, score in contexts[:3]:  # Solo top-3 chunks
-            sentences = re.split(r'(?<=[.!?])\s+', chunk.text)
+        for chunk, chunk_score in contexts[:3]:  # Solo top-3 chunks
+            # Mejor segmentación: considerar también saltos de línea como separadores
+            text = chunk.text.replace('\n', ' ').replace('  ', ' ')
+            sentences = re.split(r'(?<=[.!?])\s+', text)
             
-            for sent in sentences:
+            for idx, sent in enumerate(sentences):
                 sent = sent.strip()
-                if len(sent) < 20:  # Muy corta
+                if len(sent) < 20:
                     continue
                 
-                sent_tokens = set(self._tokenize_spanish(sent))
-                overlap = len(query_tokens & sent_tokens)
+                sent_lower = sent.lower()
+                sent_words = set(re.findall(r'\b[a-záéíóúñü]{3,}\b', sent_lower))
                 
-                # Boost si contiene números
+                # CRÍTICO: Contar palabras clave de la PREGUNTA que aparecen en la oración
+                keyword_overlap = len(query_keywords & sent_words)
+                
+                # Score base: overlap de keywords específicas (más importante)
+                score = keyword_overlap * 3
+                
+                # Boost específico según tipo de pregunta
+                if is_when_question:
+                    # Para preguntas "cuándo": priorizar oraciones con fechas
+                    if re.search(r'\d+\s*de\s*(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)', sent_lower):
+                        score += 8  # Muy alto boost para fechas completas
+                    elif re.search(r'\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\b', sent_lower):
+                        score += 5
+                    if re.search(r'pasado|último|anterior|próximo', sent_lower):
+                        score += 2
+                
+                if is_how_many_question:
+                    # Para preguntas "cuántos": priorizar oraciones con números
+                    if re.search(r'\d+', sent):
+                        score += 4
+                
+                # Boost menor genérico si contiene números
                 has_numbers = bool(re.search(r'\d+', sent))
-                if has_numbers:
-                    overlap += 2
+                if has_numbers and not is_when_question and not is_how_many_question:
+                    score += 1
                 
-                # Boost si contiene palabras clave de normativa
-                if any(kw in sent.lower() for kw in ['plazo', 'crédito', 'día', 'mes', 'año', 'máximo', 'mínimo']):
-                    overlap += 1
+                # Penalizar oraciones que son claramente de otro tema
+                if keyword_overlap == 0:
+                    score = 0  # No considerar si no tiene ninguna keyword de la pregunta
                 
-                if overlap > best_score:
-                    best_score = overlap
+                if score > best_score:
+                    best_score = score
                     best_sentence = sent
+                    best_sentence_idx = idx
+                    best_chunk_sentences = sentences
         
-        if best_sentence and best_score >= 2:
+        if best_sentence and best_score >= 4:
+            # Para preguntas temporales/numéricas: solo la oración con la respuesta
+            # Para otras: incluir contexto
+            if is_when_question or is_how_many_question:
+                # Solo la oración principal para respuestas factuales precisas
+                result = best_sentence
+            else:
+                # Incluir contexto: frase anterior y posterior
+                result_sentences = []
+                
+                # Frase anterior (si existe y es sustancial)
+                if best_sentence_idx > 0:
+                    prev = best_chunk_sentences[best_sentence_idx - 1].strip()
+                    if len(prev) > 30:
+                        result_sentences.append(prev)
+                
+                # Frase principal
+                result_sentences.append(best_sentence)
+                
+                # Frase posterior (si existe y es sustancial)
+                if best_sentence_idx < len(best_chunk_sentences) - 1:
+                    next_sent = best_chunk_sentences[best_sentence_idx + 1].strip()
+                    if len(next_sent) > 30:
+                        result_sentences.append(next_sent)
+                
+                result = " ".join(result_sentences)
+            
             # Limpiar y limitar longitud
-            if len(best_sentence) > 300:
-                best_sentence = best_sentence[:300].rsplit(' ', 1)[0] + '...'
-            return best_sentence
+            if len(result) > 500:
+                result = result[:500].rsplit(' ', 1)[0] + '...'
+            
+            logger.debug(f"Extracción factual: score={best_score}, keywords_matched={len(query_keywords)}, len={len(result)}")
+            return result
         
         return None
     
@@ -461,13 +692,35 @@ class ResponseGenerator:
         
         logger.info("Generando respuesta...")
         
-        # Generar respuesta inicial
+        # Generar respuesta inicial con todos los contextos
         answer, timer = self._generate_answer_internal(query, contexts)
         
-        # FALLBACK: Detectar respuestas sospechosas y reintentar
-        if self._is_suspicious_response(answer):
-            logger.warning(f"Respuesta sospechosa detectada: '{answer[:50]}'. Reintentando...")
-            answer, timer = self._generate_answer_with_retry(query, contexts)
+        # FALLBACK: Si abstiene, retry con solo el mejor chunk (menos ruido)
+        if self._is_suspicious_response(answer, query=query, contexts=contexts):
+            logger.warning(f"Respuesta sospechosa: '{answer[:50]}'. Retry con mejor chunk...")
+            
+            # Retry con solo el chunk de mayor score (menos confusión para el LLM)
+            best_chunk = contexts[:1]  # Solo el #1
+            logger.info(f"Retry con 1 chunk (score={best_chunk[0][1]:.3f}) vs {len(contexts)} anteriores")
+            
+            # Usar prompt más directo para el retry
+            answer_retry, timer = self._generate_with_focused_prompt(query, best_chunk)
+            
+            # Si el retry con menos contexto funciona, usarlo
+            if not self._is_abstention_response(answer_retry) and len(answer_retry.strip()) > 10:
+                logger.success(f"✓ Retry exitoso con chunk único: '{answer_retry[:60]}...'")
+                answer = answer_retry
+            else:
+                # Si sigue absteniéndose, intentar extracción
+                logger.info("Retry falló, intentando extracción...")
+                is_abstention = self._is_abstention_response(answer)
+                if self._is_factual_query(query) or is_abstention:
+                    extracted = self._extract_factual_answer(query, contexts)
+                    if extracted:
+                        logger.success(f"✓ Extracción exitosa: '{extracted[:60]}...'")
+                        answer = extracted
+                    else:
+                        logger.warning("Extracción falló, usando respuesta original")
         
         # Preparar fuentes
         sources = self._format_sources(contexts)

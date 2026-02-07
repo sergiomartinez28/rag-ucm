@@ -70,7 +70,7 @@ class RAGEvaluator:
         question_type: str,
         category: str,
         chunk_id: int,
-        top_k: int = 5
+        top_k: int = 3
     ) -> EvaluationResult:
         """
         Evalúa una pregunta individual
@@ -169,7 +169,7 @@ class RAGEvaluator:
         self,
         dataset_path: Path,
         output_path: Path,
-        top_k: int = 5,
+        top_k: int = 3,
         max_workers: int = 2
     ) -> List[EvaluationResult]:
         """

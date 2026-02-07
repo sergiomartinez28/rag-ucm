@@ -18,7 +18,9 @@
 - **RAM**: 8GB (16GB recomendado)
 - **Disco**: 10GB libres
 - **CPU**: 4 cores recomendados
-- **GPU**: Opcional (acelera generación, pero funciona en CPU)
+- **GPU**: Opcional, acelera generación (recomendada 8GB+ VRAM)
+
+> 💡 **Nota sobre rendimiento**: El LLM usa cuantización 4-bit automáticamente para reducir ~50% el uso de VRAM y acelerar la generación.
 
 ### Software
 - Python 3.10 o superior
@@ -50,53 +52,28 @@ pip install --upgrade pip
 # 5. Instalar dependencias
 pip install -r requirements.txt
 
-# 6. Copiar configuración de ejemplo
-cp .env.example .env
-```
-
-### Opción 2: Con Docker
-
-```bash
-# Construir imagen
-docker build -t rag-ucm .
-
-# Ejecutar contenedor
-docker run -p 8501:8501 -v $(pwd)/data:/app/data rag-ucm
 ```
 
 ---
 
 ## ⚙️ Configuración
 
-Edita el archivo `.env` con tus preferencias:
+Toda la configuración está centralizada en `src/config.py` con valores optimizados:
 
-```bash
-# Modelos (puedes cambiarlos según disponibilidad)
-EMBEDDING_MODEL=BAAI/bge-m3
-RERANKER_MODEL=BAAI/bge-reranker-v2-m3
-LLM_MODEL=meta-llama/Llama-3.2-3B-Instruct
+| Parámetro | Valor | Descripción |
+|-----------|-------|-------------|
+| **Embeddings** | BAAI/bge-m3 | Modelo multilingüe (1024 dims) |
+| **Re-ranker** | BAAI/bge-reranker-base | Cross-encoder para precisión |
+| **LLM** | Qwen/Qwen2.5-3B-Instruct | Cuantizado 4-bit automáticamente |
+| chunk_size | 1000 | Tamaño de chunks en caracteres |
+| chunk_overlap | 200 | Solapamiento entre chunks |
+| top_k_retrieval | 10 | Documentos iniciales a recuperar |
+| top_k_rerank | 3 | Documentos finales tras re-ranking |
+| hybrid_alpha | 0.45 | Balance BM25/semántico |
+| max_new_tokens | 100 | Tokens máximos de respuesta |
+| temperature | 0.1 | Determinismo de generación |
 
-# Alternativas de LLM:
-# LLM_MODEL=microsoft/Phi-3-mini-4k-instruct
-# LLM_MODEL=Qwen/Qwen2.5-3B-Instruct
-
-# Parámetros de chunking
-CHUNK_SIZE=600
-CHUNK_OVERLAP=100
-
-# Parámetros de recuperación
-TOP_K_RETRIEVAL=20
-TOP_K_RERANK=5
-HYBRID_ALPHA=0.5  # 0=solo BM25, 1=solo embeddings
-
-# Parámetros de generación
-MAX_NEW_TOKENS=512
-TEMPERATURE=0.3
-
-# Verificación
-ENABLE_VERIFICATION=true
-VERIFICATION_THRESHOLD=0.7
-```
+Para modificar, edita directamente `src/config.py`.
 
 ---
 
@@ -251,10 +228,10 @@ El sistema incluye verificación automática con métricas de:
 ### Problema: "Out of memory"
 
 **Soluciones**:
-1. Reduce `CHUNK_SIZE` en `.env`
-2. Reduce `TOP_K_RETRIEVAL`
-3. Usa un LLM más pequeño (Phi-3-mini)
-4. Cierra otras aplicaciones
+1. El sistema ya usa cuantización 4-bit automáticamente (~4GB VRAM)
+2. Reduce `top_k_retrieval` en `src/config.py`
+3. Usa un LLM más pequeño (Qwen2.5-1.5B-Instruct)
+4. Cierra otras aplicaciones que usen GPU
 
 ### Problema: "Modelo no encontrado"
 

@@ -29,27 +29,51 @@ Un sistema RAG "ligero", basado en búsqueda híbrida, re-ranking cruzado y veri
 
 ```
 rag-ucm/
+├── app.py                  # Interfaz web Streamlit
+├── cli.py                  # Interfaz línea de comandos
+├── process_documents.py    # Script para indexar documentos
+├── evaluate_rag.py         # Script de evaluación del sistema
+├── requirements.txt        # Dependencias Python
+├── pytest.ini              # Configuración de tests
+├── LICENSE                 # Licencia MIT
+├── README.md               # Este archivo
+│
 ├── data/
-│   ├── raw/              # Documentos originales (PDFs/HTML)
-│   └── processed/        # Texto limpio + chunks + metadatos
+│   ├── raw/                # Documentos originales (PDFs/HTML)
+│   ├── processed/          # Índices FAISS y BM25
+│   └── evaluation/         # Dataset y resultados de evaluación
+│
 ├── src/
 │   ├── __init__.py
-│   ├── preprocessor.py   # Limpieza y chunking de documentos
-│   ├── indexer.py        # Indexación FAISS + BM25
-│   ├── retrieval.py      # Búsqueda híbrida + re-ranking
-│   ├── generator.py      # Generación de respuestas con LLM
-│   ├── verifier.py       # Verificación de fidelidad
-│   └── pipeline.py       # Pipeline completo RAG
-├── notebooks/            # Análisis exploratorios y experimentos
-├── tests/                # Tests unitarios
-├── docs/                 # Documentación adicional
-├── config/               # Configuraciones
-├── app.py               # Interfaz Streamlit
-├── cli.py               # Interfaz línea de comandos
-├── requirements.txt     # Dependencias Python
-├── Dockerfile           # Containerización
-├── .env.example         # Variables de entorno
-└── README.md           # Este archivo
+│   ├── config.py           # Configuración centralizada (Pydantic)
+│   ├── preprocessor.py     # Extracción y chunking de documentos
+│   ├── indexer.py          # Indexación FAISS + BM25
+│   ├── retrieval.py        # Búsqueda híbrida + re-ranking
+│   ├── generator.py        # Generación de respuestas con LLM
+│   ├── verifier.py         # Verificación de fidelidad
+│   ├── pipeline.py         # Pipeline completo RAG
+│   ├── prompt_loader.py    # Carga de prompts externos
+│   ├── utils.py            # Utilidades (timing, memoria)
+│   └── evaluator/          # Módulo de evaluación
+│       ├── dataset_generator.py
+│       ├── rag_evaluator.py
+│       ├── llm_judge.py
+│       └── metrics.py
+│
+├── tests/                  # Tests unitarios
+│   ├── conftest.py         # Fixtures compartidos
+│   ├── test_config.py
+│   ├── test_preprocessor.py
+│   ├── test_utils.py
+│   └── test_metrics.py
+│
+├── prompts/                # Plantillas de prompts
+│   ├── system_prompt.txt
+│   ├── user_prompt.txt
+│   └── judge_*.txt
+│
+└── docs/
+    └── INSTALLATION.md     # Guía detallada de instalación
 ```
 
 ---
@@ -59,30 +83,38 @@ rag-ucm/
 ### Requisitos previos
 - Python 3.10+
 - 8GB RAM mínimo (16GB recomendado)
+- GPU opcional (acelera generación, funciona en CPU)
 - 10GB espacio en disco
 
-### Instalación local
+### Instalación
 
 ```bash
 # Clonar el repositorio
+git clone https://github.com/tu-usuario/rag-ucm.git
 cd rag-ucm
 
 # Crear entorno virtual
-python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+python -m venv .venv
+
+# Activar entorno
+# En Windows:
+.venv\Scripts\activate
+# En Linux/Mac:
+source .venv/bin/activate
 
 # Instalar dependencias
 pip install -r requirements.txt
-
-# Configurar variables de entorno
-cp .env.example .env
 ```
 
-### Con Docker
+> 💡 **Configuración**: Todos los parámetros están en `src/config.py` con valores optimizados.
+
+### Preparación de datos
 
 ```bash
-docker build -t rag-ucm .
-docker run -p 8501:8501 rag-ucm
+# 1. Colocar documentos PDF/HTML en data/raw/
+
+# 2. Procesar e indexar documentos
+python process_documents.py
 ```
 
 ---
@@ -100,7 +132,14 @@ Abre tu navegador en `http://localhost:8501`
 ### CLI
 
 ```bash
-python cli.py "¿Cuándo es el plazo para presentar el TFM?"
+# Hacer una pregunta
+python cli.py ask "¿Cuándo es el plazo para presentar el TFM?"
+
+# Construir índices
+python cli.py build --path ./data/raw
+
+# Ver estadísticas
+python cli.py stats
 ```
 
 ### Como librería
@@ -118,6 +157,19 @@ print(response['answer'])
 print(response['sources'])
 ```
 
+### Tests
+
+```bash
+# Ejecutar todos los tests
+pytest
+
+# Con cobertura
+pytest --cov=src
+
+# Tests específicos
+pytest tests/test_config.py -v
+```
+
 ---
 
 ## 🔬 Metodología Técnica
@@ -130,28 +182,31 @@ print(response['sources'])
 - Tasas y precios públicos
 
 ### 2. Preprocesado
-- Extracción de texto desde PDF/HTML
+- Extracción de texto desde PDF (PyMuPDF/pdfplumber) y HTML
 - Limpieza y normalización
-- Chunking semántico (~500-800 tokens, solape ~100)
+- Chunking semántico (~1000 tokens, solape 200)
 - Preservación de metadatos (título, facultad, fecha, URL)
 
 ### 3. Indexación
-- **Embeddings**: `bge-m3` o `multilingual-e5-base`
-- **Índice vectorial**: FAISS o Qdrant
-- **Índice léxico**: BM25 (Whoosh/Elasticsearch)
+- **Embeddings**: BAAI/bge-m3 (1024 dimensiones)
+- **Índice vectorial**: FAISS (IndexFlatIP)
+- **Índice léxico**: BM25 con tokenizador español
 
 ### 4. Recuperación
-1. Reformulación opcional de query (query expansion)
-2. Búsqueda híbrida:
-   - Similitud semántica (FAISS)
-   - BM25 (términos exactos)
-3. Fusión con Reciprocal Rank Fusion
-4. Re-ranking con cross-encoder (`bge-reranker-v2-m3`)
+1. Búsqueda híbrida:
+   - Similitud semántica (FAISS, top-10)
+   - BM25 (términos exactos, top-10)
+2. Fusión con Reciprocal Rank Fusion (alpha=0.45)
+3. Re-ranking con cross-encoder (BAAI/bge-reranker-base)
+4. Filtrado por umbral de score (min=0.5)
+5. Top-3 documentos finales
 
 ### 5. Generación
-- **LLM**: Llama-3.2-3B-Instruct / Phi-4-mini / Qwen2.5-3B-Instruct
+- **LLM**: Qwen/Qwen2.5-3B-Instruct (cuantizado 4-bit)
+- Cuantización automática para reducir ~50% uso de VRAM
 - Prompt con instrucciones de citar fuentes
-- Respuesta estructurada con referencias
+- Retry inteligente con contexto reducido si abstiene
+- Máximo 100 tokens, temperatura 0.1
 
 ### 6. Verificación de Fidelidad
 - Evaluación automática de cada afirmación
@@ -162,16 +217,29 @@ print(response['sources'])
 
 ## 📊 Evaluación
 
-### Métricas
-- **RAGAS**: Fidelidad, relevancia, completitud
-- **Precisión de citas**: % respuestas con referencias correctas
-- **Latencia**: Tiempo de respuesta
-- **Tasas de "no sé"**: Cuándo el sistema es prudente
+El sistema incluye un framework de evaluación completo con:
 
-### Comparación de enfoques
-- BM25 solo
-- Embeddings solo
-- **Híbrido + reranker + verificador** (sistema final)
+### Generación de Dataset
+```bash
+# Generar preguntas desde chunks (una vez)
+python evaluate_rag.py generate --num-samples 100
+```
+
+### Ejecutar Evaluación
+```bash
+# Evaluar con dataset existente
+python evaluate_rag.py evaluate
+
+# Evaluación rápida (100 preguntas)
+python evaluate_rag.py evaluate --limit 100
+```
+
+### Métricas
+- **Precision@k**: Documento correcto en top-k resultados
+- **Relevancia**: ¿La respuesta responde a la pregunta?
+- **Fidelidad**: ¿La respuesta se basa en los documentos?
+- **Precisión**: ¿La respuesta es correcta vs referencia?
+- **Tasa de abstención**: Cuando el sistema dice "no sé"
 
 ---
 
@@ -194,54 +262,41 @@ print(response['sources'])
 ## 🛠️ Tecnologías Utilizadas
 
 ### Modelos
-- **Embeddings**: BGE-M3, Multilingual-E5
-- **Re-ranking**: BGE-Reranker-v2-M3
-- **Generación**: Llama-3.2-3B / Phi-4 / Qwen2.5-3B
-- **Verificación**: Mismo LLM en modo crítico
+- **Embeddings**: BAAI/bge-m3 (1024 dims, multilingüe)
+- **Re-ranking**: BAAI/bge-reranker-base (cross-encoder)
+- **Generación**: Qwen/Qwen2.5-3B-Instruct
 
 ### Librerías principales
 - `transformers` - Modelos de HuggingFace
 - `sentence-transformers` - Embeddings
-- `faiss` - Búsqueda vectorial
+- `faiss-cpu` - Búsqueda vectorial
 - `rank-bm25` - Búsqueda léxica
-- `langchain` - Orquestación RAG
+- `pydantic` - Validación de configuración
 - `streamlit` - Interfaz web
-- `typer` - CLI
+- `typer` + `rich` - CLI
 
 ---
 
-## 📅 Plan de Trabajo
+## 📅 Estado del Proyecto
 
-### Fase 1: Definición del alcance ✅
-- Selección de normativas UCM
-- Definición de tipos de preguntas objetivo
+- ✅ **Fase 1**: Definición del alcance y selección de normativas
+- ✅ **Fase 2**: Adquisición y limpieza de datos (PDFs/HTML)
+- ✅ **Fase 3**: Prototipo RAG básico con recuperación + generación
+- ✅ **Fase 4**: Búsqueda híbrida (BM25 + semántica) + re-ranking
+- ✅ **Fase 5**: Verificación de fidelidad y control de abstenciones
+- ✅ **Fase 6**: Evaluación con dataset de 449 preguntas
+- ✅ **Fase 7**: Demo Streamlit + CLI
 
-### Fase 2: Adquisición y limpieza de datos 🔄
-- Descarga de PDFs/HTML oficiales
-- Conversión y limpieza
-- Chunking e indexación
+### Resultados de Evaluación
 
-### Fase 3: Prototipo RAG básico
-- Recuperación + generación básica
-- Validación de coherencia y citas
-
-### Fase 4: Mejora de recuperación
-- Implementar búsqueda híbrida
-- Añadir re-ranking
-- Medir mejoras (recall@5, precisión)
-
-### Fase 5: Verificación de fidelidad
-- Implementar chequeo de alucinaciones
-- Sistema de advertencias automáticas
-
-### Fase 6: Evaluación
-- Crear conjunto de ~100-150 preguntas
-- Calcular métricas RAGAS
-- Comparar con baselines
-
-### Fase 7: Demo y memoria
-- Streamlit + Docker
-- Redacción memoria (≤20 páginas)
+| Métrica | Valor |
+|---------|-------|
+| Overall Score | 0.72 |
+| Precision | 0.62 |
+| Fidelidad | 0.74 |
+| Abstención | 0.0% |
+| Tiempo retrieval | ~5s |
+| Tiempo generación | ~50s |
 
 ---
 

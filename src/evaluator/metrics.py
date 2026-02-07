@@ -42,6 +42,12 @@ class AggregatedMetrics:
     factual_accuracy: float         # Accuracy en preguntas factuales (números/fechas)
     abstention_when_reference_exists: float  # % de abstenciones incorrectas
     
+    # NUEVAS: Métricas de diagnóstico de abstención
+    abstention_when_chunk_correct: float   # % abstención cuando chunk correcto en top_k
+    abstention_when_doc_correct: float     # % abstención cuando doc correcto en top_k
+    abstention_with_numbers_in_ctx: float  # % abstención cuando hay números en contexto
+    abstention_with_keywords_in_ctx: float # % abstención cuando hay keywords normativas
+    
     # Por categoría
     metrics_by_category: Dict[str, Dict]
     metrics_by_question_type: Dict[str, Dict]
@@ -66,6 +72,14 @@ class MetricsCalculator:
         "no se menciona"
     ]
     
+    # Keywords que indican respuestas factuales en normativa
+    NORMATIVE_KEYWORDS = {
+        'días', 'meses', 'años', 'plazo', 'créditos', 'ects',
+        'máximo', 'mínimo', 'porcentaje', 'euros', 'fecha',
+        'deberá', 'podrá', 'será', 'tendrá', 'estará',
+        'artículo', 'apartado', 'capítulo', 'solicitud', 'transcurrir'
+    }
+    
     def _is_abstention(self, answer: str) -> bool:
         """Detecta si la respuesta es una abstención"""
         answer_lower = answer.lower().strip()
@@ -78,6 +92,22 @@ class MetricsCalculator:
             return True
         if clean.isdigit():
             return True
+        return False
+    
+    def _context_has_numbers(self, sources: List[Dict]) -> bool:
+        """Detecta si el contexto (sources) contiene números"""
+        for source in sources[:3]:  # Top-3 sources
+            text = source.get('text_preview', '')
+            if re.search(r'\d+', text):
+                return True
+        return False
+    
+    def _context_has_keywords(self, sources: List[Dict]) -> bool:
+        """Detecta si el contexto contiene keywords normativas"""
+        for source in sources[:3]:
+            text = source.get('text_preview', '').lower()
+            if any(kw in text for kw in self.NORMATIVE_KEYWORDS):
+                return True
         return False
     
     def _extract_factual_data(self, text: str) -> set:
@@ -181,10 +211,37 @@ class MetricsCalculator:
         factual_correct = 0
         factual_total = 0
         
+        # NUEVAS métricas de diagnóstico de abstención
+        abstention_when_chunk_correct = 0
+        abstention_when_doc_correct = 0
+        abstention_with_numbers = 0
+        abstention_with_keywords = 0
+        count_with_chunk_correct = 0
+        count_with_doc_correct = 0
+        count_with_numbers = 0
+        count_with_keywords = 0
+        
         for r in results:
             answer = r.get('rag_answer', '')
             reference = r.get('reference_answer', '')
             question_type = r.get('question_type', '')
+            sources = r.get('sources', [])
+            
+            # Flags de contexto
+            chunk_correct = r.get('correct_chunk_in_top_k', False)
+            doc_correct = r.get('correct_doc_in_top_k', False)
+            has_numbers = self._context_has_numbers(sources)
+            has_keywords = self._context_has_keywords(sources)
+            
+            # Conteos base para métricas condicionales
+            if chunk_correct:
+                count_with_chunk_correct += 1
+            if doc_correct:
+                count_with_doc_correct += 1
+            if has_numbers:
+                count_with_numbers += 1
+            if has_keywords:
+                count_with_keywords += 1
             
             # Abstención
             is_abstention = self._is_abstention(answer)
@@ -193,6 +250,16 @@ class MetricsCalculator:
                 # ¿Abstención cuando había referencia? (error grave)
                 if len(reference.strip()) > 10:
                     abstention_with_ref += 1
+                
+                # NUEVAS: Abstención condicional
+                if chunk_correct:
+                    abstention_when_chunk_correct += 1
+                if doc_correct:
+                    abstention_when_doc_correct += 1
+                if has_numbers:
+                    abstention_with_numbers += 1
+                if has_keywords:
+                    abstention_with_keywords += 1
             
             # Respuesta sospechosamente corta
             if self._is_suspicious_short(answer):
@@ -210,12 +277,25 @@ class MetricsCalculator:
         abstention_when_reference_exists = abstention_with_ref / n if n > 0 else 0
         factual_accuracy = factual_correct / factual_total if factual_total > 0 else 0
         
+        # Calcular métricas de abstención condicional (porcentaje DENTRO de ese subset)
+        abs_when_chunk_correct_rate = abstention_when_chunk_correct / count_with_chunk_correct if count_with_chunk_correct > 0 else 0
+        abs_when_doc_correct_rate = abstention_when_doc_correct / count_with_doc_correct if count_with_doc_correct > 0 else 0
+        abs_with_numbers_rate = abstention_with_numbers / count_with_numbers if count_with_numbers > 0 else 0
+        abs_with_keywords_rate = abstention_with_keywords / count_with_keywords if count_with_keywords > 0 else 0
+        
         # Log de métricas automáticas
         logger.info(f"Métricas automáticas:")
         logger.info(f"  - Abstention rate: {abstention_rate:.1%} ({abstentions}/{n})")
         logger.info(f"  - Suspicious short: {suspicious_short_rate:.1%} ({suspicious_short}/{n})")
         logger.info(f"  - Abstención incorrecta: {abstention_when_reference_exists:.1%} ({abstention_with_ref}/{n})")
         logger.info(f"  - Factual accuracy: {factual_accuracy:.1%} ({factual_correct}/{factual_total})")
+        
+        # Log de métricas de diagnóstico de abstención
+        logger.info(f"Diagnóstico de abstención:")
+        logger.info(f"  - Abstención cuando chunk correcto: {abs_when_chunk_correct_rate:.1%} ({abstention_when_chunk_correct}/{count_with_chunk_correct})")
+        logger.info(f"  - Abstención cuando doc correcto: {abs_when_doc_correct_rate:.1%} ({abstention_when_doc_correct}/{count_with_doc_correct})")
+        logger.info(f"  - Abstención con números en ctx: {abs_with_numbers_rate:.1%} ({abstention_with_numbers}/{count_with_numbers})")
+        logger.info(f"  - Abstención con keywords en ctx: {abs_with_keywords_rate:.1%} ({abstention_with_keywords}/{count_with_keywords})")
         
         # Métricas por categoría
         metrics_by_category = self._calculate_by_group(results, scores_by_id, 'category')
@@ -239,6 +319,11 @@ class MetricsCalculator:
             suspicious_short_rate=suspicious_short_rate,
             factual_accuracy=factual_accuracy,
             abstention_when_reference_exists=abstention_when_reference_exists,
+            # Nuevas métricas de diagnóstico
+            abstention_when_chunk_correct=abs_when_chunk_correct_rate,
+            abstention_when_doc_correct=abs_when_doc_correct_rate,
+            abstention_with_numbers_in_ctx=abs_with_numbers_rate,
+            abstention_with_keywords_in_ctx=abs_with_keywords_rate,
             metrics_by_category=metrics_by_category,
             metrics_by_question_type=metrics_by_question_type
         )
@@ -334,6 +419,28 @@ class MetricsCalculator:
         fact_pct = metrics.factual_accuracy * 100
         fact_icon = "🟢" if fact_pct > 70 else ("🟡" if fact_pct > 50 else "🔴")
         print(f"│  {fact_icon} Factual accuracy:   {fact_pct:.1f}%".ljust(69) + "│")
+        print("└" + "─"*68 + "┘")
+        
+        # NUEVA sección: Diagnóstico de abstención (para debugging)
+        print("\n┌" + "─"*68 + "┐")
+        print("│           DIAGNÓSTICO DE ABSTENCIÓN (DEBUGGING)                    │")
+        print("├" + "─"*68 + "┤")
+        # Abstención cuando chunk correcto
+        abs_chunk_pct = metrics.abstention_when_chunk_correct * 100
+        abs_chunk_icon = "🔴" if abs_chunk_pct > 50 else ("🟡" if abs_chunk_pct > 20 else "🟢")
+        print(f"│  {abs_chunk_icon} Abstiene cuando chunk correcto:  {abs_chunk_pct:.1f}%".ljust(69) + "│")
+        # Abstención cuando doc correcto
+        abs_doc_pct = metrics.abstention_when_doc_correct * 100
+        abs_doc_icon = "🔴" if abs_doc_pct > 50 else ("🟡" if abs_doc_pct > 20 else "🟢")
+        print(f"│  {abs_doc_icon} Abstiene cuando doc correcto:    {abs_doc_pct:.1f}%".ljust(69) + "│")
+        # Abstención con números en contexto
+        abs_num_pct = metrics.abstention_with_numbers_in_ctx * 100
+        abs_num_icon = "🔴" if abs_num_pct > 50 else ("🟡" if abs_num_pct > 20 else "🟢")
+        print(f"│  {abs_num_icon} Abstiene con números en ctx:     {abs_num_pct:.1f}%".ljust(69) + "│")
+        # Abstención con keywords en contexto
+        abs_kw_pct = metrics.abstention_with_keywords_in_ctx * 100
+        abs_kw_icon = "🔴" if abs_kw_pct > 50 else ("🟡" if abs_kw_pct > 20 else "🟢")
+        print(f"│  {abs_kw_icon} Abstiene con keywords en ctx:    {abs_kw_pct:.1f}%".ljust(69) + "│")
         print("└" + "─"*68 + "┘")
         
         print("\n┌" + "─"*68 + "┐")

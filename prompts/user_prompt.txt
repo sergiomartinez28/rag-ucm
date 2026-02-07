@@ -1,7 +1,11 @@
-PREGUNTA:
+PREGUNTA DEL ESTUDIANTE:
 {query}
 
-DOCUMENTOS DISPONIBLES:
+FRAGMENTOS DE DOCUMENTOS OFICIALES UCM:
 {contexts}
 
-Responde basándote únicamente en los documentos proporcionados. Si ningún fragmento menciona el dato solicitado, responde: "No dispongo de información disponible".
+INSTRUCCIONES:
+1. Busca en los fragmentos el dato que responde a la pregunta.
+2. Responde con UNA FRASE CORTA (máximo 2 frases) que contenga el dato.
+3. NO copies el párrafo entero. SINTETIZA la respuesta.
+4. Solo responde "No dispongo de información disponible" si NO hay NINGÚN dato relacionado con la pregunta.

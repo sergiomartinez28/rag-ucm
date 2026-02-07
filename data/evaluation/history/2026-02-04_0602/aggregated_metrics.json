@@ -1,0 +1,126 @@
+{
+  "precision_at_k": 0.7242798353909465,
+  "precision_at_k_chunk": 0.588477366255144,
+  "mrr": 0.551371742112483,
+  "avg_relevancia": 0.2621399176954735,
+  "avg_fidelidad": 0.25946502057613163,
+  "avg_precision": 0.26522633744855956,
+  "avg_overall": 0.262277091906721,
+  "avg_retrieval_time": 12.549007165088575,
+  "avg_generation_time": 70.93842141225996,
+  "avg_total_time": 83.48836171332701,
+  "total_questions": 486,
+  "questions_with_correct_doc": 352,
+  "questions_with_correct_chunk": 286,
+  "abstention_rate": 0.0,
+  "suspicious_short_rate": 0.01440329218106996,
+  "factual_accuracy": 0.32608695652173914,
+  "abstention_when_reference_exists": 0.0,
+  "abstention_when_chunk_correct": 0.0,
+  "abstention_when_doc_correct": 0.0,
+  "abstention_with_numbers_in_ctx": 0.0,
+  "abstention_with_keywords_in_ctx": 0.0,
+  "metrics_by_category": {
+    "estatutos": {
+      "count": 86,
+      "precision_at_k": 0.6046511627906976,
+      "avg_relevancia": 0.24534883720930234,
+      "avg_fidelidad": 0.23372093023255816,
+      "avg_precision": 0.24186046511627912,
+      "avg_overall": 0.2403100775193799,
+      "avg_time": 83.9147099422854
+    },
+    "general": {
+      "count": 133,
+      "precision_at_k": 0.7969924812030075,
+      "avg_relevancia": 0.35939849624060144,
+      "avg_fidelidad": 0.3518796992481201,
+      "avg_precision": 0.3586466165413532,
+      "avg_overall": 0.356641604010025,
+      "avg_time": 81.38876797919883
+    },
+    "gobierno": {
+      "count": 59,
+      "precision_at_k": 0.9322033898305084,
+      "avg_relevancia": 0.2288135593220339,
+      "avg_fidelidad": 0.2372881355932204,
+      "avg_precision": 0.2372881355932204,
+      "avg_overall": 0.23446327683615822,
+      "avg_time": 93.30489237833831
+    },
+    "reglamentos": {
+      "count": 175,
+      "precision_at_k": 0.64,
+      "avg_relevancia": 0.21714285714285705,
+      "avg_fidelidad": 0.2154285714285714,
+      "avg_precision": 0.2234285714285714,
+      "avg_overall": 0.2186666666666667,
+      "avg_time": 81.33998853683471
+    },
+    "trabajo_fin": {
+      "count": 12,
+      "precision_at_k": 0.75,
+      "avg_relevancia": 0.19999999999999998,
+      "avg_fidelidad": 0.20000000000000004,
+      "avg_precision": 0.20833333333333334,
+      "avg_overall": 0.2027777777777778,
+      "avg_time": 84.00758385658264
+    },
+    "becas": {
+      "count": 9,
+      "precision_at_k": 0.8888888888888888,
+      "avg_relevancia": 0.3444444444444445,
+      "avg_fidelidad": 0.37777777777777777,
+      "avg_precision": 0.35555555555555557,
+      "avg_overall": 0.35925925925925933,
+      "avg_time": 84.36762645509508
+    },
+    "defensoria": {
+      "count": 5,
+      "precision_at_k": 0.8,
+      "avg_relevancia": 0.16,
+      "avg_fidelidad": 0.16,
+      "avg_precision": 0.16,
+      "avg_overall": 0.16000000000000003,
+      "avg_time": 82.946781539917
+    },
+    "master": {
+      "count": 7,
+      "precision_at_k": 0.8571428571428571,
+      "avg_relevancia": 0.09999999999999999,
+      "avg_fidelidad": 0.1285714285714286,
+      "avg_precision": 0.1142857142857143,
+      "avg_overall": 0.11428571428571431,
+      "avg_time": 87.47891429492405
+    }
+  },
+  "metrics_by_question_type": {
+    "factual": {
+      "count": 216,
+      "precision_at_k": 0.6990740740740741,
+      "avg_relevancia": 0.25138888888888883,
+      "avg_fidelidad": 0.2509259259259257,
+      "avg_precision": 0.2564814814814812,
+      "avg_overall": 0.25293209876543205,
+      "avg_time": 78.24824681215816
+    },
+    "procedimental": {
+      "count": 268,
+      "precision_at_k": 0.7425373134328358,
+      "avg_relevancia": 0.2727611940298507,
+      "avg_fidelidad": 0.26828358208955205,
+      "avg_precision": 0.2742537313432833,
+      "avg_overall": 0.27176616915422863,
+      "avg_time": 87.79478528517396
+    },
+    "unknown": {
+      "count": 2,
+      "precision_at_k": 1.0,
+      "avg_relevancia": 0.0,
+      "avg_fidelidad": 0.0,
+      "avg_precision": 0.0,
+      "avg_overall": 0.0,
+      "avg_time": 72.36001241207123
+    }
+  }
+}

@@ -27,10 +27,10 @@ class HybridRetriever:
     def __init__(
         self,
         indexer: DocumentIndexer,
-        reranker_model: str = "BAAI/bge-reranker-v2-m3",
+        reranker_model: str = "BAAI/bge-reranker-base",
         reranker_type: str = "cross-encoder",
         use_cross_encoder: bool = True,
-        alpha: float = 0.5
+        alpha: float = 0.45
     ):
         """
         Args:

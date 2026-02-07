@@ -47,11 +47,8 @@ env/
 # Data
 data/raw/*.pdf
 data/raw/*.html
-data/processed/*.pkl
 data/processed/*.json
 data/processed/*.parquet
-data/processed/faiss_index/
-data/processed/bm25_index/
 
 # Models (si los descargas localmente)
 models/
