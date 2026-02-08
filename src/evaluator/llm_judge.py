@@ -33,6 +33,7 @@ class JudgeScore:
 
     # Agregados
     explanation: str
+    judge_raw_output: str  # C1: Raw output del LLM juez para auditoría
     
     # Referencias
     question_type: str
@@ -323,6 +324,10 @@ class LLMJudge:
         
         response = self._generate_response(text, use_messages=False)
         logger.debug(f"LLM Juez response (Q#{question_id}): {response[:200]}...")
+        
+        # C1: Guardar raw response para auditoría
+        raw_output = response
+        
         scores = self._extract_scores(response)
         
         # RETRY: Si no se pudieron extraer scores, reintentar con prompt más estricto
@@ -371,6 +376,7 @@ class LLMJudge:
             precision=scores.get('precision', 0.0),
             overall_score=scores.get('overall_score', 0.0),
             explanation=scores.get('explicacion', scores.get('explanation', '')),
+            judge_raw_output=raw_output,
             question_type=question_type,
             category=category
         )

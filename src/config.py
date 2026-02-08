@@ -78,10 +78,10 @@ class ChunkingConfig(BaseModel):
 class RetrievalConfig(BaseModel):
     """Configuración de recuperación - Fase 2: Optimizada para Precision@k"""
     top_k_retrieval: int = Field(
-        default=10,
+        default=15,
         ge=1,
         le=50,
-        description="Candidatos a recuperar (optimizado velocidad: 15→10)"
+        description="Candidatos a recuperar (aumentado 10→15 para compensar threshold 0.5)"
     )
     top_k_rerank: int = Field(
         default=3,
@@ -99,7 +99,7 @@ class RetrievalConfig(BaseModel):
         default=0.5,
         ge=0.0,
         le=1.0,
-        description="Umbral mínimo de score del reranker para filtrar ruido (Fase 2)"
+        description="Umbral mínimo de score del reranker (0.5 filtra ~30% chunks irrelevantes)"
     )
 
 
@@ -123,10 +123,10 @@ class GenerationConfig(BaseModel):
         description="Usar extracción de oraciones (desactivado para evitar perder respuestas)"
     )
     max_context_chars_per_chunk: int = Field(
-        default=800,
+        default=1000,
         ge=400,
         le=3000,
-        description="Máximo de caracteres por chunk cuando no se usa extracción"
+        description="Máximo de caracteres por chunk (balance 1000: suficiente contexto, menos ruido)"
     )
     # Retry en abstenciones
     retry_on_abstention: bool = Field(
