@@ -76,30 +76,30 @@ class ChunkingConfig(BaseModel):
 
 
 class RetrievalConfig(BaseModel):
-    """Configuración de recuperación - Fase 2: Optimizada para Precision@k"""
+    """Configuración de recuperación"""
     top_k_retrieval: int = Field(
         default=15,
         ge=1,
         le=50,
-        description="Candidatos a recuperar (aumentado 10→15 para compensar threshold 0.5)"
+        description="Candidatos a recuperar en la búsqueda inicial"
     )
     top_k_rerank: int = Field(
         default=3,
         ge=1,
         le=10,
-        description="Documentos finales después de re-ranking (reducido 5→3)"
+        description="Documentos finales después de re-ranking"
     )
     hybrid_alpha: float = Field(
         default=0.45,
         ge=0.0,
         le=1.0,
-        description="Balance BM25/Semántico (Fase 2: 0.6→0.45 para factual)"
+        description="Balance BM25/Semántico (0=solo BM25, 1=solo semántico)"
     )
     min_score_threshold: float = Field(
         default=0.5,
         ge=0.0,
         le=1.0,
-        description="Umbral mínimo de score del reranker (0.5 filtra ~30% chunks irrelevantes)"
+        description="Umbral mínimo de score del reranker para filtrar chunks irrelevantes"
     )
 
 
@@ -109,7 +109,7 @@ class GenerationConfig(BaseModel):
         default=100,
         ge=50,
         le=1024,
-        description="Tokens máximos a generar (optimizado: 120→100)"
+        description="Tokens máximos a generar"
     )
     temperature: float = Field(
         default=0.1,
@@ -117,7 +117,6 @@ class GenerationConfig(BaseModel):
         le=2.0,
         description="Temperatura de sampling"
     )
-    # Fase 3: Control de recorte de contexto
     use_sentence_extraction: bool = Field(
         default=False,
         description="Usar extracción de oraciones (desactivado para evitar perder respuestas)"
@@ -126,7 +125,7 @@ class GenerationConfig(BaseModel):
         default=1000,
         ge=400,
         le=3000,
-        description="Máximo de caracteres por chunk (balance 1000: suficiente contexto, menos ruido)"
+        description="Máximo de caracteres por chunk en el contexto del prompt"
     )
     # Retry en abstenciones
     retry_on_abstention: bool = Field(

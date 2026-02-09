@@ -683,7 +683,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 301,
     "retrieval_time": 0.1794987678527832,
@@ -760,7 +760,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 301,
     "retrieval_time": 0.42435970306396487,
@@ -2993,7 +2993,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "recomendacion-defensa-tfg-signed",
     "chunk_id": 235,
     "retrieval_time": 0.271379280090332,
@@ -3070,7 +3070,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "recomendacion-defensa-tfg-signed",
     "chunk_id": 235,
     "retrieval_time": 0.46184883117675785,
@@ -4687,7 +4687,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "recomendacion-defensa-tfg-signed",
     "chunk_id": 237,
     "retrieval_time": 0.2558947563171387,
@@ -4764,7 +4764,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "recomendacion-defensa-tfg-signed",
     "chunk_id": 237,
     "retrieval_time": 0.68274245262146,
@@ -5149,7 +5149,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 304,
     "retrieval_time": 0.2235292434692383,
@@ -5226,7 +5226,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 304,
     "retrieval_time": 0.23067913055419922,

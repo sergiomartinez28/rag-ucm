@@ -245,7 +245,7 @@ class ResponseGenerator:
             metadata = chunk.metadata
             title = metadata.get('title', metadata.get('filename', 'Doc'))
             
-            # FASE 3: Usar chunk completo o recortado según config
+            # Usar chunk completo o recortado según config
             if self.use_sentence_extraction:
                 # Método antiguo: extraer oraciones (puede perder respuesta)
                 text = self._extract_top_sentences(
@@ -782,6 +782,3 @@ Responde SOLO con la información que responda a la pregunta. Si hay nombres, fe
         
         logger.success("✓ Recursos del generador liberados")
 
-
-if __name__ == "__main__":
-    print("✓ Módulo generator listo para usar")

@@ -3455,7 +3455,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013",
     "chunk_id": 6,
     "retrieval_time": 3.0549232959747314,
@@ -10000,7 +10000,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 63,
     "retrieval_time": 3.1577491760253906,
@@ -10077,7 +10077,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 63,
     "retrieval_time": 3.1292827129364014,
@@ -14466,7 +14466,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "modificacion-directrices-tfg",
     "chunk_id": 266,
     "retrieval_time": 3.1181232929229736,
@@ -18316,7 +18316,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfm",
     "chunk_id": 65,
     "retrieval_time": 3.123541831970215,
@@ -18393,7 +18393,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfm",
     "chunk_id": 65,
     "retrieval_time": 3.169482469558716,
@@ -21165,7 +21165,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfm",
     "chunk_id": 67,
     "retrieval_time": 3.1257810592651367,

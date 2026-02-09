@@ -492,7 +492,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 45,
@@ -1471,7 +1471,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 134,
@@ -1482,7 +1482,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 135,
@@ -2065,7 +2065,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 188,
@@ -2076,7 +2076,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 189,
@@ -2648,7 +2648,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 241,
@@ -2659,7 +2659,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 242,
@@ -3055,7 +3055,7 @@
     "overall_score": 0.0,
     "explanation": "",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 278,
@@ -3066,7 +3066,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 279,
@@ -4166,7 +4166,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 379,
@@ -4221,7 +4221,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 384,
@@ -4232,7 +4232,7 @@
     "overall_score": 0.0,
     "explanation": "Penalizado: abstención cuando hay referencia",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 385,

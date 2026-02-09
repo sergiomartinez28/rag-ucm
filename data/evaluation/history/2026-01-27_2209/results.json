@@ -683,7 +683,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 301,
     "retrieval_time": 3.0909953117370605,
@@ -760,7 +760,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "chunk_id": 301,
     "retrieval_time": 3.0973994731903076,

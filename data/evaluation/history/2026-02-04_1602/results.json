@@ -3217,7 +3217,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013",
     "doc_id": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013",
     "chunk_id": "3-2013-09-23-Recomendación matricula TFG- TFM Septiembre 2013_chunk_1",
@@ -9932,7 +9932,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "doc_id": "directrices-tfg",
     "chunk_id": "directrices-tfg_chunk_3",
@@ -10017,7 +10017,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "doc_id": "directrices-tfg",
     "chunk_id": "directrices-tfg_chunk_3",
@@ -14437,7 +14437,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "modificacion-directrices-tfg",
     "doc_id": "modificacion-directrices-tfg",
     "chunk_id": "modificacion-directrices-tfg_chunk_0",
@@ -14522,7 +14522,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "modificacion-directrices-tfg",
     "doc_id": "modificacion-directrices-tfg",
     "chunk_id": "modificacion-directrices-tfg_chunk_0",
@@ -18517,7 +18517,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfm",
     "doc_id": "directrices-tfm",
     "chunk_id": "directrices-tfm_chunk_1",
@@ -18602,7 +18602,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfm",
     "doc_id": "directrices-tfm",
     "chunk_id": "directrices-tfm_chunk_1",
@@ -21577,7 +21577,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfm",
     "doc_id": "directrices-tfm",
     "chunk_id": "directrices-tfm_chunk_3",
@@ -29567,7 +29567,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "doc_id": "directrices-tfg",
     "chunk_id": "directrices-tfg_chunk_1",
@@ -29907,7 +29907,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "reglamento-tfm",
     "doc_id": "reglamento-tfm",
     "chunk_id": "reglamento-tfm_chunk_1",
@@ -29992,7 +29992,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "reglamento-tfm",
     "doc_id": "reglamento-tfm",
     "chunk_id": "reglamento-tfm_chunk_1",

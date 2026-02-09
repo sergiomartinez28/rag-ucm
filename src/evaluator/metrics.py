@@ -463,16 +463,3 @@ class MetricsCalculator:
         
         print("\n" + "="*70)
 
-
-if __name__ == "__main__":
-    from pathlib import Path
-    
-    calculator = MetricsCalculator()
-    
-    metrics = calculator.calculate_all_metrics(
-        results_path=Path("data/evaluation/results_test.json"),
-        scores_path=Path("data/evaluation/metrics_test.json"),
-        output_path=Path("data/evaluation/aggregated_metrics.json")
-    )
-    
-    calculator.print_report(metrics)

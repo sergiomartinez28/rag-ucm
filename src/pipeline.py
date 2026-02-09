@@ -363,13 +363,4 @@ class RAGPipeline:
         self.cleanup()
 
 
-if __name__ == "__main__":
-    # Ejemplo de uso con context manager
-    with RAGPipeline() as rag:
-        # Hacer consultas
-        # result = rag.query("¿Cuál es el plazo para presentar el TFM?")
-        # print(result['answer'])
-        pass
-    # Recursos liberados automáticamente
-    
-    print("✓ Pipeline RAG-UCM listo para usar")
+

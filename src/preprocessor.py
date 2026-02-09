@@ -19,7 +19,7 @@ try:
 except ImportError:
     OCR_AVAILABLE = False
 
-# Fase 1: Intentar usar PyMuPDF si está disponible
+# Intentar usar PyMuPDF si está disponible
 try:
     import fitz  # PyMuPDF
     PYMUPDF_AVAILABLE = True
@@ -63,7 +63,7 @@ class DocumentPreprocessor:
     def extract_from_pdf(self, pdf_path: Path) -> str:
         """
         Extrae texto de un PDF
-        Fase 1: Intenta múltiples métodos para máxima compatibilidad
+        Intenta múltiples métodos para máxima compatibilidad
         1. PyMuPDF (fitz) - Más robusto para PDFs problemáticos
         2. pdfplumber con tolerancias - Para PDFs estándar
         3. OCR - Para PDFs escaneados
@@ -108,7 +108,7 @@ class DocumentPreprocessor:
     def _extract_with_pymupdf(self, pdf_path: Path) -> List[str]:
         """
         Extrae texto usando PyMuPDF (fitz)
-        Fase 1: Alternativa más robusta para PDFs problemáticos
+        Alternativa más robusta para PDFs problemáticos
         """
         if not PYMUPDF_AVAILABLE:
             return []
@@ -140,7 +140,7 @@ class DocumentPreprocessor:
     def _extract_with_pdfplumber_tuned(self, pdf_path: Path) -> List[str]:
         """
         Extrae texto usando pdfplumber con tolerancias ajustadas
-        Fase 1: Parámetros optimizados para PDFs de normativa
+        Parámetros optimizados para PDFs de normativa
         """
         text_parts = []
         
@@ -251,7 +251,7 @@ class DocumentPreprocessor:
     def clean_text(self, text: str) -> str:
         """
         Limpia y normaliza el texto PDF
-        Fase 1: Heurísticas avanzadas para legibilidad
+        Heurísticas avanzadas para legibilidad
         
         - Deshacer guiones de final de línea (palabra-\n → palabra)
         - Insertar espacios perdidos (minúscula+Mayúscula, letra+número, etc.)
@@ -319,7 +319,7 @@ class DocumentPreprocessor:
     def create_chunks(self, text: str, metadata: Dict[str, str]) -> List[Chunk]:
         """
         Divide el texto en chunks respetando unidades semánticas
-        Fase 3: Normativa-aware - detecta Artículos, Disposiciones, Capítulos, etc.
+        Normativa-aware: detecta Artículos, Disposiciones, Capítulos, etc.
         
         Detecta cabeceras y chunkea por fronteras estructurales
         Si una sección es muy grande, la divide internamente
@@ -328,7 +328,7 @@ class DocumentPreprocessor:
             logger.warning("No se puede crear chunks de texto vacío")
             return []
         
-        # Fase 3: Detectar secciones normativa-aware
+        # Detectar secciones normativa-aware
         sections = self._split_by_normative_structure(text)
         
         if not sections:
@@ -349,7 +349,7 @@ class DocumentPreprocessor:
     
     def _split_by_normative_structure(self, text: str) -> List[tuple]:
         """
-        Fase 3: Detecta cabeceras de normativa y divide por ellas
+        Detecta cabeceras de normativa y divide por ellas
         
         Detecta: Artículo, Disposición, Capítulo, Sección, Apartado, etc.
         Retorna lista de (título, contenido)
@@ -621,11 +621,3 @@ class DocumentPreprocessor:
         logger.success(f"✓ Procesamiento batch completo: {len(all_chunks)} chunks totales")
         return all_chunks
 
-
-if __name__ == "__main__":
-    # Ejemplo de uso
-    from pathlib import Path
-    
-    preprocessor = DocumentPreprocessor(chunk_size=600, chunk_overlap=100)
-    
-    print("✓ Módulo preprocessor listo para usar")

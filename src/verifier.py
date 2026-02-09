@@ -195,7 +195,4 @@ class FidelityVerifier:
             'missing_citations': citation_coverage < 0.5
         }
 
-
-if __name__ == "__main__":
-    verifier = FidelityVerifier(threshold=0.7)
     print("✓ Módulo verifier listo para usar")

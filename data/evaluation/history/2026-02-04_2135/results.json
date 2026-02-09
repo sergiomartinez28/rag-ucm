@@ -5342,7 +5342,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "doc_id": "directrices-tfg",
     "chunk_id": "directrices-tfg_chunk_3",
@@ -5427,7 +5427,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "directrices-tfg",
     "doc_id": "directrices-tfg",
     "chunk_id": "directrices-tfg_chunk_3",
@@ -7892,7 +7892,7 @@
       }
     ],
     "question_type": "factual",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "modificacion-directrices-tfg",
     "doc_id": "modificacion-directrices-tfg",
     "chunk_id": "modificacion-directrices-tfg_chunk_0",
@@ -7977,7 +7977,7 @@
       }
     ],
     "question_type": "procedimental",
-    "category": "trabajo_fin",
+    "category": "tfg",
     "source_doc": "modificacion-directrices-tfg",
     "doc_id": "modificacion-directrices-tfg",
     "chunk_id": "modificacion-directrices-tfg_chunk_0",

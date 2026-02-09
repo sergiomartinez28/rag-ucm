@@ -196,7 +196,6 @@ class DatasetGenerator:
             chunk_lower = chunk_text.lower()
             
             # Extraer números de la respuesta
-            import re
             ref_nums = set(re.findall(r'\d+', ref_answer))
             chunk_nums = set(re.findall(r'\d+', chunk_lower))
             
@@ -385,7 +384,7 @@ class DatasetGenerator:
         source_lower = source.lower()
         
         if 'tfm' in source_lower or 'tfg' in source_lower:
-            return 'trabajo_fin'
+            return 'tfg'
         elif 'master' in source_lower or 'máster' in source_lower:
             return 'master'
         elif 'gobierno' in source_lower or 'claustro' in source_lower:
@@ -401,23 +400,3 @@ class DatasetGenerator:
         else:
             return 'general'
 
-
-if __name__ == "__main__":
-    # Test rápido
-    chunks_path = Path("data/processed/faiss_index/chunks.pkl")
-    output_path = Path("data/evaluation/dataset_test.json")
-    
-    generator = DatasetGenerator(
-        model_name="Qwen/Qwen2.5-3B-Instruct"
-    )
-    
-    qa_dataset = generator.generate_dataset(
-        chunks_path=chunks_path,
-        output_path=output_path,
-        num_samples=3
-    )
-    
-    print(f"\nGeneradas {len(qa_dataset)} preguntas:")
-    for qa_item in qa_dataset:
-        print(f"\n[{qa_item.question_type}] {qa_item.question}")
-        print(f"  → {qa_item.reference_answer[:100]}...")

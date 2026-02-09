@@ -96,7 +96,7 @@
     "overall_score": 1.0,
     "explanation": "La respuesta del RAG no proporciona información relevante, no es fidedigna ya que no se basa en documentos reales y es incorrecta comparada con la respuesta de referencia.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 9,
@@ -107,7 +107,7 @@
     "overall_score": 1.0,
     "explanation": "La respuesta del RAG no responde directamente a la pregunta, no está basada en documentos reales y la información proporcionada es incorrecta comparada con la respuesta de referencia.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 10,
@@ -426,7 +426,7 @@
     "overall_score": 1.0,
     "explanation": "La respuesta del RAG no proporciona información relevante, no es fidedigna ya que no menciona el Artículo X, y es incorrecta ya que no refleja la información correcta proporcionada en la respuesta de referencia.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 39,
@@ -437,7 +437,7 @@
     "overall_score": 1.0,
     "explanation": "La respuesta del RAG no responde directamente a la pregunta, no está basada en documentos reales y es incorrecta comparada con la respuesta de referencia.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 40,
@@ -668,7 +668,7 @@
     "overall_score": 5.0,
     "explanation": "La respuesta del RAG es directamente relevante a la pregunta, refleja la información proporcionada en la respuesta correcta y es precisa en su contenido.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 61,
@@ -679,7 +679,7 @@
     "overall_score": 1.0,
     "explanation": "La respuesta del RAG no responde directamente a la pregunta, no está basada en documentos reales y la información proporcionada es incorrecta.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 62,
@@ -734,7 +734,7 @@
     "overall_score": 1.0,
     "explanation": "La respuesta del RAG no responde directamente a la pregunta, no está basada en documentos reales y es incorrecta comparada con la respuesta de referencia.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 67,
@@ -745,7 +745,7 @@
     "overall_score": 1.0,
     "explanation": "La respuesta del RAG no responde directamente a la pregunta, no está basada en documentos reales y la información proporcionada es incorrecta.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 68,

@@ -9,7 +9,7 @@ REGLAS FUNDAMENTALES:
 5. Para fechas: responde con formato "El/La [evento] fue/es el [fecha]."
 6. Para números: responde con formato "[Cantidad] [unidad]."
 7. Para procedimientos: responde con 1-2 frases que expliquen el proceso.
-8. Siempre ten en cuanta qué es lo que se te está preguntando (quién, cuando, cuanto, etc.) para repsonder acorde a ello.
+8. Siempre ten en cuenta qué es lo que se te está preguntando (quién, cuándo, cuánto, etc.) para responder acorde a ello.
 
 REGLA CRÍTICA PARA DATOS NUMÉRICOS:
 - Si la pregunta pide números/fechas/porcentajes, COPIA EL FRAGMENTO EXACTO del documento.
@@ -30,4 +30,4 @@ Pregunta: "¿Qué plazo tiene el Tribunal para resolver?"
 Contexto menciona: "...resolverá en los 20 días hábiles siguientes..."
 RESPUESTA: "El Tribunal resolverá en los 20 días hábiles siguientes."
 
-IMPORTANTE: Si el fragmento contiene la información (aunque esté en medio de un párrafo largo), EXTRAE el dato y responde. No te abstengas si puedes encontrar la respuesta. Es muy importante que te asegures de que la respuesta que estas proporcionando repsonde a la pregunta hecha y es correcta y acorde a la documentación.
+IMPORTANTE: Si el fragmento contiene la información (aunque esté en medio de un párrafo largo), EXTRAE el dato y responde. No te abstengas si puedes encontrar la respuesta. Es muy importante que te asegures de que la respuesta que estás proporcionando responde a la pregunta hecha y es correcta y acorde a la documentación.

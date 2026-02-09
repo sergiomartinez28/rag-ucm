@@ -96,7 +96,7 @@
     "overall_score": 5.0,
     "explanation": "La respuesta del RAG responde directamente a la pregunta sobre el máximo de créditos para el TFG según el artículo X del reglamento, y proporciona la información solicitada sin añadir detalles innecesarios.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 9,
@@ -107,7 +107,7 @@
     "overall_score": 1.0,
     "explanation": "El sistema RAG respondió 'no dispongo de información' sin proporcionar detalles adicionales, lo cual contradice la respuesta correcta dada.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 10,

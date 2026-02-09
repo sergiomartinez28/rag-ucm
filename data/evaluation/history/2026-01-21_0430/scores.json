@@ -114,7 +114,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite el número específico de créditos mencionado en la referencia y no responde directamente a la pregunta.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 9,
@@ -127,7 +127,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite la parte sobre la Comisión de Grado y no menciona que la decisión debe ser aprobada por la Junta o Juntas de Centro, lo que reduce su fidelidad y completitud.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 10,
@@ -504,7 +504,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite la parte sobre los 6 créditos mínimos y proporciona información adicional no solicitada.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 39,
@@ -517,7 +517,7 @@
     "overall_score": 1,
     "explanation": "La respuesta omite completamente la información solicitada y proporciona información adicional no requerida.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 40,
@@ -790,7 +790,7 @@
     "overall_score": 3,
     "explanation": "La respuesta es facticamente correcta pero omite detalles importantes y contiene una frase innecesaria.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 61,
@@ -803,7 +803,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite el derecho específico mencionado en la referencia y no cubre todos los aspectos importantes. Además, contiene información adicional no respaldada por el texto original.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 62,
@@ -868,7 +868,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite la información clave sobre los 6 créditos restantes y no responde directamente a la pregunta.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 67,
@@ -881,7 +881,7 @@
     "overall_score": 1,
     "explanation": "La respuesta del RAG contiene información no mencionada en la referencia y es extensa y confusa.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 68,

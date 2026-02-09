@@ -38,7 +38,7 @@
       "avg_overall": 0.3888888888888889,
       "avg_time": 30.67231297492981
     },
-    "trabajo_fin": {
+    "tfg": {
       "count": 2,
       "precision_at_k": 1.0,
       "avg_relevancia": 1.0,

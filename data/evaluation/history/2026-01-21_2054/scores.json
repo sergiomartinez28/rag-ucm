@@ -114,7 +114,7 @@
     "overall_score": 5,
     "explanation": "La respuesta es precisa, relevante y honesta. La información se basa en el artículo X del reglamento y se menciona que no tiene información adicional.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 9,
@@ -127,7 +127,7 @@
     "overall_score": 1,
     "explanation": "El sistema afirma que no tiene información, pero la pregunta específica requiere información que no puede proporcionar.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 10,

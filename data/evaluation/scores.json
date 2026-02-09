@@ -753,7 +753,7 @@
     "explanation": "",
     "judge_raw_output": "{\"relevancia\": 1.0, \"fidelidad\": 0.9, \"precision\": 0.9}",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 117,
@@ -765,7 +765,7 @@
     "explanation": "",
     "judge_raw_output": "```json\n\n{\"relevancia\": 0.7, \"fidelidad\": 0.5, \"precision\": 0.5}\n\n```",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 122,
@@ -1113,7 +1113,7 @@
     "explanation": "",
     "judge_raw_output": "{\"relevancia\": 0.9, \"fidelidad\": 0.8, \"precision\": 0.7}",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 170,
@@ -1125,7 +1125,7 @@
     "explanation": "",
     "judge_raw_output": "```json\n\n{\"relevancia\": 0.7, \"fidelidad\": 0.8, \"precision\": 0.4}\n\n```",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 171,
@@ -1389,7 +1389,7 @@
     "explanation": "",
     "judge_raw_output": "{\"relevancia\": 0.9, \"fidelidad\": 0.8, \"precision\": 0.7}",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 219,
@@ -1641,7 +1641,7 @@
     "explanation": "",
     "judge_raw_output": "```json\n\n{\"relevancia\": 0.7, \"fidelidad\": 0.5, \"precision\": 0.3}\n\n```",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 255,
@@ -2349,7 +2349,7 @@
     "explanation": "",
     "judge_raw_output": "{\"relevancia\": 0.5, \"fidelidad\": 0.7, \"precision\": 0.0}",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 354,

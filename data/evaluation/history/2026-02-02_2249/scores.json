@@ -503,7 +503,7 @@
     "overall_score": 0.7000000000000001,
     "explanation": "",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 60,
@@ -1372,7 +1372,7 @@
     "overall_score": 1.0,
     "explanation": "",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 163,
@@ -1383,7 +1383,7 @@
     "overall_score": 0.8000000000000002,
     "explanation": "",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 165,
@@ -2131,7 +2131,7 @@
     "overall_score": 0.8000000000000002,
     "explanation": "",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 253,
@@ -2142,7 +2142,7 @@
     "overall_score": 0.7000000000000001,
     "explanation": "",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 254,
@@ -2681,7 +2681,7 @@
     "overall_score": 0.5333333333333333,
     "explanation": "",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 313,
@@ -2692,7 +2692,7 @@
     "overall_score": 0.7000000000000001,
     "explanation": "",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 315,
@@ -3055,7 +3055,7 @@
     "overall_score": 0.6,
     "explanation": "",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 361,
@@ -4045,7 +4045,7 @@
     "overall_score": 0.5333333333333333,
     "explanation": "",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 482,
@@ -4133,7 +4133,7 @@
     "overall_score": 0.8333333333333334,
     "explanation": "",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 492,
@@ -4144,7 +4144,7 @@
     "overall_score": 0.6,
     "explanation": "",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 493,

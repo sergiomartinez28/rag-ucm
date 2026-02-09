@@ -67,7 +67,7 @@ Toda la configuración está centralizada en `src/config.py` con valores optimiz
 | **LLM** | Qwen/Qwen2.5-3B-Instruct | Cuantizado 4-bit automáticamente |
 | chunk_size | 1000 | Tamaño de chunks en caracteres |
 | chunk_overlap | 200 | Solapamiento entre chunks |
-| top_k_retrieval | 10 | Documentos iniciales a recuperar |
+| top_k_retrieval | 15 | Documentos iniciales a recuperar |
 | top_k_rerank | 3 | Documentos finales tras re-ranking |
 | hybrid_alpha | 0.45 | Balance BM25/semántico |
 | max_new_tokens | 100 | Tokens máximos de respuesta |
@@ -204,10 +204,14 @@ Crea un archivo `evaluation/questions.json`:
 ]
 ```
 
-### Ejecutar evaluación (TODO: implementar)
+### Ejecutar evaluación
 
 ```bash
-python scripts/evaluate.py --questions evaluation/questions.json
+# Generar dataset de evaluación
+python evaluate_rag.py generate --num-samples 50
+
+# Ejecutar evaluación completa
+python evaluate_rag.py evaluate
 ```
 
 ### Métricas RAGAS
@@ -244,15 +248,15 @@ El sistema incluye verificación automática con métricas de:
    ```bash
    pip install torch --index-url https://download.pytorch.org/whl/cu118
    ```
-2. Reduce `TOP_K_RERANK` a 3
+2. Reduce `top_k_rerank` en `src/config.py`
 3. Usa un modelo más pequeño
 
 ### Problema: El sistema "alucina" (inventa información)
 
 **Soluciones**:
-1. Activa `ENABLE_VERIFICATION=true`
-2. Reduce `TEMPERATURE` a 0.1-0.2
-3. Aumenta `VERIFICATION_THRESHOLD`
+1. Activa `enable_verification` en `src/config.py`
+2. Reduce `temperature` a 0.1-0.2 en `src/config.py`
+3. Aumenta `verification_threshold` en `src/config.py`
 4. Revisa que los documentos sean completos y claros
 
 ---

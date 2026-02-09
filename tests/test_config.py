@@ -85,7 +85,7 @@ class TestRetrievalConfig:
         """Verifica valores por defecto optimizados"""
         config = RetrievalConfig()
         
-        assert config.top_k_retrieval == 10
+        assert config.top_k_retrieval == 15
         assert config.top_k_rerank == 3
         assert config.hybrid_alpha == 0.45
         assert config.min_score_threshold == 0.5

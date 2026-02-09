@@ -252,20 +252,3 @@ class RAGEvaluator:
         
         return results
 
-
-if __name__ == "__main__":
-    from pathlib import Path
-    
-    evaluator = RAGEvaluator()
-    
-    results = evaluator.run_evaluation(
-        dataset_path=Path("data/evaluation/dataset_test.json"),
-        output_path=Path("data/evaluation/results_test.json"),
-        top_k=5
-    )
-    
-    print(f"\nResultados: {len(results)} evaluaciones")
-    for r in results[:3]:
-        print(f"\nQ: {r.question[:80]}...")
-        print(f"A: {r.rag_answer[:100]}...")
-        print(f"Time: {r.total_time:.2f}s, Doc found: {r.correct_doc_in_top_k}")

@@ -112,7 +112,7 @@ class DocumentIndexer:
     
     def _tokenize_spanish(self, text: str) -> List[str]:
         """
-        Fase 2: Tokenizador robusto para español
+        Tokenizador robusto para español
         Captura palabras + números (créditos, plazos, artículos, fechas)
         Remueve stopwords en español
         """
@@ -145,7 +145,7 @@ class DocumentIndexer:
     def build_bm25_index(self, texts: List[str]) -> BM25Okapi:
         """
         Construye índice BM25 para búsqueda léxica
-        Fase 2: Usa tokenizador robusto en español
+        Usa tokenizador robusto en español
         
         Args:
             texts: Lista de textos a indexar
@@ -354,16 +354,3 @@ class DocumentIndexer:
         
         logger.success("✓ Recursos del indexer liberados")
 
-
-if __name__ == "__main__":
-    # Ejemplo de uso
-    from pathlib import Path
-    
-    indexer = DocumentIndexer(
-        embedding_model="BAAI/bge-m3",
-        faiss_index_path=Path("data/processed/faiss_index"),
-        bm25_index_path=Path("data/processed/bm25_index")
-    )
-    
-    print("✓ Módulo indexer listo para usar")
-    print(f"Dimensión de embeddings: {indexer.embedding_dim}")

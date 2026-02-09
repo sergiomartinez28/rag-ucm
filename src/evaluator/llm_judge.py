@@ -460,7 +460,7 @@ class LLMJudge:
             avg_precision = 0.0
             avg_overall = 0.0
         
-        logger.success("? Evaluaci?n con LLM Juez completada")
+        logger.success("✓ Evaluación con LLM Juez completada")
         logger.info(f"  Relevancia:   {avg_relevancia:.2f}/1")
         logger.info(f"  Fidelidad:    {avg_fidelidad:.2f}/1")
         logger.info(f"  Precision:    {avg_precision:.2f}/1")
@@ -468,13 +468,3 @@ class LLMJudge:
         
         return scores
 
-
-if __name__ == "__main__":
-    judge = LLMJudge()
-    
-    judge_scores = judge.evaluate_all(
-        results_path=Path("data/evaluation/results_test.json"),
-        output_path=Path("data/evaluation/metrics_test.json")
-    )
-    
-    print(f"\nMétricas: {len(judge_scores)} evaluaciones")

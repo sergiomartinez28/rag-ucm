@@ -114,7 +114,7 @@
     "overall_score": 5,
     "explanation": "La respuesta del sistema RAG es completamente precisa, completa, relevante y concisa, manteniendo toda la información relevante de la referencia.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 9,
@@ -127,7 +127,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite la parte específica sobre quién preside la Comisión de Grado y se centra en la Comisión Permanente, lo que no responde directamente a la pregunta. Además, contiene información innecesaria.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 10,
@@ -504,7 +504,7 @@
     "overall_score": 1,
     "explanation": "La respuesta del sistema RAG contiene información incorrecta y no relevante, además de omitir detalles importantes como la necesidad de superar todos los créditos restantes.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 39,
@@ -517,7 +517,7 @@
     "overall_score": 3,
     "explanation": "La respuesta es facticamente correcta pero omite detalles como el tipo de examen (TFG) y no menciona específicamente la convocatoria.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 40,
@@ -790,7 +790,7 @@
     "overall_score": 1,
     "explanation": "La respuesta del sistema RAG no menciona el contenido específico del artículo 4.6 y confunde el TFG con una asignatura más del Plan de estudios, lo cual es incorrecto y no relevante.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 61,
@@ -803,7 +803,7 @@
     "overall_score": 3,
     "explanation": "La respuesta es facticamente correcta pero omite detalles como la posibilidad de solicitar la revisión de la calificación. También es parcialmente concisa.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 62,
@@ -868,7 +868,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite la precisión de los 6 créditos específicos y no menciona que estos son los únicos requeridos, lo que hace que sea parcialmente correcta pero muy incompleta.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 67,
@@ -881,7 +881,7 @@
     "overall_score": 2,
     "explanation": "La respuesta omite detalles importantes como la precisión de las fechas y forma establecida, y no menciona específicamente el artículo X del reglamento. Además, contiene una información adicional sobre el final del curso lectivo que no está en la referencia.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 68,

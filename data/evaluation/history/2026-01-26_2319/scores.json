@@ -96,7 +96,7 @@
     "overall_score": 0.5666666666666668,
     "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 9,
@@ -107,7 +107,7 @@
     "overall_score": 0.5666666666666668,
     "explanation": "La respuesta RAG está muy relacionada con la pregunta, aunque no es la única respuesta posible. Los puntos clave están respaldados por los documentos recuperados, aunque hay algunas variaciones en la redacción.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 10,

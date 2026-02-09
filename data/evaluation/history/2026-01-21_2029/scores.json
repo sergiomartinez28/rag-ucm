@@ -114,7 +114,7 @@
     "overall_score": 1,
     "explanation": "El sistema afirma que el TFG puede tener entre 6 a 30 créditos, pero no menciona que el máximo es 30 como indica el artículo X del reglamento. Además, no menciona ninguna fuente.",
     "question_type": "factual",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 9,
@@ -127,7 +127,7 @@
     "overall_score": 4,
     "explanation": "La respuesta cita correctamente la fuente (el artículo 3.2 del reglamento) y proporciona toda la información solicitada. Sin embargo, falta mencionar que la Comisión de Grado es la unidad encargada de la organización, coordinación y seguimiento de cada Grado.",
     "question_type": "procedimental",
-    "category": "trabajo_fin"
+    "category": "tfg"
   },
   {
     "id": 10,

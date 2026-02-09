@@ -35,7 +35,6 @@ rag-ucm/
 ├── evaluate_rag.py         # Script de evaluación del sistema
 ├── requirements.txt        # Dependencias Python
 ├── pytest.ini              # Configuración de tests
-├── LICENSE                 # Licencia MIT
 ├── README.md               # Este archivo
 │
 ├── data/
@@ -64,13 +63,16 @@ rag-ucm/
 │   ├── conftest.py         # Fixtures compartidos
 │   ├── test_config.py
 │   ├── test_preprocessor.py
+│   ├── test_prompt_loader.py
 │   ├── test_utils.py
 │   └── test_metrics.py
 │
 ├── prompts/                # Plantillas de prompts
 │   ├── system_prompt.txt
 │   ├── user_prompt.txt
-│   └── judge_*.txt
+│   ├── dataset_generator.txt
+│   ├── judge_evaluation.txt
+│   └── judge_user_prompt.txt
 │
 └── docs/
     └── INSTALLATION.md     # Guía detallada de instalación
@@ -90,7 +92,7 @@ rag-ucm/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/rag-ucm.git
+git clone https://github.com/sergma22/rag-ucm.git
 cd rag-ucm
 
 # Crear entorno virtual
@@ -317,18 +319,14 @@ python evaluate_rag.py evaluate --limit 100
 - Fine-tuning del LLM con lenguaje administrativo UCM
 - Despliegue interno para secretarías
 
----
-
-## 📄 Licencia
-
-MIT License - Ver archivo `LICENSE` para más detalles
 
 ---
 
 ## 👤 Autor
 
-**Sergio Martín**
-- TFM - Máster [nombre del máster]
+**Sergio Martínez Asenjo**
+- TFM - Máster de Formación Permanente en
+Big Data, Data Science e Inteligencia Artificial
 - Universidad Complutense de Madrid
 - sergma22@ucm.es
 
@@ -337,5 +335,4 @@ MIT License - Ver archivo `LICENSE` para más detalles
 ## 🙏 Agradecimientos
 
 - Universidad Complutense de Madrid por la disponibilidad de normativas públicas
-- Comunidad open source de HuggingFace y LangChain
-- [Nombre del tutor/a] por la supervisión del TFM
+- Comunidad open source de HuggingFace

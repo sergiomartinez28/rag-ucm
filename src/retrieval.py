@@ -221,7 +221,7 @@ class HybridRetriever:
             f"max={raw_scores.max():.3f}, mean={raw_scores.mean():.3f}"
         )
         
-        # Fase 2: Normalizar con sigmoid para obtener scores [0, 1] reales
+        # Normalizar con sigmoid para obtener scores [0, 1] reales
         sigmoid_scores = 1 / (1 + np.exp(-raw_scores))
         
         # Combinar con chunks
@@ -355,7 +355,3 @@ class HybridRetriever:
         
         logger.success("✓ Recursos del retriever liberados")
 
-
-if __name__ == "__main__":
-    print("✓ Módulo retrieval listo para usar")
-    print("Implementa búsqueda híbrida BM25 + embeddings + re-ranking")
