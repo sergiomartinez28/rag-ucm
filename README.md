@@ -1,21 +1,21 @@
 # RAG-UCM — Asistente Académico con Modelos Open Source
 
-## 📌 Descripción
+## Descripción
 
-**Título**: "RAG ligero para asistencia académica en la Universidad Complutense de Madrid: recuperación semántica, generación explicable y control de alucinaciones con modelos open source"
+**Título**: "RAG ligero para asistencia académica en la Universidad Complutense de Madrid"
 
 RAG-UCM es un asistente inteligente basado en **Retrieval-Augmented Generation (RAG)** para responder preguntas sobre normativa académica de la Universidad Complutense de Madrid (UCM). 
 
 ### Características principales:
-- 🔍 **Búsqueda híbrida**: Combina BM25 (búsqueda léxica) + embeddings semánticos
-- 🎯 **Re-ranking inteligente**: Cross-encoder para máxima precisión
-- ✅ **Verificación de fidelidad**: Control automático de alucinaciones
-- 📚 **Citas obligatorias**: Siempre referencia las fuentes oficiales
-- 🔓 **100% Open Source**: Sin dependencias comerciales
+- **Búsqueda híbrida**: Combina BM25 (búsqueda léxica) + embeddings semánticos
+- **Re-ranking inteligente**: Cross-encoder para máxima precisión
+- **Verificación de fidelidad**: Control automático de alucinaciones
+- **Citas obligatorias**: Siempre referencia las fuentes oficiales
+- **100% Open Source**: Sin dependencias comerciales
 
 ---
 
-## 🎯 Objetivo e Hipótesis
+## Objetivo e Hipótesis
 
 ### Objetivo
 Desarrollar un asistente de preguntas y respuestas para estudiantes de la UCM que responda dudas prácticas (normativa TFG/TFM, matrículas, reconocimiento de créditos, becas, plazos administrativos…) citando siempre las fuentes oficiales, usando únicamente software y modelos open source y ejecutándose en hardware local/modesto.
@@ -25,7 +25,7 @@ Un sistema RAG "ligero", basado en búsqueda híbrida, re-ranking cruzado y veri
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 rag-ucm/
@@ -80,7 +80,7 @@ rag-ucm/
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 ### Requisitos previos
 - Python 3.10+
@@ -92,7 +92,7 @@ rag-ucm/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/sergma22/rag-ucm.git
+git clone https://github.com/sergiomartinez28/rag-ucm.git
 cd rag-ucm
 
 # Crear entorno virtual
@@ -121,7 +121,7 @@ python process_documents.py
 
 ---
 
-## 📖 Uso
+## Uso
 
 ### Interfaz web (Streamlit)
 

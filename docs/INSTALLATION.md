@@ -265,7 +265,7 @@ El sistema incluye verificación automática con métricas de:
 
 1. **Expandir documentos**: Añade más normativas a `data/raw/`
 2. **Fine-tuning**: Considera hacer fine-tuning del LLM con ejemplos UCM
-3. **Evaluación formal**: Crea un conjunto de test con 100+ preguntas
+3. **Evaluación formal**: Crea un conjunto de test con más preguntas
 4. **Despliegue**: Dockeriza y despliega en servidor interno
 
 ---
@@ -279,4 +279,3 @@ Para dudas o problemas:
 
 ---
 
-**¡Buena suerte con tu TFM! 🎓**
