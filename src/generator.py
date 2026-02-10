@@ -758,7 +758,7 @@ Responde SOLO con la información que responda a la pregunta. Si hay nombres, fe
                 'id': doc_id,  # ID real del documento (para métricas precisas)
                 'rank': i,     # Posición en el ranking
                 'title': metadata.get('title', metadata.get('filename', 'Documento')),
-                'text_preview': chunk.text[:200] + "..." if len(chunk.text) > 200 else chunk.text,
+                'text_preview': chunk.text,
                 'score': round(score, 3),
                 'chunk_id': chunk.chunk_id,  # ID del chunk (para métricas precisas)
                 'metadata': {

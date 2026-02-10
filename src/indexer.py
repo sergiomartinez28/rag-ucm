@@ -337,8 +337,10 @@ class DocumentIndexer:
         if self.faiss_index is None:
             return {"status": "No indexado"}
         
+        unique_docs = len(set(c.doc_id for c in self.chunks))
         return {
             "total_chunks": len(self.chunks),
+            "total_documents": unique_docs,
             "faiss_vectors": self.faiss_index.ntotal,
             "embedding_dim": self.embedding_dim,
             "embedding_model": self.embedding_model_name,
