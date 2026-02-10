@@ -108,7 +108,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-> 💡 **Configuración**: Todos los parámetros están en `src/config.py` con valores optimizados.
+>  **Configuración**: Todos los parámetros están en `src/config.py` con valores optimizados.
 
 ### Preparación de datos
 
@@ -174,7 +174,7 @@ pytest tests/test_config.py -v
 
 ---
 
-## 🔬 Metodología Técnica
+##  Metodología Técnica
 
 ### 1. Colección de Documentos
 - Normativas TFG/TFM por facultad
@@ -184,7 +184,7 @@ pytest tests/test_config.py -v
 - Tasas y precios públicos
 
 ### 2. Preprocesado
-- Extracción de texto desde PDF (PyMuPDF/pdfplumber) y HTML
+- Extracción de texto desde PDF (PyMuPDF/pdfplumber) 
 - Limpieza y normalización
 - Chunking semántico (~1000 tokens, solape 200)
 - Preservación de metadatos (título, facultad, fecha, URL)
@@ -217,7 +217,7 @@ pytest tests/test_config.py -v
 
 ---
 
-## 📊 Evaluación
+##  Evaluación
 
 El sistema incluye un framework de evaluación completo con:
 
@@ -245,16 +245,16 @@ python evaluate_rag.py evaluate --limit 100
 
 ---
 
-## 🎯 Alcance Funcional
+##  Alcance Funcional
 
-### ✅ El sistema PUEDE:
+###  El sistema PUEDE:
 - Responder preguntas sobre normativa UCM en lenguaje natural
 - Recuperar fragmentos relevantes de documentos oficiales
 - Generar respuestas claras en español con tono administrativo
 - Incluir citas precisas de documentos originales
 - Indicar cuando no tiene información suficiente
 
-### ❌ El sistema NO:
+###  El sistema NO:
 - Da consejo legal personalizado
 - Hace interpretaciones académicas subjetivas
 - Sustituye a secretaría (siempre remite a la fuente)
@@ -276,29 +276,6 @@ python evaluate_rag.py evaluate --limit 100
 - `pydantic` - Validación de configuración
 - `streamlit` - Interfaz web
 - `typer` + `rich` - CLI
-
----
-
-## 📅 Estado del Proyecto
-
-- ✅ **Fase 1**: Definición del alcance y selección de normativas
-- ✅ **Fase 2**: Adquisición y limpieza de datos (PDFs/HTML)
-- ✅ **Fase 3**: Prototipo RAG básico con recuperación + generación
-- ✅ **Fase 4**: Búsqueda híbrida (BM25 + semántica) + re-ranking
-- ✅ **Fase 5**: Verificación de fidelidad y control de abstenciones
-- ✅ **Fase 6**: Evaluación con dataset de 449 preguntas
-- ✅ **Fase 7**: Demo Streamlit + CLI
-
-### Resultados de Evaluación
-
-| Métrica | Valor |
-|---------|-------|
-| Overall Score | 0.72 |
-| Precision | 0.62 |
-| Fidelidad | 0.74 |
-| Abstención | 0.0% |
-| Tiempo retrieval | ~5s |
-| Tiempo generación | ~50s |
 
 ---
 
