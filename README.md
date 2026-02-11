@@ -80,14 +80,6 @@ rag-ucm/
 
 ---
 
-## Instalación
-
-### Requisitos previos
-- Python 3.10+
-- 8GB RAM mínimo (16GB recomendado)
-- GPU opcional (acelera generación, funciona en CPU)
-- 10GB espacio en disco
-
 ### Instalación
 
 ```bash
